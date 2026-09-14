@@ -70,10 +70,14 @@ function doPost(e) {
       sheet = ss.insertSheet(sheetName);
       sheet.appendRow(headers);
       formatHeaderRow(sheet, headers.length);
-    } else if (sheet.getLastRow() <= 1) {
-      // Если лист пуст или содержит только старую короткую шапку без данных, обновляем шапку
-      sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-      formatHeaderRow(sheet, headers.length);
+    } else {
+      // Автоматическая актуализация шапки: если колонок меньше 31 или первая ячейка не содержит токен, обновляем строку 1
+      var currentCols = sheet.getLastColumn();
+      var firstCell = sheet.getLastRow() >= 1 ? sheet.getRange(1, 1).getValue() : "";
+      if (firstCell !== headers[0] || currentCols < headers.length) {
+        sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+        formatHeaderRow(sheet, headers.length);
+      }
     }
 
     var now = new Date();
