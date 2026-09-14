@@ -276,6 +276,8 @@ const TestSession = {
         category: task.category,
         categoryName: task.categoryName || `Раздел ${task.category}`,
         title: task.title,
+        scenario: task.scenario || '',
+        question: task.question || '',
         unit: task.unit || '',
         expectedAnswer: task.correctAnswer,
         userAnswer: isNaN(userVal) ? null : userVal,
@@ -286,6 +288,7 @@ const TestSession = {
       };
     });
 
+    const correctCount = answers.filter(a => a.isCorrect).length;
     const totalScore = answers.reduce((sum, a) => sum + a.points, 0);
 
     const payload = {
@@ -294,6 +297,7 @@ const TestSession = {
       group: this.state.student.group,
       specialty: this.state.student.specialty,
       answers,
+      correctCount,
       totalScore,
       maxScore: CONFIG.MAX_SCORE,
       isAutoSubmit,

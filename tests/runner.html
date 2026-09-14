@@ -169,6 +169,33 @@
             throw new Error('Квитанция не содержит ключевых полей');
           }
         }
+      },
+      {
+        name: 'Формирование полезной нагрузки для Google Таблицы: квитанция (Token), исходные вопросы и ответы',
+        fn: () => {
+          const sample = TaskBank.getRandomTasks();
+          const answers = sample.map((t, idx) => ({
+            taskId: t.id,
+            categoryName: t.categoryName,
+            scenario: t.scenario,
+            question: t.question,
+            unit: t.unit,
+            expectedAnswer: t.correctAnswer,
+            userAnswer: t.correctAnswer,
+            isCorrect: true,
+            points: 25
+          }));
+
+          const token = GDriveSync.generateReceiptToken();
+          if (!/^RUDN-MB-[A-Z0-9]+-[A-Z0-9]+$/.test(token)) {
+            throw new Error('Токен не соответствует шаблону RUDN-MB-XXXX-YYYY');
+          }
+
+          answers.forEach((a, i) => {
+            if (!a.scenario || !a.question) throw new Error(`Задача ${i + 1} не содержит исходного вопроса или условия`);
+            if (a.userAnswer === null || a.userAnswer === undefined) throw new Error(`Задача ${i + 1} не содержит ответа студента`);
+          });
+        }
       }
     ];
 

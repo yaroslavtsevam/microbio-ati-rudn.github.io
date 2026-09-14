@@ -21,9 +21,33 @@ const GDriveSync = {
    */
   async submitResults(payload) {
     const receiptToken = this.generateReceiptToken();
+
+    // Формирование плоских полей задач для совместимости со строгим табличным представлением
+    const flatTaskFields = {};
+    (payload.answers || []).forEach((ans, idx) => {
+      const i = idx + 1;
+      flatTaskFields[`task${i}_id`] = ans.taskId || '';
+      flatTaskFields[`task${i}_title`] = ans.title || '';
+      flatTaskFields[`task${i}_category`] = ans.categoryName || `Раздел ${ans.category}`;
+      flatTaskFields[`task${i}_question`] = (ans.scenario ? ans.scenario + '\n' : '') + 'Вопрос: ' + (ans.question || '');
+      flatTaskFields[`task${i}_answer`] = (ans.userAnswer !== null && ans.userAnswer !== undefined) 
+        ? `${ans.userAnswer}${ans.unit ? ' ' + ans.unit : ''}` 
+        : 'нет ответа';
+      flatTaskFields[`task${i}_expected`] = (ans.expectedAnswer !== null && ans.expectedAnswer !== undefined) 
+        ? `${ans.expectedAnswer}${ans.unit ? ' ' + ans.unit : ''}` 
+        : '';
+      flatTaskFields[`task${i}_points`] = ans.points ?? 0;
+      flatTaskFields[`task${i}_isCorrect`] = ans.isCorrect ? 'Верно' : 'Неверно';
+      flatTaskFields[`task${i}_notes`] = ans.userNotes || '';
+    });
+
     const fullData = {
-      ...payload,
       receiptToken,
+      sessionToken: receiptToken,
+      ...payload,
+      ...flatTaskFields,
+      receiptToken,
+      sessionToken: receiptToken,
       submittedAtIso: new Date().toISOString(),
       submittedAtLocal: new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })
     };

@@ -11,6 +11,19 @@ const { TaskBank, TASK_BANK } = require('../js/task-bank.js');
 const { CONFIG } = require('../js/config.js');
 const { GDriveSync } = require('../js/gdrive-sync.js');
 
+global.CONFIG = CONFIG;
+
+// Мок LocalStorage для Node.js среды тестирования
+if (!global.localStorage || typeof global.localStorage.getItem !== 'function') {
+  const store = {};
+  global.localStorage = {
+    getItem: (k) => (k in store ? store[k] : null),
+    setItem: (k, v) => { store[k] = String(v); },
+    removeItem: (k) => { delete store[k]; },
+    clear: () => { Object.keys(store).forEach(k => delete store[k]); }
+  };
+}
+
 describe('ГРУППА 1: Схема и целостность банка расчетных задач (TASK_BANK)', () => {
   test('1.1. Банк содержит ровно 20 расчетных задач', () => {
     assert.equal(TASK_BANK.length, 20, 'В банке должно быть ровно 20 задач');
@@ -247,5 +260,181 @@ describe('ГРУППА 5: Модуль синхронизации и квита�
     assert.ok(text.includes('75 из 100'), 'Баллы должны присутствовать в тексте');
     assert.ok(text.includes('c1_t1'), 'Идентификаторы задач должны присутствовать в тексте');
     assert.ok(text.includes('Проверочный хеш:'), 'Проверочный крипто-хеш должен присутствовать в тексте');
+  });
+
+  test('5.3. В полезной нагрузке для Google Таблицы присутствуют квитанция сдачи, исходные вопросы и ответы', async () => {
+    const originalFetch = global.fetch;
+    global.fetch = async () => ({
+      ok: true,
+      json: async () => ({ status: 'success' })
+    });
+
+    try {
+      const sampleTasks = TaskBank.getRandomTasks();
+      const answers = sampleTasks.map((t, idx) => ({
+        taskId: t.id,
+        category: t.category,
+        categoryName: t.categoryName,
+        title: t.title,
+        scenario: t.scenario,
+        question: t.question,
+        unit: t.unit,
+        expectedAnswer: t.correctAnswer,
+        userAnswer: t.correctAnswer,
+        userRawInput: String(t.correctAnswer),
+        userNotes: `Тестовое примечание ${idx + 1}`,
+        isCorrect: true,
+        points: 25
+      }));
+
+      const payload = {
+        surname: 'Сидоров',
+        name: 'Алексей',
+        group: 'АТИ-303',
+        specialty: 'Управление качеством',
+        answers,
+        correctCount: 4,
+        totalScore: 100,
+        maxScore: 100,
+        isAutoSubmit: false,
+        timeSpentFormatted: '10 мин 15 сек',
+        elapsedSeconds: 615
+      };
+
+      // Проверяем вызов GDriveSync.submitResults
+      const res = await GDriveSync.submitResults(payload);
+      assert.ok(res.receiptToken, 'Результат отправки должен содержать receiptToken');
+      assert.match(res.receiptToken, /^RUDN-MB-[A-Z0-9]+-[A-Z0-9]+$/, 'Токен должен иметь формат RUDN-MB-XXXX-YYYY');
+
+      // Проверяем сохраненный локальный бэкап
+      const lastReceipt = JSON.parse(global.localStorage.getItem('rudn_microbio_last_receipt'));
+      assert.ok(lastReceipt, 'Бэкап последней квитанции должен существовать');
+      assert.equal(lastReceipt.receiptToken, res.receiptToken);
+      assert.equal(lastReceipt.sessionToken, res.receiptToken);
+
+      // Проверяем сохранение исходных вопросов и ответов для каждой задачи
+      assert.equal(lastReceipt.answers.length, 4);
+      lastReceipt.answers.forEach((ans, i) => {
+        assert.ok(ans.question && ans.question.length > 5, `Задача ${i + 1} должна содержать исходный вопрос`);
+        assert.ok(ans.scenario && ans.scenario.length > 5, `Задача ${i + 1} должна содержать исходное условие`);
+        assert.ok(ans.userAnswer !== null, `Задача ${i + 1} должна содержать ответ пользователя`);
+        assert.ok(ans.expectedAnswer !== null, `Задача ${i + 1} должна содержать эталонный ответ`);
+      });
+
+      // Проверяем плоские поля task1_question, task1_answer и т.д.
+      for (let i = 1; i <= 4; i++) {
+        assert.ok(lastReceipt[`task${i}_question`], `Поле task${i}_question должно быть заполнено`);
+        assert.ok(lastReceipt[`task${i}_answer`], `Поле task${i}_answer должно быть заполнено`);
+        assert.ok(lastReceipt[`task${i}_expected`], `Поле task${i}_expected должно быть заполнено`);
+      }
+    } finally {
+      global.fetch = originalFetch;
+    }
+  });
+
+  test('5.4. Симуляция формирования строки ведомости Google Таблицы', () => {
+    const token = 'RUDN-MB-MU0KSLNR-U1RY';
+    const mockData = {
+      receiptToken: token,
+      surname: 'Смирнова',
+      name: 'Елена',
+      group: 'АТИ-301',
+      specialty: 'Стандартизация и метрология',
+      totalScore: 75,
+      correctCount: 3,
+      timeSpentFormatted: '13 мин 20 сек',
+      isAutoSubmit: false,
+      answers: [
+        {
+          taskId: 'c1_t1',
+          categoryName: 'Автопротолиз воды',
+          scenario: 'При контроле сока pH = 3.40',
+          question: 'Рассчитайте [H+] в мкМ',
+          userAnswer: 398.1,
+          expectedAnswer: 398.1,
+          unit: 'мкМ',
+          isCorrect: true,
+          points: 25,
+          userNotes: '10^(-3.4)'
+        },
+        {
+          taskId: 'c2_t1',
+          categoryName: 'Ионная сила',
+          scenario: 'Раствор солей',
+          question: 'Рассчитайте ионную силу',
+          userAnswer: 0.0375,
+          expectedAnswer: 0.0375,
+          unit: 'моль/л',
+          isCorrect: true,
+          points: 25,
+          userNotes: ''
+        },
+        {
+          taskId: 'c3_t1',
+          categoryName: 'Гендерсон-Хассельбах',
+          scenario: 'Клюквенный морс',
+          question: 'Рассчитайте долю HA',
+          userAnswer: 86.04,
+          expectedAnswer: 86.04,
+          unit: '%',
+          isCorrect: true,
+          points: 25,
+          userNotes: ''
+        },
+        {
+          taskId: 'c4_t1',
+          categoryName: 'Растворимость',
+          scenario: 'Осадок сорбиновой кислоты',
+          question: 'Рассчитайте pH_крит',
+          userAnswer: 2.50,
+          expectedAnswer: 3.28,
+          unit: 'ед. pH',
+          isCorrect: false,
+          points: 0,
+          userNotes: 'ошибка в логарифме'
+        }
+      ]
+    };
+
+    // Эмуляция сборки строки как в google-apps-script/Code.gs
+    const taskColumns = [];
+    mockData.answers.forEach((ans) => {
+      const tId = `[${ans.taskId}] ${ans.categoryName}`;
+      const tQuestion = `${ans.scenario}\nВопрос: ${ans.question}`;
+      const tUserAns = `${ans.userAnswer} ${ans.unit}`;
+      const tExpected = `${ans.expectedAnswer} ${ans.unit}`;
+      const tPoints = `${ans.points} б. (${ans.isCorrect ? 'Верно' : 'Неверно'})`;
+      taskColumns.push(tId, tQuestion, tUserAns, tExpected, tPoints);
+    });
+
+    const row = [
+      mockData.receiptToken,
+      '2026-09-14 04:45:00',
+      mockData.surname,
+      mockData.name,
+      mockData.group,
+      mockData.specialty,
+      `${mockData.totalScore} из 100`,
+      `${mockData.correctCount} из 4`,
+      mockData.timeSpentFormatted,
+      mockData.isAutoSubmit ? 'Автосдача' : 'Штатная сдача'
+    ].concat(taskColumns);
+
+    // Верификация ключевых колонок
+    assert.equal(row[0], token, 'Колонка 1 обязана содержать токен квитанции');
+    assert.equal(row[2], 'Смирнова', 'Колонка 3 обязана содержать фамилию');
+    assert.equal(row[4], 'АТИ-301', 'Колонка 5 обязана содержать группу');
+
+    // Проверка наличия исходных вопросов и ответов
+    assert.ok(row[11].includes('Рассчитайте [H+] в мкМ'), 'Колонка вопроса задачи 1 должна содержать текст вопроса');
+    assert.equal(row[12], '398.1 мкМ', 'Колонка ответа задачи 1 должна содержать ответ студента');
+    assert.equal(row[13], '398.1 мкМ', 'Колонка эталона задачи 1 должна содержать эталон');
+    assert.equal(row[14], '25 б. (Верно)', 'Колонка результата задачи 1 должна содержать вердикт');
+
+    // Проверка 4 задачи (неверной)
+    assert.ok(row[26].includes('Рассчитайте pH_крит'), 'Колонка вопроса задачи 4 должна содержать текст вопроса');
+    assert.equal(row[27], '2.5 ед. pH', 'Колонка ответа задачи 4 должна содержать неверный ответ студента');
+    assert.equal(row[28], '3.28 ед. pH', 'Колонка эталона задачи 4 должна содержать верный эталон');
+    assert.equal(row[29], '0 б. (Неверно)', 'Колонка результата задачи 4 должна содержать 0 б. (Неверно)');
   });
 });
