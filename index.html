@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="ru" data-carbon-theme="white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пищевая микробиология, санитария и гигиена • АТИ РУДН</title>
+  <meta name="description" content="Учебный портал семинарских и практических занятий курса «Пищевая микробиология, санитария и гигиена» для направлений «Стандартизация и метрология» и «Управление качеством» АТИ РУДН.">
+
+  <!-- IBM Carbon Fonts & Design System Styles -->
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/sans.css">
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/mono.css">
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       1. IBM CARBON UI SHELL: HEADER
+       ===================================================================== -->
+  <header class="cds--header" role="banner">
+    <div class="cds--header__left">
+      <a href="#catalog" class="cds--header__name" data-nav="catalog">
+        <span class="cds--header__name-prefix">РУДН • АТИ</span>
+        <span>Пищевая микробиология</span>
+        <span class="cds--header__badge">Dry Lab</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul class="cds--header__nav">
+          <li class="cds--header__menu-item">
+            <a href="#catalog" class="cds--header__menu-link cds--header__menu-link--active" data-nav="catalog">
+              Каталог курса (1–18)
+            </a>
+          </li>
+          <li class="cds--header__menu-item">
+            <a href="#seminar1" class="cds--header__menu-link" data-nav="seminar1">
+              Семинар 1
+            </a>
+          </li>
+          <li class="cds--header__menu-item">
+            <a href="#test" class="cds--header__menu-link" data-nav="test">
+              Экспресс-контроль (15 мин)
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="cds--header__global">
+      <button type="button" class="cds--header__action" id="btn-theme-toggle" title="Переключить тему (Светлая / Темная Carbon)">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="https://github.com/yaroslavtsevam/microbio-ati-rudn.github.io" target="_blank" rel="noopener noreferrer" class="cds--header__action" title="Репозиторий на GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       2. ПРЕДСТАВЛЕНИЕ 1: КАТАЛОГ СЕМИНАРОВ И ПРАКТИКУМОВ (1–18)
+       ===================================================================== -->
+  <main id="view-catalog" class="cds--grid">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-banner__pretitle">Аграрно-технологический институт РУДН • Департамент техносферной безопасности</div>
+      <h1 class="hero-banner__title">Курс «Пищевая микробиология, санитария и гигиена»</h1>
+      <p class="hero-banner__lead">
+        Интерактивный учебно-методический комплекс семинарских и практических занятий для студентов бакалавриата направлений «Стандартизация и метрология» (27.03.01) и «Управление качеством» (27.03.02). Реализация концепции «Dry Lab» на основе компьютерного кинетического моделирования ComBase, цифровой микроскопии и аудита регламентов ТР ТС / ХАССП.
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="cds--btn cds--btn--primary" data-go-to="seminar1">
+          <span>Открыть Семинар 1 (Активен)</span>
+          <span>→</span>
+        </button>
+        <button class="cds--btn cds--btn--tertiary" data-go-to="test">
+          <span>Экспресс-контроль (15 мин)</span>
+          <span>⏱</span>
+        </button>
+      </div>
+
+      <div class="hero-banner__stats">
+        <div class="hero-stat">
+          <div class="hero-stat__value">18</div>
+          <div class="hero-stat__label">Семинарских занятий</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">36</div>
+          <div class="hero-stat__label">Академических часов</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">12</div>
+          <div class="hero-stat__label">Лабораторных работ Dry Lab</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">100%</div>
+          <div class="hero-stat__label">Цифровое моделирование</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фильтр каталога -->
+    <div class="section-header">
+      <div>
+        <h2 class="section-header__title">Календарно-тематический план занятий</h2>
+        <div class="section-header__desc">Выберите раздел для быстрой фильтрации или перейдите к активным материалам</div>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button class="cds--btn cds--btn--sm cds--btn--primary catalog-filter-btn" data-filter="all">Все (18)</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="intro">Вводные & Основы</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="drylab">Практикумы Dry Lab</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="reg">Регламенты & ТР ТС</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="haccp">ХАССП & ИСО 22000</button>
+      </div>
+    </div>
+
+    <!-- Сетка карточек 18 семинаров -->
+    <div class="cds--row" id="catalog-cards-container">
+      
+      <!-- Семинар 1 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="intro">
+        <div class="cds--tile cds--tile--active">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--green">Семинар 1 • Неделя 1</span>
+            <span class="cds--tag cds--tag--blue">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Вводный семинар: Предмет и задачи пищевой микробиологии</h3>
+          <div class="cds--tile__subtitle">Микроорганизмы как объект технического регулирования</div>
+          <div class="cds--tile__content">
+            Разбор масштабов микромира, расчетные метрики (КОЕ/г, КОЕ/см³), принципы десятичных серийных разведений, расчет коэффициентов переноса аликвот.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar1">
+              <span>Изучить материалы</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 2 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 2 • Неделя 2</span>
+            <span class="cds--tag cds--tag--purple">Работа 1 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 1: Виртуальная микроскопия и идентификация</h3>
+          <div class="cds--tile__subtitle">Фенотипическая идентификация основных групп микроорганизмов</div>
+          <div class="cds--tile__content">
+            Цифровой симулятор микроскопа с иммерсией, морфологический атлас микроорганизмов, методика дифференциальной окраски по Граму по ГОСТ ISO 7218-2015.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 2)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 3 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 3 • Неделя 3</span>
+            <span class="cds--tag cds--tag--purple">Работа 2 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 2: Экология микроорганизмов: факторы aw и pH</h3>
+          <div class="cds--tile__subtitle">Внутренние факторы стабильности пищевых матриц</div>
+          <div class="cds--tile__content">
+            Матричные профили активности воды (aw) и pH контрастных продуктов (мед, пармезан, фарш, томатный соус). Моделирование биологической устойчивости.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 3)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 4 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 4 • Неделя 4</span>
+            <span class="cds--tag cds--tag--purple">Работа 3 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 3: Предиктивное моделирование в ComBase</h3>
+          <div class="cds--tile__subtitle">Кинетика популяционного роста бактерий в ComBase Predictor</div>
+          <div class="cds--tile__content">
+            Моделирование кривой роста E. coli при +4°C, +20°C и +37°C. Определение лаг-фазы, времени генерации и расчет сроков годности сборного молока.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 4)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 5 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 5 • Неделя 5</span>
+            <span class="cds--tag cds--tag--purple">Работа 4 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 4: Санитарно-показательные микроорганизмы</h3>
+          <div class="cds--tile__subtitle">Расчет и расшифровка КМАФАнМ и БГКП по ГОСТ ISO 7218-2015</div>
+          <div class="cds--tile__content">
+            Оцифрованные чашки Петри серийных разведений. Формула средневзвешенного счета колоний стандарта ГОСТ ISO 7218 и вердикт по критериям ТР ТС 021/2011.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 5)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 6 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 6 • Неделя 6</span>
+            <span class="cds--tag cds--tag--blue">Нормативный аудит</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Требования безопасности к сырью и продукции</h3>
+          <div class="cds--tile__subtitle">Сравнительный аудит приложений ТР ТС 021, 033, 034, ТР ЕАЭС 040</div>
+          <div class="cds--tile__content">
+            Кросс-отраслевой сравнительный аудит критериев промышленной стерильности, нормирования КМАФАнМ, патогенов и сальмонелл для молока, мяса и рыбы.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 6)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 7 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 7 • Неделя 7</span>
+            <span class="cds--tag cds--tag--blue">Кейс-исследование</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Патогены пищевых цепей: Salmonella и Campylobacter</h3>
+          <div class="cds--tile__subtitle">Зоонозные риски птицеводческой и мясной индустрии</div>
+          <div class="cds--tile__content">
+            Анализ вертикальной и горизонтальной контаминации куриных яиц и тушек бройлеров. Решение ситуационных задач по локализации точек обсеменения.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 7)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 8 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 8 • Неделя 8</span>
+            <span class="cds--tag cds--tag--purple">Работа 5 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 5: Токсикоинфекции и энтеротоксины S. aureus</h3>
+          <div class="cds--tile__subtitle">Кинетика накопления термоустойчивых энтеротоксинов</div>
+          <div class="cds--tile__content">
+            Разница между гибелью клетки бактерии и термоинактивацией токсина. Экспертный аудит производственного инцидента с творожной массой при сбое охлаждения.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 8)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 9 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 9 • Неделя 9</span>
+            <span class="cds--tag cds--tag--purple">Работа 7 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 6: Спорообразующие анаэробы и концепция 12D</h3>
+          <div class="cds--tile__subtitle">Стерилизация консервов и расчет F0 для Clostridium botulinum</div>
+          <div class="cds--tile__content">
+            Формулы Бигелоу (D- и z-значения), расчет нормативного стерилизующего эффекта F0 = 12D, ГОСТ 30425-97. Физическое обоснование температурных режимов.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 9)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 10 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 10 • Неделя 10</span>
+            <span class="cds--tag cds--tag--purple">Работа 6 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 7: Психротрофные патогены: Listeria monocytogenes</h3>
+          <div class="cds--tile__subtitle">Холодовая цепь и безопасность продукции Ready-to-Eat</div>
+          <div class="cds--tile__content">
+            Предиктивное моделирование роста листерий при +4°C vs +9°C во вскрытой упаковке колбасы. Обоснование предупреждающей потребительской маркировки по ТР ТС 022.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 10)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 11 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 11 • Неделя 11</span>
+            <span class="cds--tag cds--tag--purple">Работа 8 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 8: Эпидемиологический детектив расследования</h3>
+          <div class="cds--tile__subtitle">Локализация источника вспышки и диаграмма Исикавы</div>
+          <div class="cds--tile__content">
+            Разбор реальных материалов вспышек FDA CORE / Роспотребнадзора. Анализ инкубационных интервалов, построение диаграммы «рыбий скелет» и план CAPA.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 11)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 12 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 12 • Неделя 12</span>
+            <span class="cds--tag cds--tag--purple">Работа 9 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 9: Полезная микробиота: ферментация и МКБ</h3>
+          <div class="cds--tile__subtitle">Стандартизация стартовых заквасочных культур молочных производств</div>
+          <div class="cds--tile__content">
+            Механизм коагуляции казеина молока, расчет сдвига изоэлектрической точки (pH 4.6), спектр бактериоцинов и барьерные свойства заквасок (йогурт, кефир).
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 12)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 13 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="intro">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 13 • Неделя 13</span>
+            <span class="cds--tag cds--tag--blue">Диагностика дефектов</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Микробиология порчи пищевой продукции</h3>
+          <div class="cds--tile__subtitle">Плесневение, ослизнение, гниение, прокисание, бомбаж</div>
+          <div class="cds--tile__content">
+            Классификационный альбом дефектов: болезни хлеба (тягучая болезнь B. subtilis), бомбаж консервов vs плоскокислая порча G. stearothermophilus.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 13)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 14 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 14 • Неделя 14</span>
+            <span class="cds--tag cds--tag--purple">Работа 10 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 10: Санитарная микробиология и программа смывов</h3>
+          <div class="cds--tile__subtitle">Проектирование смывного мониторинга по ГОСТ ISO 18593-2023</div>
+          <div class="cds--tile__content">
+            Координатная привязка 8 критических точек смывов цеха по 4 зонам гигиенической опасности, подбор нейтрализаторов дезинфектантов и регламент контроля.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 14)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 15 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 15 • Неделя 15</span>
+            <span class="cds--tag cds--tag--red">СМБПП & ХАССП</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Системы менеджмента безопасности: ХАССП</h3>
+          <div class="cds--tile__subtitle">Принципы ХАССП и требования стандартов ГОСТ Р ИСО 22000</div>
+          <div class="cds--tile__content">
+            Сопоставительный анализ ГОСТ Р 51705.1-2001 и ГОСТ Р ИСО 22000-2019. Разграничение программ предварительных условий (PRP, OPRP) и критических точек.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 15)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 16 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 16 • Неделя 16</span>
+            <span class="cds--tag cds--tag--purple">Работа 11 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 11: Идентификация опасностей и определение ККТ</h3>
+          <div class="cds--tile__subtitle">Логическое «дерево решений» Codex/ISO и план ХАССП</div>
+          <div class="cds--tile__content">
+            Практическое определение критических контрольных точек (ККТ) на технологической схеме пастеризации сока/молока и валидация критических пределов.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 16)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 17 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 17 • Неделя 17</span>
+            <span class="cds--tag cds--tag--purple">Работа 12 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 12: Экспертиза протокола испытаний: выпуск партии</h3>
+          <div class="cds--tile__subtitle">Сравнительный аудит протоколов аккредитованных лабораторий</div>
+          <div class="cds--tile__content">
+            Ролевая экспертиза реальных протоколов с замаскированными несоответствиями (сметана, вареная колбаса, рыба). Формирование официального мотивированного вердикта.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 17)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 18 -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="intro haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 18 • Неделя 18</span>
+            <span class="cds--tag cds--tag--red">Дифференцированный зачет</span>
+          </div>
+          <h3 class="cds--tile__title">Итоговый семинар: Защита комплексного кейс-проекта</h3>
+          <div class="cds--tile__subtitle">Круглый стол и защита досье безопасности пищевого продукта</div>
+          <div class="cds--tile__content">
+            Защита студенческих проектных портфолио сквозной оценки безопасности «от поля до полки»: предиктивная кинетика, нормативная база ТР ТС, ККТ ХАССП.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 18)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       3. ПРЕДСТАВЛЕНИЕ 2: СЕМИНАР 1 (МАТЕРИАЛЫ ДЛЯ СТУДЕНТОВ)
+       ===================================================================== -->
+  <main id="view-seminar1" class="cds--grid" style="display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Семинар 1 • Неделя 1 • Вводное занятие</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Физико-химические основы микробного гомеостаза и методы регулирования пищевых сред
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Водные свойства, электростатика ионов Дебая-Хюккеля, автопротолиз, консервация слабыми кислотами и барьерная концепция
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="assets/pdf/student_handout.pdf" download class="cds--btn cds--btn--secondary">
+          <span>Скачать материалы (PDF)</span>
+          <span>↓</span>
+        </a>
+        <button class="cds--btn cds--btn--primary" data-go-to="test">
+          <span>Экспресс-тест (15 мин)</span>
+          <span>⏱</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Вкладки Семинара 1 -->
+    <div class="cds--tabs" role="tablist">
+      <button class="cds--tab cds--tab--selected" data-tab-target="sem-tab-theory" role="tab">
+        1. Теория и механизмы
+      </button>
+      <button class="cds--tab" data-tab-target="sem-tab-tables" role="tab">
+        2. Справочные таблицы
+      </button>
+      <button class="cds--tab" data-tab-target="sem-tab-calculators" role="tab">
+        3. Инженерные калькуляторы
+      </button>
+      <button class="cds--tab" data-tab-target="sem-tab-examples" role="tab">
+        4. Типовые разобранные примеры (4)
+      </button>
+    </div>
+
+    <!-- ТАБ 1: ТЕОРИЯ И МЕХАНИЗМЫ -->
+    <section id="sem-tab-theory" class="cds--tab-panel cds--tab-panel--active">
+      
+      <!-- 1.1 Вода и активность воды -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 1.1</div>
+        <h2 class="example-box__title">Молекулярная структура воды, гидратация и активность воды (aw)</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Вода является непрерывной дисперсионной средой цитоплазмы и межклеточного пространства. Ее молекула обладает выраженным дипольным моментом ($\mu = 1{,}85\text{ D}$) и высокой диэлектрической проницаемостью ($\varepsilon \approx 78{,}5$ при $25^\circ\text{C}$), что обуславливает эффективное ослабление кулоновского взаимодействия между растворенными ионами.
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_01_water_dipole.png" alt="Диполь воды и водородные связи">
+              <div class="figure-caption">Рис. 1. Дипольное строение молекулы воды и пространственная сетка водородных связей</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_02_ion_hydration.png" alt="Гидратация ионов Na+ и Cl-">
+              <div class="figure-caption">Рис. 2. Формирование гидратных оболочек вокруг катионов Na⁺ и анионов Cl⁻</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem; line-height: 1.6;">
+          Термодинамическая доступность влаги для микроорганизмов количественно выражается величиной активности воды ($a_w$):
+        </p>
+        <div class="math-formula">
+          a_w = \frac{p}{p_0} = \frac{\text{ERH (\%)}}{100}
+        </div>
+        <p style="line-height: 1.6;">
+          где $p$ — парциальное давление водяного пара над пищевым продуктом, $p_0$ — давление пара над чистой дистиллированной водой при той же температуре, $\text{ERH}$ — равновесная относительная влажность воздуха.
+        </p>
+
+        <div class="cds--row" style="margin-top: 1rem;">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_04_aw_growth.png" alt="Зависимость скорости роста от aw">
+              <div class="figure-caption">Рис. 3. Кинетические кривые роста бактерий, дрожжей и плесеней в зависимости от aw</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_05_food_aw.png" alt="Диапазоны aw в пищевых продуктах">
+              <div class="figure-caption">Рис. 4. Типовые диапазоны активности воды и зоны микробного риска пищевых продуктов</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.2 Теория Дебая-Хюккеля -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 1.2</div>
+        <h2 class="example-box__title">Электростатическая теория растворов электролитов Дебая-Хюккеля</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          В реальных пищевых системах (рассолы, мясные соки, сыворотка) концентрация солей высока. Ионы не являются независимыми частицами: каждый центральный ион окружен «ионной атмосферой» противоположного знака, экранирующей его заряд и снижающей его химическую активность.
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_03_ionic_atmosphere.png" alt="Ионная атмосфера">
+              <div class="figure-caption">Рис. 5. Модель ионной атмосферы экранирования заряда по Дебаю-Хюккелю</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_06_nacl_curves.png" alt="Коэффициенты активности NaCl">
+              <div class="figure-caption">Рис. 6. Зависимость коэффициента активности γ от ионной силы раствора</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem; line-height: 1.6;">
+          Ионная сила раствора Льюиса ($I$) рассчитывается как полусумма произведений моляльностей/молярностей всех ионов на квадрат их валентности:
+        </p>
+        <div class="math-formula">
+          I = \frac{1}{2} \sum_{i=1}^{n} C_i \cdot z_i^2
+        </div>
+        <p style="line-height: 1.6;">
+          Коэффициент активности $\gamma$ и эффективная активность $a$ определяются предельным уравнением Дебая-Хюккеля:
+        </p>
+        <div class="math-formula">
+          \lg \gamma = -0{,}51 \cdot z^2 \cdot \frac{\sqrt{I}}{1 + \sqrt{I}}, \quad a = \gamma \cdot C
+        </div>
+      </div>
+
+      <!-- 1.3 Автопротолиз воды и pH -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 1.3</div>
+        <h2 class="example-box__title">Автопротолиз воды, водородный показатель (pH) и клеточный гомеостаз</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Вода претерпевает самоионизацию (автопротолиз). Ионное произведение воды $K_w = [H^+][OH^-]$ зависит от температуры. При $25^\circ\text{C}$ $K_w = 1{,}00 \times 10^{-14}$ ($pH_{\text{нейтр}} = 7{,}00$), а при $37^\circ\text{C}$ (температура тела человека и термостата инкубации мезофилов) $K_w = 2{,}40 \times 10^{-14}$, что смещает нейтральную точку к $pH = 6{,}81$.
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_04_autoprotolysis_ph.png" alt="Автопротолиз воды">
+              <div class="figure-caption">Рис. 7. Зависимость константы Kw и нейтрального pH от температуры среды</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_07_ph_scale.png" alt="Шкала pH">
+              <div class="figure-caption">Рис. 8. Шкала pH и критический санитарный рубеж 4.60 (Clostridium botulinum)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--inline-notification cds--inline-notification--warning">
+          <strong>Санитарный предел pH 4.60:</strong> В пищевой промышленности консервированные продукты делятся на низкокислотные (pH > 4.60, требуют стерилизации при температуре > 120°C под давлением) и кислые (pH ≤ 4.60, в которых споры Clostridium botulinum не прорастают, и достаточна пастеризация при 85–90°C).
+        </div>
+      </div>
+
+      <!-- 1.4 Слабые органические кислоты -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 1.4</div>
+        <h2 class="example-box__title">Слабые органические кислоты как консерванты: механизм «кислотной ловушки»</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Консервирующим антимикробным действием обладает исключительно недиссоциированная молекулярная форма ($HA$). Заряженный анион $A^-$ не способен диффундировать через гидрофобный липидный бислой мембраны микроорганизма.
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_01_acid_mechanism.png" alt="Механизм проникновения HA">
+              <div class="figure-caption">Рис. 9. Свободная диффузия недиссоциированной молекулы HA через клеточную мембрану</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_07_acid_trapping.png" alt="Кислотная ловушка">
+              <div class="figure-caption">Рис. 10. Механизм «кислотной ловушки» (acid trapping) и истощение АТФ H⁺-АТФазой</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem; line-height: 1.6;">
+          Попадая в нейтральную цитоплазму клетки ($pH_{\text{внутр}} \approx 7{,}2\dots7{,}5$), слабая кислота мгновенно диссоциирует: $HA \rightarrow H^+ + A^-$. Освобождающиеся протоны закисляют цитоплазму, а анион $A^-$ оказывается в ловушке. Клетка тратит весь пул АТФ на откачку протонов, что ведет к метаболическому коллапсу. Доля активной формы $\alpha$ задается уравнением Гендерсона-Хассельбаха:
+        </p>
+        <div class="math-formula">
+          \alpha = \frac{[HA]}{C_{\text{общ}}} = \frac{1}{1 + 10^{\text{pH} - pK_a}}
+        </div>
+
+        <div class="cds--row" style="margin-top: 1rem;">
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_06_henderson_hasselbalch.png" alt="Кривая диссоциации">
+              <div class="figure-caption">Рис. 11. Кривые распределения форм HA / A⁻ в зависимости от pH среды</div>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="figure-card">
+              <img src="assets/images/fig_05_solubility_ph.png" alt="Растворимость слабых кислот">
+              <div class="figure-caption">Рис. 12. Предел растворимости слабых кислот и граница выпадения кристаллического осадка</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.5 Барьерная концепция Ляйстнера -->
+      <div class="example-box">
+        <div class="example-box__badge">Раздел 1.5</div>
+        <h2 class="example-box__title">Барьерная технология Ляйстнера (Hurdle Technology)</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Вместо экстремального ужесточения одного параметра (что разрушает органолептические свойства и пищевую ценность продукта), комбинируются несколько мягких субингибиторных барьеров (pH, $a_w$, температура $T$, окислительно-восстановительный потенциал $Eh$, слабые органические кислоты). Совокупный стресс нарушает микробный гомеостаз и обеспечивает стабильность продукта при хранении.
+        </p>
+        <div class="figure-card" style="max-width: 720px; margin: 0 auto;">
+          <img src="assets/images/fig_08_hurdle_effect.png" alt="Барьерная технология Ляйстнера">
+          <div class="figure-caption">Рис. 13. Синергетическое действие барьеров Ляйстнера в обеспечении безопасности продукции</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ТАБ 2: СПРАВОЧНЫЕ ТАБЛИЦЫ -->
+    <section id="sem-tab-tables" class="cds--tab-panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-header__title">Справочно-нормативные таблицы курса</h2>
+          <div class="section-header__desc">Физико-химические константы, пороговые значения aw и лимиты ТР ТС 029/2012</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 1rem;">Таблица 1. Минимальные пороговые значения активности воды (aw) для микроорганизмов</h3>
+      <table class="cds--data-table">
+        <thead>
+          <tr>
+            <th>Группа микроорганизмов</th>
+            <th>Мин. aw</th>
+            <th>Типичные представители и риски</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Большинство грамнегативных бактерий</strong></td>
+            <td>0,95</td>
+            <td><em>Pseudomonas</em> spp., <em>Escherichia coli</em> (бактериальная порча мяса)</td>
+          </tr>
+          <tr>
+            <td><strong>Большинство грампозитивных бактерий</strong></td>
+            <td>0,90</td>
+            <td><em>Bacillus subtilis</em>, <em>Lactobacillus</em> spp.</td>
+          </tr>
+          <tr>
+            <td><strong>Спорообразующие анаэробы</strong></td>
+            <td>0,935</td>
+            <td><em>Clostridium botulinum</em> (продуцирование ботулотоксина)</td>
+          </tr>
+          <tr>
+            <td><strong>Золотистый стафилококк (S. aureus)</strong></td>
+            <td>0,86 (аэробн.)</td>
+            <td>Синтез термостабильных энтеротоксинов в сырах и выпечке</td>
+          </tr>
+          <tr>
+            <td><strong>Обычные дрожжи и плесневые грибы</strong></td>
+            <td>0,80</td>
+            <td><em>Saccharomyces</em>, <em>Penicillium</em>, <em>Aspergillus</em></td>
+          </tr>
+          <tr>
+            <td><strong>Галофильные бактерии</strong></td>
+            <td>0,75</td>
+            <td><em>Halobacterium</em> (порча соленой рыбы и шкур)</td>
+          </tr>
+          <tr>
+            <td><strong>Ксерофильные плесени</strong></td>
+            <td>0,65</td>
+            <td><em>Wallemia sebi</em>, <em>Aspergillus chevalieri</em> (порча зерна)</td>
+          </tr>
+          <tr>
+            <td><strong>Осмофильные дрожжи</strong></td>
+            <td>0,60</td>
+            <td><em>Zygosaccharomyces rouxii</em> (мед, концентрированные сиропы)</td>
+          </tr>
+          <tr>
+            <td><strong>Абсолютный биологический предел</strong></td>
+            <td>&lt; 0,60</td>
+            <td>Любое размножение живых клеток исключено</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 2rem;">Таблица 2. Физико-химические характеристики пищевых кислот-консервантов</h3>
+      <table class="cds--data-table">
+        <thead>
+          <tr>
+            <th>Наименование консерванта</th>
+            <th>Индекс E</th>
+            <th>pKa (25°C)</th>
+            <th>Молярная масса, г/моль</th>
+            <th>Внутренняя растворимость S0, г/л</th>
+            <th>Предельная доза по ТР ТС 029/2012</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Бензойная кислота</strong></td>
+            <td>E210</td>
+            <td>4,19</td>
+            <td>122,12</td>
+            <td>3,40</td>
+            <td>до 1000 мг/кг (в безалкогольных напитках)</td>
+          </tr>
+          <tr>
+            <td><strong>Сорбиновая кислота</strong></td>
+            <td>E200</td>
+            <td>4,76</td>
+            <td>112,13</td>
+            <td>1,60</td>
+            <td>до 2000 мг/кг (в соусах, сырах, кондитерке)</td>
+          </tr>
+          <tr>
+            <td><strong>Пропионовая кислота</strong></td>
+            <td>E280</td>
+            <td>4,87</td>
+            <td>74,08</td>
+            <td>Смешивается с водой</td>
+            <td>до 3000 мг/кг (против тягучей болезни хлеба)</td>
+          </tr>
+          <tr>
+            <td><strong>Уксусная кислота</strong></td>
+            <td>E260</td>
+            <td>4,75</td>
+            <td>60,05</td>
+            <td>Смешивается с водой</td>
+            <td>По технологической инструкции (Quantum Satis)</td>
+          </tr>
+          <tr>
+            <td><strong>Молочная кислота</strong></td>
+            <td>E270</td>
+            <td>3,86</td>
+            <td>90,08</td>
+            <td>Смешивается с водой</td>
+            <td>По технологической инструкции (Quantum Satis)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ТАБ 3: ИНЖЕНЕРНЫЕ КАЛЬКУЛЯТОРЫ -->
+    <section id="sem-tab-calculators" class="cds--tab-panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-header__title">Интерактивные физико-химические калькуляторы</h2>
+          <div class="section-header__desc">Моделирование параметров среды, ионной атмосферы, диссоциации и растворимости</div>
+        </div>
+      </div>
+
+      <div class="cds--row">
+        
+        <!-- Калькулятор 1: pH / pOH -->
+        <div class="cds--col-6" style="margin-bottom: 1.5rem;">
+          <div class="calc-card">
+            <h3 class="cds--tile__title">Калькулятор 1: Автопротолиз и расчет pH</h3>
+            <div class="cds--tile__subtitle">Преобразование между pH, pOH, [H⁺] и [OH⁻]</div>
+
+            <div class="cds--form-item">
+              <div style="display: flex; justify-content: space-between;">
+                <label class="cds--label" for="calc-ph-slider">Значение pH среды:</label>
+                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ph-disp">4.60</span>
+              </div>
+              <div class="cds--slider-container">
+                <input type="range" class="cds--slider" id="calc-ph-slider" min="1.00" max="13.00" step="0.05" value="4.60">
+                <input type="number" class="cds--text-input" id="calc-ph-input" style="width: 80px; height: 32px;" min="1" max="13" step="0.05" value="4.60">
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.35rem; margin-bottom: 1rem; flex-wrap: wrap;">
+              <button class="cds--btn cds--btn--sm cds--btn--secondary" onclick="setPhPreset(3.20)">Ягодный сок (3.20)</button>
+              <button class="cds--btn cds--btn--sm cds--btn--secondary" onclick="setPhPreset(4.60)">Порог ботулизма (4.60)</button>
+              <button class="cds--btn cds--btn--sm cds--btn--secondary" onclick="setPhPreset(5.80)">Свежее мясо (5.80)</button>
+              <button class="cds--btn cds--btn--sm cds--btn--secondary" onclick="setPhPreset(6.81)">Нейтраль 37°C (6.81)</button>
+            </div>
+
+            <div class="calc-display">
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Концентрация [H⁺]:</span>
+                <span class="calc-metric-val" id="calc-h-conc">2.51 &times; 10<sup>-5</sup> М</span>
+              </div>
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Микромолярность:</span>
+                <span class="calc-metric-val" id="calc-h-micromol">= 25.1 &mu;моль/л</span>
+              </div>
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Показатель pOH:</span>
+                <span class="calc-metric-val" id="calc-poh-val">9.40</span>
+              </div>
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Концентрация [OH⁻]:</span>
+                <span class="calc-metric-val" id="calc-oh-val">3.98 &times; 10<sup>-10</sup> М</span>
+              </div>
+            </div>
+
+            <div id="calc-ph-desc" class="cds--inline-notification cds--inline-notification--success" style="margin-top: 1rem; margin-bottom: 0;">
+              Критический санитарный предел (pH 4.60). Споры Clostridium botulinum блокированы.
+            </div>
+          </div>
+        </div>
+
+        <!-- Калькулятор 2: Дебай-Хюккель -->
+        <div class="cds--col-6" style="margin-bottom: 1.5rem;">
+          <div class="calc-card">
+            <h3 class="cds--tile__title">Калькулятор 2: Теория Дебая-Хюккеля</h3>
+            <div class="cds--tile__subtitle">Ионная сила (I), коэффициент активности (γ) и экранирование</div>
+
+            <div class="cds--form-item">
+              <div style="display: flex; justify-content: space-between;">
+                <label class="cds--label" for="calc-ionic-slider">Ионная сила рассола (I):</label>
+                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ionic-disp">0.1500 М</span>
+              </div>
+              <input type="range" class="cds--slider" id="calc-ionic-slider" min="0.001" max="0.500" step="0.005" value="0.150">
+            </div>
+
+            <div class="cds--row">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="calc-ionic-charge">Заряд иона (z):</label>
+                  <select class="cds--select" id="calc-ionic-charge">
+                    <option value="1">|z| = 1 (Na⁺, Cl⁻, Benzoate⁻)</option>
+                    <option value="2">|z| = 2 (Ca²⁺, Mg²⁺, SO₄²⁻)</option>
+                    <option value="3">|z| = 3 (Fe³⁺, PO₄³⁻)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="calc-ionic-conc">Аналитическая конц. (мМ):</label>
+                  <input type="number" class="cds--text-input" id="calc-ionic-conc" value="5.0" step="0.5">
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-display">
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Коэффициент активности γ:</span>
+                <span class="calc-metric-val" id="calc-gamma-val">0.7602</span>
+              </div>
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Эффективная активность a:</span>
+                <span class="calc-metric-val" id="calc-act-val">3.801 мМ</span>
+              </div>
+            </div>
+
+            <div id="calc-ionic-status" class="cds--inline-notification cds--inline-notification--info" style="margin-top: 1rem; margin-bottom: 0;">
+              Ионная атмосфера снижает эффективную активность иона на 24% относительно идеального раствора.
+            </div>
+          </div>
+        </div>
+
+        <!-- Калькулятор 3: Гендерсон-Хассельбах -->
+        <div class="cds--col-6" style="margin-bottom: 1.5rem;">
+          <div class="calc-card">
+            <h3 class="cds--tile__title">Калькулятор 3: Уравнение Гендерсона-Хассельбаха</h3>
+            <div class="cds--tile__subtitle">Расчет доли активной недиссоциированной формы HA</div>
+
+            <div class="cds--form-item">
+              <label class="cds--label" for="calc-acid-select">Тип консерванта:</label>
+              <select class="cds--select" id="calc-acid-select">
+                <option value="4.19" data-m="122.12" selected>Бензойная кислота (pKa = 4.19, M = 122.12)</option>
+                <option value="4.76" data-m="112.13">Сорбиновая кислота (pKa = 4.76, M = 112.13)</option>
+                <option value="4.87" data-m="74.08">Пропионовая кислота (pKa = 4.87, M = 74.08)</option>
+                <option value="3.86" data-m="90.08">Молочная кислота (pKa = 3.86, M = 90.08)</option>
+              </select>
+            </div>
+
+            <div class="cds--form-item">
+              <div style="display: flex; justify-content: space-between;">
+                <label class="cds--label" for="calc-ha-ph-slider">pH продукта:</label>
+                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ha-ph-disp">3.50</span>
+              </div>
+              <input type="range" class="cds--slider" id="calc-ha-ph-slider" min="2.50" max="6.50" step="0.05" value="3.50">
+            </div>
+
+            <div class="cds--form-item">
+              <label class="cds--label" for="calc-ha-dose">Внесенная дозировка консерванта (мг/л):</label>
+              <input type="number" class="cds--text-input" id="calc-ha-dose" value="500" step="25">
+            </div>
+
+            <div class="calc-display">
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Доля активной формы HA:</span>
+                <span class="calc-metric-val" id="calc-ha-percent" style="color: var(--cds-support-success);">83.02%</span>
+              </div>
+              <div class="ratio-bar">
+                <div class="ratio-active" id="calc-ratio-active" style="width: 83%;"></div>
+                <div class="ratio-inactive" id="calc-ratio-inactive" style="width: 17%;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--cds-text-secondary);">
+                <span>Активная HA: <strong id="calc-ratio-active-lbl">83.0%</strong></span>
+                <span>Инертный анион A⁻: <strong id="calc-ratio-inactive-lbl">17.0%</strong></span>
+              </div>
+              <div class="calc-metric-row" style="margin-top: 0.75rem;">
+                <span class="calc-metric-label">Эффективная доза HA:</span>
+                <span class="calc-metric-val" id="calc-ha-mg">415.1 мг/л</span>
+              </div>
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Молярная конц. HA:</span>
+                <span class="calc-metric-val" id="calc-ha-mm">3.40 мМ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Калькулятор 4: Растворимость и осадок -->
+        <div class="cds--col-6" style="margin-bottom: 1.5rem;">
+          <div class="calc-card">
+            <h3 class="cds--tile__title">Калькулятор 4: Растворимость и риск осадка</h3>
+            <div class="cds--tile__subtitle">Контроль предельной растворимости консерванта в водной фазе</div>
+
+            <div class="cds--form-item">
+              <label class="cds--label" for="calc-sol-acid">Консервант:</label>
+              <select class="cds--select" id="calc-sol-acid">
+                <option value="benzoic">Бензойная кислота (S₀ = 3.40 г/л, pKa = 4.19)</option>
+                <option value="sorbic" selected>Сорбиновая кислота (S₀ = 1.60 г/л, pKa = 4.76)</option>
+              </select>
+            </div>
+
+            <div class="cds--form-item">
+              <div style="display: flex; justify-content: space-between;">
+                <label class="cds--label" for="calc-sol-ph-slider">pH соуса / напитка:</label>
+                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-sol-ph-disp">3.80</span>
+              </div>
+              <input type="range" class="cds--slider" id="calc-sol-ph-slider" min="2.50" max="6.00" step="0.05" value="3.80">
+            </div>
+
+            <div class="cds--form-item">
+              <label class="cds--label" for="calc-sol-dose">Планируемая дозировка в водной фазе (г/л):</label>
+              <input type="number" class="cds--text-input" id="calc-sol-dose" value="1.50" step="0.1">
+            </div>
+
+            <div class="calc-display">
+              <div class="calc-metric-row">
+                <span class="calc-metric-label">Предельная растворимость S_общ:</span>
+                <span class="calc-metric-val" id="calc-sol-limit">1.77 г/л</span>
+              </div>
+            </div>
+
+            <div id="calc-sol-traffic" class="cds--inline-notification cds--inline-notification--success" style="margin-top: 1rem; margin-bottom: 0;">
+              <span id="calc-sol-traffic-text"><strong>БЕЗОПАСНО:</strong> Кислота полностью растворена в водной фазе. Запас растворимости: 0.27 г/л.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ТАБ 4: ТИПОВЫЕ РАЗОБРАННЫЕ ПРИМЕРЫ (4) -->
+    <section id="sem-tab-examples" class="cds--tab-panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-header__title">Типовые разобранные примеры (4 ключевых типа задач)</h2>
+          <div class="section-header__desc">
+            Пошаговые алгоритмы решения расчетно-аналитических задач пищевой микробиологии
+          </div>
+        </div>
+      </div>
+
+      <!-- Пример 1: Автопротолиз -->
+      <div class="example-box">
+        <div class="example-box__header">
+          <span class="example-box__badge">Пример 1 • Автопротолиз и термодинамика</span>
+          <span class="cds--tag cds--tag--blue">Раздел 1.1</span>
+        </div>
+        <h3 class="example-box__title">Расчет pH нейтральной точки чистой воды при температуре 37°C</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          <strong>Условие:</strong> В инкубаторе бактериологической лаборатории термостатируется питательная среда при температуре $+37^\circ\text{C}$. Ионное произведение чистой воды при этой температуре составляет $K_w = 2{,}40 \times 10^{-14}\text{ М}^2$. Определите концентрацию ионов водорода $[H^+]$ и значение нейтрального $pH$ чистой воды при этой температуре. Объясните, является ли среда с $pH = 6{,}90$ при $+37^\circ\text{C}$ нейтральной, кислой или щелочной.
+        </p>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 1. Анализ условия нейтральности среды</div>
+          <div class="step-item__content">
+            По определению автопротолиза, нейтральной называется среда, в которой концентрация катионов водорода в точности равна концентрации гидроксид-ионов: $[H^+] = [OH^-]$.
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 2. Расчет концентрации [H⁺] из ионного произведения</div>
+          <div class="step-item__content">
+            Подставляем равенство в уравнение ионного произведения воды:
+            <div class="math-formula">
+              K_w = [H^+] \cdot [OH^-] = [H^+]^2 \implies [H^+] = \sqrt{K_w} = \sqrt{2{,}40 \times 10^{-14}} = 1{,}55 \times 10^{-7}\text{ М}
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 3. Вычисление нейтрального показателя pH</div>
+          <div class="step-item__content">
+            <div class="math-formula">
+              pH_{\text{нейтр}} = -\lg [H^+] = -\lg(1{,}55 \times 10^{-7}) = 7 - 0{,}19 = 6{,}81
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 4. Экспертная микробиологическая оценка</div>
+          <div class="step-item__content">
+            Поскольку нейтральная точка при $+37^\circ\text{C}$ соответствует $pH = 6{,}81$, раствор с фактическим показателем $pH = 6{,}90$ имеет $[H^+] < [OH^-]$, то есть при $+37^\circ\text{C}$ является <strong>слабощелочным</strong> (несмотря на то, что при $+25^\circ\text{C}$ значение 6,90 считалось бы слабокислым). Это критически важно учитывать при культивировании термофильных и мезофильных микроорганизмов.
+          </div>
+        </div>
+      </div>
+
+      <!-- Пример 2: Дебай-Хюккель -->
+      <div class="example-box">
+        <div class="example-box__header">
+          <span class="example-box__badge">Пример 2 • Электростатика растворов</span>
+          <span class="cds--tag cds--tag--purple">Раздел 1.2</span>
+        </div>
+        <h3 class="example-box__title">Расчет ионной силы рассола и химической активности бензоат-аниона</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          <strong>Условие:</strong> Мясной посолочный рассол содержит $0{,}10\text{ М } NaCl$ и $0{,}02\text{ М } Na_2HPO_4$. В рассол введен консервант бензоат натрия в концентрации $5{,}0\text{ мМ}$ ($0{,}005\text{ М}$). Рассчитайте ионную силу раствора ($I$), коэффициент активности бензоат-аниона ($\gamma$) по уравнению Дебая-Хюккеля и его эффективную термодинамическую активность ($a$).
+        </p>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 1. Полная диссоциация солей и баланс ионов</div>
+          <div class="step-item__content">
+            $0{,}10\text{ М } NaCl \rightarrow 0{,}10\text{ М } Na^+ + 0{,}10\text{ М } Cl^-$<br>
+            $0{,}02\text{ М } Na_2HPO_4 \rightarrow 0{,}04\text{ М } Na^+ + 0{,}02\text{ М } HPO_4^{2-}$<br>
+            $0{,}005\text{ М } C_6H_5COONa \rightarrow 0{,}005\text{ М } Na^+ + 0{,}005\text{ М } C_6H_5COO^-$<br>
+            Суммарная концентрация $Na^+ = 0{,}10 + 0{,}04 + 0{,}005 = 0{,}145\text{ М}$.
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 2. Расчет ионной силы раствора (I)</div>
+          <div class="step-item__content">
+            <div class="math-formula">
+              I = \frac{1}{2} \left( [Na^+] \cdot 1^2 + [Cl^-] \cdot 1^2 + [HPO_4^{2-}] \cdot 2^2 + [C_6H_5COO^-] \cdot 1^2 \right)<br>
+              I = \frac{1}{2} \left( 0{,}145 \cdot 1 + 0{,}10 \cdot 1 + 0{,}02 \cdot 4 + 0{,}005 \cdot 1 \right) = \frac{1}{2} (0{,}330) = 0{,}165\text{ М}
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 3. Расчет коэффициента активности по Дебаю-Хюккелю</div>
+          <div class="step-item__content">
+            Для однозарядного бензоат-иона ($z = 1$):
+            <div class="math-formula">
+              \sqrt{I} = \sqrt{0{,}165} \approx 0{,}4062<br>
+              \lg \gamma = -0{,}51 \cdot 1^2 \cdot \frac{0{,}4062}{1 + 0{,}4062} = -0{,}51 \cdot \frac{0{,}4062}{1{,}4062} \approx -0{,}1473<br>
+              \gamma = 10^{-0{,}1473} \approx 0{,}712
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 4. Определение термодинамической активности и вывод</div>
+          <div class="step-item__content">
+            <div class="math-formula">
+              a = \gamma \cdot C = 0{,}712 \cdot 5{,}0\text{ мМ} = 3{,}56\text{ мМ}
+            </div>
+            <strong>Вывод:</strong> Электростатическое экранирование в рассоле снижает химическую активность консерванта почти на 29% относительно идеального раствора, что требует внесения поправки в технологическую рецептуру.
+          </div>
+        </div>
+      </div>
+
+      <!-- Пример 3: Гендерсон-Хассельбах -->
+      <div class="example-box">
+        <div class="example-box__header">
+          <span class="example-box__badge">Пример 3 • Консервация слабыми кислотами</span>
+          <span class="cds--tag cds--tag--green">Раздел 1.3</span>
+        </div>
+        <h3 class="example-box__title">Расчет дозировки бензойной кислоты в клюквенном морсе при разном pH</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          <strong>Условие:</strong> Для предотвращения развития дрожжей <em>Zygosaccharomyces bailii</em> в морсе минимальная ингибирующая концентрация недиссоциированной бензойной кислоты составляет $[HA]_{\text{min}} = 100\text{ мг/л}$. Константа $pK_a = 4{,}19$. Рассчитайте необходимую общую дозу бензоата натрия при $pH = 3{,}20$ и при раскислении морса до $pH = 4{,}60$. Сопоставьте с предельным нормативом ТР ТС 029/2012 ($1000\text{ мг/л}$).
+        </p>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 1. Расчет доли HA при кислом pH = 3.20</div>
+          <div class="step-item__content">
+            <div class="math-formula">
+              \Delta = pH - pK_a = 3{,}20 - 4{,}19 = -0{,}99<br>
+              \alpha_{3{,}20} = \frac{1}{1 + 10^{-0{,}99}} = \frac{1}{1 + 0{,}1023} \approx 0{,}907\text{ (90,7\%)}
+            </div>
+            Необходимая дозировка: $C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}907} \approx 110{,}3\text{ мг/л}$. Норматив ТР ТС соблюден с десятикратным запасом.
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 2. Расчет доли HA при pH = 4.60</div>
+          <div class="step-item__content">
+            <div class="math-formula">
+              \Delta = 4{,}60 - 4{,}19 = +0{,}41<br>
+              \alpha_{4{,}60} = \frac{1}{1 + 10^{0{,}41}} = \frac{1}{1 + 2{,}57} \approx 0{,}280\text{ (28,0\%)}
+            </div>
+            Необходимая дозировка: $C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}280} \approx 357{,}1\text{ мг/л}$.
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 3. Инженерно-технологический вывод</div>
+          <div class="step-item__content">
+            При повышении pH с 3,20 до 4,60 требуемая закладка консерванта возрастает более чем в 3,2 раза ($110{,}3 \rightarrow 357{,}1\text{ мг/л}$). При дальнейшем росте pH свыше 5,2 требуемая дозировка превысит порог ТР ТС 029/2012, что сделает использование бензоата невозможным.
+          </div>
+        </div>
+      </div>
+
+      <!-- Пример 4: Растворимость -->
+      <div class="example-box">
+        <div class="example-box__header">
+          <span class="example-box__badge">Пример 4 • Фазовое равновесие и осадок</span>
+          <span class="cds--tag cds--tag--red">Раздел 1.4</span>
+        </div>
+        <h3 class="example-box__title">Расчет критического pH выпадения кристаллического осадка сорбиновой кислоты</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          <strong>Условие:</strong> В рецептуру салатного соуса вносится сорбиновая кислота в дозировке $2{,}0\text{ г/л}$ (в пересчете на водную фазу). Собственная растворимость молекулярной формы $S_0 = 1{,}60\text{ г/л}$, $pK_a = 4{,}76$. Определите критическое значение $pH_{\text{крит}}$, ниже которого сорбиновая кислота выпадет в кристаллический осадок, испортив товарный вид соуса.
+        </p>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 1. Уравнение суммарной растворимости</div>
+          <div class="step-item__content">
+            Общая растворимость слабой кислоты в водном растворе складывается из растворимости недиссоциированной формы $S_0$ и концентрации аниона $A^-$:
+            <div class="math-formula">
+              S_{\text{общ}} = S_0 \cdot \left( 1 + 10^{pH - pK_a} \right)
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 2. Вывод расчетной формулы критического pH</div>
+          <div class="step-item__content">
+            На границе насыщения $S_{\text{общ}} = C_{\text{внес}} = 2{,}0\text{ г/л}$:
+            <div class="math-formula">
+              2{,}0 = 1{,}60 \cdot \left( 1 + 10^{pH_{\text{крит}} - 4{,}76} \right)<br>
+              \frac{2{,}0}{1{,}60} = 1{,}25 \implies 10^{pH_{\text{крит}} - 4{,}76} = 0{,}25<br>
+              pH_{\text{крит}} - 4{,}76 = \lg(0{,}25) \approx -0{,}60<br>
+              pH_{\text{крит}} = 4{,}76 - 0{,}60 = 4{,}16
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-item__title">Шаг 3. Технологический вердикт службы качества</div>
+          <div class="step-item__content">
+            При значении $pH < 4{,}16$ раствор станет пересыщенным относительно молекулярной формы, и начнется спонтанная кристаллизация сорбиновой кислоты (появление белесых кристаллов и хлопьев в соусе). Следовательно, критический технологический предел в рецептуре: $pH \ge 4{,}16$, либо необходимо заменить сорбиновую кислоту на легкорастворимый сорбат калия с учетом пересчета на активную форму.
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       4. ПРЕДСТАВЛЕНИЕ 3: ЭКСПРЕСС-КОНТРОЛЬ (15 МИНУТ)
+       ===================================================================== -->
+  <main id="view-test" class="cds--grid" style="display: none;">
+    
+    <!-- Верхняя фиксированная плашка таймера (скрыта до старта) -->
+    <div id="test-timer-bar" class="test-timer-bar" style="display: none;">
+      <div>
+        <div class="test-timer__label">Оставшееся время тестирования</div>
+        <div class="test-timer__display">
+          <span class="test-timer__time" id="test-timer-clock">15:00</span>
+          <span style="font-size: 0.8125rem; color: var(--cds-text-secondary);">из 15 минут</span>
+        </div>
+      </div>
+      <div id="test-timer-student" class="test-timer__student-meta">
+        Студент не зарегистрирован
+      </div>
+    </div>
+
+    <!-- ШАГ 1: ФОРМА РЕГИСТРАЦИИ СТУДЕНТА -->
+    <div id="test-step-registration" style="max-width: 680px; margin: 2rem auto;">
+      <div class="cds--tile" style="border-top: 4px solid var(--cds-interactive-01);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <span class="cds--tag cds--tag--blue">Семинар 1 • Экспресс-контроль</span>
+          <span class="cds--tag cds--tag--red">15 минут</span>
+        </div>
+        <h2 class="hero-banner__title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+          Регистрация на экспресс-тестирование
+        </h2>
+        <p style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+          После запуска таймера система случайным образом выберет <strong>4 задачи</strong> (по одной из каждого раздела). Результаты фиксируются в защищенной базе и автоматически передаются в Google Таблицу преподавателя на Google Drive.
+        </p>
+
+        <div id="reg-error-box" class="cds--inline-notification cds--inline-notification--error" style="display: none;"></div>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-surname">Фамилия <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-surname" placeholder="Например: Иванов" required>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-name">Имя <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-name" placeholder="Например: Иван" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-group">Учебная группа <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-group" placeholder="Например: АТИ-301" required>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-specialty">Направление подготовки:</label>
+              <select class="cds--select" id="student-specialty">
+                <option value="27.03.01 Стандартизация и метрология">27.03.01 Стандартизация и метрология</option>
+                <option value="27.03.02 Управление качеством">27.03.02 Управление качеством</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--inline-notification cds--inline-notification--info" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+          <strong>Правила регламента:</strong> У вас будет ровно 15 минут. При истечении времени ответы будут автоматически заблокированы и отправлены.
+        </div>
+
+        <button type="button" class="cds--btn cds--btn--primary" id="btn-start-test" style="width: 100%;">
+          <span>Начать тестирование (Запустить таймер 15:00)</span>
+          <span>⏱</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ШАГ 2: АКТИВНАЯ СЕССИЯ ТЕСТИРОВАНИЯ -->
+    <div id="test-step-active" style="display: none; max-width: 960px; margin: 1.5rem auto;">
+      <div id="test-tasks-container">
+        <!-- Задачи отрисовываются динамически через test-session.js -->
+      </div>
+
+      <div class="cds--tile" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+        <div>
+          <div style="font-weight: 600; color: var(--cds-text-primary);">Проверьте все введенные ответы</div>
+          <div style="font-size: 0.8125rem; color: var(--cds-text-secondary);">Все 4 ответа будут зафиксированы и переданы в Google Drive преподавателя</div>
+        </div>
+        <button type="button" class="cds--btn cds--btn--primary" id="btn-submit-test">
+          <span>Завершить и отправить на Google Drive</span>
+          <span>✓</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ШАГ 3: ЭЛЕКТРОННАЯ КВИТАНЦИЯ О СДАЧЕ -->
+    <div id="test-step-receipt" style="display: none;">
+      <div class="receipt-box">
+        <span class="cds--tag cds--tag--green">ТЕСТИРОВАНИЕ ЗАВЕРШЕНО</span>
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-top: 0.5rem;">Электронная квитанция сдачи</h2>
+        
+        <div class="receipt-token" id="receipt-token-code">RUDN-MB-XXXX-YYYY</div>
+
+        <div id="receipt-student-info" style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+          <!-- Метаданные студента -->
+        </div>
+
+        <div id="receipt-sync-status" class="cds--inline-notification cds--inline-notification--success">
+          Результаты успешно переданы на Google Drive преподавателя.
+        </div>
+
+        <table class="cds--data-table" style="text-align: left; margin-top: 1.5rem;">
+          <thead>
+            <tr>
+              <th>Номер</th>
+              <th>Категория задачи</th>
+              <th>Ваш ответ</th>
+              <th>Ход решения</th>
+            </tr>
+          </thead>
+          <tbody id="receipt-answers-body">
+            <!-- Строки ответов -->
+          </tbody>
+        </table>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <button type="button" class="cds--btn cds--btn--secondary" id="btn-download-receipt">
+            <span>Скачать квитанцию (TXT)</span>
+            <span>↓</span>
+          </button>
+          <button type="button" class="cds--btn cds--btn--primary" data-go-to="seminar1">
+            <span>Вернуться к материалам Семинара 1</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =====================================================================
+       5. CARBON FOOTER
+       ===================================================================== -->
+  <footer class="cds--footer">
+    <div class="cds--footer__content">
+      <div>
+        <div style="font-weight: 600; color: #ffffff;">Российский университет дружбы народов им. Патриса Лумумбы</div>
+        <div>Аграрно-технологический институт • Департамент техносферной безопасности • 2026</div>
+      </div>
+      <div class="cds--footer__links">
+        <a href="#catalog" class="cds--footer__link" data-nav="catalog">Каталог семинаров</a>
+        <a href="#seminar1" class="cds--footer__link" data-nav="seminar1">Семинар 1</a>
+        <a href="#test" class="cds--footer__link" data-nav="test">Экспресс-контроль</a>
+        <a href="https://github.com/yaroslavtsevam/microbio-ati-rudn.github.io" target="_blank" rel="noopener noreferrer" class="cds--footer__link">GitHub Pages</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты платформы -->
+  <script src="js/config.js"></script>
+  <script src="js/task-bank.js"></script>
+  <script src="js/gdrive-sync.js"></script>
+  <script src="js/calculators.js"></script>
+  <script src="js/test-session.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

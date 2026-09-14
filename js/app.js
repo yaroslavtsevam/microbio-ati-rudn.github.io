@@ -1,0 +1,170 @@
+/**
+ * Главный координирующий модуль веб-портала
+ * Курс «Пищевая микробиология, санитария и гигиена» • АТИ РУДН
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  App.init();
+});
+
+const App = {
+  currentView: 'catalog',
+
+  init() {
+    this.initTheme();
+    this.initNavigation();
+    this.initSeminarTabs();
+    this.initCatalogFilters();
+
+    // Инициализация калькуляторов и модуля тестирования
+    if (typeof Calculators !== 'undefined') Calculators.init();
+    if (typeof TestSession !== 'undefined') TestSession.init();
+
+    // Обработка прямого URL хеша
+    this.handleRouteHash();
+    window.addEventListener('hashchange', () => this.handleRouteHash());
+  },
+
+  /* ------------------------------------------------------------------------
+     1. ТЕМАТИЧЕСКИЙ РЕЖИМ (IBM Carbon: White vs Gray 100)
+     ------------------------------------------------------------------------ */
+  initTheme() {
+    const themeBtn = document.getElementById('btn-theme-toggle');
+    const savedTheme = localStorage.getItem('rudn_carbon_theme') || 'white';
+    
+    document.documentElement.setAttribute('data-carbon-theme', savedTheme);
+    this.updateThemeButton(savedTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-carbon-theme');
+        const next = current === 'g100' ? 'white' : 'g100';
+        document.documentElement.setAttribute('data-carbon-theme', next);
+        localStorage.setItem('rudn_carbon_theme', next);
+        this.updateThemeButton(next);
+      });
+    }
+  },
+
+  updateThemeButton(theme) {
+    const icon = document.getElementById('theme-icon');
+    if (!icon) return;
+    icon.textContent = theme === 'g100' ? '☀️' : '🌙';
+  },
+
+  /* ------------------------------------------------------------------------
+     2. НАВИГАЦИЯ МЕЖДУ РАЗДЕЛАМИ ПОРТАЛА
+     ------------------------------------------------------------------------ */
+  initNavigation() {
+    const navLinks = document.querySelectorAll('.cds--header__menu-link[data-nav]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetView = link.getAttribute('data-nav');
+        this.switchView(targetView);
+        window.location.hash = targetView;
+      });
+    });
+
+    // Делегирование ссылок на переход внутри карточек
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-go-to]');
+      if (target) {
+        e.preventDefault();
+        const view = target.getAttribute('data-go-to');
+        this.switchView(view);
+        window.location.hash = view;
+      }
+    });
+  },
+
+  handleRouteHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash === 'seminar1' || hash === 'test' || hash === 'catalog') {
+      this.switchView(hash);
+    } else {
+      this.switchView('catalog');
+    }
+  },
+
+  switchView(viewName) {
+    this.currentView = viewName;
+
+    // Обновление активных кнопок меню
+    const navLinks = document.querySelectorAll('.cds--header__menu-link[data-nav]');
+    navLinks.forEach(link => {
+      if (link.getAttribute('data-nav') === viewName) {
+        link.classList.add('cds--header__menu-link--active');
+      } else {
+        link.classList.remove('cds--header__menu-link--active');
+      }
+    });
+
+    // Скрытие / показ представлений
+    const views = {
+      catalog: document.getElementById('view-catalog'),
+      seminar1: document.getElementById('view-seminar1'),
+      test: document.getElementById('view-test')
+    };
+
+    Object.entries(views).forEach(([key, elem]) => {
+      if (elem) {
+        elem.style.display = key === viewName ? 'block' : 'none';
+      }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  /* ------------------------------------------------------------------------
+     3. ТАБЫ ВНУТРИ СЕМИНАРА 1
+     ------------------------------------------------------------------------ */
+  initSeminarTabs() {
+    const tabs = document.querySelectorAll('.cds--tabs .cds--tab');
+    const panels = document.querySelectorAll('.cds--tab-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab-target');
+
+        tabs.forEach(t => t.classList.remove('cds--tab--selected'));
+        panels.forEach(p => p.classList.remove('cds--tab-panel--active'));
+
+        tab.classList.add('cds--tab--selected');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('cds--tab-panel--active');
+        }
+      });
+    });
+  },
+
+  /* ------------------------------------------------------------------------
+     4. ФИЛЬТРАЦИЯ КАРТОЧЕК В КАТАЛОГЕ СЕМИНАРОВ
+     ------------------------------------------------------------------------ */
+  initCatalogFilters() {
+    const filterBtns = document.querySelectorAll('.catalog-filter-btn');
+    const cards = document.querySelectorAll('.seminar-catalog-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(b => b.classList.remove('cds--btn--primary'));
+        filterBtns.forEach(b => b.classList.add('cds--btn--secondary'));
+
+        btn.classList.remove('cds--btn--secondary');
+        btn.classList.add('cds--btn--primary');
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category') || '';
+          if (filter === 'all' || category.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+};
