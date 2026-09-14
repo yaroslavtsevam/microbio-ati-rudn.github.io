@@ -9,7 +9,7 @@ const CONFIG = {
   GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxv6vGp48TgIBfqOjqogr4MoTrSvonn8LeagFA80OLKbZ2TaFosgB97LMSM4zljwJQ/exec',
 
   // Время на выполнение тестирования (в минутах)
-  TEST_DURATION_MINUTES: 15,
+  TEST_DURATION_MINUTES: 30,
 
   // Количество случайных задач (по 1 из каждого раздела)
   TOTAL_TASKS: 4,
