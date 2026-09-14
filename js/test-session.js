@@ -198,6 +198,11 @@ const TestSession = {
 
       container.appendChild(card);
     });
+
+    // Компиляция математических формул внутри карточек задач
+    if (typeof App !== 'undefined' && App.renderMath) {
+      App.renderMath(container);
+    }
   },
 
   /**

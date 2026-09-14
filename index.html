@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/sans.css">
   <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/mono.css">
   <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -505,14 +506,14 @@
         <div class="cds--row">
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_01_water_dipole.png" alt="Диполь воды и водородные связи">
-              <div class="figure-caption">Рис. 1. Дипольное строение молекулы воды и пространственная сетка водородных связей</div>
+              <img src="assets/images/fig_01_water_dipole.png" alt="Полярное строение молекулы воды, валентный угол и водородные связи">
+              <div class="figure-caption">Рис. 1. Полярное строение молекулы воды, валентный угол и водородные связи</div>
             </div>
           </div>
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_02_ion_hydration.png" alt="Гидратация ионов Na+ и Cl-">
-              <div class="figure-caption">Рис. 2. Формирование гидратных оболочек вокруг катионов Na⁺ и анионов Cl⁻</div>
+              <img src="assets/images/fig_02_ion_hydration.png" alt="Ориентация диполей воды в сольватной оболочке катиона Na⁺ и аниона Cl⁻">
+              <div class="figure-caption">Рис. 2. Ориентация диполей воды в сольватной оболочке катиона Na⁺ и аниона Cl⁻</div>
             </div>
           </div>
         </div>
@@ -521,26 +522,11 @@
           Термодинамическая доступность влаги для микроорганизмов количественно выражается величиной активности воды ($a_w$):
         </p>
         <div class="math-formula">
-          a_w = \frac{p}{p_0} = \frac{\text{ERH (\%)}}{100}
+          $$a_w = \frac{p}{p_0} = \frac{\text{ERH (\%)}}{100}$$
         </div>
         <p style="line-height: 1.6;">
           где $p$ — парциальное давление водяного пара над пищевым продуктом, $p_0$ — давление пара над чистой дистиллированной водой при той же температуре, $\text{ERH}$ — равновесная относительная влажность воздуха.
         </p>
-
-        <div class="cds--row" style="margin-top: 1rem;">
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_04_aw_growth.png" alt="Зависимость скорости роста от aw">
-              <div class="figure-caption">Рис. 3. Кинетические кривые роста бактерий, дрожжей и плесеней в зависимости от aw</div>
-            </div>
-          </div>
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_05_food_aw.png" alt="Диапазоны aw в пищевых продуктах">
-              <div class="figure-caption">Рис. 4. Типовые диапазоны активности воды и зоны микробного риска пищевых продуктов</div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- 1.2 Теория Дебая-Хюккеля -->
@@ -551,32 +537,22 @@
           В реальных пищевых системах (рассолы, мясные соки, сыворотка) концентрация солей высока. Ионы не являются независимыми частицами: каждый центральный ион окружен «ионной атмосферой» противоположного знака, экранирующей его заряд и снижающей его химическую активность.
         </p>
 
-        <div class="cds--row">
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_03_ionic_atmosphere.png" alt="Ионная атмосфера">
-              <div class="figure-caption">Рис. 5. Модель ионной атмосферы экранирования заряда по Дебаю-Хюккелю</div>
-            </div>
-          </div>
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_06_nacl_curves.png" alt="Коэффициенты активности NaCl">
-              <div class="figure-caption">Рис. 6. Зависимость коэффициента активности γ от ионной силы раствора</div>
-            </div>
-          </div>
+        <div class="figure-card" style="max-width: 580px; margin: 1.5rem auto;">
+          <img src="assets/images/fig_03_ionic_atmosphere.png" alt="Электростатическое экранирование иона в теории Дебая-Хюккеля">
+          <div class="figure-caption">Рис. 3. Электростатическое экранирование иона в теории Дебая-Хюккеля</div>
         </div>
 
         <p style="margin-top: 1rem; line-height: 1.6;">
           Ионная сила раствора Льюиса ($I$) рассчитывается как полусумма произведений моляльностей/молярностей всех ионов на квадрат их валентности:
         </p>
         <div class="math-formula">
-          I = \frac{1}{2} \sum_{i=1}^{n} C_i \cdot z_i^2
+          $$I = \frac{1}{2} \sum_{i=1}^{n} C_i \cdot z_i^2$$
         </div>
         <p style="line-height: 1.6;">
           Коэффициент активности $\gamma$ и эффективная активность $a$ определяются предельным уравнением Дебая-Хюккеля:
         </p>
         <div class="math-formula">
-          \lg \gamma = -0{,}51 \cdot z^2 \cdot \frac{\sqrt{I}}{1 + \sqrt{I}}, \quad a = \gamma \cdot C
+          $$\lg \gamma = -0{,}51 \cdot z^2 \cdot \frac{\sqrt{I}}{1 + \sqrt{I}}, \quad a = \gamma \cdot C$$
         </div>
       </div>
 
@@ -588,19 +564,9 @@
           Вода претерпевает самоионизацию (автопротолиз). Ионное произведение воды $K_w = [H^+][OH^-]$ зависит от температуры. При $25^\circ\text{C}$ $K_w = 1{,}00 \times 10^{-14}$ ($pH_{\text{нейтр}} = 7{,}00$), а при $37^\circ\text{C}$ (температура тела человека и термостата инкубации мезофилов) $K_w = 2{,}40 \times 10^{-14}$, что смещает нейтральную точку к $pH = 6{,}81$.
         </p>
 
-        <div class="cds--row">
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_04_autoprotolysis_ph.png" alt="Автопротолиз воды">
-              <div class="figure-caption">Рис. 7. Зависимость константы Kw и нейтрального pH от температуры среды</div>
-            </div>
-          </div>
-          <div class="cds--col-6">
-            <div class="figure-card">
-              <img src="assets/images/fig_07_ph_scale.png" alt="Шкала pH">
-              <div class="figure-caption">Рис. 8. Шкала pH и критический санитарный рубеж 4.60 (Clostridium botulinum)</div>
-            </div>
-          </div>
+        <div class="figure-card" style="max-width: 620px; margin: 1.5rem auto;">
+          <img src="assets/images/fig_04_autoprotolysis_ph.png" alt="Шкала водородного показателя (pH), автопротолиз воды и спектр пищевых сред">
+          <div class="figure-caption">Рис. 4. Шкала водородного показателя (pH), автопротолиз воды и спектр пищевых сред</div>
         </div>
 
         <div class="cds--inline-notification cds--inline-notification--warning">
@@ -619,14 +585,14 @@
         <div class="cds--row">
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_01_acid_mechanism.png" alt="Механизм проникновения HA">
-              <div class="figure-caption">Рис. 9. Свободная диффузия недиссоциированной молекулы HA через клеточную мембрану</div>
+              <img src="assets/images/fig_05_solubility_ph.png" alt="Зависимость растворимости бензойной кислоты от pH">
+              <div class="figure-caption">Рис. 5. Зависимость растворимости бензойной кислоты от pH</div>
             </div>
           </div>
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_07_acid_trapping.png" alt="Кислотная ловушка">
-              <div class="figure-caption">Рис. 10. Механизм «кислотной ловушки» (acid trapping) и истощение АТФ H⁺-АТФазой</div>
+              <img src="assets/images/fig_06_henderson_hasselbalch.png" alt="Кривая диссоциации слабой кислоты">
+              <div class="figure-caption">Рис. 6. Кривая диссоциации слабой кислоты</div>
             </div>
           </div>
         </div>
@@ -635,20 +601,20 @@
           Попадая в нейтральную цитоплазму клетки ($pH_{\text{внутр}} \approx 7{,}2\dots7{,}5$), слабая кислота мгновенно диссоциирует: $HA \rightarrow H^+ + A^-$. Освобождающиеся протоны закисляют цитоплазму, а анион $A^-$ оказывается в ловушке. Клетка тратит весь пул АТФ на откачку протонов, что ведет к метаболическому коллапсу. Доля активной формы $\alpha$ задается уравнением Гендерсона-Хассельбаха:
         </p>
         <div class="math-formula">
-          \alpha = \frac{[HA]}{C_{\text{общ}}} = \frac{1}{1 + 10^{\text{pH} - pK_a}}
+          $$\alpha = \frac{[HA]}{C_{\text{общ}}} = \frac{1}{1 + 10^{\text{pH} - pK_a}}$$
         </div>
 
         <div class="cds--row" style="margin-top: 1rem;">
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_06_henderson_hasselbalch.png" alt="Кривая диссоциации">
-              <div class="figure-caption">Рис. 11. Кривые распределения форм HA / A⁻ в зависимости от pH среды</div>
+              <img src="assets/images/fig_07_acid_trapping.png" alt="Молекулярный механизм Acid Trapping">
+              <div class="figure-caption">Рис. 7. Молекулярный механизм Acid Trapping</div>
             </div>
           </div>
           <div class="cds--col-6">
             <div class="figure-card">
-              <img src="assets/images/fig_05_solubility_ph.png" alt="Растворимость слабых кислот">
-              <div class="figure-caption">Рис. 12. Предел растворимости слабых кислот и граница выпадения кристаллического осадка</div>
+              <img src="assets/images/fig_08_preservatives_salts.png" alt="Химические формулы, структуры и параметры промышленных консервантов">
+              <div class="figure-caption">Рис. 8. Химические формулы, структуры и параметры промышленных консервантов</div>
             </div>
           </div>
         </div>
@@ -661,10 +627,6 @@
         <p style="margin-bottom: 1rem; line-height: 1.6;">
           Вместо экстремального ужесточения одного параметра (что разрушает органолептические свойства и пищевую ценность продукта), комбинируются несколько мягких субингибиторных барьеров (pH, $a_w$, температура $T$, окислительно-восстановительный потенциал $Eh$, слабые органические кислоты). Совокупный стресс нарушает микробный гомеостаз и обеспечивает стабильность продукта при хранении.
         </p>
-        <div class="figure-card" style="max-width: 720px; margin: 0 auto;">
-          <img src="assets/images/fig_08_hurdle_effect.png" alt="Барьерная технология Ляйстнера">
-          <div class="figure-caption">Рис. 13. Синергетическое действие барьеров Ляйстнера в обеспечении безопасности продукции</div>
-        </div>
       </div>
 
     </section>
@@ -811,13 +773,11 @@
             <div class="cds--tile__subtitle">Преобразование между pH, pOH, [H⁺] и [OH⁻]</div>
 
             <div class="cds--form-item">
-              <div style="display: flex; justify-content: space-between;">
-                <label class="cds--label" for="calc-ph-slider">Значение pH среды:</label>
-                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ph-disp">4.60</span>
-              </div>
+              <label class="cds--label" for="calc-ph-slider">Значение pH среды:</label>
               <div class="cds--slider-container">
                 <input type="range" class="cds--slider" id="calc-ph-slider" min="1.00" max="13.00" step="0.05" value="4.60">
-                <input type="number" class="cds--text-input" id="calc-ph-input" style="width: 80px; height: 32px;" min="1" max="13" step="0.05" value="4.60">
+                <span class="cds--slider-value-badge" id="calc-ph-disp">4.60</span>
+                <input type="number" class="cds--text-input" id="calc-ph-input" style="width: 70px; height: 32px; padding: 0 0.5rem;" min="1" max="13" step="0.05" value="4.60">
               </div>
             </div>
 
@@ -860,11 +820,11 @@
             <div class="cds--tile__subtitle">Ионная сила (I), коэффициент активности (γ) и экранирование</div>
 
             <div class="cds--form-item">
-              <div style="display: flex; justify-content: space-between;">
-                <label class="cds--label" for="calc-ionic-slider">Ионная сила рассола (I):</label>
-                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ionic-disp">0.1500 М</span>
+              <label class="cds--label" for="calc-ionic-slider">Ионная сила рассола (I):</label>
+              <div class="cds--slider-container">
+                <input type="range" class="cds--slider" id="calc-ionic-slider" min="0.001" max="0.500" step="0.005" value="0.150">
+                <span class="cds--slider-value-badge" id="calc-ionic-disp">0.1500 М</span>
               </div>
-              <input type="range" class="cds--slider" id="calc-ionic-slider" min="0.001" max="0.500" step="0.005" value="0.150">
             </div>
 
             <div class="cds--row">
@@ -920,11 +880,11 @@
             </div>
 
             <div class="cds--form-item">
-              <div style="display: flex; justify-content: space-between;">
-                <label class="cds--label" for="calc-ha-ph-slider">pH продукта:</label>
-                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-ha-ph-disp">3.50</span>
+              <label class="cds--label" for="calc-ha-ph-slider">pH продукта:</label>
+              <div class="cds--slider-container">
+                <input type="range" class="cds--slider" id="calc-ha-ph-slider" min="2.50" max="6.50" step="0.05" value="3.50">
+                <span class="cds--slider-value-badge" id="calc-ha-ph-disp">3.50</span>
               </div>
-              <input type="range" class="cds--slider" id="calc-ha-ph-slider" min="2.50" max="6.50" step="0.05" value="3.50">
             </div>
 
             <div class="cds--form-item">
@@ -972,11 +932,11 @@
             </div>
 
             <div class="cds--form-item">
-              <div style="display: flex; justify-content: space-between;">
-                <label class="cds--label" for="calc-sol-ph-slider">pH соуса / напитка:</label>
-                <span style="font-weight: 600; font-family: 'IBM Plex Mono', monospace;" id="calc-sol-ph-disp">3.80</span>
+              <label class="cds--label" for="calc-sol-ph-slider">pH соуса / напитка:</label>
+              <div class="cds--slider-container">
+                <input type="range" class="cds--slider" id="calc-sol-ph-slider" min="2.50" max="6.00" step="0.05" value="3.80">
+                <span class="cds--slider-value-badge" id="calc-sol-ph-disp">3.80</span>
               </div>
-              <input type="range" class="cds--slider" id="calc-sol-ph-slider" min="2.50" max="6.00" step="0.05" value="3.80">
             </div>
 
             <div class="cds--form-item">
@@ -1034,7 +994,7 @@
           <div class="step-item__content">
             Подставляем равенство в уравнение ионного произведения воды:
             <div class="math-formula">
-              K_w = [H^+] \cdot [OH^-] = [H^+]^2 \implies [H^+] = \sqrt{K_w} = \sqrt{2{,}40 \times 10^{-14}} = 1{,}55 \times 10^{-7}\text{ М}
+              $$K_w = [H^+] \cdot [OH^-] = [H^+]^2 \implies [H^+] = \sqrt{K_w} = \sqrt{2{,}40 \times 10^{-14}} = 1{,}55 \times 10^{-7}\text{ М}$$
             </div>
           </div>
         </div>
@@ -1043,7 +1003,7 @@
           <div class="step-item__title">Шаг 3. Вычисление нейтрального показателя pH</div>
           <div class="step-item__content">
             <div class="math-formula">
-              pH_{\text{нейтр}} = -\lg [H^+] = -\lg(1{,}55 \times 10^{-7}) = 7 - 0{,}19 = 6{,}81
+              $$pH_{\text{нейтр}} = -\lg [H^+] = -\lg(1{,}55 \times 10^{-7}) = 7 - 0{,}19 = 6{,}81$$
             </div>
           </div>
         </div>
@@ -1070,10 +1030,10 @@
         <div class="step-item">
           <div class="step-item__title">Шаг 1. Полная диссоциация солей и баланс ионов</div>
           <div class="step-item__content">
-            $0{,}10\text{ М } NaCl \rightarrow 0{,}10\text{ М } Na^+ + 0{,}10\text{ М } Cl^-$<br>
-            $0{,}02\text{ М } Na_2HPO_4 \rightarrow 0{,}04\text{ М } Na^+ + 0{,}02\text{ М } HPO_4^{2-}$<br>
-            $0{,}005\text{ М } C_6H_5COONa \rightarrow 0{,}005\text{ М } Na^+ + 0{,}005\text{ М } C_6H_5COO^-$<br>
-            Суммарная концентрация $Na^+ = 0{,}10 + 0{,}04 + 0{,}005 = 0{,}145\text{ М}$.
+            $$0{,}10\text{ М } NaCl \rightarrow 0{,}10\text{ М } Na^+ + 0{,}10\text{ М } Cl^-$$
+            $$0{,}02\text{ М } Na_2HPO_4 \rightarrow 0{,}04\text{ М } Na^+ + 0{,}02\text{ М } HPO_4^{2-}$$
+            $$0{,}005\text{ М } C_6H_5COONa \rightarrow 0{,}005\text{ М } Na^+ + 0{,}005\text{ М } C_6H_5COO^-$$
+            Суммарная концентрация натрия: $[Na^+] = 0{,}10 + 0{,}04 + 0{,}005 = 0{,}145\text{ М}$.
           </div>
         </div>
 
@@ -1081,8 +1041,10 @@
           <div class="step-item__title">Шаг 2. Расчет ионной силы раствора (I)</div>
           <div class="step-item__content">
             <div class="math-formula">
-              I = \frac{1}{2} \left( [Na^+] \cdot 1^2 + [Cl^-] \cdot 1^2 + [HPO_4^{2-}] \cdot 2^2 + [C_6H_5COO^-] \cdot 1^2 \right)<br>
-              I = \frac{1}{2} \left( 0{,}145 \cdot 1 + 0{,}10 \cdot 1 + 0{,}02 \cdot 4 + 0{,}005 \cdot 1 \right) = \frac{1}{2} (0{,}330) = 0{,}165\text{ М}
+              $$\begin{aligned}
+              I &= \frac{1}{2} \left( [Na^+] \cdot 1^2 + [Cl^-] \cdot 1^2 + [HPO_4^{2-}] \cdot 2^2 + [C_6H_5COO^-] \cdot 1^2 \right) \\
+              &= \frac{1}{2} \left( 0{,}145 \cdot 1 + 0{,}10 \cdot 1 + 0{,}02 \cdot 4 + 0{,}005 \cdot 1 \right) = \frac{1}{2} (0{,}330) = 0{,}165\text{ М}
+              \end{aligned}$$
             </div>
           </div>
         </div>
@@ -1092,9 +1054,11 @@
           <div class="step-item__content">
             Для однозарядного бензоат-иона ($z = 1$):
             <div class="math-formula">
-              \sqrt{I} = \sqrt{0{,}165} \approx 0{,}4062<br>
-              \lg \gamma = -0{,}51 \cdot 1^2 \cdot \frac{0{,}4062}{1 + 0{,}4062} = -0{,}51 \cdot \frac{0{,}4062}{1{,}4062} \approx -0{,}1473<br>
-              \gamma = 10^{-0{,}1473} \approx 0{,}712
+              $$\begin{aligned}
+              \sqrt{I} &= \sqrt{0{,}165} \approx 0{,}4062 \\
+              \lg \gamma &= -0{,}51 \cdot 1^2 \cdot \frac{0{,}4062}{1 + 0{,}4062} = -0{,}51 \cdot \frac{0{,}4062}{1{,}4062} \approx -0{,}1473 \\
+              \gamma &= 10^{-0{,}1473} \approx 0{,}712
+              \end{aligned}$$
             </div>
           </div>
         </div>
@@ -1103,7 +1067,7 @@
           <div class="step-item__title">Шаг 4. Определение термодинамической активности и вывод</div>
           <div class="step-item__content">
             <div class="math-formula">
-              a = \gamma \cdot C = 0{,}712 \cdot 5{,}0\text{ мМ} = 3{,}56\text{ мМ}
+              $$a = \gamma \cdot C = 0{,}712 \cdot 5{,}0\text{ мМ} = 3{,}56\text{ мМ}$$
             </div>
             <strong>Вывод:</strong> Электростатическое экранирование в рассоле снижает химическую активность консерванта почти на 29% относительно идеального раствора, что требует внесения поправки в технологическую рецептуру.
           </div>
@@ -1125,10 +1089,16 @@
           <div class="step-item__title">Шаг 1. Расчет доли HA при кислом pH = 3.20</div>
           <div class="step-item__content">
             <div class="math-formula">
-              \Delta = pH - pK_a = 3{,}20 - 4{,}19 = -0{,}99<br>
-              \alpha_{3{,}20} = \frac{1}{1 + 10^{-0{,}99}} = \frac{1}{1 + 0{,}1023} \approx 0{,}907\text{ (90,7\%)}
+              $$\begin{aligned}
+              \Delta &= pH - pK_a = 3{,}20 - 4{,}19 = -0{,}99 \\
+              \alpha_{3{,}20} &= \frac{1}{1 + 10^{-0{,}99}} = \frac{1}{1 + 0{,}1023} \approx 0{,}907 \text{ (90,7\%)}
+              \end{aligned}$$
             </div>
-            Необходимая дозировка: $C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}907} \approx 110{,}3\text{ мг/л}$. Норматив ТР ТС соблюден с десятикратным запасом.
+            Необходимая дозировка:
+            <div class="math-formula">
+              $$C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}907} \approx 110{,}3\text{ мг/л}$$
+            </div>
+            Норматив ТР ТС соблюден с десятикратным запасом.
           </div>
         </div>
 
@@ -1136,10 +1106,15 @@
           <div class="step-item__title">Шаг 2. Расчет доли HA при pH = 4.60</div>
           <div class="step-item__content">
             <div class="math-formula">
-              \Delta = 4{,}60 - 4{,}19 = +0{,}41<br>
-              \alpha_{4{,}60} = \frac{1}{1 + 10^{0{,}41}} = \frac{1}{1 + 2{,}57} \approx 0{,}280\text{ (28,0\%)}
+              $$\begin{aligned}
+              \Delta &= 4{,}60 - 4{,}19 = +0{,}41 \\
+              \alpha_{4{,}60} &= \frac{1}{1 + 10^{0{,}41}} = \frac{1}{1 + 2{,}57} \approx 0{,}280 \text{ (28,0\%)}
+              \end{aligned}$$
             </div>
-            Необходимая дозировка: $C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}280} \approx 357{,}1\text{ мг/л}$.
+            Необходимая дозировка:
+            <div class="math-formula">
+              $$C_{\text{общ}} = \frac{100\text{ мг/л}}{0{,}280} \approx 357{,}1\text{ мг/л}$$
+            </div>
           </div>
         </div>
 
@@ -1167,7 +1142,7 @@
           <div class="step-item__content">
             Общая растворимость слабой кислоты в водном растворе складывается из растворимости недиссоциированной формы $S_0$ и концентрации аниона $A^-$:
             <div class="math-formula">
-              S_{\text{общ}} = S_0 \cdot \left( 1 + 10^{pH - pK_a} \right)
+              $$S_{\text{общ}} = S_0 \cdot \left( 1 + 10^{pH - pK_a} \right)$$
             </div>
           </div>
         </div>
@@ -1177,10 +1152,12 @@
           <div class="step-item__content">
             На границе насыщения $S_{\text{общ}} = C_{\text{внес}} = 2{,}0\text{ г/л}$:
             <div class="math-formula">
-              2{,}0 = 1{,}60 \cdot \left( 1 + 10^{pH_{\text{крит}} - 4{,}76} \right)<br>
-              \frac{2{,}0}{1{,}60} = 1{,}25 \implies 10^{pH_{\text{крит}} - 4{,}76} = 0{,}25<br>
-              pH_{\text{крит}} - 4{,}76 = \lg(0{,}25) \approx -0{,}60<br>
-              pH_{\text{крит}} = 4{,}76 - 0{,}60 = 4{,}16
+              $$\begin{aligned}
+              2{,}0 &= 1{,}60 \cdot \left( 1 + 10^{pH_{\text{крит}} - 4{,}76} \right) \\
+              \frac{2{,}0}{1{,}60} &= 1{,}25 \implies 10^{pH_{\text{крит}} - 4{,}76} = 0{,}25 \\
+              pH_{\text{крит}} - 4{,}76 &= \lg(0{,}25) \approx -0{,}60 \\
+              pH_{\text{крит}} &= 4{,}76 - 0{,}60 = 4{,}16
+              \end{aligned}$$
             </div>
           </div>
         </div>
@@ -1357,6 +1334,10 @@
   </footer>
 
   <!-- Скрипты платформы -->
+  <!-- KaTeX Math Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
   <script src="js/config.js"></script>
   <script src="js/task-bank.js"></script>
   <script src="js/gdrive-sync.js"></script>

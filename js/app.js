@@ -20,6 +20,9 @@ const App = {
     if (typeof Calculators !== 'undefined') Calculators.init();
     if (typeof TestSession !== 'undefined') TestSession.init();
 
+    // Первичная компиляция математических формул KaTeX
+    this.renderMath();
+
     // Обработка прямого URL хеша
     this.handleRouteHash();
     window.addEventListener('hashchange', () => this.handleRouteHash());
@@ -113,6 +116,7 @@ const App = {
       }
     });
 
+    this.renderMath();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
@@ -134,9 +138,31 @@ const App = {
         const targetPanel = document.getElementById(targetId);
         if (targetPanel) {
           targetPanel.classList.add('cds--tab-panel--active');
+          this.renderMath(targetPanel);
         }
       });
     });
+  },
+
+  /**
+   * Компиляция математической разметки LaTeX через KaTeX
+   */
+  renderMath(element = document.body) {
+    if (typeof renderMathInElement === 'function') {
+      try {
+        renderMathInElement(element, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true }
+          ],
+          throwOnError: false
+        });
+      } catch (e) {
+        console.warn('[KaTeX] Render warning:', e);
+      }
+    }
   },
 
   /* ------------------------------------------------------------------------
