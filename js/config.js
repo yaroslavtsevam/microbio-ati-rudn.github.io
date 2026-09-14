@@ -23,3 +23,7 @@ const CONFIG = {
   // Версия платформы
   VERSION: '2.0.0 (IBM Carbon)'
 };
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { CONFIG };
+}

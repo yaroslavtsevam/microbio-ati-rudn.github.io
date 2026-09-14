@@ -300,3 +300,73 @@ const TASK_BANK = [
     hint: "S_общ = 1.60 × (1 + 10^(2.80 - 4.76)) = 1.60 × 1.0110 = 1.618 г/л."
   }
 ];
+
+const TaskBank = {
+  tasks: TASK_BANK,
+
+  getAllTasks() {
+    return this.tasks;
+  },
+
+  getTasksByCategory(category) {
+    return this.tasks.filter(t => t.category === category);
+  },
+
+  getTaskById(id) {
+    return this.tasks.find(t => t.id === id) || null;
+  },
+
+  /**
+   * Случайный выбор 4 задач (ровно по 1 задаче из разделов 1, 2, 3 и 4)
+   */
+  getRandomTasks() {
+    const selected = [];
+    for (let cat = 1; cat <= 4; cat++) {
+      const catTasks = this.getTasksByCategory(cat);
+      if (catTasks.length > 0) {
+        const randomIndex = Math.floor(Math.random() * catTasks.length);
+        selected.push({ ...catTasks[randomIndex] });
+      }
+    }
+    return selected;
+  },
+
+  /**
+   * Безопасный парсер числового ввода (поддержка запятой, удаление пробелов)
+   */
+  parseNumericInput(val) {
+    if (val === null || val === undefined) return NaN;
+    if (typeof val === 'number') return isNaN(val) ? NaN : val;
+    const cleaned = String(val).trim().replace(/\s+/g, '').replace(',', '.');
+    if (cleaned === '') return NaN;
+    const parsed = parseFloat(cleaned);
+    return isFinite(parsed) ? parsed : NaN;
+  },
+
+  /**
+   * Проверка числового ответа студента с учетом допустимой погрешности
+   */
+  validateAnswer(taskOrId, userVal) {
+    const task = typeof taskOrId === 'string' ? this.getTaskById(taskOrId) : taskOrId;
+    if (!task) return false;
+
+    const parsedUser = this.parseNumericInput(userVal);
+    if (isNaN(parsedUser)) return false;
+
+    const expected = task.correctAnswer;
+    const tolPercent = task.tolerancePercent || 2.0;
+
+    // Относительная погрешность: |user - expected| / |expected|
+    const relDiff = Math.abs(parsedUser - expected) / Math.abs(expected);
+    return relDiff <= (tolPercent / 100);
+  }
+};
+
+// Экспорт для глобальной области видимости браузера и модуля Node.js
+if (typeof window !== 'undefined') {
+  window.TaskBank = TaskBank;
+  window.TASK_BANK = TASK_BANK;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { TaskBank, TASK_BANK };
+}

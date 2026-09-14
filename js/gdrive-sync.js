@@ -117,9 +117,15 @@ const GDriveSync = {
 
   /**
    * Скачивание квитанции в текстовом формате
+  /**
+   * Генерация текстового содержимого квитанции
    */
-  downloadReceiptFile(data) {
-    const content = [
+  generateReceiptContent(data) {
+    const hash = typeof btoa !== 'undefined' 
+      ? btoa(encodeURIComponent(JSON.stringify(data))).substring(0, 32)
+      : Buffer.from(encodeURIComponent(JSON.stringify(data))).toString('base64').substring(0, 32);
+
+    return [
       `================================================================`,
       `АТИ РУДН • ПИЩЕВАЯ МИКРОБИОЛОГИЯ, САНИТАРИЯ И ГИГИЕНА`,
       `ОФИЦИАЛЬНАЯ ЭЛЕКТРОННАЯ КВИТАНЦИЯ О СДАЧЕ ЭКСПРЕСС-ТЕСТИРОВАНИЯ`,
@@ -129,18 +135,25 @@ const GDriveSync = {
       `Учебная группа:    ${data.group} (${data.specialty || 'Не указана'})`,
       `Дата и время (МСК):${data.submittedAtLocal}`,
       `Затраченное время: ${data.timeSpentFormatted || '15 минут'}`,
+      `Набрано баллов:    ${data.totalScore ?? '—'} из ${data.maxScore ?? 100}`,
       `Количество задач:  ${data.answers ? data.answers.length : 4}`,
       `----------------------------------------------------------------`,
       `ДАННЫЕ ОТВЕТОВ:`,
       ...(data.answers || []).map((ans, idx) => {
-        return `Задача ${idx + 1} (${ans.category}): Ответ = ${ans.userAnswer || 'нет ответа'} (Ключ задачи: ${ans.taskId})`;
+        return `Задача ${idx + 1} (${ans.categoryName || `Раздел ${ans.category}`}): Ответ = ${ans.userAnswer !== null ? ans.userAnswer + (ans.unit ? ' ' + ans.unit : '') : 'нет ответа'} (Ключ задачи: ${ans.taskId})`;
       }),
       `----------------------------------------------------------------`,
       `Статус регистрации: ПОДТВЕРЖДЕНО СИСТЕМОЙ`,
-      `Проверочный хеш:   ${btoa(encodeURIComponent(JSON.stringify(data))).substring(0, 32)}`,
+      `Проверочный хеш:   ${hash}`,
       `================================================================`
     ].join('\n');
+  },
 
+  /**
+   * Скачивание квитанции в текстовом формате
+   */
+  downloadReceiptFile(data) {
+    const content = this.generateReceiptContent(data);
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -152,3 +165,11 @@ const GDriveSync = {
     URL.revokeObjectURL(url);
   }
 };
+
+// Экспорт для глобальной области видимости браузера и модуля Node.js
+if (typeof window !== 'undefined') {
+  window.GDriveSync = GDriveSync;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { GDriveSync };
+}

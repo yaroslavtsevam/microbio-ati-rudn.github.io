@@ -140,33 +140,22 @@ const TestSession = {
 
     container.innerHTML = '';
 
-    const categoryNames = {
-      autoprotolysis_ph: 'Раздел 1: Автопротолиз и расчет pH',
-      debye_huckel: 'Раздел 2: Ионная сила и теория Дебая-Хюккеля',
-      henderson_hasselbalch: 'Раздел 3: Уравнение Гендерсона-Хассельбаха',
-      solubility_precipitation: 'Раздел 4: Растворимость и критический pH'
-    };
-
     this.state.tasks.forEach((task, idx) => {
       const card = document.createElement('div');
       card.className = 'task-card';
       card.id = `task-card-${task.id}`;
 
-      // Параметры для отображения
-      const paramsList = Object.entries(task.params)
-        .map(([k, v]) => `<code>${k} = ${v}</code>`)
-        .join(' • ');
-
       card.innerHTML = `
-        <div class="task-card__badge">Задача ${idx + 1} из 4 • 25 баллов</div>
+        <div class="task-card__badge">${task.badge || `Раздел ${task.category}`} • Задача ${idx + 1} из 4 • 25 баллов</div>
         <h4 class="task-card__title">${task.title}</h4>
-        <div class="cds--tile__subtitle">${categoryNames[task.category] || task.category}</div>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0.75rem;">${task.categoryName || `Раздел ${task.category}`}</div>
         
-        <p class="task-card__desc">${task.description}</p>
-        
-        <div class="task-card__meta-box">
-          <strong>Исходные параметры задачи:</strong><br>
-          ${paramsList}
+        <div class="task-card__scenario" style="margin-bottom: 0.75rem; line-height: 1.6; color: var(--cds-text-primary);">
+          ${task.scenario}
+        </div>
+
+        <div class="task-card__question" style="margin-bottom: 1.25rem; font-weight: 600; line-height: 1.5; color: var(--cds-text-primary);">
+          ${task.question}
         </div>
 
         <div class="cds--row">
@@ -175,11 +164,11 @@ const TestSession = {
               <label class="cds--label" for="ans-${task.id}">
                 Ваш числовой ответ (${task.unit || 'безразмерный'}) <span style="color: var(--cds-support-error);">*</span>:
               </label>
-              <input type="number" step="any" class="cds--text-input task-answer-input" 
+              <input type="text" inputmode="decimal" class="cds--text-input task-answer-input" 
                      id="ans-${task.id}" data-task-id="${task.id}" 
-                     placeholder="Например: 4.60" required>
-              <div class="cds--label" style="font-size: 0.75rem; margin-top: 0.25rem;">
-                Точность: до ${task.tolerance.places} знаков после запятой
+                     placeholder="${task.placeholder || 'Например: 4.60'}" required>
+              <div class="cds--label" style="font-size: 0.75rem; margin-top: 0.25rem; color: var(--cds-text-secondary);">
+                Единицы: <strong>${task.unit || '—'}</strong> • Допустимая погрешность: <strong>±${task.tolerancePercent}%</strong>
               </div>
             </div>
           </div>
@@ -224,7 +213,12 @@ const TestSession = {
       // Проверка окончания времени
       if (this.state.remainingSeconds <= 0) {
         clearInterval(this.state.timerInterval);
-        alert('Время тестирования (15 минут) истекло! Ответы будут автоматически зафиксированы и отправлены преподавателю.');
+        const timerBar = document.getElementById('test-timer-bar');
+        if (timerBar) {
+          timerBar.className = 'test-timer-bar test-timer-bar--danger';
+          const clock = document.getElementById('test-timer-clock');
+          if (clock) clock.textContent = '00:00 (Время истекло)';
+        }
         this.submitSession(true);
       }
     }, 1000);
@@ -270,18 +264,22 @@ const TestSession = {
     const answers = this.state.tasks.map((task) => {
       const input = document.getElementById(`ans-${task.id}`);
       const notes = document.getElementById(`notes-${task.id}`);
-      const userVal = input ? parseFloat(input.value) : NaN;
+      const rawVal = input ? input.value : '';
+      const userVal = TaskBank.parseNumericInput(rawVal);
       const userNotes = notes ? notes.value.trim() : '';
 
-      // Метрика корректности (вспомогательно для аналитики)
-      const isCorrect = !isNaN(userVal) && task.validate(userVal);
+      // Метрика корректности (вспомогательно для аналитики преподавателя)
+      const isCorrect = !isNaN(userVal) && TaskBank.validateAnswer(task, userVal);
 
       return {
         taskId: task.id,
         category: task.category,
+        categoryName: task.categoryName || `Раздел ${task.category}`,
         title: task.title,
-        expectedAnswer: task.expectedAnswer,
+        unit: task.unit || '',
+        expectedAnswer: task.correctAnswer,
         userAnswer: isNaN(userVal) ? null : userVal,
+        userRawInput: rawVal,
         userNotes,
         isCorrect,
         points: isCorrect ? CONFIG.POINTS_PER_TASK : 0
@@ -345,6 +343,7 @@ const TestSession = {
         <strong>${payload.surname} ${payload.name}</strong> (${payload.group})<br>
         Специальность: ${payload.specialty || 'Стандартизация и метрология / Управление качеством'}<br>
         Время сдачи: ${new Date().toLocaleString('ru-RU')} • Затрачено: ${payload.timeSpentFormatted}
+        ${payload.isAutoSubmit ? '<br><span class="cds--tag cds--tag--red" style="margin-top: 0.5rem;">Автоматическая сдача по истечении 15 минут</span>' : ''}
       `;
     }
 
@@ -362,8 +361,8 @@ const TestSession = {
       answersTableBody.innerHTML = payload.answers.map((a, i) => `
         <tr>
           <td><strong>Задача ${i + 1}</strong></td>
-          <td>${a.category}</td>
-          <td><code>${a.userAnswer !== null ? a.userAnswer : 'нет ответа'}</code></td>
+          <td>${a.categoryName || `Раздел ${a.category}`}</td>
+          <td><code>${a.userAnswer !== null ? a.userAnswer + (a.unit ? ' ' + a.unit : '') : 'нет ответа'}</code></td>
           <td>${a.userNotes || '—'}</td>
         </tr>
       `).join('');
@@ -380,3 +379,11 @@ const TestSession = {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
+
+// Экспорт для глобальной области видимости браузера и модуля Node.js
+if (typeof window !== 'undefined') {
+  window.TestSession = TestSession;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { TestSession };
+}

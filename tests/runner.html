@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru" data-carbon-theme="white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Диагностический тест-раннер • Портал микробиологии АТИ РУДН</title>
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/sans.css">
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/mono.css">
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding: 2rem; background-color: var(--cds-background); }
+    .runner-header { max-width: 960px; margin: 0 auto 2rem; }
+    .test-box { max-width: 960px; margin: 0 auto; }
+    .test-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--cds-border-subtle);
+      font-size: 0.875rem;
+    }
+    .test-row:last-child { border-bottom: none; }
+    .badge-pass { color: #24a148; font-weight: 600; }
+    .badge-fail { color: #da1e28; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="runner-header">
+    <span class="cds--tag cds--tag--blue">АТИ РУДН • Диагностика платформы</span>
+    <h1 style="font-size: 1.75rem; margin: 0.5rem 0 1rem;">Браузерный тест-раннер формы задач Семинара 1</h1>
+    <p style="color: var(--cds-text-secondary); margin-bottom: 1.5rem;">
+      Автоматизированная проверка целостности базы задач, парсинга ввода (запятая/точка), случайной генерации вариантов и формирования квитанций.
+    </p>
+
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+      <button id="btn-run-tests" class="cds--btn cds--btn--primary">
+        <span>Запустить все тесты</span>
+        <span>▶</span>
+      </button>
+      <a href="../index.html#test" class="cds--btn cds--btn--secondary">
+        <span>Открыть форму экспресс-теста</span>
+        <span>→</span>
+      </a>
+      <span id="tests-summary" class="cds--tag cds--tag--gray">Готов к запуску</span>
+    </div>
+  </div>
+
+  <div class="test-box cds--tile" id="test-results-container">
+    <div style="color: var(--cds-text-secondary); text-align: center; padding: 2rem;">
+      Нажмите «Запустить все тесты» для выполнения диагностического набора в браузере.
+    </div>
+  </div>
+
+  <!-- Невидимый тестовый контейнер для проверки DOM-рендеринга -->
+  <div id="test-tasks-container" style="display: none;"></div>
+
+  <!-- Загрузка скриптов платформы -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/task-bank.js"></script>
+  <script src="../js/gdrive-sync.js"></script>
+  <script src="../js/test-session.js"></script>
+
+  <script>
+    const tests = [
+      {
+        name: 'Банк задач содержит ровно 20 задач',
+        fn: () => {
+          if (TASK_BANK.length !== 20) throw new Error(`Ожидалось 20, получено ${TASK_BANK.length}`);
+          if (TaskBank.getAllTasks().length !== 20) throw new Error('TaskBank.getAllTasks() вернул неверное число');
+        }
+      },
+      {
+        name: 'В банке 4 категории по 5 задач в каждой',
+        fn: () => {
+          for (let c = 1; c <= 4; c++) {
+            const count = TaskBank.getTasksByCategory(c).length;
+            if (count !== 5) throw new Error(`Категория ${c} содержит ${count} вместо 5 задач`);
+          }
+        }
+      },
+      {
+        name: 'Все задачи обладают обязательными полями (id, title, scenario, question, unit, correctAnswer, tolerancePercent)',
+        fn: () => {
+          TASK_BANK.forEach(t => {
+            if (!t.id || !t.title || !t.scenario || !t.question || !t.unit) {
+              throw new Error(`Задача ${t.id} не имеет одного из строковых полей`);
+            }
+            if (typeof t.correctAnswer !== 'number' || t.correctAnswer <= 0) {
+              throw new Error(`Задача ${t.id} имеет невалидный correctAnswer`);
+            }
+            if (t.tolerancePercent < 1 || t.tolerancePercent > 5) {
+              throw new Error(`Задача ${t.id} имеет допуск вне 1-5%`);
+            }
+          });
+        }
+      },
+      {
+        name: 'Рандомизатор getRandomTasks() возвращает 4 уникальные задачи из категорий 1, 2, 3, 4',
+        fn: () => {
+          for (let i = 0; i < 20; i++) {
+            const tasks = TaskBank.getRandomTasks();
+            if (tasks.length !== 4) throw new Error(`Выборка содержит ${tasks.length} задач вместо 4`);
+            const cats = tasks.map(t => t.category).sort().join(',');
+            if (cats !== '1,2,3,4') throw new Error(`Неверное распределение категорий: ${cats}`);
+            const ids = new Set(tasks.map(t => t.id));
+            if (ids.size !== 4) throw new Error('Обнаружены дубликаты ID в выборке');
+          }
+        }
+      },
+      {
+        name: 'Парсер чисел TaskBank.parseNumericInput поддерживает русскую запятую и пробелы',
+        fn: () => {
+          if (TaskBank.parseNumericInput('398,1') !== 398.1) throw new Error('Ошибка парсинга "398,1"');
+          if (TaskBank.parseNumericInput('  1 258,9  ') !== 1258.9) throw new Error('Ошибка парсинга разрядов с пробелами');
+          if (TaskBank.parseNumericInput('0,0375') !== 0.0375) throw new Error('Ошибка парсинга "0,0375"');
+          if (!isNaN(TaskBank.parseNumericInput('abc'))) throw new Error('Ожидался NaN для текста');
+          if (!isNaN(TaskBank.parseNumericInput(''))) throw new Error('Ожидался NaN для пустой строки');
+        }
+      },
+      {
+        name: 'Математическая валидация TaskBank.validateAnswer засчитывает верные ответы с допуском',
+        fn: () => {
+          const task = TaskBank.getTaskById('c1_t1');
+          if (!TaskBank.validateAnswer(task, task.correctAnswer)) throw new Error('Точный ответ не зачтен');
+          if (!TaskBank.validateAnswer(task, '398,1')) throw new Error('Ответ со строкой "398,1" не зачтен');
+          
+          const margin = task.correctAnswer * (task.tolerancePercent / 100);
+          if (!TaskBank.validateAnswer(task, task.correctAnswer + margin * 0.9)) throw new Error('Ответ в допуске не зачтен');
+          if (TaskBank.validateAnswer(task, task.correctAnswer + margin * 1.5)) throw new Error('Ответ вне допуска зачтен ошибочно');
+        }
+      },
+      {
+        name: 'Проверка DOM-рендеринга карточек задач (TestSession.renderTasks)',
+        fn: () => {
+          const container = document.getElementById('test-tasks-container');
+          TestSession.state.tasks = TaskBank.getRandomTasks();
+          TestSession.renderTasks();
+          const cards = container.querySelectorAll('.task-card');
+          if (cards.length !== 4) throw new Error(`Ожидалось 4 карточки в DOM, получено ${cards.length}`);
+          const inputs = container.querySelectorAll('.task-answer-input');
+          if (inputs.length !== 4) throw new Error(`Ожидалось 4 поля ввода в DOM, получено ${inputs.length}`);
+        }
+      },
+      {
+        name: 'Генератор квитанции GDriveSync формирует валидный токен и текстовый файл с хешем',
+        fn: () => {
+          const token = GDriveSync.generateReceiptToken();
+          if (!/^RUDN-MB-[A-Z0-9]+-[A-Z0-9]+$/.test(token)) throw new Error(`Неверный формат токена: ${token}`);
+          
+          const content = GDriveSync.generateReceiptContent({
+            receiptToken: token,
+            surname: 'Петров',
+            name: 'Петр',
+            group: 'АТИ-302',
+            submittedAtLocal: '14.09.2026, 04:35:00',
+            timeSpentFormatted: '12 мин 10 сек',
+            totalScore: 100,
+            maxScore: 100,
+            answers: [
+              { categoryName: 'Раздел 1', taskId: 'c1_t1', userAnswer: 398.1, unit: 'мкМ' }
+            ]
+          });
+
+          if (!content.includes(token) || !content.includes('Петров Петр') || !content.includes('100 из 100')) {
+            throw new Error('Квитанция не содержит ключевых полей');
+          }
+        }
+      }
+    ];
+
+    document.getElementById('btn-run-tests').addEventListener('click', runAll);
+
+    function runAll() {
+      const container = document.getElementById('test-results-container');
+      const summaryTag = document.getElementById('tests-summary');
+      container.innerHTML = '';
+
+      let passed = 0;
+      let failed = 0;
+
+      tests.forEach((t, idx) => {
+        const row = document.createElement('div');
+        row.className = 'test-row';
+
+        const t0 = performance.now();
+        let statusHtml = '';
+        try {
+          t.fn();
+          const t1 = performance.now();
+          passed++;
+          statusHtml = `<span class="badge-pass">✓ PASS (${(t1 - t0).toFixed(1)} ms)</span>`;
+        } catch (err) {
+          failed++;
+          statusHtml = `<span class="badge-fail">✗ FAIL: ${err.message}</span>`;
+        }
+
+        row.innerHTML = `
+          <div><strong>${idx + 1}. ${t.name}</strong></div>
+          <div>${statusHtml}</div>
+        `;
+        container.appendChild(row);
+      });
+
+      if (failed === 0) {
+        summaryTag.className = 'cds--tag cds--tag--green';
+        summaryTag.textContent = `Все тесты пройдены: ${passed} из ${tests.length} (100%)`;
+      } else {
+        summaryTag.className = 'cds--tag cds--tag--red';
+        summaryTag.textContent = `Провалено: ${failed}, Пройдено: ${passed}`;
+      }
+    }
+
+    // Автозапуск при загрузке страницы раннера
+    window.addEventListener('DOMContentLoaded', runAll);
+  </script>
+</body>
+</html>
