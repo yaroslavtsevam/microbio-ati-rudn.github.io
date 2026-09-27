@@ -6,7 +6,7 @@
 const CONFIG = {
   // URL веб-приложения Google Apps Script для записи в Google Таблицу на Google Drive
   // Замените на ваш URL после развертывания по инструкции в google-apps-script/README.md
-  GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxv6vGp48TgIBfqOjqogr4MoTrSvonn8LeagFA80OLKbZ2TaFosgB97LMSM4zljwJQ/exec',
+  GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwhdXGtTdOF36ZpqeYR5D7tBqsQGLsSIhdn0uOWB3n5C-iY_7ocheLYIDfjh5mt2IY3/exec',
 
   // Время на выполнение тестирования (в минутах)
   TEST_DURATION_MINUTES: 30,
