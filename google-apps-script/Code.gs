@@ -2,12 +2,16 @@
  * Google Apps Script для автоматической фиксации результатов экспресс-тестирования
  * Курс «Пищевая микробиология, санитария и гигиена» • АТИ РУДН
  * Репозиторий: https://github.com/yaroslavtsevam/microbio-ati-rudn.github.io
+ * 
+ * Поддерживает:
+ *  - Семинар 0 (Вводная химия): 12 расчетных задач -> Лист "Ведомость_Семинар_0"
+ *  - Семинар 1 (Гомеостаз микроорганизмов): 4 расчетные задачи -> Лист "Ведомость_Семинар_1"
  */
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
   try {
-    // Блокировка на 10 сек для предотвращения коллизий одновременных записей
+    // Блокировка на 10 сек для предотвращения коллизий при одновременной сдаче группой
     lock.waitLock(10000);
 
     var rawData = e.postData ? e.postData.contents : null;
@@ -23,9 +27,19 @@ function doPost(e) {
     }
 
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetName = "Ведомость_Семинар_1";
+    var topic = String(data.topic || 'sem0').toLowerCase();
+    
+    // Определение имени листа в зависимости от темы
+    var sheetName = (topic === 'sem0' || topic.indexOf('хим') !== -1 || topic.indexOf('0') !== -1)
+      ? "Ведомость_Семинар_0"
+      : "Ведомость_Семинар_1";
+
     var sheet = ss.getSheetByName(sheetName);
 
+    var answers = Array.isArray(data.answers) ? data.answers : [];
+    var totalTasks = answers.length > 0 ? answers.length : (topic === 'sem0' ? 12 : 4);
+
+    // Построение заголовков таблицы
     var headers = [
       "Квитанция сдачи (Receipt Token)",
       "Дата и время (МСК)",
@@ -36,34 +50,20 @@ function doPost(e) {
       "Итоговый балл",
       "Верных ответов",
       "Затраченное время",
-      "Режим сдачи",
-
-      "Задача 1: Раздел и ID",
-      "Задача 1: Исходное условие и вопрос",
-      "Задача 1: Исходный ответ студента",
-      "Задача 1: Эталонный ответ",
-      "Задача 1: Результат",
-
-      "Задача 2: Раздел и ID",
-      "Задача 2: Исходное условие и вопрос",
-      "Задача 2: Исходный ответ студента",
-      "Задача 2: Эталонный ответ",
-      "Задача 2: Результат",
-
-      "Задача 3: Раздел и ID",
-      "Задача 3: Исходное условие и вопрос",
-      "Задача 3: Исходный ответ студента",
-      "Задача 3: Эталонный ответ",
-      "Задача 3: Результат",
-
-      "Задача 4: Раздел и ID",
-      "Задача 4: Исходное условие и вопрос",
-      "Задача 4: Исходный ответ студента",
-      "Задача 4: Эталонный ответ",
-      "Задача 4: Результат",
-
-      "Ход решения / Примечания студента"
+      "Режим сдачи"
     ];
+
+    for (var t = 1; t <= totalTasks; t++) {
+      headers.push(
+        "Задача " + t + ": Раздел и ID",
+        "Задача " + t + ": Исходное условие и вопрос",
+        "Задача " + t + ": Исходный ответ студента",
+        "Задача " + t + ": Эталонный ответ",
+        "Задача " + t + ": Результат"
+      );
+    }
+
+    headers.push("Ход решения / Примечания студента");
 
     // Если листа нет, создаем и оформляем шапку таблицы
     if (!sheet) {
@@ -71,7 +71,7 @@ function doPost(e) {
       sheet.appendRow(headers);
       formatHeaderRow(sheet, headers.length);
     } else {
-      // Автоматическая актуализация шапки: если колонок меньше 31 или первая ячейка не содержит токен, обновляем строку 1
+      // Автоматическая актуализация шапки при изменении количества задач
       var currentCols = sheet.getLastColumn();
       var firstCell = sheet.getLastRow() >= 1 ? sheet.getRange(1, 1).getValue() : "";
       if (firstCell !== headers[0] || currentCols < headers.length) {
@@ -84,18 +84,17 @@ function doPost(e) {
     var timeFormatted = Utilities.formatDate(now, "Europe/Moscow", "yyyy-MM-dd HH:mm:ss");
     var receiptToken = data.receiptToken || data.sessionToken || "НЕТ_ТОКЕНА";
 
-    var answers = Array.isArray(data.answers) ? data.answers : [];
-
-    // Извлечение данных по каждой из 4 задач
+    // Извлечение данных по каждой задаче
     var taskColumns = [];
     var notesList = [];
 
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= totalTasks; i++) {
       var ans = answers[i - 1] || {};
 
       // 1. Идентификатор и тема
-      var tId = ans.taskId ? ("[" + ans.taskId + "] " + (ans.categoryName || ans.title || ("Раздел " + i))) 
-                           : (data["task" + i + "_id"] ? ("[" + data["task" + i + "_id"] + "] " + (data["task" + i + "_category"] || "")) : ("Раздел " + i));
+      var tId = ans.taskId 
+        ? ("[" + ans.taskId + "] " + (ans.categoryName || ans.title || ("Раздел " + i))) 
+        : (data["task" + i + "_id"] ? ("[" + data["task" + i + "_id"] + "] " + (data["task" + i + "_category"] || "")) : ("Раздел " + i));
 
       // 2. Исходное условие и вопрос задачи
       var tQuestion = "";
@@ -134,7 +133,7 @@ function doPost(e) {
       // 5. Результат проверки и баллы
       var tPoints = "";
       if (ans.points !== undefined) {
-        tPoints = ans.points + " б. (" + (ans.isCorrect ? "Верно" : "Неверно") + ")";
+        tPoints = Math.round(ans.points * 10) / 10 + " б. (" + (ans.isCorrect ? "Верно" : "Неверно") + ")";
       } else if (data["task" + i + "_points"] !== undefined) {
         tPoints = data["task" + i + "_points"] + " б. (" + (data["task" + i + "_isCorrect"] || "") + ")";
       } else {
@@ -143,8 +142,8 @@ function doPost(e) {
 
       taskColumns.push(tId, tQuestion, tUserAns, tExpected, tPoints);
 
-      if (ans.userNotes && ans.userNotes.trim()) {
-        notesList.push("Задача " + i + ": " + ans.userNotes.trim());
+      if (ans.userNotes && String(ans.userNotes).trim()) {
+        notesList.push("Задача " + i + ": " + String(ans.userNotes).trim());
       } else if (data["task" + i + "_notes"] && String(data["task" + i + "_notes"]).trim()) {
         notesList.push("Задача " + i + ": " + String(data["task" + i + "_notes"]).trim());
       }
@@ -156,7 +155,7 @@ function doPost(e) {
       : answers.filter(function(a) { return a.isCorrect; }).length;
 
     var timeSpent = data.timeSpentFormatted || (data.elapsedSeconds ? Math.floor(data.elapsedSeconds / 60) + " мин " + (data.elapsedSeconds % 60) + " сек" : "15 мин");
-    var submitMode = data.isAutoSubmit ? "Автосдача (таймаут 15 мин)" : "Штатная сдача студентом";
+    var submitMode = data.isAutoSubmit ? "Автосдача (таймаут)" : "Штатная сдача студентом";
 
     var allNotes = notesList.length > 0 ? notesList.join("\n") : "—";
 
@@ -168,7 +167,7 @@ function doPost(e) {
       data.group || "",
       data.specialty || "—",
       totalScoreVal + " из 100",
-      correctCountVal + " из 4",
+      correctCountVal + " из " + totalTasks,
       timeSpent,
       submitMode
     ].concat(taskColumns).concat([allNotes]);
@@ -176,13 +175,14 @@ function doPost(e) {
     sheet.appendRow(row);
 
     var lastRowIdx = sheet.getLastRow();
-    // Выравнивание ячеек по верхнему краю для комфортного чтения условий
+    // Выравнивание по верхнему краю для комфортного чтения больших текстов условий
     sheet.getRange(lastRowIdx, 1, 1, row.length).setVerticalAlignment("top");
 
     var response = {
       status: "success",
+      sheetName: sheetName,
       receiptToken: receiptToken,
-      message: "Ответы, исходные вопросы и квитанция успешно сохранены в Google Таблице",
+      message: "Ответы (" + totalTasks + " задач), исходные вопросы и квитанция успешно сохранены в листе [" + sheetName + "]",
       timestamp: timeFormatted,
       rowNumber: lastRowIdx
     };
@@ -213,7 +213,8 @@ function formatHeaderRow(sheet, numColumns) {
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({
     status: "ok",
-    service: "RUDN Microbiology Testing Service (v2.1 with Receipt & Questions)",
+    service: "RUDN Microbiology & Chemistry Testing Gateway (v2.2 Universal)",
+    supportedSeminars: ["Семинар 0 (12 задач)", "Семинар 1 (4 задачи)"],
     timestamp: new Date().toISOString()
   })).setMimeType(ContentService.MimeType.JSON);
 }
