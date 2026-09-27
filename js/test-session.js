@@ -9,13 +9,14 @@ const TestSession = {
       surname: '',
       name: '',
       group: '',
-      specialty: ''
+      specialty: '',
+      topic: 'sem0'
     },
     tasks: [],
     startTime: null,
     endTime: null,
-    totalSeconds: CONFIG.TEST_DURATION_MINUTES * 60,
-    remainingSeconds: CONFIG.TEST_DURATION_MINUTES * 60,
+    totalSeconds: 30 * 60,
+    remainingSeconds: 30 * 60,
     timerInterval: null,
     isSubmitted: false
   },
@@ -39,6 +40,20 @@ const TestSession = {
         }
       });
     }
+
+    const topicSelect = document.getElementById('student-test-topic');
+    if (topicSelect) {
+      topicSelect.addEventListener('change', (e) => {
+        const desc = document.getElementById('test-topic-description');
+        if (desc) {
+          if (e.target.value === 'sem0') {
+            desc.innerHTML = '⏱ <strong>30 минут</strong> • <strong>12 расчетных задач</strong> (по 2 из 6 категорий базовой химии) • Максимум: 100 баллов';
+          } else {
+            desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>4 расчетные задачи</strong> (по 1 из 4 разделов гомеостаза) • Максимум: 100 баллов';
+          }
+        }
+      });
+    }
   },
 
   /**
@@ -51,7 +66,8 @@ const TestSession = {
         const parsed = JSON.parse(saved);
         if (!parsed.isSubmitted && parsed.startTime) {
           const elapsed = Math.floor((Date.now() - parsed.startTime) / 1000);
-          const remaining = (CONFIG.TEST_DURATION_MINUTES * 60) - elapsed;
+          const duration = parsed.totalSeconds || (15 * 60);
+          const remaining = duration - elapsed;
           if (remaining > 0) {
             this.state = parsed;
             this.state.remainingSeconds = remaining;
@@ -76,12 +92,14 @@ const TestSession = {
     const nameInput = document.getElementById('student-name');
     const groupInput = document.getElementById('student-group');
     const specialtyInput = document.getElementById('student-specialty');
+    const topicInput = document.getElementById('student-test-topic');
     const errorBox = document.getElementById('reg-error-box');
 
     const surname = surnameInput ? surnameInput.value.trim() : '';
     const name = nameInput ? nameInput.value.trim() : '';
     const group = groupInput ? groupInput.value.trim() : '';
     const specialty = specialtyInput ? specialtyInput.value : '';
+    const topic = topicInput ? topicInput.value : 'sem0';
 
     if (!surname || !name || !group) {
       if (errorBox) {
@@ -93,10 +111,19 @@ const TestSession = {
 
     if (errorBox) errorBox.style.display = 'none';
 
-    this.state.student = { surname, name, group, specialty };
-    this.state.tasks = TaskBank.getRandomTasks();
+    const isSem0 = topic === 'sem0';
+    const durationMinutes = isSem0 ? 30 : 15;
+
+    this.state.student = { surname, name, group, specialty, topic };
+    
+    if (isSem0) {
+      this.state.tasks = typeof TaskBankSem0 !== 'undefined' ? TaskBankSem0.getRandomTasks() : [];
+    } else {
+      this.state.tasks = typeof TaskBank !== 'undefined' ? TaskBank.getRandomTasks() : [];
+    }
+
     this.state.startTime = Date.now();
-    this.state.totalSeconds = CONFIG.TEST_DURATION_MINUTES * 60;
+    this.state.totalSeconds = durationMinutes * 60;
     this.state.remainingSeconds = this.state.totalSeconds;
     this.state.isSubmitted = false;
 
@@ -107,6 +134,7 @@ const TestSession = {
     this.renderTasks();
     this.startTimer();
   },
+
 
   /**
    * Переключение между шагами теста (Регистрация -> Задачи -> Квитанция)
@@ -132,13 +160,15 @@ const TestSession = {
   },
 
   /**
-   * Отрисовка 4 задач в Carbon-стиле
+   * Отрисовка задач в Carbon-стиле
    */
   renderTasks() {
     const container = document.getElementById('test-tasks-container');
     if (!container) return;
 
     container.innerHTML = '';
+    const totalCount = this.state.tasks.length;
+    const ptsPerTask = (100 / totalCount).toFixed(1);
 
     this.state.tasks.forEach((task, idx) => {
       const card = document.createElement('div');
@@ -146,7 +176,7 @@ const TestSession = {
       card.id = `task-card-${task.id}`;
 
       card.innerHTML = `
-        <div class="task-card__badge">${task.badge || `Раздел ${task.category}`} • Задача ${idx + 1} из 4 • 25 баллов</div>
+        <div class="task-card__badge">${task.badge || `Раздел ${task.category}`} • Задача ${idx + 1} из ${totalCount} • ${ptsPerTask} баллов</div>
         <h4 class="task-card__title">${task.title}</h4>
         <div class="cds--tile__subtitle" style="margin-bottom: 0.75rem;">${task.categoryName || `Раздел ${task.category}`}</div>
         
@@ -195,7 +225,7 @@ const TestSession = {
   },
 
   /**
-   * Таймер обратного отсчета (15 минут)
+   * Таймер обратного отсчета
    */
   startTimer() {
     this.updateTimerDisplay();
@@ -260,16 +290,20 @@ const TestSession = {
     const secsSpent = elapsedSeconds % 60;
     const timeSpentFormatted = `${minsSpent} мин ${secsSpent} сек`;
 
+    const isSem0 = this.state.student.topic === 'sem0';
+    const bank = isSem0 && typeof TaskBankSem0 !== 'undefined' ? TaskBankSem0 : (typeof TaskBank !== 'undefined' ? TaskBank : null);
+    const ptsPerTask = 100 / (this.state.tasks.length || 1);
+
     // Сбор ответов
     const answers = this.state.tasks.map((task) => {
       const input = document.getElementById(`ans-${task.id}`);
       const notes = document.getElementById(`notes-${task.id}`);
       const rawVal = input ? input.value : '';
-      const userVal = TaskBank.parseNumericInput(rawVal);
+      const userVal = bank ? bank.parseNumericInput(rawVal) : parseFloat(rawVal);
       const userNotes = notes ? notes.value.trim() : '';
 
       // Метрика корректности (вспомогательно для аналитики преподавателя)
-      const isCorrect = !isNaN(userVal) && TaskBank.validateAnswer(task, userVal);
+      const isCorrect = !isNaN(userVal) && bank && bank.validateAnswer(task, userVal);
 
       return {
         taskId: task.id,
@@ -284,26 +318,29 @@ const TestSession = {
         userRawInput: rawVal,
         userNotes,
         isCorrect,
-        points: isCorrect ? CONFIG.POINTS_PER_TASK : 0
+        points: isCorrect ? ptsPerTask : 0
       };
     });
 
     const correctCount = answers.filter(a => a.isCorrect).length;
-    const totalScore = answers.reduce((sum, a) => sum + a.points, 0);
+    const totalScore = Math.round(answers.reduce((sum, a) => sum + a.points, 0));
 
     const payload = {
       surname: this.state.student.surname,
       name: this.state.student.name,
       group: this.state.student.group,
       specialty: this.state.student.specialty,
+      topic: this.state.student.topic || 'sem0',
+      topicTitle: isSem0 ? 'Семинар 0: Базовая химия' : 'Семинар 1: Физико-химия гомеостаза',
       answers,
       correctCount,
       totalScore,
-      maxScore: CONFIG.MAX_SCORE,
+      maxScore: 100,
       isAutoSubmit,
       timeSpentFormatted,
       elapsedSeconds
     };
+
 
     // Блокируем кнопку отправки и показываем лоадер
     const submitBtn = document.getElementById('btn-submit-test');

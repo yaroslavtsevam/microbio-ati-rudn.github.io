@@ -13,11 +13,13 @@ const App = {
   init() {
     this.initTheme();
     this.initNavigation();
-    this.initSeminarTabs();
+    this.initTabs();
     this.initCatalogFilters();
 
-    // Инициализация калькуляторов и модуля тестирования
+    // Инициализация калькуляторов, плеера слайдов и модуля тестирования
     if (typeof Calculators !== 'undefined') Calculators.init();
+    if (typeof CalculatorsSem0 !== 'undefined') CalculatorsSem0.init();
+    if (typeof SlidesPlayer !== 'undefined') SlidesPlayer.init();
     if (typeof TestSession !== 'undefined') TestSession.init();
 
     // Первичная компиляция математических формул KaTeX
@@ -69,7 +71,7 @@ const App = {
       });
     });
 
-    // Делегирование ссылок на переход внутри карточек
+    // Делегирование ссылок на переход внутри карточек и кнопок
     document.addEventListener('click', (e) => {
       const target = e.target.closest('[data-go-to]');
       if (target) {
@@ -83,7 +85,8 @@ const App = {
 
   handleRouteHash() {
     const hash = window.location.hash.replace('#', '');
-    if (hash === 'seminar1' || hash === 'test' || hash === 'catalog') {
+    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'test'];
+    if (validViews.includes(hash)) {
       this.switchView(hash);
     } else {
       this.switchView('catalog');
@@ -106,6 +109,8 @@ const App = {
     // Скрытие / показ представлений
     const views = {
       catalog: document.getElementById('view-catalog'),
+      lectures: document.getElementById('view-lectures'),
+      seminar0: document.getElementById('view-seminar0'),
       seminar1: document.getElementById('view-seminar1'),
       test: document.getElementById('view-test')
     };
@@ -116,30 +121,39 @@ const App = {
       }
     });
 
+    // Специальная инициализация при переходе в лекции
+    if (viewName === 'lectures' && typeof SlidesPlayer !== 'undefined') {
+      SlidesPlayer.renderSlide(SlidesPlayer.currentIndex);
+    }
+
     this.renderMath();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
   /* ------------------------------------------------------------------------
-     3. ТАБЫ ВНУТРИ СЕМИНАРА 1
+     3. ТАБЫ ВНУТРИ СЕМИНАРОВ 0 И 1
      ------------------------------------------------------------------------ */
-  initSeminarTabs() {
-    const tabs = document.querySelectorAll('.cds--tabs .cds--tab');
-    const panels = document.querySelectorAll('.cds--tab-panel');
+  initTabs() {
+    const tabContainers = document.querySelectorAll('.cds--tabs');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetId = tab.getAttribute('data-tab-target');
+    tabContainers.forEach(container => {
+      const tabs = container.querySelectorAll('.cds--tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = tab.getAttribute('data-tab-target');
+          const parentView = tab.closest('main') || document;
+          const panels = parentView.querySelectorAll('.cds--tab-panel');
 
-        tabs.forEach(t => t.classList.remove('cds--tab--selected'));
-        panels.forEach(p => p.classList.remove('cds--tab-panel--active'));
+          tabs.forEach(t => t.classList.remove('cds--tab--selected'));
+          panels.forEach(p => p.classList.remove('cds--tab-panel--active'));
 
-        tab.classList.add('cds--tab--selected');
-        const targetPanel = document.getElementById(targetId);
-        if (targetPanel) {
-          targetPanel.classList.add('cds--tab-panel--active');
-          this.renderMath(targetPanel);
-        }
+          tab.classList.add('cds--tab--selected');
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add('cds--tab-panel--active');
+            this.renderMath(targetPanel);
+          }
+        });
       });
     });
   },
@@ -166,7 +180,7 @@ const App = {
   },
 
   /* ------------------------------------------------------------------------
-     4. ФИЛЬТРАЦИЯ КАРТОЧЕК В КАТАЛОГЕ СЕМИНАРОВ
+     4. ФИЛЬТРАЦИЯ КАРТОЧЕК В КАТАЛОГЕ
      ------------------------------------------------------------------------ */
   initCatalogFilters() {
     const filterBtns = document.querySelectorAll('.catalog-filter-btn');

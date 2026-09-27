@@ -7,10 +7,11 @@ const GDriveSync = {
   /**
    * Генерация уникального контрольного токена квитанции
    */
-  generateReceiptToken() {
+  generateReceiptToken(topic = 'sem1') {
+    const prefix = topic === 'sem0' ? 'RUDN-CHEM' : 'RUDN-MB';
     const timestamp = Date.now().toString(36).toUpperCase();
     const randomHex = Math.random().toString(36).substring(2, 6).toUpperCase();
-    return `RUDN-MB-${timestamp}-${randomHex}`;
+    return `${prefix}-${timestamp}-${randomHex}`;
   },
 
   /**
@@ -20,7 +21,8 @@ const GDriveSync = {
    * @returns {Promise<Object>} Результат отправки
    */
   async submitResults(payload) {
-    const receiptToken = this.generateReceiptToken();
+    const receiptToken = this.generateReceiptToken(payload.topic || 'sem1');
+
 
     // Формирование плоских полей задач для совместимости со строгим табличным представлением
     const flatTaskFields = {};

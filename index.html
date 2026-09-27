@@ -30,17 +30,27 @@
         <ul class="cds--header__nav">
           <li class="cds--header__menu-item">
             <a href="#catalog" class="cds--header__menu-link cds--header__menu-link--active" data-nav="catalog">
-              Каталог курса (1–18)
+              Каталог курса (0–18)
+            </a>
+          </li>
+          <li class="cds--header__menu-item">
+            <a href="#lectures" class="cds--header__menu-link" data-nav="lectures">
+              Лекции (1)
+            </a>
+          </li>
+          <li class="cds--header__menu-item">
+            <a href="#seminar0" class="cds--header__menu-link" data-nav="seminar0">
+              Семинар 0 (Химия)
             </a>
           </li>
           <li class="cds--header__menu-item">
             <a href="#seminar1" class="cds--header__menu-link" data-nav="seminar1">
-              Семинар 1
+              Семинар 1 (Гомеостаз)
             </a>
           </li>
           <li class="cds--header__menu-item">
             <a href="#test" class="cds--header__menu-link" data-nav="test">
-              Экспресс-контроль (15 мин)
+              Экспресс-контроль
             </a>
           </li>
         </ul>
@@ -72,32 +82,40 @@
       </p>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="cds--btn cds--btn--primary" data-go-to="seminar1">
-          <span>Открыть Семинар 1 (Активен)</span>
+        <button class="cds--btn cds--btn--primary" data-go-to="seminar0">
+          <span>Семинар 0: Базовая химия (Пререквизит)</span>
+          <span>🧪</span>
+        </button>
+        <button class="cds--btn cds--btn--secondary" data-go-to="lectures">
+          <span>Лекция 1: Слайды и презентация</span>
+          <span>📑</span>
+        </button>
+        <button class="cds--btn cds--btn--tertiary" data-go-to="seminar1">
+          <span>Семинар 1: Гомеостаз и консерванты</span>
           <span>→</span>
         </button>
-        <button class="cds--btn cds--btn--tertiary" data-go-to="test">
-          <span>Экспресс-контроль (15 мин)</span>
+        <button class="cds--btn cds--btn--ghost" data-go-to="test">
+          <span>Экспресс-контроль (30 мин)</span>
           <span>⏱</span>
         </button>
       </div>
 
       <div class="hero-banner__stats">
         <div class="hero-stat">
-          <div class="hero-stat__value">18</div>
-          <div class="hero-stat__label">Семинарских занятий</div>
+          <div class="hero-stat__value">19</div>
+          <div class="hero-stat__label">Семинаров (0–18)</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat__value">36</div>
-          <div class="hero-stat__label">Академических часов</div>
+          <div class="hero-stat__value">45</div>
+          <div class="hero-stat__label">Слайдов Лекции 1</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat__value">12</div>
-          <div class="hero-stat__label">Лабораторных работ Dry Lab</div>
+          <div class="hero-stat__value">8</div>
+          <div class="hero-stat__label">Инженерных калькуляторов</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat__value">100%</div>
-          <div class="hero-stat__label">Цифровое моделирование</div>
+          <div class="hero-stat__value">80</div>
+          <div class="hero-stat__label">Задач в базе контроля</div>
         </div>
       </div>
     </div>
@@ -120,6 +138,52 @@
     <!-- Сетка карточек 18 семинаров -->
     <div class="cds--row" id="catalog-cards-container">
       
+      <!-- Семинар 0: Фундаментальная химия -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-interactive-01);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--blue">Семинар 0 • Пререквизит</span>
+            <span class="cds--tag cds--tag--green">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Фундаментальные основы физической и аналитической химии</h3>
+          <div class="cds--tile__subtitle">Размерности концентраций, разведения, кинетика, равновесие, диссоциация и буферы</div>
+          <div class="cds--tile__content">
+            Строгий расчет молярности, массовой доли, моляльности, титра, нормальности; закон разбавления и крест Пирсона; кинетика 1-го порядка и Аррениус; закон Оствальда, Kw, pH, гидролиз солей и буферные смеси. Включает 12 примеров и 4 калькулятора.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar0">
+              <span>Изучить Семинар 0 (12 примеров)</span>
+              <span>🧪 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Лекция 1: Морфология и ультраструктура -->
+      <div class="cds--col-4 seminar-catalog-card" data-category="intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-tag-text-purple);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--purple">Лекция 1 • Модуль 1</span>
+            <span class="cds--tag cds--tag--green">АКТИВНА</span>
+          </div>
+          <h3 class="cds--tile__title">Морфология, анатомия и классификация микроорганизмов</h3>
+          <div class="cds--tile__subtitle">Ультраструктура бактерий, грибов и вирусов (45 слайдов)</div>
+          <div class="cds--tile__content">
+            Полный иллюстративный атлас ультраструктур: пептидогликан, спорогенез, жгутиковый мотор, окраска по Граму, дрожжи и фаги. Доступен онлайн-плеер и скачивание в PPTX и PDF.
+          </div>
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--secondary" style="flex: 1;" data-go-to="lectures">
+              <span>Слайды</span>
+              <span>📑</span>
+            </button>
+            <a href="assets/presentations/Lecture_01_Microbiology_fin.pptx" download class="cds--btn cds--btn--sm cds--btn--ghost" title="Скачать PPTX">
+              <span>PPTX</span>
+              <span>📥</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Семинар 1 -->
       <div class="cds--col-4 seminar-catalog-card" data-category="intro">
         <div class="cds--tile cds--tile--active">
@@ -453,6 +517,845 @@
   <!-- =====================================================================
        3. ПРЕДСТАВЛЕНИЕ 2: СЕМИНАР 1 (МАТЕРИАЛЫ ДЛЯ СТУДЕНТОВ)
        ===================================================================== -->
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ 2: ЛЕКЦИОННЫЙ РАЗДЕЛ (ИНТЕРАКТИВНЫЙ ПЛЕЕР СЛАЙДОВ)
+       ===================================================================== -->
+  <main id="view-lectures" class="cds--grid" style="display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Лекционный комплекс • Модуль 1</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Лекция 1: Морфология, анатомия и классификация микроорганизмов
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Ультраструктура бактерий, пептидогликан, спорогенез, жгутиковый аппарат, микология и вирусология • 45 слайдов • 26 научных иллюстраций высокого разрешения (200 DPI)
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="assets/presentations/Lecture_01_Microbiology_fin.pptx" download class="cds--btn cds--btn--primary">
+          <span>Скачать презентацию (PPTX, 9.8 МБ)</span>
+          <span>📥</span>
+        </a>
+        <a href="assets/pdf/Lecture_01_Microbiology.pdf" download class="cds--btn cds--btn--secondary">
+          <span>Скачать слайды (PDF, 14.7 МБ)</span>
+          <span>📄</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Интерактивный плеер презентации -->
+    <div class="presentation-wrapper" id="presentation-player-wrapper">
+      <!-- Панель управления плеером -->
+      <div class="presentation-toolbar">
+        <div class="presentation-toolbar__left">
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--secondary" id="btn-slide-prev" title="Предыдущий слайд (←)">
+            <span>← Назад</span>
+          </button>
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--primary" id="btn-slide-next" title="Следующий слайд (→ или Space)">
+            <span>Вперед →</span>
+          </button>
+          <span class="cds--tag cds--tag--blue" id="slide-counter-badge">1 / 45</span>
+        </div>
+
+        <div class="presentation-toolbar__right">
+          <label for="select-slide-jump" class="cds--label" style="margin: 0; font-size: 0.75rem;">Перейти к слайду:</label>
+          <select class="cds--select-input" id="select-slide-jump" style="max-width: 320px; font-size: 0.8125rem; padding: 0.25rem 0.5rem; height: 32px;">
+            <!-- Заполняется динамически через slides-player.js -->
+          </select>
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--ghost" id="btn-slide-fullscreen" title="На весь экран (F)">
+            <span>⛶ Полный экран</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Прогресс-бар -->
+      <div class="slide-progress-container">
+        <div class="slide-progress-bar" id="slide-progress-fill"></div>
+      </div>
+
+      <!-- Контейнер слайда (16:9) -->
+      <div class="slide-viewport" id="slide-viewport">
+        <!-- Слайд рендерится через SlidesPlayer.js -->
+      </div>
+
+      <!-- Футер плеера с подсказками клавиш -->
+      <div class="presentation-footer-bar">
+        <div>
+          <strong>Управление с клавиатуры:</strong> <kbd>←</kbd> / <kbd>→</kbd> — переключение слайдов • <kbd>Space</kbd> — следующий • <kbd>F</kbd> — полный экран • <kbd>Home</kbd> / <kbd>End</kbd> — в начало / конец
+        </div>
+        <div>
+          Кафедра техносферной безопасности АТИ РУДН • 2026
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ 3: СЕМИНАР 0 (ФУНДАМЕНТАЛЬНАЯ ХИМИЯ)
+       ===================================================================== -->
+  <main id="view-seminar0" class="cds--grid" style="display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Семинар 0 • Вводный пререквизит • Общая и аналитическая химия</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Фундаментальные основы физической и аналитической химии
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Химические размерности концентраций, правила разведений и смешивания, кинетика реакций, химическое равновесие, диссоциация, Kw, pH, гидролиз и буферные растворы
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="assets/pdf/student_handout_sem0.pdf" download class="cds--btn cds--btn--secondary">
+          <span>Скачать раздатку (PDF)</span>
+          <span>📄</span>
+        </a>
+        <button class="cds--btn cds--btn--primary" data-go-to="test">
+          <span>Экспресс-контроль по химии (30 мин)</span>
+          <span>⏱</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Вкладки Семинара 0 -->
+    <div class="cds--tabs" role="tablist">
+      <button class="cds--tab cds--tab--selected" data-tab-target="sem0-tab-theory" role="tab">
+        1. Теория и размерности (6 разделов)
+      </button>
+      <button class="cds--tab" data-tab-target="sem0-tab-examples" role="tab">
+        2. Разобранные примеры (12 задач)
+      </button>
+      <button class="cds--tab" data-tab-target="sem0-tab-calculators" role="tab">
+        3. Инженерные калькуляторы (4 шт.)
+      </button>
+      <button class="cds--tab" data-tab-target="sem0-tab-tables" role="tab">
+        4. Справочные таблицы
+      </button>
+    </div>
+
+    <!-- ТАБ 1: ТЕОРИЯ И РАЗМЕРНОСТИ -->
+    <section id="sem0-tab-theory" class="cds--tab-panel cds--tab-panel--active">
+      
+      <!-- Раздел 0.1 -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 0.1</div>
+        <h2 class="example-box__title">Базовые химические величины и размерности концентраций</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Концентрация — ключевая количественная характеристика раствора. В химических и микробиологических расчетах используются следующие взаимосвязанные величины:
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="margin-bottom: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">1. Молярная концентрация ($C_M$ или $M$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Количество растворенного вещества в $1\text{ л}$ раствора:
+              </p>
+              <div class="formula-box">$$C_M = \frac{n}{V} = \frac{m}{M \cdot V} \quad [\text{моль/л}, \text{ М}]$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0;">
+                $1\text{ мМ} = 10^{-3}\text{ М}$, $1\text{ мкМ} = 10^{-6}\text{ М}$.
+              </p>
+            </div>
+
+            <div class="slide-info-card" style="margin-bottom: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">2. Массовая доля ($\omega, \%$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Отношение массы растворенного вещества к общей массе раствора:
+              </p>
+              <div class="formula-box">$$\omega\% = \frac{m_{\text{в-ва}}}{m_{\text{р-ра}}} \times 100\% = \frac{m_{\text{в-ва}}}{V \cdot \rho} \times 100\%$$</div>
+            </div>
+
+            <div class="slide-info-card">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">3. Массовая концентрация ($C_m$) и Титр ($T$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Массовая концентрация: $C_m = m/V$ [г/л, мг/л]. Титр — масса вещества в $1\text{ мл}$ раствора:
+              </p>
+              <div class="formula-box">$$T = \frac{m_{\text{в-ва}}}{V \text{ (мл)}} = \frac{C_M \cdot M}{1000} \quad [\text{г/мл}]$$</div>
+            </div>
+          </div>
+
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="margin-bottom: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">4. Моляльность ($m$ или $b$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Число молей вещества на $1\text{ кг}$ чистого растворителя (не зависит от температуры):
+              </p>
+              <div class="formula-box">$$m = \frac{n_{\text{в-ва}}}{m_{\text{растворителя}} \text{ (кг)}} = \frac{1000 \cdot \omega\%}{M \cdot (100 - \omega\%)}$$</div>
+            </div>
+
+            <div class="slide-info-card" style="margin-bottom: 1rem;">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">5. Мольная доля ($\chi_i$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Доля молей данного компонента от суммарного количества всех компонентов:
+              </p>
+              <div class="formula-box">$$\chi_i = \frac{n_i}{\sum n_j} = \frac{n_{\text{в-ва}}}{n_{\text{в-ва}} + n_{\text{воды}}}$$</div>
+            </div>
+
+            <div class="slide-info-card">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">6. Нормальность ($C_N$)</h4>
+              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                Молярная концентрация эквивалента ($f_{\text{экв}}$ — фактор эквивалентности):
+              </p>
+              <div class="formula-box">$$C_N = \frac{C_M}{f_{\text{экв}}} = \frac{10 \cdot \omega\% \cdot \rho}{M \cdot f_{\text{экв}}} \quad [\text{н.}, \text{ моль-экв/л}]$$</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background-color: var(--cds-layer-02); padding: 1rem 1.25rem; border: 1px solid var(--cds-border-subtle-01);">
+          <h4 style="margin: 0 0 0.5rem 0;">Сводная формула связи молярности $C_M$ и массовой доли $\omega\%$ через плотность $\rho$:</h4>
+          <div class="formula-box" style="font-size: 1.125rem;">$$C_M = \frac{10 \cdot \omega\% \cdot \rho}{M} \iff \omega\% = \frac{C_M \cdot M}{10 \cdot \rho}$$</div>
+        </div>
+      </div>
+
+      <!-- Раздел 0.2 -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 0.2</div>
+        <h2 class="example-box__title">Приготовление, разбавление и смешивание растворов</h2>
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">1. Закон разбавления</h4>
+            <p style="font-size: 0.875rem; line-height: 1.5;">
+              При добавлении растворителя количество вещества остается неизменным:
+            </p>
+            <div class="formula-box">$$C_1 V_1 = C_2 V_2 \implies V_1 = \frac{C_2 V_2}{C_1}, \quad DF = \frac{C_1}{C_2} = \frac{V_2}{V_1}$$</div>
+            <p style="font-size: 0.8125rem; color: var(--cds-text-secondary);">
+              При серийном $k$-ступенчатом разведении: $DF_{\text{общ}} = DF_1 \times DF_2 \times \dots \times DF_k$.
+            </p>
+          </div>
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">2. Правило смешивания (Крест Пирсона)</h4>
+            <p style="font-size: 0.875rem; line-height: 1.5;">
+              Для получения раствора с концентрацией $\omega_3$ смешиванием растворов $\omega_1$ и $\omega_2$:
+            </p>
+            <div class="formula-box">$$\frac{m_1}{m_2} = \frac{|\omega_3 - \omega_2|}{|\omega_1 - \omega_3|}$$</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Раздел 0.3 -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 0.3</div>
+        <h2 class="example-box__title">Химическая кинетика и температурная зависимость</h2>
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">1. Интегральные кинетические уравнения</h4>
+            <p style="font-size: 0.875rem; line-height: 1.5;">
+              <strong>1-й порядок:</strong> $\ln\frac{[A]_0}{[A]_t} = k t \implies [A]_t = [A]_0 e^{-kt}$.<br>
+              <strong>Период полупревращения ($t_{1/2}$):</strong>
+            </p>
+            <div class="formula-box">$$t_{1/2} = \frac{\ln 2}{k} \approx \frac{0.69315}{k} \quad (\text{не зависит от } [A]_0)$$</div>
+          </div>
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">2. Температура: Вант-Гофф и Аррениус</h4>
+            <div class="formula-box">$$\frac{k_2}{k_1} = \gamma^{\frac{T_2 - T_1}{10}} = Q_{10}^{\frac{\Delta T}{10}}$$</div>
+            <div class="formula-box">$$\ln\left(\frac{k_2}{k_1}\right) = \frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right) = \frac{E_a}{R} \frac{T_2 - T_1}{T_1 T_2}$$</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Раздел 0.4 -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Раздел 0.4</div>
+        <h2 class="example-box__title">Химическое равновесие и принцип Ле Шателье</h2>
+        <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+          Для обратимой реакции $aA + bB \rightleftharpoons cC + dD$ закон действующих масс определяет константу равновесия:
+        </p>
+        <div class="formula-box">$$K_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}, \quad K_p = K_c (R T)^{\Delta n}$$</div>
+        <p style="font-size: 0.875rem; line-height: 1.5;">
+          <strong>Принцип Ле Шателье:</strong> внешнее воздействие (изменение $C, T, P$) смещает равновесие в сторону процесса, компенсирующего это воздействие.
+        </p>
+      </div>
+
+      <!-- Раздел 0.5 & 0.6 -->
+      <div class="example-box">
+        <div class="example-box__badge">Разделы 0.5 & 0.6</div>
+        <h2 class="example-box__title">Диссоциация, $pH$, гидролиз солей и буферные растворы</h2>
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">Закон разведения Оствальда и $pH$</h4>
+            <div class="formula-box">$$\alpha = \sqrt{\frac{K_{dis}}{C}}, \quad [H^+] = \sqrt{K_a \cdot C} \implies pH = \frac{1}{2}(pK_a - \lg C)$$</div>
+            <div class="formula-box">$$K_w = [H^+][OH^-] = 1.0 \times 10^{-14} \implies pH + pOH = 14.00$$</div>
+          </div>
+          <div class="cds--col-6">
+            <h4 style="color: var(--cds-interactive-01); margin-bottom: 0.5rem;">Буфер Гендерсона-Хассельбаха</h4>
+            <div class="formula-box">$$pH = pK_a + \lg\frac{[\text{Соль}]}{[\text{Кислота}]}, \quad \beta = \frac{\Delta C_{\text{щелочи}}}{\Delta pH}$$</div>
+            <p style="font-size: 0.8125rem; color: var(--cds-text-secondary);">
+              <strong>Гидролиз солей ($CH_3COONa$):</strong> $K_г = \frac{K_w}{K_a}$, $pH = 7 + \frac{1}{2}pK_a + \frac{1}{2}\lg C_{\text{соли}}$.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТАБ 2: 12 РАЗОБРАННЫХ ПРИМЕРОВ -->
+    <section id="sem0-tab-examples" class="cds--tab-panel">
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">12 подробных пошаговых разобранных задач</h3>
+        <p style="color: var(--cds-text-secondary);">
+          Все примеры построены строго на базовых химических соединениях ($NaCl, HCl, NaOH, H_2SO_4, CuSO_4, KMnO_4, H_2O_2, CH_3COOH$).
+        </p>
+      </div>
+
+      <!-- Пример 0.1 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.1. Полный расчет характеристик раствора NaCl</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 0.1: Концентрации</span>
+        </div>
+        <div class="example-card__scenario">
+          В $450.0\text{ г}$ воды растворили $29.22\text{ г}$ $NaCl$ ($M = 58.44\text{ г/моль}$). Плотность раствора $\rho = 1.040\text{ г/мл}$.<br>
+          <strong>Найти:</strong> $\omega\%$, молярность $C_M$, массовую концентрацию $C_m$, титр $T$, моляльность $m$ и мольную долю $\chi(NaCl)$.
+        </div>
+        <div class="example-card__solution">
+          1. Масса раствора: $m_{\text{р-ра}} = 29.22 + 450.0 = 479.22\text{ г}$.<br>
+          2. Массовая доля: $\omega\% = (29.22 / 479.22) \times 100\% = \mathbf{6.10\%}$.<br>
+          3. Объем раствора: $V = 479.22 / 1.040 = 460.79\text{ мл} = 0.4608\text{ л}$.<br>
+          4. Количество вещества: $n = 29.22 / 58.44 = 0.5000\text{ моль}$.<br>
+          5. Молярность: $C_M = 0.5000 / 0.4608 = \mathbf{1.085\text{ моль/л}}$.<br>
+          6. Массовая концентрация: $C_m = 29.22 / 0.4608 = \mathbf{63.41\text{ г/л}}$. Титр $T = \mathbf{0.06341\text{ г/мл}}$.<br>
+          7. Моляльность: $m = 0.5000 / 0.450\text{ кг} = \mathbf{1.111\text{ моль/кг воды}}$.<br>
+          8. Мольная доля: $n(H_2O) = 450.0 / 18.015 = 24.979\text{ моль}$. $\chi = 0.5000 / (0.5000 + 24.979) = \mathbf{0.01962 \quad (1.96\%)}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $\omega = 6.10\%$; $C_M = 1.085\text{ М}$; $C_m = 63.41\text{ г/л}$; $T = 0.0634\text{ г/мл}$; $m = 1.111\text{ моль/кг}$; $\chi = 1.96\%$.
+        </div>
+      </div>
+
+      <!-- Пример 0.2 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.2. Пересчет концентрированной серной кислоты: нормальность и титр</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 0.1: Пересчеты</span>
+        </div>
+        <div class="example-card__scenario">
+          Концентрированная $H_2SO_4$ имеет $\omega = 96.0\%$ и $\rho = 1.8355\text{ г/мл}$ ($M = 98.08\text{ г/моль}$, $f_{\text{экв}} = 1/2$).<br>
+          <strong>Найти:</strong> $C_M$, нормальность $C_N$, титр $T$ и мольную долю $\chi(H_2SO_4)$.
+        </div>
+        <div class="example-card__solution">
+          1. $C_M = \frac{10 \cdot \omega \cdot \rho}{M} = \frac{10 \times 96.0 \times 1.8355}{98.08} = \mathbf{17.97\text{ моль/л}}$.<br>
+          2. $C_N = \frac{C_M}{f_{\text{экв}}} = \frac{17.966}{1/2} = \mathbf{35.93\text{ н. (моль-экв/л)}}$.<br>
+          3. $T = \frac{C_M \cdot M}{1000} = \frac{17.966 \times 98.08}{1000} = \mathbf{1.762\text{ г/мл}}$.<br>
+          4. В $100\text{ г}$ раствора: $n(H_2SO_4) = 96.0 / 98.08 = 0.9788\text{ моль}$, $n(H_2O) = 4.0 / 18.015 = 0.2220\text{ моль}$.<br>
+          $\chi = 0.9788 / (0.9788 + 0.2220) = \mathbf{0.8151 \quad (81.51\%)}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $C_M = 17.97\text{ М}$; $C_N = 35.93\text{ н.}$; $T = 1.762\text{ г/мл}$; $\chi = 81.51\%$.
+        </div>
+      </div>
+
+      <!-- Пример 0.3 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.3. Приготовление раствора из кристаллогидрата медного купороса</h4>
+          <span class="cds--tag cds--tag--blue">Разделы 0.1 & 0.2: Кристаллогидраты</span>
+        </div>
+        <div class="example-card__scenario">
+          Требуется приготовить $2.00\text{ л}$ $0.250\text{ М}$ раствора $CuSO_4$ из $CuSO_4 \cdot 5H_2O$ ($M_{\text{крист}} = 249.68\text{ г/моль}$). Плотность раствора $\rho = 1.035\text{ г/мл}$.<br>
+          <strong>Найти:</strong> массу кристаллогидрата и $\omega(CuSO_4)$ в растворе.
+        </div>
+        <div class="example-card__solution">
+          1. $n(CuSO_4) = 0.250\text{ моль/л} \times 2.00\text{ л} = 0.500\text{ моль}$.<br>
+          2. $m_{\text{крист}} = 0.500\text{ моль} \times 249.68\text{ г/моль} = \mathbf{124.84\text{ г}}$.<br>
+          3. Масса безводной соли: $m(CuSO_4) = 0.500 \times 159.61 = 79.805\text{ г}$.<br>
+          4. Масса раствора: $m_{\text{р-ра}} = 2000\text{ мл} \times 1.035\text{ г/мл} = 2070\text{ г}$.<br>
+          5. $\omega\% = (79.805 / 2070) \times 100\% = \mathbf{3.86\%}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: Навеска медного купороса = $124.84\text{ г}$; $\omega(CuSO_4) = 3.86\%$.
+        </div>
+      </div>
+
+      <!-- Пример 0.4 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.4. Закон разбавления: расчет аликвоты соляной кислоты</h4>
+          <span class="cds--tag cds--tag--green">Раздел 0.2: Разбавление</span>
+        </div>
+        <div class="example-card__scenario">
+          Из маточного раствора $2.50\text{ М}$ $HCl$ необходимо приготовить $750.0\text{ мл}$ $0.150\text{ М}$ раствора.<br>
+          <strong>Найти:</strong> аликвоту $V_1$ и объем воды.
+        </div>
+        <div class="example-card__solution">
+          1. $V_1 = \frac{C_2 V_2}{C_1} = \frac{0.150 \times 750.0}{2.50} = \mathbf{45.0\text{ мл}}$.<br>
+          2. $DF = C_1 / C_2 = 2.50 / 0.150 = 16.67$.<br>
+          3. $V(H_2O) = 750.0 - 45.0 = \mathbf{705.0\text{ мл}}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: Аликвота $V_1 = 45.0\text{ мл}$; объем воды = $705.0\text{ мл}$; $DF = 16.67$.
+        </div>
+      </div>
+
+      <!-- Пример 0.5 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.5. Правило креста Пирсона: смешивание двух растворов щелочи</h4>
+          <span class="cds--tag cds--tag--green">Раздел 0.2: Смешивание</span>
+        </div>
+        <div class="example-card__scenario">
+          Имеется $40.0\%$ раствор $NaOH$ ($\rho_1 = 1.430\text{ г/мл}$) и $5.0\%$ раствор $NaOH$ ($\rho_2 = 1.054\text{ г/мл}$). Требуется приготовить $600.0\text{ г}$ $15.0\%$ раствора.<br>
+          <strong>Найти:</strong> массы $m_1, m_2$ и объемы $V_1, V_2$ обоих растворов.
+        </div>
+        <div class="example-card__solution">
+          1. Части: $|15.0 - 5.0| = 10.0$ частей $40\%$ раствора; $|40.0 - 15.0| = 25.0$ частей $5\%$ раствора. Всего 35 частей.<br>
+          2. Масса одной части: $600.0 / 35.0 = 17.143\text{ г}$.<br>
+          3. $m_1 = 10.0 \times 17.143 = \mathbf{171.43\text{ г}}$ ($V_1 = 171.43 / 1.430 = \mathbf{119.9\text{ мл}}$).<br>
+          4. $m_2 = 25.0 \times 17.143 = \mathbf{428.57\text{ г}}$ ($V_2 = 428.57 / 1.054 = \mathbf{406.6\text{ мл}}$).
+        </div>
+        <div class="example-card__answer">
+          Ответ: Масса $40\%$ раствора = $171.43\text{ г}$ ($119.9\text{ мл}$); масса $5\%$ раствора = $428.57\text{ г}$ ($406.6\text{ мл}$).
+        </div>
+      </div>
+
+      <!-- Пример 0.6 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.6. Серийное десятикратное разведение раствора KMnO4</h4>
+          <span class="cds--tag cds--tag--green">Раздел 0.2: Серийные разведения</span>
+        </div>
+        <div class="example-card__scenario">
+          Раствор $KMnO_4$ с концентрацией $C_0 = 0.050\text{ М}$ разведен в 5 пробирках по схеме 1:10 ($1\text{ мл} + 9\text{ мл}$).<br>
+          <strong>Найти:</strong> концентрации в пробирках и общий фактор разведения $DF_{\text{общ}}$.
+        </div>
+        <div class="example-card__solution">
+          $C_1 = 5.0\text{ мМ}$, $C_2 = 500\text{ мкМ}$, $C_3 = 50\text{ мкМ}$, $C_4 = 5.0\text{ мкМ}$, $C_5 = 0.50\text{ мкМ} = 500\text{ нМ}$.<br>
+          $DF_{\text{общ}} = 10^5 = \mathbf{100\,000}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $C_5 = 0.50\text{ мкМ}$; $DF_{\text{общ}} = 100\,000$.
+        </div>
+      </div>
+
+      <!-- Пример 0.7 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.7. Кинетика 1-го порядка: разложение пероксида водорода</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 0.3: Кинетика</span>
+        </div>
+        <div class="example-card__scenario">
+          Разложение $H_2O_2$ протекает по 1-му порядку с $k = 3.50 \times 10^{-4}\text{ с}^{-1}$ ($25^\circ\text{C}$). $C_0 = 0.800\text{ М}$.<br>
+          <strong>Найти:</strong> $t_{1/2}$, остаточную концентрацию и процент распавшегося вещества за $45.0\text{ мин}$.
+        </div>
+        <div class="example-card__solution">
+          1. $t_{1/2} = \ln 2 / (3.50 \times 10^{-4}) = 1980.4\text{ с} = \mathbf{33.0\text{ мин}}$.<br>
+          2. $t = 45 \times 60 = 2700\text{ с}$. $[A]_t = 0.800 \times e^{-(3.50 \times 10^{-4} \times 2700)} = 0.800 \times e^{-0.945} = \mathbf{0.311\text{ М}}$.<br>
+          3. Доля распавшегося: $(0.800 - 0.311) / 0.800 \times 100\% = \mathbf{61.1\%}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $t_{1/2} = 33.0\text{ мин}$; $C(45\text{ мин}) = 0.311\text{ М}$; распалось $61.1\%$.
+        </div>
+      </div>
+
+      <!-- Пример 0.8 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.8. Температурный коэффициент Вант-Гоффа и уравнение Аррениуса</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 0.3: Температура</span>
+        </div>
+        <div class="example-card__scenario">
+          Гидролиз этилацетата: $k_1 = 1.10 \times 10^{-3}\text{ л}/(\text{моль}\cdot\text{с})$ при $20^\circ\text{C}$ ($293.15\text{ К}$) и $k_2 = 5.50 \times 10^{-3}\text{ л}/(\text{моль}\cdot\text{с})$ при $40^\circ\text{C}$ ($313.15\text{ К}$).<br>
+          <strong>Найти:</strong> $\gamma (Q_{10})$ и энергию активации $E_a$ (кДж/моль).
+        </div>
+        <div class="example-card__solution">
+          1. $\gamma^2 = 5.50 / 1.10 = 5.00 \implies \gamma = \sqrt{5.00} = \mathbf{2.24}$.<br>
+          2. $E_a = \frac{R \cdot \ln(5.00)}{1/293.15 - 1/313.15} = \frac{8.31446 \times 1.60944}{2.1786 \times 10^{-4}} = 61423\text{ Дж/моль} = \mathbf{61.42\text{ кДж/моль}}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $\gamma = 2.24$; $E_a = 61.42\text{ кДж/моль}$.
+        </div>
+      </div>
+
+      <!-- Пример 0.9 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.9. Расчет равновесия этерификации через таблицу ICE</h4>
+          <span class="cds--tag cds--tag--red">Раздел 0.4: Равновесие</span>
+        </div>
+        <div class="example-card__scenario">
+          $CH_3COOH + C_2H_5OH \rightleftharpoons CH_3COOC_2H_5 + H_2O$ ($K_c = 4.00$). Исходно по $2.00\text{ моль}$ кислоты и спирта в $1.0\text{ л}$.<br>
+          <strong>Найти:</strong> равновесные концентрации и выход эфира.
+        </div>
+        <div class="example-card__solution">
+          $K_c = \frac{x^2}{(2.00 - x)^2} = 4.00 \implies \frac{x}{2.00 - x} = 2.00 \implies x = \mathbf{1.333\text{ М}}$.<br>
+          $[\text{Эфир}] = [H_2O] = \mathbf{1.333\text{ М}}$; $[\text{Кислота}] = [\text{Спирт}] = \mathbf{0.667\text{ М}}$. Выход = $\mathbf{66.7\%}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $[\text{Эфир}] = 1.33\text{ М}$; выход = $66.7\%$.
+        </div>
+      </div>
+
+      <!-- Пример 0.10 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.10. Закон Оствальда и расчет pH уксусной кислоты</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 0.5: Диссоциация и pH</span>
+        </div>
+        <div class="example-card__scenario">
+          Раствор $CH_3COOH$ имеет $C_1 = 0.050\text{ М}$ ($K_a = 1.75 \times 10^{-5}, pK_a = 4.76$).<br>
+          <strong>Найти:</strong> $\alpha_1$, $[H^+]$, $pH_1$ и изменение $\alpha_2$ при разбавлении водой в 100 раз.
+        </div>
+        <div class="example-card__solution">
+          1. $\alpha_1 = \sqrt{1.75 \times 10^{-5} / 0.050} = \mathbf{0.01871 \quad (1.87\%)}$. $[H^+] = 935.4\text{ мкМ} \implies pH_1 = \mathbf{3.03}$.<br>
+          2. При разбавлении в 100 раз ($C_2 = 0.00050\text{ М}$): $\alpha_2 = \sqrt{1.75 \times 10^{-5} / 0.00050} = \mathbf{18.71\%}$ (степень выросла ровно в 10 раз), $pH_2 = \mathbf{4.03}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $\alpha_1 = 1.87\%$; $pH_1 = 3.03$; $\alpha_2 = 18.71\%$; $pH_2 = 4.03$.
+        </div>
+      </div>
+
+      <!-- Пример 0.11 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.11. Гидролиз солей: расчет константы, степени гидролиза и pH</h4>
+          <span class="cds--tag cds--tag--green">Раздел 0.6: Гидролиз</span>
+        </div>
+        <div class="example-card__scenario">
+          Рассчитать $K_г, h, pH$ в: 1) $0.100\text{ М}$ $CH_3COONa$ ($K_a = 1.75 \times 10^{-5}$); 2) $0.050\text{ М}$ $NH_4Cl$ ($K_b = 1.76 \times 10^{-5}$).
+        </div>
+        <div class="example-card__solution">
+          1. $CH_3COONa$: $K_г = 10^{-14} / 1.75 \times 10^{-5} = \mathbf{5.71 \times 10^{-10}}$. $h = \mathbf{0.00756\%}$. $[OH^-] = 7.56 \times 10^{-6}\text{ М} \implies pH = \mathbf{8.88}$.<br>
+          2. $NH_4Cl$: $K_г = 10^{-14} / 1.76 \times 10^{-5} = \mathbf{5.68 \times 10^{-10}}$. $h = \mathbf{0.0107\%}$. $[H^+] = 5.33 \times 10^{-6}\text{ М} \implies pH = \mathbf{5.27}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $CH_3COONa$: $pH = 8.88$; $NH_4Cl$: $pH = 5.27$.
+        </div>
+      </div>
+
+      <!-- Пример 0.12 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 0.12. Буферный раствор: Гендерсон-Хассельбах и сдвиг pH</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 0.6: Буферные системы</span>
+        </div>
+        <div class="example-card__scenario">
+          Ацетатный буфер ($1.00\text{ л}$) содержит $0.200\text{ М}$ $CH_3COOH$ и $0.300\text{ М}$ $CH_3COONa$ ($pK_a = 4.76$).<br>
+          <strong>Найти:</strong> $pH_0$, сдвиг $\Delta pH$ при добавлении $0.020\text{ моль}$ $NaOH$ и буферную емкость $\beta$.
+        </div>
+        <div class="example-card__solution">
+          1. $pH_0 = 4.76 + \lg(0.300 / 0.200) = 4.76 + 0.176 = \mathbf{4.94}$.<br>
+          2. После добавления $0.020\text{ моль}$ $NaOH$: $[\text{К-та}] = 0.180$, $[\text{Соль}] = 0.320$. $pH_1 = 4.76 + \lg(0.320 / 0.180) = \mathbf{5.01}$. $\Delta pH = \mathbf{+0.074}$.<br>
+          3. Буферная емкость: $\beta = 0.020 / 0.074 = \mathbf{0.270\text{ моль}/(\text{л}\cdot\text{ед. } pH)}$.
+        </div>
+        <div class="example-card__answer">
+          Ответ: $pH_0 = 4.94$; $pH_1 = 5.01$ ($\Delta pH = +0.074$); $\beta = 0.270\text{ моль}/(\text{л}\cdot\text{ед. } pH)$.
+        </div>
+      </div>
+    </section>
+
+    <!-- ТАБ 3: 4 ХИМИЧЕСКИХ КАЛЬКУЛЯТОРА -->
+    <section id="sem0-tab-calculators" class="cds--tab-panel">
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">Интерактивные химико-аналитические калькуляторы</h3>
+        <p style="color: var(--cds-text-secondary);">
+          Мгновенный расчет и взаимный пересчет любых химических концентраций, кинетики, равновесия и pH буферов.
+        </p>
+      </div>
+
+      <div class="cds--row">
+        <!-- Калькулятор 1 -->
+        <div class="cds--col-6">
+          <div class="calc-panel" style="margin-bottom: 1.5rem;">
+            <div class="calc-panel__header">
+              <span class="calc-panel__badge">Калькулятор 1</span>
+              <h4 class="calc-panel__title">Универсальный конвертер размерностей концентраций</h4>
+            </div>
+            <div class="cds--form-item" style="margin-bottom: 0.75rem;">
+              <label class="cds--label" for="c0-conv-type">Известный тип концентрации:</label>
+              <select class="cds--select-input" id="c0-conv-type">
+                <option value="omega">Массовая доля (w, %)</option>
+                <option value="cm">Молярность (C_M, моль/л)</option>
+                <option value="mass_conc">Массовая концентрация (C_m, г/л)</option>
+              </select>
+            </div>
+            <div class="cds--row">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-conv-val">Значение концентрации:</label>
+                  <input type="number" class="cds--text-input" id="c0-conv-val" value="10.0" step="0.1">
+                </div>
+              </div>
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-conv-m">Молярная масса M (г/моль):</label>
+                  <input type="number" class="cds--text-input" id="c0-conv-m" value="58.44" step="0.01">
+                </div>
+              </div>
+            </div>
+            <div class="cds--row" style="margin-top: 0.5rem;">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-conv-rho">Плотность rho (г/мл):</label>
+                  <input type="number" class="cds--text-input" id="c0-conv-rho" value="1.070" step="0.001">
+                </div>
+              </div>
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-conv-feq">Фактор экв. feq (1 или 0.5):</label>
+                  <input type="number" class="cds--text-input" id="c0-conv-feq" value="1.0" step="0.5">
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-results" style="margin-top: 1rem;">
+              <div class="calc-result-item"><span>Массовая доля (w%):</span><strong id="res-c0-omega">—</strong></div>
+              <div class="calc-result-item"><span>Молярность (C_M):</span><strong id="res-c0-cm">—</strong></div>
+              <div class="calc-result-item"><span>Нормальность (C_N):</span><strong id="res-c0-cn">—</strong></div>
+              <div class="calc-result-item"><span>Моляльность (m):</span><strong id="res-c0-m">—</strong></div>
+              <div class="calc-result-item"><span>Массовая конц. (C_m):</span><strong id="res-c0-massconc">—</strong></div>
+              <div class="calc-result-item"><span>Титр (T):</span><strong id="res-c0-t">—</strong></div>
+              <div class="calc-result-item"><span>Мольная доля (chi):</span><strong id="res-c0-chi">—</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Калькулятор 2 -->
+        <div class="cds--col-6">
+          <div class="calc-panel" style="margin-bottom: 1.5rem;">
+            <div class="calc-panel__header">
+              <span class="calc-panel__badge">Калькулятор 2</span>
+              <h4 class="calc-panel__title">Разбавление и смешивание растворов</h4>
+            </div>
+            <div style="font-weight: 600; font-size: 0.8125rem; margin-bottom: 0.5rem; color: var(--cds-interactive-01);">Режим А: Закон разбавления C1*V1 = C2*V2</div>
+            <div class="cds--row">
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-dil-c1">C1 маточный (М):</label>
+                  <input type="number" class="cds--text-input" id="c0-dil-c1" value="2.50" step="0.1">
+                </div>
+              </div>
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-dil-v2">V2 целевой (мл):</label>
+                  <input type="number" class="cds--text-input" id="c0-dil-v2" value="750.0" step="10">
+                </div>
+              </div>
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-dil-c2">C2 целевой (М):</label>
+                  <input type="number" class="cds--text-input" id="c0-dil-c2" value="0.150" step="0.01">
+                </div>
+              </div>
+            </div>
+            <div class="calc-results" style="margin-top: 0.75rem;">
+              <div class="calc-result-item"><span>Аликвота V1:</span><strong id="res-c0-dil-v1">—</strong></div>
+              <div class="calc-result-item"><span>Объем воды:</span><strong id="res-c0-dil-water">—</strong></div>
+              <div class="calc-result-item"><span>Фактор разведения DF:</span><strong id="res-c0-dil-df">—</strong></div>
+            </div>
+
+            <div style="font-weight: 600; font-size: 0.8125rem; margin: 1rem 0 0.5rem 0; color: var(--cds-interactive-01);">Режим Б: Крест Пирсона (смешивание w1 и w2)</div>
+            <div class="cds--row">
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-mix-w1">w1 (%):</label>
+                  <input type="number" class="cds--text-input" id="c0-mix-w1" value="40.0" step="1">
+                </div>
+              </div>
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-mix-w2">w2 (%):</label>
+                  <input type="number" class="cds--text-input" id="c0-mix-w2" value="5.0" step="1">
+                </div>
+              </div>
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-mix-target">Цель w%:</label>
+                  <input type="number" class="cds--text-input" id="c0-mix-target" value="15.0" step="1">
+                </div>
+              </div>
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-mix-mtotal">Масса m (г):</label>
+                  <input type="number" class="cds--text-input" id="c0-mix-mtotal" value="600.0" step="50">
+                </div>
+              </div>
+            </div>
+            <div class="calc-results" style="margin-top: 0.75rem;">
+              <div class="calc-result-item"><span>Масса раствора 1 (w1):</span><strong id="res-c0-mix-m1">—</strong></div>
+              <div class="calc-result-item"><span>Масса раствора 2 (w2):</span><strong id="res-c0-mix-m2">—</strong></div>
+              <div class="calc-result-item"><span>Пропорция частей:</span><strong id="res-c0-mix-ratio">—</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cds--row">
+        <!-- Калькулятор 3 -->
+        <div class="cds--col-6">
+          <div class="calc-panel">
+            <div class="calc-panel__header">
+              <span class="calc-panel__badge">Калькулятор 3</span>
+              <h4 class="calc-panel__title">Химическая кинетика, Вант-Гофф и Аррениус</h4>
+            </div>
+            <div class="cds--row">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-kin-k1">k1:</label>
+                  <input type="number" class="cds--text-input" id="c0-kin-k1" value="0.0011" step="0.0001">
+                </div>
+              </div>
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-kin-t1">T1 (°C):</label>
+                  <input type="number" class="cds--text-input" id="c0-kin-t1" value="20.0" step="1">
+                </div>
+              </div>
+            </div>
+            <div class="cds--row" style="margin-top: 0.5rem;">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-kin-k2">k2:</label>
+                  <input type="number" class="cds--text-input" id="c0-kin-k2" value="0.0055" step="0.0001">
+                </div>
+              </div>
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-kin-t2">T2 (°C):</label>
+                  <input type="number" class="cds--text-input" id="c0-kin-t2" value="40.0" step="1">
+                </div>
+              </div>
+            </div>
+            <div class="calc-results" style="margin-top: 1rem;">
+              <div class="calc-result-item"><span>Коэфф. Вант-Гоффа (Q10):</span><strong id="res-c0-kin-gamma">—</strong></div>
+              <div class="calc-result-item"><span>Энергия активации Ea:</span><strong id="res-c0-kin-ea">—</strong></div>
+              <div class="calc-result-item"><span>Период полупревращения t1/2:</span><strong id="res-c0-kin-thalf">—</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Калькулятор 4 -->
+        <div class="cds--col-6">
+          <div class="calc-panel">
+            <div class="calc-panel__header">
+              <span class="calc-panel__badge">Калькулятор 4</span>
+              <h4 class="calc-panel__title">Диссоциация, pH и буфер Гендерсона-Хассельбаха</h4>
+            </div>
+            <div class="cds--row">
+              <div class="cds--col-6">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-ab-type">Тип электролита:</label>
+                  <select class="cds--select-input" id="c0-ab-type">
+                    <option value="weak_acid">Слабая кислота (pKa)</option>
+                    <option value="strong_acid">Сильная кислота</option>
+                    <option value="weak_base">Слабое основание (pKb)</option>
+                    <option value="strong_base">Сильное основание</option>
+                  </select>
+                </div>
+              </div>
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-ab-c">C (моль/л):</label>
+                  <input type="number" class="cds--text-input" id="c0-ab-c" value="0.050" step="0.01">
+                </div>
+              </div>
+              <div class="cds--col-3">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-ab-pka">pKa (pKb):</label>
+                  <input type="number" class="cds--text-input" id="c0-ab-pka" value="4.76" step="0.01">
+                </div>
+              </div>
+            </div>
+            <div class="calc-results" style="margin-top: 0.75rem;">
+              <div class="calc-result-item"><span>Водородный показатель pH:</span><strong id="res-c0-ab-ph">—</strong></div>
+              <div class="calc-result-item"><span>Гидроксильный показатель pOH:</span><strong id="res-c0-ab-poh">—</strong></div>
+              <div class="calc-result-item"><span>Концентрация [H+]:</span><strong id="res-c0-ab-h">—</strong></div>
+              <div class="calc-result-item"><span>Степень диссоциации (alpha):</span><strong id="res-c0-ab-alpha">—</strong></div>
+            </div>
+
+            <div style="font-weight: 600; font-size: 0.8125rem; margin: 1rem 0 0.5rem 0; color: var(--cds-interactive-01);">Буфер: C(кислоты) + C(соли) + добавка щелочи</div>
+            <div class="cds--row">
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-buf-acid">C(кислоты):</label>
+                  <input type="number" class="cds--text-input" id="c0-buf-acid" value="0.200" step="0.01">
+                </div>
+              </div>
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-buf-salt">C(соли):</label>
+                  <input type="number" class="cds--text-input" id="c0-buf-salt" value="0.300" step="0.01">
+                </div>
+              </div>
+              <div class="cds--col-4">
+                <div class="cds--form-item">
+                  <label class="cds--label" for="c0-buf-add">+NaOH (моль/л):</label>
+                  <input type="number" class="cds--text-input" id="c0-buf-add" value="0.020" step="0.005">
+                </div>
+              </div>
+            </div>
+            <div class="calc-results" style="margin-top: 0.75rem;">
+              <div class="calc-result-item"><span>Исходный pH0 буфера:</span><strong id="res-c0-buf-ph0">—</strong></div>
+              <div class="calc-result-item"><span>pH1 после добавления:</span><strong id="res-c0-buf-ph1">—</strong></div>
+              <div class="calc-result-item"><span>Сдвиг delta_pH:</span><strong id="res-c0-buf-delta">—</strong></div>
+              <div class="calc-result-item"><span>Буферная емкость beta:</span><strong id="res-c0-buf-beta">—</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТАБ 4: СПРАВОЧНЫЕ ТАБЛИЦЫ -->
+    <section id="sem0-tab-tables" class="cds--tab-panel">
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">Справочные физико-химические таблицы</h3>
+      </div>
+
+      <div class="cds--row">
+        <div class="cds--col-6">
+          <div class="table-container" style="margin-bottom: 1.5rem;">
+            <div class="table-container__header">Таблица 1. Молярные массы и факторы эквивалентности ($20^\circ\text{C}$)</div>
+            <table class="cds--data-table">
+              <thead>
+                <tr>
+                  <th>Вещество</th>
+                  <th>Формула</th>
+                  <th>$M$, г/моль</th>
+                  <th>$f_{\text{экв}}$</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Хлорид натрия</td><td><code>NaCl</code></td><td>58.44</td><td>1</td></tr>
+                <tr><td>Гидроксид натрия</td><td><code>NaOH</code></td><td>40.00</td><td>1</td></tr>
+                <tr><td>Соляная кислота</td><td><code>HCl</code></td><td>36.46</td><td>1</td></tr>
+                <tr><td>Серная кислота</td><td><code>H2SO4</code></td><td>98.08</td><td>1/2</td></tr>
+                <tr><td>Уксусная кислота</td><td><code>CH3COOH</code></td><td>60.05</td><td>1</td></tr>
+                <tr><td>Ацетат натрия</td><td><code>CH3COONa</code></td><td>82.03</td><td>1</td></tr>
+                <tr><td>Медный купорос</td><td><code>CuSO4 * 5H2O</code></td><td>249.68</td><td>1/2</td></tr>
+                <tr><td>Кристаллическая сода</td><td><code>Na2CO3 * 10H2O</code></td><td>286.14</td><td>1/2</td></tr>
+                <tr><td>Хлорид аммония</td><td><code>NH4Cl</code></td><td>53.49</td><td>1</td></tr>
+                <tr><td>Пероксид водорода</td><td><code>H2O2</code></td><td>34.01</td><td>1/2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="cds--col-6">
+          <div class="table-container" style="margin-bottom: 1.5rem;">
+            <div class="table-container__header">Таблица 2. Константы диссоциации и автопротолиза ($25^\circ\text{C}$)</div>
+            <table class="cds--data-table">
+              <thead>
+                <tr>
+                  <th>Соединение / Равновесие</th>
+                  <th>$K_a$ ($K_b$), моль/л</th>
+                  <th>$pK_a$ ($pK_b$)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Уксусная кислота $CH_3COOH$</td><td>$1.75 \times 10^{-5}$</td><td>4.76</td></tr>
+                <tr><td>Муравьиная кислота $HCOOH$</td><td>$1.77 \times 10^{-4}$</td><td>3.75</td></tr>
+                <tr><td>Азотистая кислота $HNO_2$</td><td>$4.60 \times 10^{-4}$</td><td>3.34</td></tr>
+                <tr><td>Фтороводородная к-та $HF$</td><td>$6.80 \times 10^{-4}$</td><td>3.17</td></tr>
+                <tr><td>Угольная кислота ($K_{a1}$)</td><td>$4.45 \times 10^{-7}$</td><td>6.35</td></tr>
+                <tr><td>Фосфорная кислота ($K_{a2}$)</td><td>$6.23 \times 10^{-8}$</td><td>7.21</td></tr>
+                <tr><td>Гидрат аммиака $NH_3 \cdot H_2O$</td><td>$1.76 \times 10^{-5}$</td><td>4.75</td></tr>
+                <tr><td>Вода ($K_w$, $25^\circ\text{C}$)</td><td>$1.008 \times 10^{-14}$</td><td>14.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <main id="view-seminar1" class="cds--grid" style="display: none;">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
       <div>
@@ -1196,17 +2099,29 @@
     <div id="test-step-registration" style="max-width: 680px; margin: 2rem auto;">
       <div class="cds--tile" style="border-top: 4px solid var(--cds-interactive-01);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <span class="cds--tag cds--tag--blue">Семинар 1 • Экспресс-контроль</span>
-          <span class="cds--tag cds--tag--red">15 минут</span>
+          <span class="cds--tag cds--tag--blue" id="test-header-badge">Экспресс-контроль</span>
+          <span class="cds--tag cds--tag--green">100 баллов БРС</span>
         </div>
         <h2 class="hero-banner__title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
           Регистрация на экспресс-тестирование
         </h2>
-        <p style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
-          После запуска таймера система случайным образом выберет <strong>4 задачи</strong> (по одной из каждого раздела). Результаты фиксируются в защищенной базе и автоматически передаются в Google Таблицу преподавателя на Google Drive.
+        <p style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+          Выберите тему занятия. Система сформирует индивидуальный билет со случайными параметризованными задачами. Результаты проверяются автоматически с выдачей электронной квитанции и синхронизацией с Google Drive.
         </p>
 
         <div id="reg-error-box" class="cds--inline-notification cds--inline-notification--error" style="display: none;"></div>
+
+        <!-- Выбор темы теста -->
+        <div class="cds--form-item" style="margin-bottom: 1.25rem;">
+          <label class="cds--label" for="student-test-topic">Тематический модуль экспресс-контроля <span style="color: var(--cds-support-error);">*</span>:</label>
+          <select class="cds--select-input" id="student-test-topic" style="width: 100%; font-size: 0.9375rem; padding: 0.5rem 0.75rem; height: 42px;">
+            <option value="sem0" selected>Семинар 0: Фундаментальная химия (12 задач, 30 минут, банк 60 задач)</option>
+            <option value="sem1">Семинар 1: Физико-химия микробного гомеостаза (4 задачи, 15 минут, банк 20 задач)</option>
+          </select>
+          <div id="test-topic-description" style="font-size: 0.8125rem; margin-top: 0.4rem; color: var(--cds-interactive-01);">
+            ⏱ <strong>30 минут</strong> • <strong>12 расчетных задач</strong> (по 2 из 6 категорий базовой химии) • Максимум: 100 баллов
+          </div>
+        </div>
 
         <div class="cds--row">
           <div class="cds--col-6">
@@ -1242,12 +2157,12 @@
         </div>
 
         <div class="cds--inline-notification cds--inline-notification--info" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
-          <strong>Правила регламента:</strong> У вас будет ровно 15 минут. При истечении времени ответы будут автоматически заблокированы и отправлены.
+          <strong>Правила регламента:</strong> При истечении времени таймера ответы будут автоматически зафиксированы и отправлены.
         </div>
 
         <button type="button" class="cds--btn cds--btn--primary" id="btn-start-test" style="width: 100%;">
-          <span>Начать тестирование (Запустить таймер 15:00)</span>
-          <span>⏱</span>
+          <span>Начать тестирование и запустить таймер</span>
+          <span>⏱ →</span>
         </button>
       </div>
     </div>
@@ -1339,9 +2254,13 @@
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
   <script src="js/config.js"></script>
+  <script src="js/lecture1-slides.js"></script>
+  <script src="js/slides-player.js"></script>
   <script src="js/task-bank.js"></script>
+  <script src="js/task-bank-sem0.js"></script>
   <script src="js/gdrive-sync.js"></script>
   <script src="js/calculators.js"></script>
+  <script src="js/calculators-sem0.js"></script>
   <script src="js/test-session.js"></script>
   <script src="js/app.js"></script>
 </body>
