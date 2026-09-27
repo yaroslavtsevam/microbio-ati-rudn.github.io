@@ -136,7 +136,7 @@ const SlidesPlayer = {
         html = this.renderHorizontalMediaSlide(slide);
         break;
       default:
-        html = `<div class="slide-content"><h2 class="slide-title">${slide.title}</h2></div>`;
+        html = `<div class="slide-content"><h2 class="slide-title">${this.formatMathText(slide.title)}</h2></div>`;
     }
 
     this.container.innerHTML = html;
@@ -162,34 +162,72 @@ const SlidesPlayer = {
   renderTitleSlide(slide) {
     const metaHtml = (slide.meta || []).map(([k, v]) => `
       <div class="slide-meta-item">
-        <span class="slide-meta-label">${this.escape(k)}</span>
-        <span class="slide-meta-val">${this.escape(v)}</span>
+        <span class="slide-meta-label">${this.formatMathText(k)}</span>
+        <span class="slide-meta-val">${this.formatMathText(v)}</span>
       </div>
     `).join('');
 
     return `
       <div class="slide-card slide-card--title">
         <div class="slide-title-tag">ЛЕКЦИЯ 1 • АТИ РУДН</div>
-        <h1 class="slide-hero-title">${this.escape(slide.title)}</h1>
-        <p class="slide-hero-subtitle">${this.escape(slide.subtitle || '')}</p>
+        <h1 class="slide-hero-title">${this.formatMathText(slide.title)}</h1>
+        <p class="slide-hero-subtitle">${this.formatMathText(slide.subtitle || '')}</p>
         <div class="slide-meta-grid">${metaHtml}</div>
       </div>
     `;
   },
 
+  renderBlockContent(b) {
+    if (!b) return '';
+    
+    // Если передан массив [heading, text]
+    if (Array.isArray(b)) {
+      return `
+        <div class="slide-section-block">
+          <div class="slide-section-heading">${this.formatMathText(b[0] || '')}</div>
+          <div class="slide-section-text">${this.formatMathText(b[1] || '')}</div>
+        </div>
+      `;
+    }
+
+    // Если передан объект { title, text, items, ... }
+    let out = '<div class="slide-section-block">';
+    if (b.title) {
+      out += `<div class="slide-section-heading">${this.formatMathText(b.title)}</div>`;
+    }
+    if (b.text) {
+      out += `<div class="slide-section-text">${this.formatMathText(b.text)}</div>`;
+    }
+    if (b.items && Array.isArray(b.items)) {
+      out += '<ul class="slide-items-list" style="margin: 0.4rem 0 0 1.2rem; padding: 0; line-height: 1.5; font-size: 0.9rem;">';
+      b.items.forEach(item => {
+        if (Array.isArray(item)) {
+          out += `<li style="margin-bottom: 0.3rem;"><strong>${this.formatMathText(item[0])}:</strong> ${this.formatMathText(item[1])}</li>`;
+        } else if (typeof item === 'string') {
+          out += `<li style="margin-bottom: 0.3rem;">${this.formatMathText(item)}</li>`;
+        }
+      });
+      out += '</ul>';
+    }
+    out += '</div>';
+    return out;
+  },
+
   renderWideCardsSlide(slide) {
     const renderCard = (card) => {
       if (!card) return '';
-      const sectionsHtml = (card.sections || []).map(([heading, text]) => `
-        <div class="slide-section-block">
-          <div class="slide-section-heading">${this.escape(heading)}</div>
-          <div class="slide-section-text">${this.escape(text)}</div>
-        </div>
-      `).join('');
+      let sectionsHtml = '';
+      if (card.sections && Array.isArray(card.sections)) {
+        sectionsHtml = card.sections.map(s => this.renderBlockContent(s)).join('');
+      } else if (card.blocks && Array.isArray(card.blocks)) {
+        sectionsHtml = card.blocks.map(b => this.renderBlockContent(b)).join('');
+      } else if (card.text) {
+        sectionsHtml = `<div class="slide-section-text">${this.formatMathText(card.text)}</div>`;
+      }
 
       return `
         <div class="slide-info-card">
-          <h3 class="slide-card-header">${this.escape(card.title)}</h3>
+          <h3 class="slide-card-header">${this.formatMathText(card.title || '')}</h3>
           <div class="slide-card-body">${sectionsHtml}</div>
         </div>
       `;
@@ -198,9 +236,9 @@ const SlidesPlayer = {
     return `
       <div class="slide-card">
         <div class="slide-header">
-          <div class="slide-module-badge">${this.escape(slide.module || '')}</div>
-          <h2 class="slide-title">${this.escape(slide.title)}</h2>
-          ${slide.subtitle ? `<div class="slide-subtitle">${this.escape(slide.subtitle)}</div>` : ''}
+          <div class="slide-module-badge">${this.formatMathText(slide.module || '')}</div>
+          <h2 class="slide-title">${this.formatMathText(slide.title)}</h2>
+          ${slide.subtitle ? `<div class="slide-subtitle">${this.formatMathText(slide.subtitle)}</div>` : ''}
         </div>
         <div class="slide-grid-2">
           ${renderCard(slide.card_left)}
@@ -211,24 +249,22 @@ const SlidesPlayer = {
   },
 
   renderSplitMediaSlide(slide) {
-    const blocksHtml = (slide.blocks || []).map(([heading, text]) => `
-      <div class="slide-section-block">
-        <div class="slide-section-heading">${this.escape(heading)}</div>
-        <div class="slide-section-text">${this.escape(text)}</div>
-      </div>
-    `).join('');
+    let blocksHtml = '';
+    if (slide.blocks && Array.isArray(slide.blocks)) {
+      blocksHtml = slide.blocks.map(b => this.renderBlockContent(b)).join('');
+    }
 
     return `
       <div class="slide-card">
         <div class="slide-header">
-          <div class="slide-module-badge">${this.escape(slide.module || '')}</div>
-          <h2 class="slide-title">${this.escape(slide.title)}</h2>
-          ${slide.subtitle ? `<div class="slide-subtitle">${this.escape(slide.subtitle)}</div>` : ''}
+          <div class="slide-module-badge">${this.formatMathText(slide.module || '')}</div>
+          <h2 class="slide-title">${this.formatMathText(slide.title)}</h2>
+          ${slide.subtitle ? `<div class="slide-subtitle">${this.formatMathText(slide.subtitle)}</div>` : ''}
         </div>
         <div class="slide-split-container">
           <div class="slide-media-box">
-            <img src="${slide.image}" alt="${this.escape(slide.title)}" class="slide-media-img" />
-            ${slide.caption ? `<div class="slide-caption">${this.escape(slide.caption)}</div>` : ''}
+            <img src="${slide.image}" alt="${this.escape(slide.title)}" class="slide-media-img" loading="lazy" />
+            ${slide.caption ? `<div class="slide-caption">${this.formatMathText(slide.caption)}</div>` : ''}
           </div>
           <div class="slide-text-box">
             ${blocksHtml}
@@ -239,30 +275,36 @@ const SlidesPlayer = {
   },
 
   renderHorizontalMediaSlide(slide) {
-    const renderCol = (blocks) => {
-      return (blocks || []).map(([heading, text]) => `
-        <div class="slide-section-block">
-          <div class="slide-section-heading">${this.escape(heading)}</div>
-          <div class="slide-section-text">${this.escape(text)}</div>
-        </div>
-      `).join('');
-    };
+    let leftBlocksHtml = '';
+    let rightBlocksHtml = '';
+
+    if (slide.blocks_left || slide.blocks_right) {
+      leftBlocksHtml = (slide.blocks_left || []).map(b => this.renderBlockContent(b)).join('');
+      rightBlocksHtml = (slide.blocks_right || []).map(b => this.renderBlockContent(b)).join('');
+    } else if (slide.blocks && Array.isArray(slide.blocks)) {
+      // Распределяем блоки по двум колонкам
+      const mid = Math.ceil(slide.blocks.length / 2);
+      const left = slide.blocks.slice(0, mid);
+      const right = slide.blocks.slice(mid);
+      leftBlocksHtml = left.map(b => this.renderBlockContent(b)).join('');
+      rightBlocksHtml = right.map(b => this.renderBlockContent(b)).join('');
+    }
 
     return `
       <div class="slide-card">
         <div class="slide-header">
-          <div class="slide-module-badge">${this.escape(slide.module || '')}</div>
-          <h2 class="slide-title">${this.escape(slide.title)}</h2>
-          ${slide.subtitle ? `<div class="slide-subtitle">${this.escape(slide.subtitle)}</div>` : ''}
+          <div class="slide-module-badge">${this.formatMathText(slide.module || '')}</div>
+          <h2 class="slide-title">${this.formatMathText(slide.title)}</h2>
+          ${slide.subtitle ? `<div class="slide-subtitle">${this.formatMathText(slide.subtitle)}</div>` : ''}
         </div>
         <div class="slide-horizontal-container">
           <div class="slide-media-box slide-media-box--horizontal">
-            <img src="${slide.image}" alt="${this.escape(slide.title)}" class="slide-media-img-horizontal" />
-            ${slide.caption ? `<div class="slide-caption">${this.escape(slide.caption)}</div>` : ''}
+            <img src="${slide.image}" alt="${this.escape(slide.title)}" class="slide-media-img-horizontal" loading="lazy" />
+            ${slide.caption ? `<div class="slide-caption">${this.formatMathText(slide.caption)}</div>` : ''}
           </div>
           <div class="slide-grid-2" style="margin-top: 1rem;">
-            <div class="slide-info-card">${renderCol(slide.blocks_left)}</div>
-            <div class="slide-info-card">${renderCol(slide.blocks_right)}</div>
+            <div class="slide-info-card">${leftBlocksHtml}</div>
+            <div class="slide-info-card">${rightBlocksHtml}</div>
           </div>
         </div>
       </div>
@@ -284,11 +326,33 @@ const SlidesPlayer = {
 
   escape(text) {
     if (!text) return '';
-    return text
+    return String(text)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  },
+
+  formatMathText(text) {
+    if (!text) return '';
+    
+    // Разделяем строку на математические блоки ($...$ или $$...$$) и обычный текст
+    const parts = String(text).split(/(\$\$[^\$]+\$\$|\$[^\$]+\$)/g);
+    
+    return parts.map(part => {
+      if (!part) return '';
+      
+      // Математический блок: сохраняем знаки <, >, &, нормализуем экранирование
+      if (part.startsWith('$') && part.endsWith('$')) {
+        return part;
+      }
+      
+      // Обычный текст: экранируем HTML и преобразуем markdown bold/italic
+      let res = this.escape(part);
+      res = res.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      res = res.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      return res;
+    }).join('');
   }
 };
