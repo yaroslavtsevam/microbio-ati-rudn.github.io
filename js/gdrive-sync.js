@@ -8,7 +8,10 @@ const GDriveSync = {
    * Генерация уникального контрольного токена квитанции
    */
   generateReceiptToken(topic = 'sem1') {
-    const prefix = topic === 'sem0' ? 'RUDN-CHEM' : 'RUDN-MB';
+    let prefix = 'RUDN-MB';
+    if (topic === 'sem0') prefix = 'RUDN-CHEM';
+    else if (topic === 'sem2') prefix = 'RUDN-REDOX';
+    
     const timestamp = Date.now().toString(36).toUpperCase();
     const randomHex = Math.random().toString(36).substring(2, 6).toUpperCase();
     return `${prefix}-${timestamp}-${randomHex}`;
@@ -69,6 +72,10 @@ const GDriveSync = {
     // Для избежания проблем с CORS preflight используем text/plain
     const postBody = JSON.stringify(fullData);
 
+    let defaultSheet = 'Ведомость_Семинар_1';
+    if (payload.topic === 'sem0') defaultSheet = 'Ведомость_Семинар_0';
+    else if (payload.topic === 'sem2') defaultSheet = 'Ведомость_Семинар_2';
+
     try {
       const response = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -86,8 +93,8 @@ const GDriveSync = {
           mode: 'gdrive',
           receiptToken,
           serverData: json,
-          sheetName: json.sheetName || (payload.topic === 'sem0' ? 'Ведомость_Семинар_0' : 'Ведомость_Семинар_1'),
-          message: `Результаты успешно записаны в Google Таблицу [${json.sheetName || 'Ведомость'}] на Google Drive преподавателя.`
+          sheetName: json.sheetName || defaultSheet,
+          message: `Результаты успешно записаны в Google Таблицу [${json.sheetName || defaultSheet}] на Google Drive преподавателя.`
         };
       } else {
         throw new Error(`HTTP Error ${response.status}`);
@@ -110,8 +117,8 @@ const GDriveSync = {
           success: true,
           mode: 'gdrive_nocors',
           receiptToken,
-          sheetName: payload.topic === 'sem0' ? 'Ведомость_Семинар_0' : 'Ведомость_Семинар_1',
-          message: 'Результаты успешно переданы в Google Таблицу на Google Drive преподавателя.'
+          sheetName: defaultSheet,
+          message: `Результаты успешно переданы в Google Таблицу [${defaultSheet}] на Google Drive преподавателя.`
         };
       } catch (fallbackErr) {
         console.error('[GDriveSync] Ошибка доставки на Google Drive:', fallbackErr);
@@ -158,7 +165,7 @@ const GDriveSync = {
       `АТИ РУДН • ПИЩЕВАЯ МИКРОБИОЛОГИЯ, САНИТАРИЯ И ГИГИЕНА`,
       `ОФИЦИАЛЬНАЯ ЭЛЕКТРОННАЯ КВИТАНЦИЯ О СДАЧЕ ЭКСПРЕСС-ТЕСТИРОВАНИЯ`,
       `================================================================`,
-      `Тематика:          ${data.topicTitle || (data.topic === 'sem0' ? 'Семинар 0: Базовая химия' : 'Семинар 1: Гомеостаз')}`,
+      `Тематика:          ${data.topicTitle || (data.topic === 'sem0' ? 'Семинар 0: Базовая химия' : (data.topic === 'sem2' ? 'Семинар 2: RedOx и аэробиоз' : 'Семинар 1: Гомеостаз'))}`,
       `Код квитанции:     ${data.receiptToken}`,
       `Студент:           ${data.surname} ${data.name}`,
       `Учебная группа:    ${data.group} (${data.specialty || 'Не указана'})`,

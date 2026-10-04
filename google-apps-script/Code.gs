@@ -6,6 +6,7 @@
  * Поддерживает:
  *  - Семинар 0 (Вводная химия): 12 расчетных задач -> Лист "Ведомость_Семинар_0"
  *  - Семинар 1 (Гомеостаз микроорганизмов): 4 расчетные задачи -> Лист "Ведомость_Семинар_1"
+ *  - Семинар 2 (RedOx, rH2 и аэробиоз): 4 расчетные задачи -> Лист "Ведомость_Семинар_2"
  */
 
 function doPost(e) {
@@ -27,12 +28,15 @@ function doPost(e) {
     }
 
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var topic = String(data.topic || 'sem0').toLowerCase();
+    var topic = String(data.topic || 'sem2').toLowerCase();
     
     // Определение имени листа в зависимости от темы
-    var sheetName = (topic === 'sem0' || topic.indexOf('хим') !== -1 || topic.indexOf('0') !== -1)
-      ? "Ведомость_Семинар_0"
-      : "Ведомость_Семинар_1";
+    var sheetName = "Ведомость_Семинар_1";
+    if (topic === 'sem0' || topic.indexOf('хим') !== -1 || topic.indexOf('0') !== -1) {
+      sheetName = "Ведомость_Семинар_0";
+    } else if (topic === 'sem2' || topic.indexOf('redox') !== -1 || topic.indexOf('2') !== -1) {
+      sheetName = "Ведомость_Семинар_2";
+    }
 
     var sheet = ss.getSheetByName(sheetName);
 
@@ -71,7 +75,7 @@ function doPost(e) {
       sheet.appendRow(headers);
       formatHeaderRow(sheet, headers.length);
     } else {
-      // Автоматическая актуализация шапки при изменении количества задач
+      // Автоматическая актуализация шапки при изменении структуры
       var currentCols = sheet.getLastColumn();
       var firstCell = sheet.getLastRow() >= 1 ? sheet.getRange(1, 1).getValue() : "";
       if (firstCell !== headers[0] || currentCols < headers.length) {
@@ -213,8 +217,8 @@ function formatHeaderRow(sheet, numColumns) {
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({
     status: "ok",
-    service: "RUDN Microbiology & Chemistry Testing Gateway (v2.2 Universal)",
-    supportedSeminars: ["Семинар 0 (12 задач)", "Семинар 1 (4 задачи)"],
+    service: "RUDN Microbiology & Chemistry Testing Gateway (v2.3 Universal)",
+    supportedSeminars: ["Семинар 0 (12 задач)", "Семинар 1 (4 задачи)", "Семинар 2 (4 задачи)"],
     timestamp: new Date().toISOString()
   })).setMimeType(ContentService.MimeType.JSON);
 }

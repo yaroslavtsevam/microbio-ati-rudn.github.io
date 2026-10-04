@@ -19,6 +19,7 @@ const App = {
     // Инициализация калькуляторов, плеера слайдов и модуля тестирования
     if (typeof Calculators !== 'undefined') Calculators.init();
     if (typeof CalculatorsSem0 !== 'undefined') CalculatorsSem0.init();
+    if (typeof CalculatorsSem2 !== 'undefined') CalculatorsSem2.init();
     if (typeof SlidesPlayer !== 'undefined') SlidesPlayer.init();
     if (typeof TestSession !== 'undefined') TestSession.init();
 
@@ -85,7 +86,7 @@ const App = {
 
   handleRouteHash() {
     const hash = window.location.hash.replace('#', '');
-    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'test'];
+    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'test'];
     if (validViews.includes(hash)) {
       this.switchView(hash);
     } else {
@@ -112,6 +113,7 @@ const App = {
       lectures: document.getElementById('view-lectures'),
       seminar0: document.getElementById('view-seminar0'),
       seminar1: document.getElementById('view-seminar1'),
+      seminar2: document.getElementById('view-seminar2'),
       test: document.getElementById('view-test')
     };
 
@@ -131,7 +133,7 @@ const App = {
   },
 
   /* ------------------------------------------------------------------------
-     3. ТАБЫ ВНУТРИ СЕМИНАРОВ 0 И 1
+     3. ТАБЫ ВНУТРИ СЕМИНАРОВ 0, 1 И 2
      ------------------------------------------------------------------------ */
   initTabs() {
     const tabContainers = document.querySelectorAll('.cds--tabs');

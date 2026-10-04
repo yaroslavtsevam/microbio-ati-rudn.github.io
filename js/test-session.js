@@ -1,5 +1,5 @@
 /**
- * Модуль управления сессией 15-минутного экспресс-тестирования
+ * Модуль управления сессией экспресс-тестирования (Семинары 0, 1 и 2)
  * Курс «Пищевая микробиология, санитария и гигиена» • АТИ РУДН
  */
 
@@ -10,13 +10,13 @@ const TestSession = {
       name: '',
       group: '',
       specialty: '',
-      topic: 'sem0'
+      topic: 'sem2'
     },
     tasks: [],
     startTime: null,
     endTime: null,
-    totalSeconds: 30 * 60,
-    remainingSeconds: 30 * 60,
+    totalSeconds: 15 * 60,
+    remainingSeconds: 15 * 60,
     timerInterval: null,
     isSubmitted: false
   },
@@ -48,6 +48,8 @@ const TestSession = {
         if (desc) {
           if (e.target.value === 'sem0') {
             desc.innerHTML = '⏱ <strong>30 минут</strong> • <strong>12 расчетных задач</strong> (по 2 из 6 категорий базовой химии) • Максимум: 100 баллов';
+          } else if (e.target.value === 'sem2') {
+            desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>4 расчетные задачи</strong> (по 1 из 4 разделов RedOx и аэробиоза) • Максимум: 100 баллов';
           } else {
             desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>4 расчетные задачи</strong> (по 1 из 4 разделов гомеостаза) • Максимум: 100 баллов';
           }
@@ -99,7 +101,7 @@ const TestSession = {
     const name = nameInput ? nameInput.value.trim() : '';
     const group = groupInput ? groupInput.value.trim() : '';
     const specialty = specialtyInput ? specialtyInput.value : '';
-    const topic = topicInput ? topicInput.value : 'sem0';
+    const topic = topicInput ? topicInput.value : 'sem2';
 
     if (!surname || !name || !group) {
       if (errorBox) {
@@ -112,12 +114,15 @@ const TestSession = {
     if (errorBox) errorBox.style.display = 'none';
 
     const isSem0 = topic === 'sem0';
+    const isSem2 = topic === 'sem2';
     const durationMinutes = isSem0 ? 30 : 15;
 
     this.state.student = { surname, name, group, specialty, topic };
     
     if (isSem0) {
       this.state.tasks = typeof TaskBankSem0 !== 'undefined' ? TaskBankSem0.getRandomTasks() : [];
+    } else if (isSem2) {
+      this.state.tasks = typeof TaskBankSem2 !== 'undefined' ? TaskBankSem2.getRandomTasks() : [];
     } else {
       this.state.tasks = typeof TaskBank !== 'undefined' ? TaskBank.getRandomTasks() : [];
     }
@@ -134,7 +139,6 @@ const TestSession = {
     this.renderTasks();
     this.startTimer();
   },
-
 
   /**
    * Переключение между шагами теста (Регистрация -> Задачи -> Квитанция)
@@ -291,7 +295,19 @@ const TestSession = {
     const timeSpentFormatted = `${minsSpent} мин ${secsSpent} сек`;
 
     const isSem0 = this.state.student.topic === 'sem0';
-    const bank = isSem0 && typeof TaskBankSem0 !== 'undefined' ? TaskBankSem0 : (typeof TaskBank !== 'undefined' ? TaskBank : null);
+    const isSem2 = this.state.student.topic === 'sem2';
+
+    let bank = typeof TaskBank !== 'undefined' ? TaskBank : null;
+    let topicTitle = 'Семинар 1: Физико-химия гомеостаза';
+
+    if (isSem0) {
+      bank = typeof TaskBankSem0 !== 'undefined' ? TaskBankSem0 : bank;
+      topicTitle = 'Семинар 0: Базовая химия';
+    } else if (isSem2) {
+      bank = typeof TaskBankSem2 !== 'undefined' ? TaskBankSem2 : bank;
+      topicTitle = 'Семинар 2: RedOx-потенциал и аэробиоз';
+    }
+
     const ptsPerTask = 100 / (this.state.tasks.length || 1);
 
     // Сбор ответов
@@ -330,8 +346,8 @@ const TestSession = {
       name: this.state.student.name,
       group: this.state.student.group,
       specialty: this.state.student.specialty,
-      topic: this.state.student.topic || 'sem0',
-      topicTitle: isSem0 ? 'Семинар 0: Базовая химия' : 'Семинар 1: Физико-химия гомеостаза',
+      topic: this.state.student.topic || 'sem2',
+      topicTitle,
       answers,
       correctCount,
       totalScore,
@@ -340,7 +356,6 @@ const TestSession = {
       timeSpentFormatted,
       elapsedSeconds
     };
-
 
     // Блокируем кнопку отправки и показываем лоадер
     const submitBtn = document.getElementById('btn-submit-test');
@@ -382,16 +397,17 @@ const TestSession = {
     if (studentInfo) {
       studentInfo.innerHTML = `
         <strong>${payload.surname} ${payload.name}</strong> (${payload.group})<br>
+        Тематика: <strong>${payload.topicTitle}</strong><br>
         Специальность: ${payload.specialty || 'Стандартизация и метрология / Управление качеством'}<br>
         Время сдачи: ${new Date().toLocaleString('ru-RU')} • Затрачено: ${payload.timeSpentFormatted}
-        ${payload.isAutoSubmit ? '<br><span class="cds--tag cds--tag--red" style="margin-top: 0.5rem;">Автоматическая сдача по истечении 15 минут</span>' : ''}
+        ${payload.isAutoSubmit ? '<br><span class="cds--tag cds--tag--red" style="margin-top: 0.5rem;">Автоматическая сдача по истечении времени</span>' : ''}
       `;
     }
 
     if (syncStatus) {
       if (syncResult.mode === 'gdrive' || syncResult.mode === 'gdrive_nocors') {
         syncStatus.className = 'cds--inline-notification cds--inline-notification--success';
-        syncStatus.innerHTML = '<strong>Статус синхронизации:</strong> Результаты успешно записаны в Google Таблицу на Google Drive преподавателя.';
+        syncStatus.innerHTML = `<strong>Статус синхронизации:</strong> Результаты успешно записаны в Google Таблицу <code>[${syncResult.sheetName || 'Ведомость'}]</code> на Google Drive преподавателя.`;
       } else {
         syncStatus.className = 'cds--inline-notification cds--inline-notification--info';
         syncStatus.innerHTML = '<strong>Локальная фиксация:</strong> Результаты надежно сохранены в резервной памяти браузера. Сохраните номер квитанции.';
