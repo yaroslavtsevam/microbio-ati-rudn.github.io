@@ -27,35 +27,83 @@
       </a>
 
       <nav aria-label="Основная навигация">
-        <ul class="cds--header__nav">
-          <li class="cds--header__menu-item">
-            <a href="#catalog" class="cds--header__menu-link cds--header__menu-link--active" data-nav="catalog">
-              Каталог курса (0–18)
+        <ul class="cds--header__nav" role="menubar">
+          <!-- 1. Каталог курса -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#catalog" class="cds--header__menu-link cds--header__menu-link--active" role="menuitem" data-nav="catalog">
+              Каталог курса
             </a>
           </li>
-          <li class="cds--header__menu-item">
-            <a href="#lectures" class="cds--header__menu-link" data-nav="lectures">
-              Лекции (1)
-            </a>
+
+          <!-- 2. Выпадающее меню: Лекции -->
+          <li class="cds--header__submenu" data-header-submenu role="none">
+            <button type="button" 
+                    class="cds--header__menu-title" 
+                    aria-haspopup="menu" 
+                    aria-expanded="false" 
+                    aria-controls="header-menu-lectures"
+                    data-submenu-trigger="lectures">
+              <span>Лекции</span>
+              <svg class="cds--header__menu-arrow" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/>
+              </svg>
+            </button>
+            <ul class="cds--header__menu" id="header-menu-lectures" role="menu" aria-label="Лекции курса">
+              <li role="none">
+                <a href="#lectures" class="cds--header__menu-item-link" role="menuitem" data-nav="lectures">
+                  <span class="cds--tag cds--tag--sm cds--tag--purple" style="margin-right: 8px;">Лекция 1</span>
+                  <span>Морфология и ультраструктура (45 слайдов)</span>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="cds--header__menu-item">
-            <a href="#seminar0" class="cds--header__menu-link" data-nav="seminar0">
-              Семинар 0 (Химия)
-            </a>
+
+          <!-- 3. Выпадающее меню: Семинары и практикумы -->
+          <li class="cds--header__submenu" data-header-submenu role="none">
+            <button type="button" 
+                    class="cds--header__menu-title" 
+                    aria-haspopup="menu" 
+                    aria-expanded="false" 
+                    aria-controls="header-menu-seminars"
+                    data-submenu-trigger="seminars">
+              <span>Семинары</span>
+              <svg class="cds--header__menu-arrow" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/>
+              </svg>
+            </button>
+            <ul class="cds--header__menu" id="header-menu-seminars" role="menu" aria-label="Семинары и практикумы">
+              <li role="none">
+                <a href="#seminar0" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar0">
+                  <span class="cds--tag cds--tag--sm cds--tag--blue" style="margin-right: 8px;">Сем 0</span>
+                  <span>Фундаментальная химия (Пререквизит)</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar1" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar1">
+                  <span class="cds--tag cds--tag--sm cds--tag--green" style="margin-right: 8px;">Сем 1</span>
+                  <span>Физико-химия гомеостаза и консерванты</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar2" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar2">
+                  <span class="cds--tag cds--tag--sm cds--tag--purple" style="margin-right: 8px;">Сем 2</span>
+                  <span>RedOx-потенциал, rH₂ и биоэнергетика</span>
+                </a>
+              </li>
+              <li class="cds--header__menu-divider" role="separator"></li>
+              <li role="none">
+                <a href="#catalog" class="cds--header__menu-item-link" role="menuitem" data-nav="catalog" style="color: #78a9ff; font-size: 0.8125rem;">
+                  <span>Все занятия курса (0–18) в каталоге →</span>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="cds--header__menu-item">
-            <a href="#seminar1" class="cds--header__menu-link" data-nav="seminar1">
-              Семинар 1 (Гомеостаз)
-            </a>
-          </li>
-          <li class="cds--header__menu-item">
-            <a href="#seminar2" class="cds--header__menu-link" data-nav="seminar2">
-              Семинар 2 (RedOx)
-            </a>
-          </li>
-          <li class="cds--header__menu-item">
-            <a href="#test" class="cds--header__menu-link" data-nav="test">
-              Экспресс-контроль
+
+          <!-- 4. Экспресс-контроль -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#test" class="cds--header__menu-link" role="menuitem" data-nav="test">
+              <span>Экспресс-контроль</span>
+              <span class="cds--tag cds--tag--sm cds--tag--green" style="margin-left: 6px; font-size: 0.6875rem;">15/30 мин</span>
             </a>
           </li>
         </ul>

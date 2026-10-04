@@ -186,4 +186,16 @@ describe('ГРУППА 4: Физическое наличие файлов ку�
     assert.ok(indexHtml.includes('js/task-bank-sem2.js'), 'скрипт task-bank-sem2.js не подключен в index.html');
     assert.ok(indexHtml.includes('value="sem2"'), 'option value="sem2" отсутствует в форме тестирования');
   });
+
+  test('4.4. index.html реализует стандарты IBM Carbon UI Shell Submenus (ARIA, role=menu, trigger)', () => {
+    const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf-8');
+    assert.ok(indexHtml.includes('class="cds--header__submenu"'), 'class cds--header__submenu отсутствует');
+    assert.ok(indexHtml.includes('aria-haspopup="menu"'), 'aria-haspopup="menu" отсутствует на триггерах подменю');
+    assert.ok(indexHtml.includes('aria-expanded="false"'), 'aria-expanded="false" отсутствует на триггерах подменю');
+    assert.ok(indexHtml.includes('class="cds--header__menu"'), 'class cds--header__menu отсутствует');
+    assert.ok(indexHtml.includes('role="menu"'), 'role="menu" отсутствует на выпадающих списках');
+    assert.ok(indexHtml.includes('role="menuitem"'), 'role="menuitem" отсутствует на элементах выпадающих списков');
+    assert.ok(indexHtml.includes('data-submenu-trigger="lectures"'), 'триггер лекций отсутствует');
+    assert.ok(indexHtml.includes('data-submenu-trigger="seminars"'), 'триггер семинаров отсутствует');
+  });
 });

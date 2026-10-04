@@ -59,28 +59,67 @@ const App = {
   },
 
   /* ------------------------------------------------------------------------
-     2. НАВИГАЦИЯ МЕЖДУ РАЗДЕЛАМИ ПОРТАЛА
+     2. НАВИГАЦИЯ МЕЖДУ РАЗДЕЛАМИ ПОРТАЛА И CARBON SUBMENUS
      ------------------------------------------------------------------------ */
   initNavigation() {
-    const navLinks = document.querySelectorAll('.cds--header__menu-link[data-nav]');
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    // 2.1. Прямые клики по элементам навигации с data-nav
+    document.addEventListener('click', (e) => {
+      const navLink = e.target.closest('[data-nav]');
+      if (navLink) {
         e.preventDefault();
-        const targetView = link.getAttribute('data-nav');
+        const targetView = navLink.getAttribute('data-nav');
+        this.closeAllSubmenus();
         this.switchView(targetView);
         window.location.hash = targetView;
-      });
-    });
+        return;
+      }
 
-    // Делегирование ссылок на переход внутри карточек и кнопок
-    document.addEventListener('click', (e) => {
-      const target = e.target.closest('[data-go-to]');
-      if (target) {
+      // 2.2. Кнопка-триггер выпадающего меню Carbon Submenu
+      const submenuBtn = e.target.closest('[data-submenu-trigger]');
+      if (submenuBtn) {
         e.preventDefault();
-        const view = target.getAttribute('data-go-to');
+        const parentSubmenu = submenuBtn.closest('.cds--header__submenu');
+        if (parentSubmenu) {
+          const isOpen = parentSubmenu.classList.contains('cds--header__submenu--open');
+          this.closeAllSubmenus();
+          if (!isOpen) {
+            parentSubmenu.classList.add('cds--header__submenu--open');
+            submenuBtn.setAttribute('aria-expanded', 'true');
+          }
+        }
+        return;
+      }
+
+      // 2.3. Клик вне навигации закрывает все открытые выпадающие списки
+      if (!e.target.closest('.cds--header__submenu')) {
+        this.closeAllSubmenus();
+      }
+
+      // 2.4. Делегирование ссылок на переход внутри контентных карточек и кнопок
+      const targetGoTo = e.target.closest('[data-go-to]');
+      if (targetGoTo) {
+        e.preventDefault();
+        const view = targetGoTo.getAttribute('data-go-to');
+        this.closeAllSubmenus();
         this.switchView(view);
         window.location.hash = view;
       }
+    });
+
+    // 2.5. Закрытие меню по нажатию клавиши Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeAllSubmenus();
+      }
+    });
+  },
+
+  closeAllSubmenus() {
+    const submenus = document.querySelectorAll('.cds--header__submenu');
+    submenus.forEach(menu => {
+      menu.classList.remove('cds--header__submenu--open');
+      const trigger = menu.querySelector('[data-submenu-trigger]');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
     });
   },
 
@@ -96,8 +135,9 @@ const App = {
 
   switchView(viewName) {
     this.currentView = viewName;
+    this.closeAllSubmenus();
 
-    // Обновление активных кнопок меню
+    // 1. Обновление активных прямых ссылок меню
     const navLinks = document.querySelectorAll('.cds--header__menu-link[data-nav]');
     navLinks.forEach(link => {
       if (link.getAttribute('data-nav') === viewName) {
@@ -107,7 +147,40 @@ const App = {
       }
     });
 
-    // Скрытие / показ представлений
+    // 2. Обновление активных элементов внутри выпадающих подменю
+    const submenuLinks = document.querySelectorAll('.cds--header__menu-item-link[data-nav]');
+    submenuLinks.forEach(item => {
+      if (item.getAttribute('data-nav') === viewName) {
+        item.classList.add('cds--header__menu-item-link--active');
+      } else {
+        item.classList.remove('cds--header__menu-item-link--active');
+      }
+    });
+
+    // 3. Подсветка родительского триггера подменю при активном дочернем роуте
+    const lecturesViews = ['lectures'];
+    const seminarsViews = ['seminar0', 'seminar1', 'seminar2'];
+
+    const lecturesTrigger = document.querySelector('[data-submenu-trigger="lectures"]');
+    const seminarsTrigger = document.querySelector('[data-submenu-trigger="seminars"]');
+
+    if (lecturesTrigger) {
+      if (lecturesViews.includes(viewName)) {
+        lecturesTrigger.classList.add('cds--header__menu-title--active');
+      } else {
+        lecturesTrigger.classList.remove('cds--header__menu-title--active');
+      }
+    }
+
+    if (seminarsTrigger) {
+      if (seminarsViews.includes(viewName)) {
+        seminarsTrigger.classList.add('cds--header__menu-title--active');
+      } else {
+        seminarsTrigger.classList.remove('cds--header__menu-title--active');
+      }
+    }
+
+    // 4. Скрытие / показ представлений
     const views = {
       catalog: document.getElementById('view-catalog'),
       lectures: document.getElementById('view-lectures'),
