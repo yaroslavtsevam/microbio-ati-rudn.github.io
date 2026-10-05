@@ -667,7 +667,7 @@
           <span>Скачать раздатку (PDF)</span>
           <span>📄</span>
         </a>
-        <button class="cds--btn cds--btn--primary" data-go-to="test">
+        <button class="cds--btn cds--btn--primary" data-go-to="test" data-test-topic="sem0">
           <span>Экспресс-контроль по химии (30 мин)</span>
           <span>⏱</span>
         </button>
@@ -1498,7 +1498,7 @@
           <span>Скачать материалы (PDF)</span>
           <span>↓</span>
         </a>
-        <button class="cds--btn cds--btn--primary" data-go-to="test">
+        <button class="cds--btn cds--btn--primary" data-go-to="test" data-test-topic="sem1">
           <span>Экспресс-тест (15 мин)</span>
           <span>⏱</span>
         </button>
@@ -2228,7 +2228,7 @@
           <span>Ключи (PDF)</span>
           <span>🔑</span>
         </a>
-        <button class="cds--btn cds--btn--primary" data-go-to="test">
+        <button class="cds--btn cds--btn--primary" data-go-to="test" data-test-topic="sem2">
           <span>Экспресс-тест (15 мин)</span>
           <span>⏱</span>
         </button>
@@ -2260,14 +2260,16 @@
     <!-- ===================================================================
          ТАБ 1: ТЕОРИЯ И МЕХАНИЗМЫ (8 МОДУЛЕЙ + 5 СХЕМ)
          =================================================================== -->
-    <section id="sem2-tab-theory" class="cds--tab-panel cds--tab-panel--active">
+        <section id="sem2-tab-theory" class="cds--tab-panel cds--tab-panel--active">
       
-      <!-- Модуль 2.1: Введение в биоэнергетику и роль ОВР -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.1: ВВЕДЕНИЕ В БИОЭНЕРГЕТИКУ И РОЛЬ ОВР
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.1</div>
         <h2 class="example-box__title">Введение в клеточную биоэнергетику и роль окислительно-восстановительного потенциала</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Жизнедеятельность любого живого организма — от высших эукариот до специализированных экстремофильных архей в подледниковых озерах Антарктиды и геотермальных гидротермах океанического дна — фундаментально зависит от непрерывного сопряжения потоков энергии и материи. Метаболизм является основой поддержания гомеостаза. Вне зависимости от экониши, все микроорганизмы подчиняются универсальным термодинамическим требованиям:
+          Жизнедеятельность любого организма, от сложнейших многоклеточных эукариот до специализированных архей, обитающих в экстремальных условиях подледниковых озер или геотермальных источников, фундаментально зависит от непрерывного потока энергии и материи. Метаболизм является основой, на которой строится сама жизнь. Исследования показывают, что все микроорганизмы в их колоссальном разнообразии имеют общий набор базовых термодинамических требований:
         </p>
 
         <div class="cds--row" style="margin-bottom: 1.5rem;">
@@ -2276,7 +2278,7 @@
               <div class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Фактор 1</div>
               <h4 style="margin: 0 0 0.5rem 0;">Жидкая вода ($a_w$)</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                Необходима как универсальный растворитель и среда протекания диффузионных и ферментативных процессов.
+                Необходима как универсальный растворитель и реакционная среда для диффузионных и ферментативных процессов.
               </p>
             </div>
           </div>
@@ -2285,14 +2287,14 @@
               <div class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Фактор 2</div>
               <h4 style="margin: 0 0 0.5rem 0;">Источник энергии</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                Химический (хемотрофы) или лучистый (фототрофы) потенциал для совершения термодинамической работы.
+                Химический (хемотрофы) или лучистый (фототрофы) потенциал для совершения полезной термодинамической работы.
               </p>
             </div>
           </div>
           <div class="cds--col-3">
             <div class="slide-info-card" style="height: 100%;">
               <div class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Фактор 3</div>
-              <h4 style="margin: 0 0 0.5rem 0;">Донор электронов</h4>
+              <h4 style="margin: 0 0 0.5rem 0;">Источник электронов</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
                 Органический (органотрофы) или неорганический ($H_2, H_2S, Fe^{2+}, NH_3$ у литотрофов) восстановитель.
               </p>
@@ -2300,396 +2302,466 @@
           </div>
           <div class="cds--col-3">
             <div class="slide-info-card" style="height: 100%;">
-              <div class="cds--tag cds--tag--red" style="margin-bottom: 0.5rem;">Фактор 4</div>
-              <h4 style="margin: 0 0 0.5rem 0;">Биогенные элементы</h4>
+              <div class="cds--tag cds--tag--teal" style="margin-bottom: 0.5rem;">Фактор 4</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Питательные биогены</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                Источники C, N, P, S и микроэлементов для биосинтеза макромолекул и ферментативных кофакторов.
+                Пул макро- ($C, N, P, S$) и микроэлементов ($Fe, Cu, Zn, Mo, Mn$) для построения биополимеров и коферментов.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="cds--tile" style="margin-bottom: 1rem;">
-          <h4 style="margin-top: 0; color: var(--cds-interactive-01);">Биологический смысл окислительно-восстановительного потенциала ($E_h$ / ORP)</h4>
-          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 0.5rem;">
-            В основе клеточного энергообеспечения лежат <strong>окислительно-восстановительные реакции (ОВР)</strong>, высвобождающие кванты свободной энергии для фосфорилирования АДФ в универсальную энергетическую валюту — <strong>аденозинтрифосфат (АТФ)</strong>.
-          </p>
-          <p style="font-size: 0.875rem; line-height: 1.6; margin: 0;">
-            Окислительно-восстановительный потенциал ($E_h$, или ORP — <em>Oxidation-Reduction Potential</em>, измеряемый в мВ или В) отражает меру способности химической системы или экологической матрицы отдавать или присоединять электроны. Этот параметр выступает <strong>генеральным термодинамическим регулятором</strong> микробного метаболизма, определяющим допустимость дыхательных или бродильных путей, структуру микробиома и скорость порчи сырья.
-          </p>
-        </div>
-      </div>
-
-      <!-- Модуль 2.2: Фундаментальная термодинамика ОВР и энергия Гиббса -->
-      <div class="example-box" style="margin-bottom: 2rem;">
-        <div class="example-box__badge">Модуль 2.2</div>
-        <h2 class="example-box__title">Фундаментальная термодинамика ОВР: Сопряженные полуреакции и энергия Гиббса</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Всякий процесс окисления (отдача $e^-$ донором) неразрывно сопряжен с процессом восстановления (присоединение $e^-$ акцептором). Термодинамически любая окислительно-восстановительная система описывается через сопряженную редокс-пару ($Ox/Red$).
+          В основе клеточной биоэнергетики лежат <strong>окислительно-восстановительные реакции (ОВР)</strong>. По сути, энергообеспечение планеты осуществляется за счет реакций, высвобождающих энергию, достаточную для синтеза универсальной энергетической валюты — <em>аденозинтрифосфата (АТФ)</em>. <strong>Окислительно-восстановительный потенциал ($E_h$, или ORP — Oxidation-Reduction Potential)</strong> служит критически важным параметром, отражающим меру способности химического вещества или экосистемы в целом присоединять электроны. Измеряемый в милливольтах или вольтах, этот показатель выступает генеральным регулятором микробной энергетики, определяющим термодинамическую возможность протекания метаболических путей, распределение биомассы и структуру сообществ.
         </p>
 
-        <div class="cds--row" style="margin-bottom: 1.5rem;">
-          <div class="cds--col-6">
-            <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">1. Сопряженная полуреакция и стандартный потенциал $E^\circ$</h4>
-              <div class="formula-box">$$\text{Ox} + n e^- \rightleftharpoons \text{Red}$$</div>
-              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
-                Каждая полуреакция характеризуется стандартным восстановительным потенциалом $E^\circ$ относительно нормального водородного электрода (НВЭ) при $a_{\text{H}^+} = 1\text{ М}$ (pH 0, 25 °C).
+        <!-- Carbon Accordion: Астробиологические экстраполяции -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🪐</span>
+                <span>Астробиология и экстремофилия: гидротермальная активность Энцелада и происхождение метаболизма</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                Как только базовые термодинамические требования микроорганизмов становятся понятны, появляется возможность с высокой точностью предсказывать поведение биологических систем в любой среде — будь то каустический гиперсоленый водоем, внутреннее поровое пространство антарктических эндолитических скал или даже внеземные океаны.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; padding-left: 1.25rem;">
-                <li><strong>Положительный $E^\circ$:</strong> окисленная форма обладает высоким сродством к электронам (сильный окислитель/акцептор).</li>
-                <li><strong>Отрицательный $E^\circ$:</strong> восстановленная форма легко отдает электроны (сильный восстановитель/донор).</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cds--col-6">
-            <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">2. Энергия Гиббса ($\Delta G^\circ$) и критерий самопроизвольности</h4>
-              <div class="formula-box">$$\Delta E^\circ = E^\circ_{\text{акцептора}} - E^\circ_{\text{донора}} \implies \Delta G^\circ = -n \cdot F \cdot \Delta E^\circ$$</div>
-              <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
-                Где $F = 96485\text{ Кл/моль} = 96{,}485\text{ кДж/(В}\cdot\text{моль)}$ — константа Фарадея, $n$ — число переносимых электронов.
+              <p>
+                Ярким примером служат подледные океаны на спутнике Сатурна <strong>Энцеладе</strong>. Анализ состава водяных плюмов, выброшенных в космическое пространство через криовулканические трещины («тигровые полосы») и зарегистрированных зондом <em>Cassini</em>, выявил наличие молекулярного водорода ($H_2$), метана ($CH_4$), углекислого газа ($CO_2$) и наночастиц диоксида кремния (кремнезема). Это служит прямым геохимическим доказательством активных гидротермальных процессов серпентинизации на границе ядра и океана, создающих глубоко восстановительную среду с отрицательным $E_h$, термодинамически благоприятную для анаэробного хемолитоавтотрофного метаногенеза ($4H_2 + CO_2 	o CH_4 + 2H_2O$).
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; padding-left: 1.25rem;">
-                <li><strong>Критерий самопроизвольности:</strong> реакция термодинамически выгодна только при $\Delta E^\circ > 0 \iff \Delta G^\circ < 0$.</li>
-                <li><strong>Порог синтеза АТФ:</strong> для фосфорилирования АДФ требуется минимальный квант потенциала $\eta_{\text{ATP}} \ge 0{,}013\text{ В}$ (или критический уровень $\Delta\mu_{\min}$).</li>
-              </ul>
             </div>
-          </div>
+          </details>
         </div>
       </div>
 
-      <!-- Модуль 2.3: Уравнение Нернста и динамика Eh -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.2: ФУНДАМЕНТАЛЬНАЯ ТЕРМОДИНАМИКА ОВР И ЭДС
+           =================================================================== -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Модуль 2.2</div>
+        <h2 class="example-box__title">Фундаментальная термодинамика окислительно-восстановительных реакций</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Метаболические окислительно-восстановительные реакции всегда протекают строго сопряженными парами: <strong>окисление</strong> (процесс отдачи электронов донором) неразрывно связано с <strong>восстановлением</strong> (процессом присоединения электронов акцептором). Вещество, отдающее электроны, служит источником энергии (донором), а вещество, принимающее их, — акцептором.
+        </p>
+
+        <div class="cds--row" style="margin-bottom: 1.25rem;">
+          <div class="cds--col-6">
+            <div class="slide-info-card">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">Сопряженная полуреакция:</h4>
+              <div class="formula-box">$$	ext{Ox} + n e^- ightleftharpoons 	ext{Red}$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0;">
+                $	ext{Ox}$ — окисленная форма вещества, $	ext{Red}$ — восстановленная форма, $n$ — количество молей переносимых электронов.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="slide-info-card">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">Связь энергии Гиббса и разности потенциалов:</h4>
+              <div class="formula-box">$$\Delta G^\circ = -n \cdot F \cdot \Delta E^\circ$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0;">
+                $F = 96485	ext{ Кл/моль} = 96{,}485	ext{ кДж/(В}\cdot	ext{моль)}$ (константа Фарадея), $\Delta E^\circ = E^\circ_{	ext{акцептора}} - E^\circ_{	ext{донора}}$.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Каждая полуреакция характеризуется стандартным восстановительным потенциалом ($E^\circ$), измеряемым относительно стандартного водородного электрода при $pH = 0$. Чем выше (положительнее) потенциал $E^\circ$, тем выше сродство окисленной формы к электронам и тем сильнее ее окислительные свойства. Классическим примером окислительно-восстановительного электрода является платиновый электрод в растворе солей железа ($	ext{Pt} / 	ext{Fe}^{3+}, 	ext{Fe}^{2+}$). И наоборот, системы с отрицательным потенциалом обладают ярко выраженной тенденцией отдавать электроны, выступая сильными восстановителями.
+        </p>
+
+        <div class="cds--inline-notification cds--inline-notification--info" style="margin-bottom: 1.25rem;">
+          <strong>Термодинамический критерий самопроизвольности:</strong> Процесс идет самопроизвольно только при уменьшении свободной энергии системы ($\Delta G^\circ < 0$), что выполняется исключительно при положительной разности потенциалов ($\Delta E^\circ > 0$).
+        </div>
+
+        <!-- Carbon Accordion: Термодинамический квант АТФ -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>⚡</span>
+                <span>Термодинамический квант синтеза АТФ (η_ATP) и минимальные энергетические пределы жизни</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                Высвобождаемая свободная энергия $\Delta G^\circ$ прямо пропорциональна $\Delta E^\circ$ и используется микробной клеткой для создания электрохимического протонного градиента на мембране.
+              </p>
+              <p>
+                Минимальный потенциал, необходимый для транслокации протонов и синтеза одной молекулы АТФ ($\eta_{	ext{ATP}}$), оценивается биофизиками примерно в <strong>$0{,}013	ext{ В}$</strong> (что эквивалентно кванту свободной энергии порядка $-15 \dots -20	ext{ кДж/моль}$). Если доступная разность потенциалов $\Delta E$ в экосистеме падает ниже этого порога (или ниже минимального трансмембранного потенциала $\Delta\mu_{	ext{min}}$ для поддержания целостности мембраны), метаболические процессы прекращаются, и клетка переходит в состояние покоя или погибает из-за энергетического голодания.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           МОДУЛЬ 2.3: УРАВНЕНИЕ НЕРНСТА И ВЛИЯНИЕ СРЕДЫ
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.3</div>
-        <h2 class="example-box__title">Динамика окислительно-восстановительного потенциала: Уравнение Нернста</h2>
+        <h2 class="example-box__title">Динамика редокс-потенциала: Уравнение Нернста</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          В биологических матрицах условия далеки от стандартных (концентрации $\ne 1\text{ М}$, газы $\ne 1\text{ атм}$, температура и pH варьируют). В биохимии принят физиологический стандартный потенциал $E^{\circ\prime}$, определенный при $\text{pH} = 7{,}0$ ($298{,}15\text{ K}$).
+          Хотя стандартные потенциалы $E^\circ$ рассчитываются при концентрациях $1	ext{ моль/л}$, давлении газов $1	ext{ атм}$ и температуре $298{,}15	ext{ К}$ ($25^\circ	ext{C}$), в реальных биологических матрицах, микробных биопленках и водоемах условия далеки от стандартных. В биологии фундаментальным эталоном служит <strong>физиологический стандартный потенциал $E^{\circ\prime}$</strong>, определяемый при нейтральном $pH = 7{,}00$.
+        </p>
+
+        <div class="slide-info-card" style="margin-bottom: 1.25rem;">
+          <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">Уравнение Нернста для биологических систем:</h4>
+          <div class="formula-box">$$E_h = E^\circ - rac{R \cdot T}{n \cdot F} \ln rac{[	ext{Red}]}{[	ext{Ox}]} = E^\circ - rac{2{,}3026 \cdot R \cdot T}{n \cdot F} \lg rac{[	ext{Red}]}{[	ext{Ox}]}$$</div>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin: 0.5rem 0 0 0;">
+            При $25^\circ	ext{C}$ ($298{,}15	ext{ K}$) для реакции с участием протонов ($m = n = 2$, например $	ext{NAD}^+ / 	ext{NADH}$):
+          </p>
+          <div class="formula-box" style="margin-top: 0.5rem;">$$E_h = E^\circ - 0{,}0592 \cdot pH + rac{0{,}0592}{n} \lg rac{[	ext{Ox}]}{[	ext{Red}]} \quad [	ext{В}]$$</div>
+        </div>
+
+        <!-- Carbon Accordion: In silico анализ чувствительности Нернста -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>💻</span>
+                <span>Вычислительный анализ (in silico) чувствительности уравнения Нернста к pH и температуре</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                Математическое моделирование уравнения Нернста демонстрирует исключительную чувствительность параметра $E_h$ к малейшим колебаниям физико-химических параметров окружающей среды:
+              </p>
+              <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+                <li><strong>Влияние кислотности:</strong> Повышение $pH$ всего на одну единицу (например, с 7.0 до 8.0) сдвигает редокс-потенциал на $-59{,}2	ext{ мВ}$, что по величине термодинамического эффекта строго эквивалентно увеличению концентрации растворенного молекулярного водорода в <strong>100 раз</strong> (например, с $1$ до $100	ext{ мг/л}$).</li>
+                <li><strong>Влияние температуры:</strong> При насыщенной концентрации водорода ($1{,}57	ext{ мг/л}$) и нейтральном $pH = 7{,}0$, изменение температуры на каждые $20^\circ	ext{C}$ приводит к сдвигу потенциала примерно на <strong>$30	ext{ мВ}$</strong>. Данный температурный сдвиг термодинамически эквивалентен изменению концентрации водорода в <strong>10 раз</strong> (от $0{,}1$ до $1{,}0	ext{ мг/л}$).</li>
+              </ul>
+              <p style="margin-top: 0.75rem;">
+                Таким образом, даже локальные микрофлуктуации температуры и $pH$ внутри колоний или биопленок способны кардинально изменять термодинамическую выгодность конкурирующих метаболических путей.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           МОДУЛЬ 2.4: ПОКАЗАТЕЛЬ КЛАРКА rH2 И ЭЛЕКТРОМЕТРИЯ
+           =================================================================== -->
+      <div class="example-box" style="margin-bottom: 2rem;">
+        <div class="example-box__badge">Модуль 2.4</div>
+        <h2 class="example-box__title">Показатель Кларка (rH₂) как объективная мера редокс-статуса</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Поскольку измеренный потенциал $E_h$ напрямую зависит от концентрации ионов гидроксония, простое сопоставление величин $E_h$ для двух сред с различной кислотностью неизбежно приводит к ложным выводам об их истинной окислительной или восстановительной силе. Для устранения зависимости от $pH$ в 1925 году <strong>У. М. Кларк (W. Mansfield Clark)</strong> в серии фундаментальных трудов <em>«Studies on Oxidation-Reduction»</em> ввел безразмерный критерий — <strong>относительный водородный показатель $rH_2$</strong>.
         </p>
 
         <div class="slide-info-card" style="margin-bottom: 1.5rem;">
-          <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">Обобщенное уравнение Нернста с учетом ионов $\text{H}^+$</h4>
-          <div class="formula-box">$$\text{Ox} + n e^- + m \text{H}^+ \rightleftharpoons \text{Red} \implies E_h = E^\circ - \frac{RT}{nF} \ln \frac{[\text{Red}]}{[\text{Ox}][\text{H}^+]^m}$$</div>
-          <p style="font-size: 0.875rem; line-height: 1.5; margin-top: 0.75rem; margin-bottom: 0.5rem;">
-            При $T = 298{,}15\text{ K}$ ($25^\circ\text{C}$) переход к десятичным логарифмам ($2{,}3026 \cdot \frac{RT}{F} \approx 0{,}05916\text{ В} = 59{,}2\text{ мВ}$):
+          <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">Физико-химический смысл и расчетная формула:</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            Критерий $rH_2$ представляет собой отрицательный десятичный логарифм парциального давления газообразного водорода ($rH_2 = -\lg P_{	ext{H}_2}$), находящегося в термодинамическом равновесии с исследуемой системой:
           </p>
-          <div class="formula-box">$$E_h = E^\circ - \frac{m}{n} \cdot 0{,}0592 \cdot \text{pH} + \frac{0{,}0592}{n} \lg \frac{[\text{Ox}]}{[\text{Red}]}$$</div>
+          <div class="formula-box">$$rH_2 = rac{E_h	ext{ (В)} + 0{,}0592 \cdot pH}{0{,}0296}$$</div>
+          <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0.5rem 0 0 0;">
+            При пересчете показаний лабораторного прибора: $E_h = E_{	ext{изм}} + E_{	ext{сравн}}$, где для хлорсеребряного электрода ($Ag/AgCl$, насыщ. $KCl$) $E_{	ext{сравн}} = +207{,}0	ext{ мВ}$ ($+0{,}207	ext{ В}$).
+          </p>
         </div>
 
-        <!-- Анализ чувствительности In Silico -->
-        <div class="cds--tile">
-          <h4 style="margin-top: 0; color: var(--cds-support-warning);">Вычислительный анализ (in silico) чувствительности параметра $E_h$:</h4>
-          <div class="cds--row">
-            <div class="cds--col-6">
-              <div style="background: var(--cds-layer-01); padding: 1rem; border-left: 3px solid #0f62fe; height: 100%;">
-                <strong>1. Сдвиг pH на 1 единицу:</strong>
-                <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0.5rem 0 0 0;">
-                  Для систем с $m=n$ (например, $\text{NAD}^+/\text{NADH}$) изменение pH с 7 до 8 сдвигает $E_h$ на <strong>$-59{,}2\text{ мВ}$</strong>. По термодинамическому эффекту это эквивалентно <strong>100-кратному увеличению концентрации растворенного водорода</strong> (с 1 до 100 мг/л).
-                </p>
-              </div>
-            </div>
-            <div class="cds--col-6">
-              <div style="background: var(--cds-layer-01); padding: 1rem; border-left: 3px solid #198038; height: 100%;">
-                <strong>2. Сдвиг температуры на $20^\circ\text{C}$:</strong>
-                <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0.5rem 0 0 0;">
-                  При постоянном pH 7.0 и насыщении водородом (1.57 мг/л) нагрев на $20^\circ\text{C}$ смещает редокс-потенциал примерно на <strong>$\approx 30\text{ мВ}$</strong>, что термодинамически эквивалентно <strong>10-кратному изменению концентрации восстановителя</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Модуль 2.4: Электрометрия Eh и показатель Кларка rH2 -->
-      <div class="example-box" style="margin-bottom: 2rem;">
-        <div class="example-box__badge">Модуль 2.4</div>
-        <h2 class="example-box__title">Электрометрия $E_h$ и показатель Кларка ($rH_2$) как инвариантная мера редокс-статуса</h2>
-        <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Поскольку $E_h$ линейно зависит от кислотности среды, прямое сравнение показаний милливольтметра в средах с разным pH приводит к грубым ошибкам. Для устранения этого искажения в 1925 году <strong>У. М. Кларк (W.M. Clark)</strong> ввел безразмерный критерий — <strong>относительный водородный показатель $rH_2$</strong>.
-        </p>
-
-        <div class="cds--row" style="margin-bottom: 1.5rem;">
-          <div class="cds--col-6">
-            <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">1. Инструментальное измерение $E_h$</h4>
-              <div class="formula-box">$$E_h = E_{\text{изм}} + E_{\text{сравн}}$$</div>
-              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0;">
-                Измерение проводят платиновым индикаторным электродом против хлорсеребряного ($\text{Ag/AgCl}$ в насс. $\text{KCl}$, где $E_{\text{сравн}} = +207{,}0\text{ мВ}$ при $25^\circ\text{C}$).
-              </p>
-            </div>
-          </div>
-
-          <div class="cds--col-6">
-            <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin: 0 0 0.5rem 0; color: var(--cds-interactive-01);">2. Формула Кларка ($rH_2$)</h4>
-              <div class="formula-box">$$rH_2 = -\lg P_{\text{H}_2} = \frac{E_h (\text{В}) + 0{,}0592 \cdot \text{pH}}{0{,}0296}$$</div>
-              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0;">
-                $rH_2$ численно равен отрицательному логарифму парциального давления $H_2$, находящегося в равновесии с системой при текущих $E_h$ и pH.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- СХЕМА 2: Градуированная шкала Кларка SVG -->
+        <!-- СХЕМА 2: Шкала Кларка rH2 SVG -->
         <div style="margin: 1.5rem 0; background: var(--cds-layer-01); border: 1px solid var(--cds-border-subtle-01); border-radius: 4px; padding: 1rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 2. Интерактивная шкала Кларка ($rH_2$) и зоны дифференциации микробиоты</strong>
-            <span class="cds--tag cds--tag--blue">Диапазон 0 ... 42.6</span>
+            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 2. Градуированная шкала Кларка (rH₂) и метаболические зоны микробиоты</strong>
+            <span class="cds--tag cds--tag--purple">0 ... 42.6 единиц rH₂</span>
           </div>
-          <svg viewBox="0 0 880 240" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
+          <svg viewBox="0 0 880 260" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
             <defs>
-              <linearGradient id="clarkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#3b82f6"/>
-                <stop offset="32.8%" stop-color="#06b6d4"/>
-                <stop offset="56.3%" stop-color="#10b981"/>
-                <stop offset="66.4%" stop-color="#f59e0b"/>
-                <stop offset="100%" stop-color="#ef4444"/>
+              <linearGradient id="clarkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#8a3ffc"/>
+                <stop offset="30%" stop-color="#0f62fe"/>
+                <stop offset="55%" stop-color="#f1c21b"/>
+                <stop offset="70%" stop-color="#ff832b"/>
+                <stop offset="100%" stop-color="#da1e28"/>
               </linearGradient>
             </defs>
-            <!-- Background track -->
-            <rect x="40" y="70" width="800" height="36" rx="6" fill="url(#clarkGradient)" opacity="0.95"/>
-            <rect x="40" y="70" width="800" height="36" rx="6" fill="none" stroke="var(--cds-border-subtle-01, #525252)" stroke-width="1.5"/>
 
-            <!-- Division markers -->
-            <!-- rH2 = 0 -->
-            <line x1="40" y1="62" x2="40" y2="114" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
-            <text x="40" y="55" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600" text-anchor="middle">rH₂ = 0</text>
-            <text x="40" y="130" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11" text-anchor="middle">P(H₂)=1 атм</text>
+            <!-- Background Gradient Bar -->
+            <rect x="40" y="50" width="800" height="36" rx="4" fill="url(#clarkGrad)"/>
 
-            <!-- rH2 = 14 -->
-            <line x1="303" y1="62" x2="303" y2="114" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2" stroke-dasharray="3,3"/>
-            <text x="303" y="55" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600" text-anchor="middle">rH₂ = 14</text>
-            <text x="303" y="130" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11" text-anchor="middle">Граница анаэробиоза</text>
+            <!-- Axis ticks & labels -->
+            <!-- 0 -->
+            <line x1="40" y1="42" x2="40" y2="94" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
+            <text x="40" y="35" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="700" text-anchor="middle">0</text>
+            <text x="40" y="110" fill="#d4bbff" font-size="11" text-anchor="middle">P(H₂)=1 атм</text>
 
-            <!-- rH2 = 24 -->
-            <line x1="491" y1="62" x2="491" y2="114" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2" stroke-dasharray="3,3"/>
-            <text x="491" y="55" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600" text-anchor="middle">rH₂ = 24</text>
-            <text x="491" y="130" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11" text-anchor="middle">Амфолитная граница</text>
+            <!-- 14 -->
+            <line x1="303" y1="42" x2="303" y2="94" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
+            <text x="303" y="35" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="700" text-anchor="middle">14.0</text>
+            <text x="303" y="110" fill="#78a9ff" font-size="11" text-anchor="middle">Граница анаэробиоза</text>
 
-            <!-- rH2 = 28.3 -->
-            <line x1="571" y1="58" x2="571" y2="118" stroke="#f1c21b" stroke-width="2.5"/>
-            <polygon points="571,52 566,42 576,42" fill="#f1c21b"/>
-            <text x="571" y="36" fill="#f1c21b" font-size="12" font-weight="700" text-anchor="middle">28.3 (Нейтралитет)</text>
+            <!-- 24 -->
+            <line x1="491" y1="42" x2="491" y2="94" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
+            <text x="491" y="35" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="700" text-anchor="middle">24.0</text>
+            <text x="491" y="110" fill="#f1c21b" font-size="11" text-anchor="middle">Переходная зона</text>
 
-            <!-- rH2 = 42.6 -->
-            <line x1="840" y1="62" x2="840" y2="114" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
-            <text x="840" y="55" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600" text-anchor="middle">rH₂ = 42.6</text>
-            <text x="840" y="130" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11" text-anchor="middle">P(O₂)=1 атм</text>
+            <!-- 28.3 -->
+            <line x1="571" y1="42" x2="571" y2="94" stroke="#ffffff" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="571" y="22" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">28.3</text>
+            <text x="571" y="35" fill="var(--cds-text-secondary, #c6c6c6)" font-size="9" text-anchor="middle">Нейтралитет</text>
 
-            <!-- Zone cards below -->
+            <!-- 42.6 -->
+            <line x1="840" y1="42" x2="840" y2="94" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
+            <text x="840" y="35" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="700" text-anchor="middle">42.6</text>
+            <text x="840" y="110" fill="#ff8389" font-size="11" text-anchor="middle">P(O₂)=1 атм</text>
+
+            <!-- Zone Cards Below -->
             <!-- Zone 1 -->
-            <rect x="40" y="150" width="250" height="75" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#3b82f6" stroke-width="1"/>
-            <text x="50" y="170" fill="#78a9ff" font-size="12" font-weight="700">1. Восстановительная зона (0–14)</text>
-            <text x="50" y="190" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Облигатные анаэробы:</text>
-            <text x="50" y="208" fill="var(--cds-text-primary, #f4f4f4)" font-size="11" font-weight="600">Clostridium botulinum, C. perfringens</text>
+            <rect x="40" y="135" width="250" height="105" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#8a3ffc" stroke-width="1.5"/>
+            <text x="50" y="155" fill="#d4bbff" font-size="12" font-weight="700">Глубоко восстановительная (0–14)</text>
+            <text x="50" y="175" fill="var(--cds-text-primary, #ffffff)" font-size="11">• Облигатные строгие анаэробы</text>
+            <text x="50" y="193" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Clostridium botulinum (rH₂ ≤ 14.5)</text>
+            <text x="50" y="211" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Метаногенные археи, сульфатредукторы</text>
+            <text x="50" y="229" fill="#ff8389" font-size="10" font-weight="600">Опасность ботулинического токсина!</text>
 
             <!-- Zone 2 -->
-            <rect x="305" y="150" width="255" height="75" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#10b981" stroke-width="1"/>
-            <text x="315" y="170" fill="#42be65" font-size="12" font-weight="700">2. Амфолитная зона (15–24)</text>
-            <text x="315" y="190" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Факультативные анаэробы &amp; МКБ:</text>
-            <text x="315" y="208" fill="var(--cds-text-primary, #f4f4f4)" font-size="11" font-weight="600">E. coli, Salmonella, Listeria, Lactobacillus</text>
+            <rect x="305" y="135" width="270" height="105" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#0f62fe" stroke-width="1.5"/>
+            <text x="315" y="155" fill="#78a9ff" font-size="12" font-weight="700">Амфолитная / Переходная (15–24)</text>
+            <text x="315" y="175" fill="var(--cds-text-primary, #ffffff)" font-size="11">• Факультативные анаэробы (E. coli)</text>
+            <text x="315" y="193" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Молочнокислые бактерии (Lactobacillus)</text>
+            <text x="315" y="211" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Микроаэрофилы (Campylobacter)</text>
+            <text x="315" y="229" fill="#6fdc8c" font-size="10" font-weight="600">Брожение или анаэробное дыхание</text>
 
             <!-- Zone 3 -->
-            <rect x="575" y="150" width="265" height="75" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#ef4444" stroke-width="1"/>
-            <text x="585" y="170" fill="#fa4d56" font-size="12" font-weight="700">3. Окислительная зона (25–42.6)</text>
-            <text x="585" y="190" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Облигатные аэробы &amp; Плесени:</text>
-            <text x="585" y="208" fill="var(--cds-text-primary, #f4f4f4)" font-size="11" font-weight="600">Pseudomonas, Penicillium, Aspergillus</text>
+            <rect x="590" y="135" width="250" height="105" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#da1e28" stroke-width="1.5"/>
+            <text x="600" y="155" fill="#ff8389" font-size="12" font-weight="700">Выраженно окислительная (25–42.6)</text>
+            <text x="600" y="175" fill="var(--cds-text-primary, #ffffff)" font-size="11">• Строгие облигатные аэробы</text>
+            <text x="600" y="193" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Pseudomonas, Micrococcus</text>
+            <text x="600" y="211" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">• Плесневые грибы (Penicillium)</text>
+            <text x="600" y="229" fill="#f1c21b" font-size="10" font-weight="600">Аэробное дыхание (O₂ - терминал)</text>
           </svg>
         </div>
 
-        <div class="cds--tile" style="margin-top: 1rem;">
-          <h4 style="margin-top: 0; color: var(--cds-interactive-01);">Прикладное и клиническое применение показателя Кларка:</h4>
-          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.6;">
-            <li><strong>BTA-анализ (Biological Terrain Assessment):</strong> инструментальная оценка оксидативного стресса и метаболического статуса биожидкостей (слюна, кровь, моча) по координатам $rH_2$–pH.</li>
-            <li><strong>Пищевая стабильность наноэмульсий с ПНЖК:</strong> контроль $rH_2$ позволяет предотвратить радикальное автоокисление липидов и сенсорную деградацию продуктов функционального питания без избыточного внесения синтетических антиоксидантов.</li>
-          </ul>
+        <!-- Carbon Accordion: BTA-анализ и наноэмульсии -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🧪</span>
+                <span>BTA-анализ биологических матриц и защита липидных наноэмульсий в пищевой биотехнологии</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                Использование критерия $rH_2$ нашло широкое практическое признание в клинической физико-химической диагностике и промышленной биотехнологии:
+              </p>
+              <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+                <li><strong>BTA-анализ (Biological Terrain Assessment):</strong> Метод интегральной оценки биологических жидкостей (крови, слюны, мочи) по сопряженным координатам $pH$, $E_h$ и $rH_2$. Позволяет точно оценивать электронный потенциал, активность защитных ферментов и подвижность ионов, количественно выявляя уровень скрытого оксидативного стресса организма при конкретном физиологическом значении $pH$.</li>
+                <li><strong>Пищевая микробиология и защита наноэмульсий:</strong> В пищевой инженерии мониторинг $rH_2$ используется для прогнозирования окислительной стабильности наноэмульсий с полиненасыщенными жирными кислотами (ПНЖК), предотвращая их сенсорную деградацию и прогоркание, а также для расчета динамики барьерных факторов сохранения скоропортящейся продукции.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
 
-      <!-- Модуль 2.5: Редокс-башня, ЭТЦ и мембранные комплексы -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.5: РЕДОКС-БАШНЯ И АРХИТЕКТУРА ДЫХАТЕЛЬНЫХ ЦЕПЕЙ
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.5</div>
-        <h2 class="example-box__title">Биоэнергетическая «Редокс-башня», электрон-транспортные цепи и мембраны</h2>
+        <h2 class="example-box__title">Архитектура «Редокс-башни» и биоэнергетика электрон-транспортных цепей</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Концепция <strong>«Редокс-башни» (Redox Tower)</strong> упорядочивает потенциальные электронные доноры и акцепторы в соответствии с их физиологическими потенциалами $E^{\circ\prime}$. Вещества на вершине башни обладают максимальной склонностью отдавать электроны, а вещества у основания — принимать их.
+          Концепция <strong>«Редокс-башни» (Redox Tower)</strong> упорядочивает потенциальные электронные доноры и акцепторы в соответствии с их физиологическими стандартными потенциалами $E^{\circ\prime}$ при $pH = 7{,}00$. Сильнейшие восстановители (наиболее отрицательный $E^{\circ\prime}$) находятся на вершине башни, а сильнейшие терминальные акцепторы (наиболее положительный $E^{\circ\prime}$) — в ее основании.
         </p>
 
         <!-- СХЕМА 1: Редокс-башня SVG -->
         <div style="margin: 1.5rem 0; background: var(--cds-layer-01); border: 1px solid var(--cds-border-subtle-01); border-radius: 4px; padding: 1rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 1. Биоэнергетическая «Редокс-башня» и каскад свободной энергии ($\Delta G^{\circ\prime}$)</strong>
-            <span class="cds--tag cds--tag--purple">pH = 7.0 • 25 °C</span>
+            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 1. Биоэнергетическая «Редокс-башня» (Redox Tower) и каскад падения свободной энергии ΔG°'</strong>
+            <span class="cds--tag cds--tag--blue">E°' от -0.43 В до +0.82 В</span>
           </div>
-          <svg viewBox="0 0 880 500" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
-            <!-- Axis -->
-            <line x1="120" y1="40" x2="120" y2="460" stroke="var(--cds-text-primary, #ffffff)" stroke-width="2"/>
-            <polygon points="120,30 114,44 126,44" fill="var(--cds-text-primary, #ffffff)"/>
-            <text x="110" y="25" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="700" text-anchor="end">E°' (Вольт)</text>
+          <svg viewBox="0 0 880 420" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
+            <!-- Background & Axis -->
+            <line x1="180" y1="40" x2="180" y2="380" stroke="#0f62fe" stroke-width="4"/>
+            <polygon points="180,25 174,45 186,45" fill="#0f62fe"/>
+            
+            <!-- Axis Labels -->
+            <text x="120" y="35" fill="#fa4d56" font-size="12" font-weight="700" text-anchor="middle">ДОНОРЫ (Red)</text>
+            <text x="120" y="50" fill="#fa4d56" font-size="10" text-anchor="middle">Сильные восстановители</text>
 
-            <!-- Gradient background column -->
-            <defs>
-              <linearGradient id="towerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#8a3ffc" stop-opacity="0.35"/>
-                <stop offset="50%" stop-color="#0f62fe" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="#24a148" stop-opacity="0.35"/>
-              </linearGradient>
-            </defs>
-            <rect x="135" y="40" width="360" height="420" rx="6" fill="url(#towerGradient)" stroke="var(--cds-border-subtle-01, #525252)" stroke-width="1"/>
+            <text x="120" y="375" fill="#42be65" font-size="12" font-weight="700" text-anchor="middle">АКЦЕПТОРЫ (Ox)</text>
+            <text x="120" y="390" fill="#42be65" font-size="10" text-anchor="middle">Сильные окислители</text>
 
-            <!-- Potential ticks & pairs -->
-            <!-- -0.43 V -->
-            <line x1="112" y1="60" x2="128" y2="60" stroke="#a56eff" stroke-width="2"/>
-            <text x="105" y="64" fill="#d4bbff" font-size="11" font-weight="600" text-anchor="end">-0.43 В</text>
-            <text x="150" y="64" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">CO₂ / Глюкоза (-0.43 В)</text>
-            <text x="480" y="64" fill="#a8a8a8" font-size="11" text-anchor="end">Органотрофы</text>
+            <!-- Tower Steps -->
+            <!-- Step 1: CO2 / Glucose (-0.43 V) -->
+            <line x1="170" y1="65" x2="190" y2="65" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="70" fill="#ffffff" font-size="12" font-weight="600">CO₂ / Глюкоза (-0.43 В)</text>
+            <rect x="460" y="55" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)"/>
+            <text x="470" y="71" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Первичный органический донор (органотрофия)</text>
 
-            <!-- -0.41 V -->
-            <line x1="112" y1="95" x2="128" y2="95" stroke="#a56eff" stroke-width="2"/>
-            <text x="105" y="99" fill="#d4bbff" font-size="11" font-weight="600" text-anchor="end">-0.41 В</text>
-            <text x="150" y="99" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">2H⁺ / H₂ (-0.41 В)</text>
-            <text x="480" y="99" fill="#a8a8a8" font-size="11" text-anchor="end">Литотрофы / Синтрофы</text>
+            <!-- Step 2: 2H+ / H2 (-0.41 V) -->
+            <line x1="170" y1="100" x2="190" y2="100" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="105" fill="#ffffff" font-size="12" font-weight="600">2H⁺ / H₂ (-0.41 В)</text>
+            <rect x="460" y="90" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)"/>
+            <text x="470" y="106" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Донор электронов литотрофов и синтрофных культур</text>
 
-            <!-- -0.32 V -->
-            <line x1="112" y1="140" x2="128" y2="140" stroke="#78a9ff" stroke-width="2"/>
-            <text x="105" y="144" fill="#78a9ff" font-size="11" font-weight="600" text-anchor="end">-0.32 В</text>
-            <text x="150" y="144" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">NAD⁺ / NADH (-0.32 В)</text>
-            <text x="480" y="144" fill="#a8a8a8" font-size="11" text-anchor="end">Универсальный переносчик</text>
+            <!-- Step 3: NAD+ / NADH (-0.32 V) -->
+            <line x1="170" y1="140" x2="190" y2="140" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="145" fill="#78a9ff" font-size="12" font-weight="700">NAD⁺ / NADH (-0.32 В)</text>
+            <rect x="460" y="130" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="#0f62fe"/>
+            <text x="470" y="146" fill="#78a9ff" font-size="11" font-weight="600">Универсальный растворимый переносчик (2e⁻ / 2H⁺)</text>
 
-            <!-- -0.28 V -->
-            <line x1="112" y1="180" x2="128" y2="180" stroke="#78a9ff" stroke-width="2"/>
-            <text x="105" y="184" fill="#78a9ff" font-size="11" font-weight="600" text-anchor="end">-0.28 В</text>
-            <text x="150" y="184" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">CO₂ / Ацетат (-0.28 В)</text>
-            <text x="480" y="184" fill="#a8a8a8" font-size="11" text-anchor="end">Ацетокластический метаногенез</text>
+            <!-- Step 4: FAD / FADH2 (-0.22 V) -->
+            <line x1="170" y1="180" x2="190" y2="180" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="185" fill="#ffffff" font-size="12" font-weight="600">FAD / FADH₂ (-0.22 В)</text>
+            <rect x="460" y="170" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)"/>
+            <text x="470" y="186" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Простетическая группа флавопротеинов Комплекса II</text>
 
-            <!-- -0.22 V -->
-            <line x1="112" y1="215" x2="128" y2="215" stroke="#78a9ff" stroke-width="2"/>
-            <text x="105" y="219" fill="#78a9ff" font-size="11" font-weight="600" text-anchor="end">-0.22 В</text>
-            <text x="150" y="219" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">FAD / FADH₂ (-0.22 В)</text>
-            <text x="480" y="219" fill="#a8a8a8" font-size="11" text-anchor="end">Флавопротеины</text>
+            <!-- Step 5: S0 / H2S (-0.27 V) / Pyruvate (-0.19 V) -->
+            <line x1="170" y1="220" x2="190" y2="220" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="225" fill="#ffffff" font-size="12" font-weight="600">Пируват / Лактат (-0.19 В)</text>
+            <rect x="460" y="210" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)"/>
+            <text x="470" y="226" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Ключевая пара молочнокислого брожения</text>
 
-            <!-- +0.42 V -->
-            <line x1="112" y1="330" x2="128" y2="330" stroke="#42be65" stroke-width="2"/>
-            <text x="105" y="334" fill="#42be65" font-size="11" font-weight="600" text-anchor="end">+0.42 В</text>
-            <text x="150" y="334" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">NO₃⁻ / NO₂⁻ (+0.42 В)</text>
-            <text x="480" y="334" fill="#a8a8a8" font-size="11" text-anchor="end">Нитратредукция</text>
+            <!-- Step 6: NO3- / NO2- (+0.43 V) -->
+            <line x1="170" y1="270" x2="190" y2="270" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="275" fill="#f1c21b" font-size="12" font-weight="700">NO₃⁻ / NO₂⁻ (+0.43 В)</text>
+            <rect x="460" y="260" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="#f1c21b"/>
+            <text x="470" y="276" fill="#f1c21b" font-size="11" font-weight="600">Нитратное дыхание: ΔE°' = 0.75 В, ΔG°' = -145.3 кДж/моль</text>
 
-            <!-- +0.78 V -->
-            <line x1="112" y1="400" x2="128" y2="400" stroke="#42be65" stroke-width="2"/>
-            <text x="105" y="404" fill="#42be65" font-size="11" font-weight="600" text-anchor="end">+0.78 В</text>
-            <text x="150" y="404" fill="var(--cds-text-primary, #ffffff)" font-size="12" font-weight="600">Fe³⁺ / Fe²⁺ (+0.78 В)</text>
-            <text x="480" y="404" fill="#a8a8a8" font-size="11" text-anchor="end">Железоредукция / Ацидофилы</text>
+            <!-- Step 7: Fe3+ / Fe2+ (+0.77 V) -->
+            <line x1="170" y1="315" x2="190" y2="315" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="320" fill="#ffffff" font-size="12" font-weight="600">Fe³⁺ / Fe²⁺ (+0.77 В)</text>
+            <rect x="460" y="305" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)"/>
+            <text x="470" y="321" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Железоредукция / Окисление железа ацидофилами</text>
 
-            <!-- +0.82 V -->
-            <line x1="112" y1="440" x2="128" y2="440" stroke="#24a148" stroke-width="2"/>
-            <text x="105" y="444" fill="#6fdc8c" font-size="11" font-weight="700" text-anchor="end">+0.82 В</text>
-            <text x="150" y="444" fill="#6fdc8c" font-size="12" font-weight="700">½ O₂ / H₂O (+0.82 В)</text>
-            <text x="480" y="444" fill="#6fdc8c" font-size="11" font-weight="700" text-anchor="end">Терминальный акцептор</text>
+            <!-- Step 8: O2 / H2O (+0.82 V) -->
+            <line x1="170" y1="360" x2="190" y2="360" stroke="#ffffff" stroke-width="2"/>
+            <text x="210" y="365" fill="#42be65" font-size="12" font-weight="700">½ O₂ / H₂O (+0.815 В)</text>
+            <rect x="460" y="350" width="380" height="24" rx="3" fill="var(--cds-layer-02, #262626)" stroke="#42be65"/>
+            <text x="470" y="366" fill="#6fdc8c" font-size="11" font-weight="700">Аэробное дыхание: ΔE°' = 1.135 В, ΔG°' = -219.0 кДж/моль</text>
 
-            <!-- Right Energy Brackets -->
-            <!-- Aerobic bracket -->
-            <path d="M 520,140 L 550,140 L 550,440 L 520,440" fill="none" stroke="#0f62fe" stroke-width="2.5"/>
-            <text x="565" y="270" fill="#78a9ff" font-size="13" font-weight="700">Аэробное дыхание (NADH → O₂)</text>
-            <text x="565" y="290" fill="var(--cds-text-primary, #ffffff)" font-size="12">ΔE°' = +1.135 В  |  ΔG°' = -219.0 кДж/моль</text>
-            <text x="565" y="308" fill="#42be65" font-size="11" font-weight="600">Синтез до 30–32 моль АТФ / моль глюкозы</text>
-
-            <!-- Nitrate bracket -->
-            <path d="M 520,148 L 535,148 L 535,330 L 520,330" fill="none" stroke="#8a3ffc" stroke-width="2"/>
-            <text x="565" y="200" fill="#d4bbff" font-size="12" font-weight="700">Нитратное дыхание (NADH → NO₃⁻)</text>
-            <text x="565" y="218" fill="var(--cds-text-primary, #ffffff)" font-size="11">ΔE°' = +0.753 В  |  ΔG°' = -145.3 кДж/моль</text>
-
-            <!-- Threshold indicator -->
-            <rect x="560" y="380" width="300" height="65" rx="4" fill="var(--cds-layer-02, #262626)" stroke="#f1c21b" stroke-width="1.5"/>
-            <text x="575" y="402" fill="#f1c21b" font-size="12" font-weight="700">Порог синтеза АТФ (η_ATP):</text>
-            <text x="575" y="420" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">Минимальный квант: ΔE ≥ 0.013 В</text>
-            <text x="575" y="435" fill="var(--cds-text-secondary, #c6c6c6)" font-size="10">Ниже порога рост невозможен (голодание)</text>
+            <!-- Main Electron Fall Arrow -->
+            <path d="M 430,140 C 400,200 400,280 430,350" fill="none" stroke="#fa4d56" stroke-width="3" stroke-dasharray="6,4"/>
+            <polygon points="432,358 423,348 435,344" fill="#fa4d56"/>
+            <text x="360" y="245" fill="#fa4d56" font-size="11" font-weight="700" transform="rotate(-90 360,245)" text-anchor="middle">Падение электронов (ΔG°' &lt; 0)</text>
           </svg>
         </div>
 
-        <!-- СХЕМА 3: ЭТЦ, Протондвижущая сила и сравнение мембран -->
+        <!-- Carbon Accordion: GAPDH, ЦТК и липиды архей -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🧬</span>
+                <span>Биохимия центрального метаболизма (GAPDH, ЦТК) и уникальная липидная архитектура мембран архей</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                <strong>Окислительно-восстановительные этапы катаболизма:</strong> Во время гликолиза <em>глицеральдегид-3-фосфат (ГАФ)</em> окисляется до 1,3-бисфосфоглицериновой кислоты ферментом глицеральдегид-3-фосфатдегидрогеназой (GAPDH). Это первая ОВР гликолитического пути, повторяющаяся дважды на одну молекулу глюкозы, восстанавливая $NAD^+$ до $NADH$ и присоединяя неорганический фосфат.
+              </p>
+              <p>
+                Далее образованный $NADH$ направляется к мембране и передает электроны в <strong>Комплекс I (NADH:убихинон-оксидоредуктазу)</strong> на флавинадениндинуклеотид ($FAD$), а затем через цепь железосерных кластеров ($[2Fe-2S], [4Fe-4S]$) на гидрофобные мембранные хиноны. При каждом скачке электрона высвобождается энергия, затрачиваемая на выкачивание $4H^+$ из цитоплазмы в периплазму, что генерирует электрохимический градиент ($\Delta p = \Delta\psi - 59\Delta pH$).
+              </p>
+              <p>
+                В цикле трикарбоновых кислот (ЦТК Кребса) ацетил-КоА конденсируется с оксалоацетатом, образуя цитрат. По мере прохождения цикла углеродный скелет полностью окисляется до $CO_2$ с регенерацией оксалоацетата (причем на этапе перехода сукцината в фумарат и оксалоацетат $CO_2$ уже не выделяется), поставляя дополнительные молекулы $NADH$ и $FADH_2$.
+              </p>
+              <p>
+                <strong>Эволюционная дивергенция мембран:</strong> Метаболизм архей подчиняется аналогичным термодинамическим принципам, однако их биомембраны построены из <em>простых эфиров изопреноидных спиртов (фитанила $C_{20}$ или бифитанила $C_{40}$)</em>, присоединенных эфирной связью к $sn$-глицеро-1-фосфатному остову. В отличие от сложноэфирных триглицеридов бактерий и эукариот ($sn$-глицеро-3-фосфат с жирными кислотами), эфирная связь и изопреноидные тетраэфирные монослои обеспечивают экстремальную устойчивость к температуре и кислотному гидролизу, предотвращая паралитическую утечку протонов при сверхвысоких мембранных потенциалах.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <!-- СХЕМА 3: ЭТЦ и мембраны SVG -->
         <div style="margin: 1.5rem 0; background: var(--cds-layer-01); border: 1px solid var(--cds-border-subtle-01); border-radius: 4px; padding: 1rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 3. Архитектура дыхательной цепи (ЭТЦ), генерация ПДС и структура биомембран</strong>
-            <span class="cds--tag cds--tag--green">Протондвижущая сила (ПДС)</span>
+            <strong style="font-size: 0.9375rem; color: var(--cds-interactive-01);">Схема 3. Архитектура электрон-транспортной цепи (ЭТЦ), генерация ПДС и синтез АТФ</strong>
+            <span class="cds--tag cds--tag--green">Протонный градиент Δp</span>
           </div>
-          <svg viewBox="0 0 880 340" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
-            <!-- Outer space (Periplasm) -->
-            <rect x="20" y="20" width="560" height="60" fill="#002d9c" fill-opacity="0.25" rx="4"/>
-            <text x="35" y="55" fill="#78a9ff" font-size="12" font-weight="700">Периплазма / Внешняя среда (Высокая концентрация H⁺, заряд +)</text>
+          <svg viewBox="0 0 880 320" style="width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif;">
+            <!-- Periplasm Top -->
+            <rect x="20" y="20" width="840" height="50" fill="var(--cds-layer-01, #161616)"/>
+            <text x="40" y="50" fill="#78a9ff" font-size="14" font-weight="700">ПЕРИПЛАЗМА / ВНЕШНЯЯ СРЕДА (Высокая концентрация H⁺, заряд +)</text>
 
-            <!-- Lipid Bilayer -->
-            <rect x="20" y="85" width="560" height="90" fill="#393939" rx="2"/>
-            <text x="35" y="135" fill="#a8a8a8" font-size="11" font-weight="600">Липидный бислой мембраны</text>
+            <!-- Membrane Lipid Bilayer -->
+            <rect x="20" y="70" width="840" height="110" fill="var(--cds-layer-02, #262626)" stroke="#f1c21b" stroke-width="1.5"/>
+            <text x="40" y="130" fill="#f1c21b" font-size="11" font-weight="600" transform="rotate(-90 40,130)" text-anchor="middle">БИОМЕМБРАНА</text>
 
-            <!-- Inner space (Cytoplasm) -->
-            <rect x="20" y="180" width="560" height="140" fill="#044317" fill-opacity="0.25" rx="4"/>
-            <text x="35" y="210" fill="#6fdc8c" font-size="12" font-weight="700">Цитоплазма (Низкая концентрация H⁺, заряд -)</text>
+            <!-- Cytoplasm Bottom -->
+            <rect x="20" y="180" width="840" height="120" fill="var(--cds-layer-01, #161616)"/>
+            <text x="40" y="285" fill="#42be65" font-size="14" font-weight="700">ЦИТОПЛАЗМА (Низкая концентрация H⁺, заряд -)</text>
 
             <!-- Complex I -->
-            <rect x="180" y="70" width="70" height="120" rx="6" fill="#0f62fe" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="215" y="130" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Комплекс I</text>
-            <text x="215" y="145" fill="#ffffff" font-size="9" text-anchor="middle">(NADH-ДГ)</text>
+            <rect x="120" y="60" width="110" height="150" rx="8" fill="#0f62fe" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="175" y="115" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">Комплекс I</text>
+            <text x="175" y="135" fill="#d0e2ff" font-size="9" text-anchor="middle">NADH-дегидрогеназа</text>
+            <text x="175" y="150" fill="#ffffff" font-size="9" text-anchor="middle">[FAD, Fe-S кластеры]</text>
+            <text x="175" y="195" fill="#f1c21b" font-size="10" font-weight="700" text-anchor="middle">NADH → NAD⁺</text>
 
-            <!-- Quinone -->
-            <circle cx="290" cy="130" r="22" fill="#8a3ffc" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="290" y="134" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Q/QH₂</text>
+            <!-- H+ Pump Arrow Complex I -->
+            <path d="M 175,210 L 175,40" fill="none" stroke="#6fdc8c" stroke-width="3"/>
+            <polygon points="175,32 170,44 180,44" fill="#6fdc8c"/>
+            <text x="195" y="45" fill="#6fdc8c" font-size="11" font-weight="700">4 H⁺ ↑</text>
+
+            <!-- Quinone Pool -->
+            <circle cx="290" cy="125" r="26" fill="#8a3ffc" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="290" y="122" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Q / QH₂</text>
+            <text x="290" y="136" fill="#d4bbff" font-size="8" text-anchor="middle">Хиноны</text>
+
+            <!-- Arrow from I to Q -->
+            <path d="M 230,125 L 260,125" fill="none" stroke="#ffffff" stroke-width="2"/>
+            <polygon points="264,125 254,120 254,130" fill="#ffffff"/>
+
+            <!-- Complex III -->
+            <rect x="350" y="60" width="110" height="150" rx="8" fill="#0f62fe" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="405" y="115" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">Комплекс III</text>
+            <text x="405" y="135" fill="#d0e2ff" font-size="9" text-anchor="middle">Цитохром bc₁</text>
+            
+            <!-- Arrow from Q to III -->
+            <path d="M 316,125 L 350,125" fill="none" stroke="#ffffff" stroke-width="2"/>
+            <polygon points="350,125 340,120 340,130" fill="#ffffff"/>
+
+            <!-- H+ Pump Arrow Complex III -->
+            <path d="M 405,210 L 405,40" fill="none" stroke="#6fdc8c" stroke-width="3"/>
+            <polygon points="405,32 400,44 410,44" fill="#6fdc8c"/>
+            <text x="425" y="45" fill="#6fdc8c" font-size="11" font-weight="700">4 H⁺ ↑</text>
+
+            <!-- Cytochrome c -->
+            <circle cx="510" cy="55" r="22" fill="#da1e28" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="510" y="58" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">Cyt c</text>
 
             <!-- Complex IV -->
-            <rect x="350" y="70" width="70" height="120" rx="6" fill="#0f62fe" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="385" y="130" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Комплекс IV</text>
-            <text x="385" y="145" fill="#ffffff" font-size="9" text-anchor="middle">(Цитохром aa₃)</text>
+            <rect x="560" y="60" width="110" height="150" rx="8" fill="#0f62fe" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="615" y="115" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">Комплекс IV</text>
+            <text x="615" y="135" fill="#d0e2ff" font-size="9" text-anchor="middle">Цитохромоксидаза</text>
+            <text x="615" y="195" fill="#42be65" font-size="10" font-weight="700" text-anchor="middle">½ O₂ + 2H⁺ → H₂O</text>
+
+            <!-- H+ Pump Arrow Complex IV -->
+            <path d="M 615,210 L 615,40" fill="none" stroke="#6fdc8c" stroke-width="3"/>
+            <polygon points="615,32 610,44 620,44" fill="#6fdc8c"/>
+            <text x="635" y="45" fill="#6fdc8c" font-size="11" font-weight="700">2 H⁺ ↑</text>
 
             <!-- ATP Synthase -->
-            <rect x="470" y="75" width="50" height="60" rx="4" fill="#f1c21b" stroke="#ffffff" stroke-width="1.5"/>
-            <circle cx="495" cy="170" r="30" fill="#f1c21b" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="495" y="108" fill="#161616" font-size="10" font-weight="700" text-anchor="middle">F₀</text>
-            <text x="495" y="174" fill="#161616" font-size="11" font-weight="700" text-anchor="middle">АТФ-синтаза</text>
+            <rect x="730" y="50" width="110" height="180" rx="10" fill="#24a148" stroke="#ffffff" stroke-width="2"/>
+            <text x="785" y="110" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">АТФ-синтаза</text>
+            <text x="785" y="130" fill="#defbe6" font-size="9" text-anchor="middle">F₀F₁-комплекс</text>
+            <text x="785" y="150" fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle">(Роторный мотор)</text>
 
-            <!-- Proton pumping arrows UP -->
-            <path d="M 215,220 L 215,60" fill="none" stroke="#fa4d56" stroke-width="2.5"/>
-            <polygon points="215,50 210,62 220,62" fill="#fa4d56"/>
-            <text x="215" y="240" fill="#fa4d56" font-size="11" font-weight="700" text-anchor="middle">4 H⁺</text>
-
-            <path d="M 385,220 L 385,60" fill="none" stroke="#fa4d56" stroke-width="2.5"/>
-            <polygon points="385,50 380,62 390,62" fill="#fa4d56"/>
-            <text x="385" y="240" fill="#fa4d56" font-size="11" font-weight="700" text-anchor="middle">2–4 H⁺</text>
-
-            <!-- Proton flux DOWN through ATP Synthase -->
-            <path d="M 495,45 L 495,135" fill="none" stroke="#42be65" stroke-width="3"/>
-            <polygon points="495,145 490,133 500,133" fill="#42be65"/>
-            <text x="495" y="38" fill="#42be65" font-size="11" font-weight="700" text-anchor="middle">H⁺ поток</text>
-            <text x="495" y="235" fill="#42be65" font-size="11" font-weight="700" text-anchor="middle">АДФ + Фн → АТФ</text>
-
-            <!-- Substrates in cytoplasm -->
-            <text x="140" y="275" fill="#78a9ff" font-size="11" font-weight="600">NADH + H⁺ → NAD⁺ + 2e⁻</text>
-            <text x="330" y="275" fill="#6fdc8c" font-size="11" font-weight="600">½ O₂ + 2H⁺ + 2e⁻ → H₂O</text>
-
-            <!-- Right Box: Membranes of Archaea vs Bacteria -->
-            <rect x="600" y="20" width="260" height="300" rx="6" fill="var(--cds-layer-02, #262626)" stroke="var(--cds-border-subtle-01, #525252)" stroke-width="1.5"/>
-            <text x="615" y="45" fill="#f1c21b" font-size="13" font-weight="700">Липидный диморфизм</text>
-            
-            <text x="615" y="75" fill="#78a9ff" font-size="12" font-weight="700">1. Бактерии &amp; Эукариоты:</text>
-            <text x="615" y="95" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Сложные эфирные связи</text>
-            <text x="615" y="112" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Неразветвленные жирные кислоты</text>
-            <text x="615" y="130" fill="var(--cds-text-secondary, #c6c6c6)" font-size="10">• D-глицериновый остов (G-3-P)</text>
-
-            <line x1="615" y1="145" x2="845" y2="145" stroke="var(--cds-border-subtle-01, #525252)" stroke-width="1"/>
-
-            <text x="615" y="175" fill="#d4bbff" font-size="12" font-weight="700">2. Археи (Экстремофилы):</text>
-            <text x="615" y="195" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Простые эфирные связи (ether lipids)</text>
-            <text x="615" y="212" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Разветвленные изопреноиды</text>
-            <text x="615" y="230" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Фитанил (C20) / Бифитанил (C40)</text>
-            <text x="615" y="248" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Монослойная термостабильность</text>
-            <text x="615" y="266" fill="var(--cds-text-secondary, #c6c6c6)" font-size="10">• L-глицериновый остов (G-1-P)</text>
+            <!-- H+ Inflow Arrow into ATP synthase -->
+            <path d="M 785,35 L 785,210" fill="none" stroke="#f1c21b" stroke-width="3"/>
+            <polygon points="785,218 780,206 790,206" fill="#f1c21b"/>
+            <text x="750" y="250" fill="#f1c21b" font-size="11" font-weight="700">ADP + Pi → АТФ</text>
           </svg>
         </div>
       </div>
 
-      <!-- Модуль 2.6: Дивергенция дыхания, литотрофия и брожение -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.6: ДЫХАНИЕ ПРОТИВ БРОЖЕНИЯ
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.6</div>
-        <h2 class="example-box__title">Дивергенция метаболических путей: Аэробное дыхание, Литотрофия и Брожение</h2>
+        <h2 class="example-box__title">Дивергенция метаболических путей: Дыхание против Брожения</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          В зависимости от наличия экзогенных акцепторов электронов микроорганизмы мобилизуют принципиально разные биоэнергетические механизмы.
+          С точки зрения биоэнергетики, метаболическое разнообразие микроорганизмов сводится к различиям в природе донора электронов, терминального акцептора и способе синтеза АТФ. Микробиальные процессы, использующие наиболее термодинамически выгодную сопряженную пару, всегда получают селективное конкурентное преимущество.
         </p>
 
         <div class="cds--row" style="margin-bottom: 1.5rem;">
@@ -2698,9 +2770,9 @@
               <div class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Аэробное дыхание</div>
               <h4 style="margin: 0 0 0.5rem 0;">Кислород ($O_2$)</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
-                Терминальный акцептор с максимальным $E^{\circ\prime} = +0{,}82\text{ В}$. Полное окисление субстрата до $CO_2$ и $H_2O$.
+                Терминальный акцептор с максимальным $E^{\circ\prime} = +0{,}815	ext{ В}$. Полное окисление субстрата до $CO_2$ и $H_2O$.
               </p>
-              <div class="formula-box" style="font-size: 0.75rem;">$$\text{Выход: 30–32 моль АТФ}$$</div>
+              <div class="formula-box" style="font-size: 0.75rem;">$$	ext{Выход: 30–32 моль АТФ / моль}$$</div>
             </div>
           </div>
 
@@ -2709,9 +2781,9 @@
               <div class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Анаэробное дыхание</div>
               <h4 style="margin: 0 0 0.5rem 0;">Альтернативные акцепторы</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
-                Использование $NO_3^-, Fe^{3+}, SO_4^{2-}, CO_2$. В формациях Boom Clay первичным донором служит глубинный $H_2$.
+                Использование $NO_3^-, Fe^{3+}, SO_4^{2-}, CO_2$. В геологических формациях Boom Clay первичным донором служит глубинный $H_2$.
               </p>
-              <div class="formula-box" style="font-size: 0.75rem;">$$\text{Выход: 4–20 моль АТФ}$$</div>
+              <div class="formula-box" style="font-size: 0.75rem;">$$	ext{Выход: 4–20 моль АТФ / моль}$$</div>
             </div>
           </div>
 
@@ -2720,30 +2792,49 @@
               <div class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Брожение (Ферментация)</div>
               <h4 style="margin: 0 0 0.5rem 0;">Субстратное фосфорилирование</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
-                Эндогенный органический акцептор (пируват $\to$ лактат, ацетальдегид $\to$ этанол). ЭТЦ не функционирует.
+                Органический субстрат сам служит и донором, и акцептором электронов (пируват $	o$ лактат). ЭТЦ отсутствует.
               </p>
-              <div class="formula-box" style="font-size: 0.75rem;">$$\text{Выход: 2–4 моль АТФ}$$</div>
+              <div class="formula-box" style="font-size: 0.75rem;">$$	ext{Выход: 2 моль АТФ / моль}$$</div>
             </div>
           </div>
         </div>
 
-        <div class="cds--tile">
-          <h4 style="margin-top: 0; color: var(--cds-interactive-01);">Специфические примеры литотрофии и азотного метаболизма:</h4>
-          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.6;">
-            <li><strong>Аммиакокисляющие археи (AOA, <em>Nitrososphaera gargensis</em>):</strong> конвертируют цианат в аммиак цианазой и окисляют аммиакмонооксигеназой (AMO) с переносом электронов на цитохром $c_{552}$.</li>
-            <li><strong>Нитритокисляющие бактерии (<em>Nitrospira</em>):</strong> мембранный железо-серный молибдопротеин <strong>NOR</strong> окисляет $NO_2^-$ до $NO_3^-$. Перенос электрона от NOR ($+420\text{ мВ}$) к цитохрому $c$ ($+270\text{ мВ}$) является «энергетически восходящей» (<em>uphill</em>) реакцией, потребляющей мембранный потенциал.</li>
-            <li><strong>Comammox (<em>Candidatus Nitrospira inopinata</em>):</strong> «полные окислители», способные осуществлять полный цикл нитрификации ($NH_3 \to NO_2^- \to NO_3^-$) внутри одной бактериальной клетки.</li>
-            <li><strong>Биологическая фиксация азота ($N_2 \to NH_3$):</strong> требует 8 электронов и 16 молекул АТФ на моль $N_2$ (динитрогеназный комплекс, флаводоксин).</li>
-          </ul>
+        <!-- Carbon Accordion: Глубинное дыхание, Boom Clay, Comammox, Нитрогеназа -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>⛏️</span>
+                <span>Глубинное литотрофное дыхание (Boom Clay), энзимология нитрификации (AOA, NOR, Comammox) и затраты нитрогеназы</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                <strong>Глубинные экосистемы и градиенты ацидофилов:</strong> В глубоких геологических пластах (например, бельгийских и голландских олигоценовых глинах <em>Boom Clay</em>) первичным донором электронов, поддерживающим хемолитотрофные сообщества, выступает молекулярный водород ($H_2$). В таких средах твердофазные минералы $Fe(III)$ служат акцепторами. Свободная энергия реакции окисления $Fe(II)$ относительно невелика, так как потенциал пары $Fe^{3+}/Fe^{2+}$ ($+0{,}78	ext{ В}$) близок к кислороду ($+0{,}82	ext{ В}$ при $pH = 7$; или $+1{,}12	ext{ В}$ при $pH = 2{,}0$). Поэтому ацидофильные железоокисляющие бактерии вынуждены поддерживать колоссальный трансмембранный градиент протонов (до <strong>$10^6$ раз</strong>), чтобы защитить цитоплазму от закисления и обеспечить синтез АТФ.
+              </p>
+              <p>
+                <strong>Энзиматические каскады азотного метаболизма:</strong>
+              </p>
+              <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+                <li><strong>Аммиакокисляющие археи (AOA, <em>Nitrososphaera gargensis</em>):</strong> конвертируют токсичный цианат в аммиак с помощью цианазы и окисляют его ферментом аммиакмонооксигеназой (AMO), потребляющей 2 электрона от цитохрома $c_{552}$, так как потенциал пары $NH_2OH/NH_3$ ($+0{,}899	ext{ В}$) превышает потенциал $O_2/H_2O$.</li>
+                <li><strong>Нитритокисляющие бактерии (<em>Nitrospira</em>):</strong> мембранный железо-серный молибдопротеин <strong>NOR</strong> (нитритоксидоредуктаза) окисляет нитрит до нитрата ($NO_2^- 	o NO_3^-$). Перенос электрона от NOR ($E^{\circ\prime} = +420	ext{ мВ}$) к цитохрому $c$ ($E^{\circ\prime} = +270	ext{ мВ}$) является «восходящей» (<em>uphill</em>) реакцией, идущей против термодинамического градиента за счет расхода трансмембранного потенциала (перенос гидрид-иона $H^-$ потребляет внутриклеточный отрицательный заряд).</li>
+                <li><strong>Comammox (<em>Candidatus Nitrospira inopinata</em>):</strong> уникальные бактерии полного цикла, осуществляющие полную нитрификацию ($NH_3 	o NO_2^- 	o NO_3^-$) внутри одной клетки без накопления токсичного интермедиата $NO_2^-$, используя уреазу для расщепления мочевины.</li>
+                <li><strong>Фиксация молекулярного азота ($N_2 	o NH_3$):</strong> процесс колоссальной энергоемкости. Комплексу динитрогеназы фактически требуется 8 электронов (2 теряются в виде $H_2$). Пируват восстанавливает флаводоксин, который передает электроны динитрогеназе редуктазе. На каждый перенесенный электрон расходуется 2 молекулы АТФ, что суммарно требует <strong>16 молекул АТФ</strong> на один моль фиксированного $N_2$.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
 
-      <!-- Модуль 2.7: Синтрофия и пределы микробной биоэнергетики -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.7: СИНТРОФИЯ И МЕЖВИДОВОЙ ПЕРЕНОС ЭЛЕКТРОНОВ
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.7</div>
         <h2 class="example-box__title">Синтрофия: Пределы микробной энергетики и пространственная сегрегация</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          В анаэробных экосистемах с дефицитом внешних акцепторов (биореакторы, донные осадки, рубцовый микробиом) микроорганизмы преодолевают эндоэргонические энергетические барьеры за счет <strong>синтрофии</strong> — обязательного термодинамического мутуализма.
+          В анаэробных экосистемах с дефицитом внешних акцепторов (биогазовые реакторы, торфяники, рисовые чеки, рубец жвачных) микроорганизмы преодолевают эндоэргонические энергетические барьеры за счет <strong>синтрофии</strong> — обязательного метаболического партнерства. Синтрофные бактерии разлагают жирные кислоты (пропионат, бутират) только в тесной ассоциации с водород- и формиат-утилизирующими метаногенными археями.
         </p>
 
         <!-- СХЕМА 4: Синтрофия SVG -->
@@ -2764,7 +2855,7 @@
             <text x="60" y="165" fill="#fa4d56" font-size="11" font-weight="700">ΔG°' = +68.4 кДж/моль (Эндоэргонично!)</text>
 
             <text x="50" y="210" fill="var(--cds-text-secondary, #c6c6c6)" font-size="11">Бактерия не может расти одна.</text>
-            <text x="50" y="228" fill="#f1c21b" font-size="11" font-weight="600">Требуется непрерывное удаление H₂!</text>
+            <text x="50" y="228" fill="#f1c21b" font-size="11" font-weight="600">Требуется непрерывный сток H₂!</text>
 
             <!-- Partner 2: Methanospirillum -->
             <rect x="490" y="30" width="360" height="280" rx="8" fill="var(--cds-layer-02, #262626)" stroke="#42be65" stroke-width="2"/>
@@ -2788,7 +2879,7 @@
             <!-- DIET -->
             <path d="M 370,250 L 510,250" fill="none" stroke="#f1c21b" stroke-width="3"/>
             <polygon points="515,250 503,245 503,255" fill="#f1c21b"/>
-            <text x="440" y="242" fill="#f1c21b" font-size="10" font-weight="700" text-anchor="middle">DIET (Нанопровода)</text>
+            <text x="440" y="242" fill="#f1c21b" font-size="10" font-weight="700" text-anchor="middle">DIET (e-пили / нанопровода)</text>
 
             <!-- Distance restriction badge bottom -->
             <rect x="240" y="295" width="400" height="32" rx="4" fill="#161616" stroke="#fa4d56" stroke-width="1.5"/>
@@ -2796,21 +2887,44 @@
           </svg>
         </div>
 
-        <div class="cds--tile">
-          <h4 style="margin-top: 0; color: var(--cds-interactive-01);">Механизмы межвидового переноса электронов:</h4>
-          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.6;">
-            <li><strong>MIET (Mediated Interspecies Electron Transfer):</strong> перенос, опосредованный диффузией растворенных метаболитов ($H_2$ и формиата). Лимитируется диффузионным градиентом в водной фазе.</li>
-            <li><strong>DIET (Direct Interspecies Electron Transfer):</strong> прямой перенос электронов через проводящие белковые нанопровода (e-pili) и мультигемовые цитохромы внешней мембраны. Нивелирует диффузионные ограничения в плотных агрегатах и биопленках.</li>
-          </ul>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Положительное значение $\Delta G^\circ = +68{,}4	ext{ кДж/моль}$ показывает, что изолированное окисление пропионата термодинамически невозможно. Чтобы реакция пошла самопроизвольно, метаногенные археи должны непрерывно откачивать водород, удерживая его парциальное давление на уровне $P_{	ext{H}_2} < 10^{-4}	ext{ атм}$. Это смещает реальную энергию Гиббса ($\Delta G$) в отрицательную область (суммарно около <strong>$-26{,}0	ext{ кДж/моль}$</strong>), которая делится между двумя организмами. Этим объясняется низкий удельный прирост биомассы и малая скорость роста ($\mu_{	ext{max}} pprox 0{,}21	ext{ день}^{-1}$).
+        </p>
+
+        <!-- Carbon Accordion: Транскриптомика mmc, DIET/MIET и пространственная сегрегация -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🔬</span>
+                <span>Транскриптомика пути mmc, кинетика и математическое моделирование пространственной сегрегации</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                <strong>Путь метилмалонил-КоА и обратный транспорт электронов:</strong> В синтрофных бактериях (например, <em>Candidatus Propionivorax syntrophicum</em>) при добавлении пропионата активируется транскрипция генов деградации <em>mmc</em>. Электроны, высвобождаемые при окислении сукцината в фумарат, должны перемещаться к более низкому редокс-потенциалу за счет обратного транспорта электронов, расходующего мембранный потенциал.
+              </p>
+              <p>
+                <strong>Механизмы переноса электронов и кинетические лимиты:</strong>
+              </p>
+              <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+                <li><strong>MIET (Mediated Interspecies Electron Transfer):</strong> Перенос, опосредованный диффузией растворенных интермедиатов ($H_2$ и формиата). Лимитируется константами сродства ($K_m^{	ext{CH}_4} = 1 \dots 20	ext{ мМ}$) и диффузионным сопротивлением водной фазы. В разделенных колониях при увеличении расстояния между клетками до <strong>$15	ext{ мкм}$</strong> для бактерий и до <strong>$30	ext{ мкм}$</strong> для архей метаболическая активность падает более чем на <strong>70%</strong>.</li>
+                <li><strong>DIET (Direct Interspecies Electron Transfer):</strong> Прямой перенос электронов через электропроводящие белковые нанопровода (e-pili) и цитохромы внешней мембраны. Механизм DIET позволяет формировать плотные агрегаты с переплетенным распределением клеток, где диффузионные ограничения полностью нивелируются.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
 
-      <!-- Модуль 2.8: АФК и антиоксидантная защита -->
+      <!-- ===================================================================
+           МОДУЛЬ 2.8: АКТИВНЫЕ ФОРМЫ КИСЛОРОДА И ЗАЩИТА
+           =================================================================== -->
       <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.8</div>
         <h2 class="example-box__title">Активные формы кислорода (АФК) и ферментативная антиоксидантная защита</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Высокий окислительный потенциал кислорода сопряжен с риском оксидативного стресса: утечка одиночных электронов в дыхательной цепи приводит к образованию цитотоксических <strong>активных форм кислорода (АФК)</strong>.
+          Использование кислорода в качестве терминального акцептора обеспечивает колоссальный выигрыш в энергии ($\Delta E^{\circ\prime} = +1{,}135	ext{ В}$), однако сопряжено с рисками оксидативного стресса. Неизбежная утечка одиночных электронов с компонентов дыхательной цепи на кислород приводит к образованию цитотоксических <strong>активных форм кислорода (АФК, ROS)</strong>: супероксид-радикала ($O_2^{ullet-}$), пероксида водорода ($H_2O_2$) и крайне агрессивного гидроксильного радикала ($OH^ullet$).
         </p>
 
         <!-- СХЕМА 5: АФК и защита SVG -->
@@ -2874,25 +2988,56 @@
             <text x="615" y="225" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Отсутствие генов каталазы</text>
             <text x="615" y="243" fill="var(--cds-text-primary, #f4f4f4)" font-size="11">• Детоксикация 2-кетокислотами:</text>
             <text x="615" y="262" fill="#f1c21b" font-size="10" font-weight="600">Пируват + H₂O₂ → Ацетат + CO₂ + H₂O</text>
-            <text x="615" y="280" fill="var(--cds-text-secondary, #c6c6c6)" font-size="10">• Белок защиты WrbA</text>
+            <text x="615" y="280" fill="var(--cds-text-secondary, #c6c6c6)" font-size="10">• Экспрессия защитного белка WrbA</text>
           </svg>
+        </div>
+
+        <!-- Carbon Accordion: Антиоксидантные ферменты, WrbA и защита архей -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🛡️</span>
+                <span>Энзиматическая система защиты, белок WrbA и неферментативная детоксикация пероксида у архей</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                <strong>Ферментативный арсенал клетки:</strong>
+              </p>
+              <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+                <li><strong>Супероксиддисмутаза (СОД):</strong> Металлофермент (содержит $Cu/Zn, Mn$ или $Fe$), катализирующий дисмутацию: $2O_2^{ullet-} + 2H^+ 	o H_2O_2 + O_2$.</li>
+                <li><strong>Каталаза:</strong> Гемсодержащий фермент с рекордной скоростью катализа, расщепляющий пероксид: $2H_2O_2 	o 2H_2O + O_2$.</li>
+                <li><strong>Пероксидазы (например, глутатионпероксидаза):</strong> $H_2O_2 + 2	ext{RSH} 	o 	ext{RSSR} + 2H_2O$.</li>
+              </ul>
+              <p style="margin-top: 0.75rem;">
+                <strong>Реакция Фентона и повреждение биоструктур:</strong> В присутствии свободного закисного железа ($	ext{Fe}^{2+}$) пероксид водорода вступает в реакцию: $	ext{Fe}^{2+} + 	ext{H}_2	ext{O}_2 	o 	ext{Fe}^{3+} + 	ext{OH}^ullet + 	ext{OH}^-$. Образующийся гидроксильный радикал ($	ext{OH}^ullet$) является мощнейшим оксидантом, окисляющим остатки метионина и цистеина, повреждающим железосерные кластеры ($[4Fe-4S]$) в гидрогеназах и дегидрогеназах, разрушающим ДНК и вызывающим перекисное окисление липидов мембран.
+              </p>
+              <p>
+                <strong>Адаптации бескаталазных микроорганизмов:</strong> При повышении $E_h$ среды экспрессия генов стрессовой защиты (например, флавопротеина <em>wrbA</em>) резко возрастает. Некоторые аммиакокисляющие археи (AOA) полностью лишены генов каталазы. Их выживание обеспечивается неферментативной реакцией пероксида с 2-кетокислотами среды: $	ext{Пируват} + H_2O_2 	o 	ext{Ацетат} + CO_2 + H_2O$.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
 
-      <!-- Модуль 2.9: Экологические и прикладные модели биоэнергетики -->
-      <div class="example-box">
+      <!-- ===================================================================
+           МОДУЛЬ 2.9: ЭКОЛОГИЧЕСКИЕ И ПРИКЛАДНЫЕ МОДЕЛИ
+           =================================================================== -->
+      <div class="example-box" style="margin-bottom: 2rem;">
         <div class="example-box__badge">Модуль 2.9</div>
-        <h2 class="example-box__title">Экологическое и биотехнологическое значение биоэнергетических моделей</h2>
+        <h2 class="example-box__title">Экологическое значение и практическое применение биоэнергетических моделей</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
-          Фундаментальные принципы ОВР и Редокс-башни находят широкое практическое применение в анализе биосферных процессов, пищевой инженерии и промышленной биотехнологии:
+          Фундаментальные принципы ОВР, заложенные в Редокс-башне и уравнении Нернста, имеют критическое значение при анализе биосферных процессов, пищевой инженерии и промышленной биотехнологии.
         </p>
 
-        <div class="cds--row">
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
           <div class="cds--col-4">
             <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin-top: 0; color: var(--cds-support-warning);">1. Торфяники мерзлоты &amp; Метан</h4>
+              <h4 style="margin-top: 0; color: var(--cds-support-warning);">1. Торфяники мерзлоты &amp; Эмиссия CH₄</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                Таяние вечной мерзлоты высвобождает лабильное органическое вещество, сдвигая $E_h$ и перераспределяя поток электронов в пользу метаногенеза, что определяет темпы глобальной эмиссии $CH_4$.
+                Таяние вечной мерзлоты высвобождает древний и лабильный растительный углерод. Это сдвигает $E_h$ и перераспределяет поток электронов в пользу метаногенеза, что определяет темпы планетарной эмиссии $CH_4$.
               </p>
             </div>
           </div>
@@ -2901,20 +3046,61 @@
             <div class="slide-info-card" style="height: 100%;">
               <h4 style="margin-top: 0; color: var(--cds-interactive-01);">2. Озеро Уилланс &amp; Модель TEEM</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                В подледном озере SLW ($pE = 2$) термодинамическая модель электроноэквивалентов Маккарти (TEEM) позволяет рассчитывать предельный выход биомассы при КПД анаэробного переноса 45–50%.
+                В антарктическом подледном озере SLW ($pE = 2$) термодинамическая модель электроноэквивалентов Маккарти (TEEM) позволяет рассчитывать предельный выход биомассы при КПД анаэробного переноса 45–50%.
               </p>
             </div>
           </div>
 
           <div class="cds--col-4">
             <div class="slide-info-card" style="height: 100%;">
-              <h4 style="margin-top: 0; color: var(--cds-support-success);">3. Биоремедиация &amp; Пищевая защита</h4>
+              <h4 style="margin-top: 0; color: var(--cds-support-success);">3. Биоремедиация &amp; Пищевая стерилизация</h4>
               <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
-                Восстановительное дехлорирование галогенорганических загрязнителей в водоносных горизонтах и управление $rH_2$ в пищевых упаковках для гарантированной инактивации спор ботулизма.
+                Восстановительное дехлорирование галогенорганических поллютантов в водоносных пластах и расчет стерилизующего эффекта $F_0 \ge 3{,}0	ext{ мин}$ для предотвращения прорастания спор ботулизма.
               </p>
             </div>
           </div>
         </div>
+
+        <!-- Carbon Accordion: Озеро Уилланс, DOM и модель TEEM -->
+        <div class="cds--accordion">
+          <details class="cds--accordion__item">
+            <summary class="cds--accordion__heading">
+              <span class="cds--accordion__title">
+                <span>🧊</span>
+                <span>Биоэнергетика экстремальных сред: подледное озеро Уилланс, модель Маккарти TEEM и стерилизация</span>
+              </span>
+              <span class="cds--accordion__arrow">▶</span>
+            </summary>
+            <div class="cds--accordion__content">
+              <p>
+                <strong>Растворенное органическое вещество (DOM):</strong> Состав экзометаболитов определяет энергетику микробиомов. Так, метаболиты мясистых макроводорослей генерируют пул химически восстановленных субстратов с более высоким энергетическим потенциалом по сравнению с выделениями рифообразующих кораллов.
+              </p>
+              <p>
+                <strong>Подледное озеро Уилланс (Subglacial Lake Whillans, SLW):</strong> В экстремальных олиготрофных средах под ледяным щитом Антарктиды биоэнергетика определяет физическую границу выживания. При расчетных геохимических сценариях (от аэробных до микроаноксичных при $pE = 2$) выход свободной энергии максимален для окисления ацетата и формиата и минимален для метана. Измерения геометрического размера клеток (в сферическом эквивалентном диаметре) и плотности энергии подтверждают крайне низкие темпы гетеротрофной активности.
+              </p>
+              <p>
+                <strong>Модель TEEM Маккарти (Thermodynamic Electron Equivalents Model):</strong> Зная стандартную эффективность анаэробного переноса энергии (около $45 \dots 50\%$), модель TEEM позволяет достоверно рассчитывать теоретические максимальные выходы прироста биомассы в процессах очистки стоков и биоремедиации (например, при восстановительном дехлорировании галогенированных алканов в подземных водах).
+              </p>
+              <p>
+                <strong>Санитарно-микробиологический регламент консервов:</strong> При $pH > 4{,}5$ и $rH_2 \le 14{,}5$ в консервированных продуктах создаются идеальные условия для прорастания терморезистентных спор <em>Clostridium botulinum</em>. Единственным гарантом микробиологической безопасности является автоклавная стерилизация с критерием стерилизующего эффекта $F_0 \ge 3{,}0	ext{ мин}$ (промышленный норматив «ботулинического варки» с логарифмической редукцией $12D$).
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           МОДУЛЬ 2.10: СИСТЕМНОЕ ЗАКЛЮЧЕНИЕ
+           =================================================================== -->
+      <div class="example-box">
+        <div class="example-box__badge">Итоги</div>
+        <h2 class="example-box__title">Системные выводы и взаимосвязь физико-химических факторов</h2>
+        <p style="margin-bottom: 0.75rem; line-height: 1.6;">
+          Термодинамика окислительно-восстановительных процессов организует жизнь на всех уровнях биологической иерархии. Окислительно-восстановительный потенциал ($E_h$), наряду с водородным показателем $pH$ и температурой, строго детерминирует направление электронных потоков. Взаимосвязь между разностью потенциалов полуреакций и свободной энергией Гиббса лежит в основе способности клеток запасать энергию электрохимического градиента протонов.
+        </p>
+        <p style="margin-bottom: 0; line-height: 1.6;">
+          Архитектура Редокс-башни иллюстрирует эволюционную пластичность микроорганизмов: от использования высокоэнергетических аэробных пар до выживания за счет синтрофного консорциумного перераспределения энергии в анаэробных нишах, где реакции идут исключительно благодаря межвидовому стоку электронов и водорода. При этом неизбежная цена аэробного метаболизма — оксидативный стресс — компенсируется высокоэффективными ферментативными системами (СОД, каталазы, пероксидазы). Комплексный анализ этих параметров позволяет моделировать планетарные биогеохимические циклы, разрабатывать технологии биоремедиации и обосновывать критерии обитаемости других планет.
+        </p>
       </div>
 
     </section>
@@ -3562,7 +3748,7 @@
           <select class="cds--select-input" id="student-test-topic" style="width: 100%; font-size: 0.9375rem; padding: 0.5rem 0.75rem; height: 42px;">
             <option value="sem0" selected>Семинар 0: Фундаментальная химия (12 задач, 30 минут, банк 60 задач)</option>
             <option value="sem1">Семинар 1: Физико-химия микробного гомеостаза (4 задачи, 15 минут, банк 20 задач)</option>
-            <option value="sem2">Семинар 2: Окислительно-восстановительный потенциал и аэробиоз (4 задачи, 15 минут, банк 20 задач)</option>
+            <option value="sem2">Семинар 2: Окислительно-восстановительный потенциал и биоэнергетика (6 задач, 15 минут, банк 36 задач)</option>
           </select>
           <div id="test-topic-description" style="font-size: 0.8125rem; margin-top: 0.4rem; color: var(--cds-interactive-01);">
             ⏱ <strong>30 минут</strong> • <strong>12 расчетных задач</strong> (по 2 из 6 категорий базовой химии) • Максимум: 100 баллов

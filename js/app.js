@@ -100,9 +100,18 @@ const App = {
       if (targetGoTo) {
         e.preventDefault();
         const view = targetGoTo.getAttribute('data-go-to');
+        const testTopic = targetGoTo.getAttribute('data-test-topic');
         this.closeAllSubmenus();
         this.switchView(view);
         window.location.hash = view;
+
+        if (view === 'test' && testTopic) {
+          const select = document.getElementById('student-test-topic');
+          if (select) {
+            select.value = testTopic;
+            select.dispatchEvent(new Event('change'));
+          }
+        }
       }
     });
 

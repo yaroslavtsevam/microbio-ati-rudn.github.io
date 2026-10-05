@@ -12,15 +12,15 @@ const { TaskBankSem2, TASK_BANK_SEM2 } = require('../js/task-bank-sem2.js');
 const { CalculatorsSem2 } = require('../js/calculators-sem2.js');
 
 describe('ГРУППА 1: Схема и целостность банка расчетных задач Семинара 2', () => {
-  test('1.1. Банк Семинара 2 содержит ровно 20 расчетных задач', () => {
-    assert.equal(TASK_BANK_SEM2.length, 20, 'В банке Семинара 2 должно быть ровно 20 задач');
-    assert.equal(TaskBankSem2.getAllTasks().length, 20);
+  test('1.1. Банк Семинара 2 содержит ровно 36 расчетных задач', () => {
+    assert.equal(TASK_BANK_SEM2.length, 36, 'В банке Семинара 2 должно быть ровно 36 задач');
+    assert.equal(TaskBankSem2.getAllTasks().length, 36);
   });
 
-  test('1.2. В банке ровно 4 категории, по 5 задач в каждой', () => {
-    for (let cat = 1; cat <= 4; cat++) {
+  test('1.2. В банке ровно 6 категорий, по 6 задач в каждой', () => {
+    for (let cat = 1; cat <= 6; cat++) {
       const catTasks = TaskBankSem2.getTasksByCategory(cat);
-      assert.equal(catTasks.length, 5, `Категория ${cat} должна содержать ровно 5 задач`);
+      assert.equal(catTasks.length, 6, `Категория ${cat} должна содержать ровно 6 задач`);
       catTasks.forEach(task => {
         assert.equal(task.category, cat, `Категория задачи ${task.id} должна быть ${cat}`);
       });
@@ -50,10 +50,10 @@ describe('ГРУППА 1: Схема и целостность банка рас
     });
   });
 
-  test('1.4. Функция getRandomTasks() возвращает 4 задачи (по 1 из каждой категории)', () => {
+  test('1.4. Функция getRandomTasks() возвращает 6 задач (по 1 из каждой категории)', () => {
     for (let run = 0; run < 10; run++) {
       const ticket = TaskBankSem2.getRandomTasks();
-      assert.equal(ticket.length, 4, 'В билете должно быть ровно 4 задачи');
+      assert.equal(ticket.length, 6, 'В билете должно быть ровно 6 задач');
 
       const catCounts = {};
       const ids = new Set();
@@ -64,7 +64,7 @@ describe('ГРУППА 1: Схема и целостность банка рас
         ids.add(task.id);
       });
 
-      for (let c = 1; c <= 4; c++) {
+      for (let c = 1; c <= 6; c++) {
         assert.equal(catCounts[c], 1, `В билете должна быть ровно 1 задача из категории ${c}`);
       }
     }

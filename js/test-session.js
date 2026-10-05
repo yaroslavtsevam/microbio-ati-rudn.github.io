@@ -49,7 +49,7 @@ const TestSession = {
           if (e.target.value === 'sem0') {
             desc.innerHTML = '⏱ <strong>30 минут</strong> • <strong>12 расчетных задач</strong> (по 2 из 6 категорий базовой химии) • Максимум: 100 баллов';
           } else if (e.target.value === 'sem2') {
-            desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>4 расчетные задачи</strong> (по 1 из 4 разделов RedOx и аэробиоза) • Максимум: 100 баллов';
+            desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>6 расчетных задач</strong> (по 1 из 6 разделов RedOx, rH₂, синтрофии и АФК) • Максимум: 100 баллов';
           } else {
             desc.innerHTML = '⏱ <strong>15 минут</strong> • <strong>4 расчетные задачи</strong> (по 1 из 4 разделов гомеостаза) • Максимум: 100 баллов';
           }
@@ -305,7 +305,7 @@ const TestSession = {
       topicTitle = 'Семинар 0: Базовая химия';
     } else if (isSem2) {
       bank = typeof TaskBankSem2 !== 'undefined' ? TaskBankSem2 : bank;
-      topicTitle = 'Семинар 2: RedOx-потенциал и аэробиоз';
+      topicTitle = 'Семинар 2: RedOx-потенциал и биоэнергетика';
     }
 
     const ptsPerTask = 100 / (this.state.tasks.length || 1);
@@ -431,6 +431,15 @@ const TestSession = {
         receiptToken: syncResult.receiptToken,
         submittedAtLocal: new Date().toLocaleString('ru-RU')
       });
+    }
+
+    const returnBtn = document.getElementById('btn-receipt-return') || document.querySelector('#test-step-receipt [data-go-to]');
+    if (returnBtn) {
+      const viewTarget = payload.topic === 'sem0' ? 'seminar0' : (payload.topic === 'sem2' ? 'seminar2' : 'seminar1');
+      const semNum = payload.topic === 'sem0' ? '0' : (payload.topic === 'sem2' ? '2' : '1');
+      returnBtn.setAttribute('data-go-to', viewTarget);
+      const span = returnBtn.querySelector('span:first-child');
+      if (span) span.textContent = `Вернуться к материалам Семинара ${semNum}`;
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });

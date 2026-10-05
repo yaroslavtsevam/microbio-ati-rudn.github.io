@@ -1508,3 +1508,85 @@ code, pre, kbd, samp {
   border-left: 4px solid var(--cds-support-success);
 }
 
+/* ==========================================================================
+   24. IBM CARBON ACCORDION & COLLAPSIBLE MODULES
+   ========================================================================== */
+.cds--accordion {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+  border-top: 1px solid var(--cds-border-subtle-01);
+  background: var(--cds-layer-01);
+}
+
+.cds--accordion__item {
+  border-bottom: 1px solid var(--cds-border-subtle-01);
+  transition: background-color 0.2s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.cds--accordion__item[open] {
+  background-color: var(--cds-layer-02);
+}
+
+.cds--accordion__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cds-text-primary);
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: none;
+  text-align: left;
+  list-style: none;
+  outline: none;
+  transition: background-color 0.15s ease;
+}
+
+.cds--accordion__heading::-webkit-details-marker {
+  display: none;
+}
+
+.cds--accordion__heading:hover {
+  background-color: var(--cds-layer-hover-01, rgba(255, 255, 255, 0.05));
+}
+
+.cds--accordion__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cds--accordion__arrow {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.38, 0.9);
+  font-size: 0.8125rem;
+  color: var(--cds-interactive-01);
+}
+
+.cds--accordion__item[open] .cds--accordion__arrow {
+  transform: rotate(90deg);
+}
+
+.cds--accordion__content {
+  padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+  color: var(--cds-text-primary);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  border-top: 1px dashed var(--cds-border-subtle-01);
+}
+
+.cds--accordion__content p {
+  margin-bottom: 0.75rem;
+}
+
+.cds--accordion__content p:last-child {
+  margin-bottom: 0;
+}
+
