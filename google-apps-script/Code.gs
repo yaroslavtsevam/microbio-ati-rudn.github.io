@@ -6,7 +6,7 @@
  * Поддерживает:
  *  - Семинар 0 (Вводная химия): 12 расчетных задач -> Лист "Ведомость_Семинар_0"
  *  - Семинар 1 (Гомеостаз микроорганизмов): 4 расчетные задачи -> Лист "Ведомость_Семинар_1"
- *  - Семинар 2 (RedOx, rH2 и аэробиоз): 4 расчетные задачи -> Лист "Ведомость_Семинар_2"
+ *  - Семинар 2 (RedOx, rH2 и биоэнергетика): 6 расчетных задач -> Лист "Ведомость_Семинар_2"
  */
 
 function doPost(e) {
@@ -41,7 +41,7 @@ function doPost(e) {
     var sheet = ss.getSheetByName(sheetName);
 
     var answers = Array.isArray(data.answers) ? data.answers : [];
-    var totalTasks = answers.length > 0 ? answers.length : (topic === 'sem0' ? 12 : 4);
+    var totalTasks = answers.length > 0 ? answers.length : (topic === 'sem0' ? 12 : (topic === 'sem2' ? 6 : 4));
 
     // Построение заголовков таблицы
     var headers = [
