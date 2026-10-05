@@ -45,9 +45,15 @@ const GDriveSync = {
       flatTaskFields[`task${i}_notes`] = ans.userNotes || '';
     });
 
+    let defaultSheet = 'Ведомость_Семинар_1';
+    if (payload.topic === 'sem0') defaultSheet = 'Ведомость_Семинар_0';
+    else if (payload.topic === 'sem2') defaultSheet = 'Ведомость_Семинар_2';
+
     const fullData = {
       receiptToken,
       sessionToken: receiptToken,
+      sheetName: defaultSheet,
+      targetSheet: defaultSheet,
       ...payload,
       ...flatTaskFields,
       submittedAtIso: new Date().toISOString(),
@@ -71,10 +77,6 @@ const GDriveSync = {
     // 3. Отправка POST-запроса в Google Apps Script
     // Для избежания проблем с CORS preflight используем text/plain
     const postBody = JSON.stringify(fullData);
-
-    let defaultSheet = 'Ведомость_Семинар_1';
-    if (payload.topic === 'sem0') defaultSheet = 'Ведомость_Семинар_0';
-    else if (payload.topic === 'sem2') defaultSheet = 'Ведомость_Семинар_2';
 
     try {
       const response = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {

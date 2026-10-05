@@ -30,15 +30,47 @@ function doPost(e) {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var topic = String(data.topic || 'sem2').toLowerCase();
     
-    // Определение имени листа в зависимости от темы
-    var sheetName = "Ведомость_Семинар_1";
-    if (topic === 'sem0' || topic.indexOf('хим') !== -1 || topic.indexOf('0') !== -1) {
-      sheetName = "Ведомость_Семинар_0";
-    } else if (topic === 'sem2' || topic.indexOf('redox') !== -1 || topic.indexOf('2') !== -1) {
-      sheetName = "Ведомость_Семинар_2";
+    // Определение предпочтительного имени вкладки и поиск существующего листа
+    var targetSheetName = "Ведомость_Семинар_2";
+    if (data.sheetName) {
+      targetSheetName = String(data.sheetName).trim();
+    } else if (topic === 'sem0' || topic.indexOf('хим') !== -1 || topic.indexOf('0') !== -1) {
+      targetSheetName = "Ведомость_Семинар_0";
+    } else if (topic === 'sem1' || topic.indexOf('гомео') !== -1 || topic === '1') {
+      targetSheetName = "Ведомость_Семинар_1";
+    } else {
+      targetSheetName = "Ведомость_Семинар_2";
     }
 
-    var sheet = ss.getSheetByName(sheetName);
+    // Умный поиск вкладки в документе (проверяет точные совпадения и вариации без "Ведомость_")
+    var sheet = ss.getSheetByName(targetSheetName);
+    if (!sheet) {
+      var allSheets = ss.getSheets();
+      for (var s = 0; s < allSheets.length; s++) {
+        var sName = allSheets[s].getName().toLowerCase();
+        if (topic === 'sem2' || topic.indexOf('2') !== -1 || topic.indexOf('redox') !== -1) {
+          if (sName.indexOf('семинар 2') !== -1 || sName.indexOf('семинар_2') !== -1 || sName.indexOf('семинар-2') !== -1 || sName.indexOf('redox') !== -1) {
+            sheet = allSheets[s];
+            targetSheetName = allSheets[s].getName();
+            break;
+          }
+        } else if (topic === 'sem0' || topic.indexOf('0') !== -1 || topic.indexOf('хим') !== -1) {
+          if (sName.indexOf('семинар 0') !== -1 || sName.indexOf('семинар_0') !== -1 || sName.indexOf('хим') !== -1) {
+            sheet = allSheets[s];
+            targetSheetName = allSheets[s].getName();
+            break;
+          }
+        } else if (topic === 'sem1' || topic.indexOf('1') !== -1) {
+          if (sName.indexOf('семинар 1') !== -1 || sName.indexOf('семинар_1') !== -1) {
+            sheet = allSheets[s];
+            targetSheetName = allSheets[s].getName();
+            break;
+          }
+        }
+      }
+    }
+
+    var sheetName = sheet ? sheet.getName() : targetSheetName;
 
     var answers = Array.isArray(data.answers) ? data.answers : [];
     var totalTasks = answers.length > 0 ? answers.length : (topic === 'sem0' ? 12 : (topic === 'sem2' ? 6 : 4));
@@ -218,7 +250,7 @@ function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({
     status: "ok",
     service: "RUDN Microbiology & Chemistry Testing Gateway (v2.3 Universal)",
-    supportedSeminars: ["Семинар 0 (12 задач)", "Семинар 1 (4 задачи)", "Семинар 2 (4 задачи)"],
+    supportedSeminars: ["Семинар 0 (12 задач)", "Семинар 1 (4 задачи)", "Семинар 2 (6 задач)"],
     timestamp: new Date().toISOString()
   })).setMimeType(ContentService.MimeType.JSON);
 }
