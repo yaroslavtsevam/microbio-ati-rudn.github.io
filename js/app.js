@@ -274,36 +274,9 @@ const App = {
      ------------------------------------------------------------------------ */
   
   /* ------------------------------------------------------------------------
-     4.5. ФИЛЬТРАЦИЯ ВОПРОСОВ КОЛЛОКВИУМА 1
+     4.5. НАВИГАЦИЯ И ПЕРЕКЛЮЧЕНИЕ ТАБОВ КОЛЛОКВИУМА 1
      ------------------------------------------------------------------------ */
   initColloquiumFilters() {
-    const filterBar = document.getElementById('colloquium-filter-bar');
-    if (!filterBar) return;
-
-    filterBar.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-filter]');
-      if (!btn) return;
-
-      const filter = btn.getAttribute('data-filter');
-      const allBtns = filterBar.querySelectorAll('[data-filter]');
-      allBtns.forEach(b => {
-        b.classList.remove('cds--btn--primary');
-        b.classList.add('cds--btn--secondary');
-      });
-      btn.classList.remove('cds--btn--secondary');
-      btn.classList.add('cds--btn--primary');
-
-      const cards = document.querySelectorAll('.colloquium-q-card');
-      cards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-
     // Обработчик кнопок data-tab-switch в шапке Коллоквиума
     document.addEventListener('click', (e) => {
       const switchBtn = e.target.closest('[data-tab-switch]');
