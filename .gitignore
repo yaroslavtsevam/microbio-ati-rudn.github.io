@@ -1,0 +1,20 @@
+# Преподавательские материалы, ключи и решения
+assets/pdf/*instructor*
+*instructor*
+*solution*
+*solutions*
+*keys*
+*.key.*
+*.secret*
+
+# Серверные скрипты и ключи оценивания
+*.gs
+google-apps-script/
+scripts/
+tests/
+deploy.sh
+
+# Системные и временные файлы
+.DS_Store
+*.swp
+*~

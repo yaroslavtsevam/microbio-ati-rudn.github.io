@@ -1,0 +1,40 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Права доступа для развертывания GitHub Pages через встроенный GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Запретить параллельные сборки для предотвращения конфликтов
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout репозитория
+        uses: actions/checkout@v4
+
+      - name: Настройка GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Загрузка артефактов страниц
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Развертывание на GitHub Pages по токену
+        id: deployment
+        uses: actions/deploy-pages@v4
