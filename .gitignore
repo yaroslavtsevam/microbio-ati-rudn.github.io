@@ -6,6 +6,8 @@ assets/pdf/*instructor*
 *keys*
 *.key.*
 *.secret*
+colloquium_01/
+*colloquium*
 
 # Серверные скрипты и ключи оценивания
 *.gs

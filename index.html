@@ -105,7 +105,15 @@
             </ul>
           </li>
 
-          <!-- 4. Домашнее задание -->
+                    <!-- 3.5. Коллоквиум 1 -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#colloquium1" class="cds--header__menu-link" role="menuitem" data-nav="colloquium1">
+              <span>Коллоквиум 1</span>
+              <span class="cds--tag cds--tag--sm cds--tag--magenta" style="margin-left: 6px; font-size: 0.6875rem;">Теория • 60 вопросов</span>
+            </a>
+          </li>
+
+<!-- 4. Домашнее задание -->
           <li class="cds--header__menu-item" role="none">
             <a href="#test" class="cds--header__menu-link" role="menuitem" data-nav="test">
               <span>Домашнее задание</span>
@@ -319,6 +327,27 @@
             <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar3">
               <span>Изучить Семинар 3 (aw, 12 примеров)</span>
               <span>💧 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+            <!-- Карточка: Коллоквиум 1 (Рубежный контроль Модуля 1) -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="colloquium" data-category="type-seminar exam">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid #ee5396; background: var(--cds-layer);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--magenta">Коллоквиум 1 • Рубежный контроль</span>
+            <span class="cds--tag cds--tag--purple">МОДУЛЬ 1</span>
+          </div>
+          <h3 class="cds--tile__title">Подготовка к коллоквиуму 1: Гомеостаз, RedOx и Активность воды</h3>
+          <div class="cds--tile__subtitle">Синтез теории Семинаров 1–3, 60 экзаменационных вопросов и 9 типовых ответов</div>
+          <div class="cds--tile__content">
+            Комплексный теоретический путеводитель: термодинамика воды, шкала pH, acid trapping, теория Дебая-Хюккеля, потенциал Eh и показатель rH2 по Нернсту, биоэнергетика дыхания и брожения, активность воды aw по Раулю и Кельвину, плазмолиз, совместимые осмолиты и барьеры ХАССП.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%; background-color: #9f1853;" data-go-to="colloquium1">
+              <span>Подготовка к коллоквиуму 1 (60 вопросов)</span>
+              <span>🎓 →</span>
             </button>
           </div>
         </div>
@@ -5666,6 +5695,1483 @@
         </table>
       </div>
 
+    </section>
+
+  </main>
+
+
+    <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ: ПОДГОТОВКА К КОЛЛОКВИУМУ 1 (МОДУЛЬ 1)
+       ===================================================================== -->
+  <main id="view-colloquium1" class="cds--grid" style="display: none;">
+    
+    <!-- Hero Banner -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Рубежный контроль • Модуль 1 • Семинары 1, 2 и 3</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Подготовка к коллоквиуму 1: Фундаментальные основы микробного гомеостаза
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Единый сквозной теоретический конспект, 60 экзаменационных вопросов с рубрикатором и 9 развернутых типовых ответов экспертного уровня
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button class="cds--btn cds--btn--secondary" data-tab-switch="colloquium1-tab-questions">
+          <span>Вопросы (60)</span>
+          <span>📋</span>
+        </button>
+        <button class="cds--btn cds--btn--primary" data-tab-switch="colloquium1-tab-answers" style="background-color: #9f1853;">
+          <span>Типовые ответы (9)</span>
+          <span>💡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Табы Carbon -->
+    <div class="cds--tabs" role="tablist">
+      <button class="cds--tab cds--tab--selected" data-tab-target="colloquium1-tab-theory" role="tab">
+        1. Единый теоретический конспект (Семинары 1–3)
+      </button>
+      <button class="cds--tab" data-tab-target="colloquium1-tab-questions" role="tab">
+        2. Вопросы к коллоквиуму (60 вопросов)
+      </button>
+      <button class="cds--tab" data-tab-target="colloquium1-tab-answers" role="tab">
+        3. Эталонные ответы на типовые вопросы (9 разборов)
+      </button>
+    </div>
+
+    <!-- ===================================================================
+         ВКЛАДКА 1: ЕДИНЫЙ ТЕОРЕТИЧЕСКИЙ КОНСПЕКТ (FLUENT TEXT)
+         =================================================================== -->
+    <section id="colloquium1-tab-theory" class="cds--tab-panel cds--tab-panel--active" style="padding-top: 1.5rem;">
+
+      <!-- ЧАСТЬ I: СЕМИНАР 1 -->
+      <article class="example-box" style="margin-bottom: 2.5rem;">
+        <div class="example-box__badge" style="background-color: var(--cds-interactive-01); color: #fff;">Часть I • Семинар 1</div>
+        <h2 class="example-box__title" style="font-size: 1.4rem;">Водный диполь, шкала pH, ионная сила и антимикробный гомеостаз</h2>
+        
+        <div style="line-height: 1.7; font-size: 0.9375rem;">
+          <h3 style="margin-top: 1.25rem; color: var(--cds-text-primary); font-size: 1.15rem;">1. Вводный парадокс: почему уксус опаснее соляной кислоты?</h3>
+          <p>
+            Представьте два консервирующих раствора в пищевой лаборатории: первый — это раствор неорганической соляной кислоты ($HCl$) с водородным показателем $pH = 1.5$; второй — пищевой маринад на основе слабого столового уксуса ($CH_3COOH$) с водородным показателем $pH = 3.5$. 
+          </p>
+          <p>
+            Формальная логика подсказывает, что в растворе соляной кислоты концентрация протонов $[H^+]$ в сто раз выше, чем в уксусе, а значит, бактерии должны погибать там мгновенно. Однако реальный микробиологический эксперимент показывает обратное: в растворе соляной кислоты при $pH = 1.5$ бактериальные клетки способны выживать в течение некоторого времени, тогда как в $3\%$-м уксусе при $pH = 3.5$ микроорганизмы погибают за считанные минуты.
+          </p>
+          <p>
+            Причина этого парадокса кроется в фундаментальном различии между <strong>внешней средой</strong> и <strong>внутриклеточным гомеостазом</strong>, а также в физико-химических законах мембранного транспорта.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">2. Полярность воды, автопротолиз и термодинамическая шкала pH</h3>
+          <p>
+            Вода ($H_2O$) является основой любого пищевого продукта. Её уникальные свойства обусловлены геометрией молекулы: атом кислорода ($sp^3$-гибридизация) обладает высокой электроотрицательностью ($3.44$), валентный угол $H-O-H$ составляет $104.5^\circ$, что формирует постоянный дипольный момент $\mu = 1.85\text{ D}$. Высокая диэлектрическая проницаемость ($\varepsilon = 78.5$ при $25^\circ\text{C}$) ослабляет кулоновские силы между растворенными ионами почти в $80$ раз, обеспечивая их эффективную сольватацию.
+          </p>
+          <p>
+            Вода способна к обратимому автопротолизу:
+          </p>
+          <div class="formula-box">$$2H_2O \rightleftharpoons H_3O^+ + OH^-, \quad K_w = [H^+][OH^-] = 1.0 \times 10^{-14} \text{ (при } 25^\circ\text{C})$$</div>
+          <p>
+            Шкала $pH$ — строго логарифмическая: $pH = -\log_{10} a_{H^+}$. Это означает, что изменение $pH$ на 1 единицу означает <strong>десятикратное</strong> изменение термодинамической активности протонов, а сдвиг на 2 единицы — <strong>стократное</strong>. Для микробной клетки цитоплазматический водородный показатель является константой жизни: ферменты гликолиза, рибосомы и репликация ДНК функционируют строго в узком диапазоне $pH_{in} \approx 7.0\text{--}7.4$.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">3. Ионная сила раствора и теория Дебая-Хюккеля</h3>
+          <p>
+            В реальных пищевых продуктах (рассолы, сыры, соки, соусы) растворено множество сильных электролитов ($NaCl$, $CaCl_2$, лактаты). Вокруг каждого иона образуется плотная <em>ионная атмосфера</em> из противоположно заряженных частиц. В результате ионы электростатически экранируют друг друга, и их истинная реакционная способность (активность $a_i$) становится ниже аналитической концентрации $c_i$:
+          </p>
+          <div class="formula-box">$$a_i = \gamma_i \cdot c_i, \quad I = \frac{1}{2} \sum_{i=1}^n c_i z_i^2, \quad \log_{10} \gamma_i = -0.51 \cdot z_i^2 \cdot \frac{\sqrt{I}}{1 + \sqrt{I}}$$</div>
+          <p>
+            В соленых пищевых средах ионная сила $I$ может достигать $0.5\text{--}1.5\text{ М}$. В этих условиях коэффициент активности протонов $\gamma_{H^+}$ падает до $0.7\text{--}0.8$. Это означает, что стандартный лабораторный pH-метр, измеряющий активность $a_{H^+}$, показывает значение, отличающееся от стехиометрической концентрации кислоты, что обязательно должно учитываться инженером по качеству при расчете рецептур консервирования.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">4. Уравнение Гендерсона-Хассельбаха и эффект «кислотной ловушки» (Acid Trapping)</h3>
+          <p>
+            Фосфолипидный бислой бактериальной цитоплазматической мембраны является непреодолимым барьером для гидратированных ионов водорода ($H_3O^+$) и диссоциированных анионов ($A^-$). Минеральная кислота ($HCl$), диссоциированная на $100\%$, не может преодолеть мембрану и действует только снаружи, повреждая поверхностные белки.
+          </p>
+          <p>
+            Напротив, слабые органические кислоты (бензойная $pK_a = 4.19$, сорбиновая $pK_a = 4.76$, уксусная $pK_a = 4.75$, пропионовая $pK_a = 4.87$) находятся в динамическом равновесии:
+          </p>
+          <div class="formula-box">$$HA \rightleftharpoons H^+ + A^-, \quad \alpha_{HA} = \frac{[HA]}{C_{tot}} = \frac{1}{1 + 10^{pH - pK_a}}$$</div>
+          <p>
+            <strong>Молекулярная механика Acid Trapping:</strong>
+          </p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li>Электронейтральная липофильная молекула $HA$ беспрепятственно растворяется в липидном бислое и диффундирует внутрь цитоплазмы бактерии по градиенту концентрации.</li>
+            <li>Внутри клетки среда нейтральна ($pH_{in} \approx 7.2$). Согласно закону действующих масс, молекула $HA$ в нейтральной среде мгновенно диссоциирует на протон $H^+$ и анион $A^-$.</li>
+            <li>Образовавшийся анион $A^-$ и протон $H^+$ заряжены и <em>не могут выйти обратно сквозь мембрану</em>. Кислота оказывается в «ловушке».</li>
+            <li>Внутренний пул протонов лавинообразно нарастает, закисляя цитоплазму ($pH_{in}$ падает до $5.5\text{--}5.0$), что денатурирует ферменты метаболизма.</li>
+            <li>Бактерия в панике запускает мембранную $H^+$-АТФазу, тратя все запасы энергии (АТФ) на откачку протонов наружу. Когда пул АТФ исчерпан, мембранный потенциал $\Delta\psi$ коллапсирует, и клетка погибает от метаболического истощения.</li>
+          </ol>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">5. Растворимость кислот и критический порог осаждения ($pH_{\text{крит}}$)</h3>
+          <p>
+            Свободные кислоты-консерванты малорастворимы в воде: для бензойной кислоты внутренняя растворимость $S_0 = 3.40\text{ г/л}$, для сорбиновой $S_0 = 1.60\text{ г/л}$ при $20^\circ\text{C}$. На производстве их всегда вносят в форме солей (бензоат натрия E211, сорбат калия E202). Суммарная растворимость зависит от $pH$:
+          </p>
+          <div class="formula-box">$$S_{tot}(pH) = S_0 \cdot \left(1 + 10^{pH - pK_a}\right), \quad pH_{\text{крит}} = pK_a + \log_{10}\left(\frac{C_{tot}}{S_0} - 1\right)$$</div>
+          <p>
+            Если технолог чрезмерно закисляет напиток ($pH < pH_{\text{крит}}$), недиссоциированная кислота превышает предел растворимости и выпадает на дно бутылок в виде тонких белых кристаллов (технологический брак). Регламент ТР ТС 029/2012 строго лимитирует предельные дозировки бензоатов (до $150\text{ мг/л}$ в безалкогольных напитках) и сорбатов ($300\text{--}1000\text{ мг/кг}$).
+          </p>
+        </div>
+      </article>
+
+      <!-- ЧАСТЬ II: СЕМИНАР 2 -->
+      <article class="example-box" style="margin-bottom: 2.5rem;">
+        <div class="example-box__badge" style="background-color: #6929c4; color: #fff;">Часть II • Семинар 2</div>
+        <h2 class="example-box__title" style="font-size: 1.4rem;">Окислительно-восстановительные процессы, RedOx-потенциал, rH2 и биоэнергетика</h2>
+        
+        <div style="line-height: 1.7; font-size: 0.9375rem;">
+          <h3 style="margin-top: 1.25rem; color: var(--cds-text-primary); font-size: 1.15rem;">1. Вводный парадокс: консервная банка и смертельный токсин</h3>
+          <p>
+            Многие считают, что удаление воздуха и герметичная упаковка — абсолютная гарантия сохранности пищевого продукта. Однако в истории пищевой токсикологии самые опасные и летальные вспышки отравлений связаны именно с герметичными консервами из мяса и рыбы.
+          </p>
+          <p>
+            Возбудитель ботулизма — <em>Clostridium botulinum</em> — вырабатывает сильнейший биологический яд (ботулотоксин, летальная доза менее $1\text{ нг/кг}$) исключительно тогда, когда из продукта <strong>полностью удален кислород</strong>, а окислительно-восстановительный потенциал опускается до глубоко отрицательных значений ($E_h < -150\text{ мВ}$). Воздух для этого микроба — смертельный яд, а вакуум — идеальная среда для прорастания спор.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">2. Физический смысл RedOx-потенциала ($E_h$) и уравнение Нернста</h3>
+          <p>
+            RedOx-потенциал ($E_h$, измеряемый в милливольтах относительно стандартного водородного электрода СВЭ) отражает баланс между молекулами-донорами и молекулами-акцепторами электронов в пищевой матрице:
+          </p>
+          <div class="formula-box">$$Ox + n e^- \rightleftharpoons Red, \quad E_h = E^\circ + \frac{2.303 R T}{n F} \log_{10}\frac{[Ox]}{[Red]}$$</div>
+          <p>
+            При $25^\circ\text{C}$ ($T = 298.15\text{ K}$) множитель Нернста равен $59.16 / n\text{ мВ}$. На величину $E_h$ пищевых продуктов колоссальное влияние оказывает кислотность среды. В присутствии протонов полуреакция восстановления связывается с $H^+$, приводя к смещению потенциала на <strong>$-59.16\text{ мВ}$ на каждую единицу $pH$</strong>:
+          </p>
+          <div class="formula-box">$$E_h(pH) = E_h(pH = 0) - 0.05916 \cdot pH$$</div>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">3. Показатель Кларка ($rH_2$): мера истинной восстановительной способности</h3>
+          <p>
+            Чтобы отделить окислительное состояние продукта от влияния водородного показателя $pH$, В.М. Кларк ввел безразмерный показатель $rH_2$, равный отрицательному логарифму парциального давления молекулярного водорода в растворе:
+          </p>
+          <div class="formula-box">$$rH_2 = \frac{E_h}{0.029} + 2 pH \quad (\text{при } 25^\circ\text{C})$$</div>
+          <p>
+            Шкала Кларка простирается от $0$ до $42$:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li><strong>Зона I: $rH_2 > 28$</strong> — выраженно окислительная среда (аэробная). Благоприятна для облигатных аэробов (<em>Pseudomonas</em>, плесени, уксуснокислые бактерии). Присутствует свободный $O_2$.</li>
+            <li><strong>Зона II: $15 \le rH_2 \le 28$</strong> — нейтральная (индифферентная) зона. Оптимальна для факультативных анаэробов (дрожжи, <em>Escherichia coli</em>, <em>Lactobacillus</em>).</li>
+            <li><strong>Зона III: $rH_2 < 15$</strong> — выраженно восстановительная среда (глубокий анаэробиоз). Единственная зона, где способны размножаться строгие облигатные анаэробы (<em>Clostridium botulinum</em>, <em>C. perfringens</em>).</li>
+          </ul>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">4. Токсичность кислорода и ферменты антиоксидантной защиты</h3>
+          <p>
+            Молекулярный кислород сам по себе малотоксичен, но в ходе метаболизма образуются сверхактивные свободные радикалы — <em>активные формы кислорода (АФК)</em>: супероксид-анион радикал $O_2^{\bullet-}$, пероксид водорода $H_2O_2$ и гидроксильный радикал $OH^\bullet$. АФК окисляют тиоловые группы ($-SH$) белков, разрушают мембранные фосфолипиды и вызывают мутации ДНК.
+          </p>
+          <p>
+            Аэробы и факультативные анаэробы защищены каскадом защитных ферментов:
+          </p>
+          <div class="formula-box">$$2 O_2^{\bullet-} + 2 H^+ \xrightarrow{\text{Супероксиддисмутаза (СОД)}} O_2 + H_2O_2$$</div>
+          <div class="formula-box">$$2 H_2O_2 \xrightarrow{\text{Каталаза}} 2 H_2O + O_2$$</div>
+          <p>
+            Строгие облигатные анаэробы лишены генов СОД и каталазы. В присутствии следов кислорода накопление пероксида и супероксида убивает их за минуты.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">5. Биоэнергетический расчет: дыхание против брожения</h3>
+          <p>
+            Термодинамическая движущая сила любого метаболического пути определяется изменением свободной энергии Гиббса $\Delta G^\circ'$:
+          </p>
+          <div class="formula-box">$$\Delta G^\circ' = -n F \Delta E^\circ'$$</div>
+          <p>
+            Сравнение двух способов синтеза АТФ:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li><strong>Аэробное дыхание:</strong> перенос электронов с $NADH$ ($E^\circ' = -0.32\text{ В}$) на кислород ($E^\circ' = +0.82\text{ В}$). $\Delta E^\circ' = +1.14\text{ В}$, $\Delta G^\circ' = -220\text{ кДж/моль пары } e^-$. В дыхательной цепи генерируется протон-движущая сила ($pmf$), и $\text{F}_0\text{F}_1$-АТФ-синтаза генерирует <strong>$30\text{--}32\text{ моль АТФ}$</strong> на 1 моль глюкозы.</li>
+            <li><strong>Брожение (молочнокислое / спиртовое):</strong> субстратное фосфорилирование. Конечным акцептором электронов служит органическая молекула (пируват, ацетальдегид). Выход составляет всего <strong>$2\text{ моль АТФ}$</strong> на моль глюкозы.</li>
+          </ul>
+          <p>
+            Именно поэтому при доступе кислорода биомасса бактерий нарастает в $15\text{--}20$ раз быстрее, чем при анаэробном сбраживании (эффект Пастера).
+          </p>
+        </div>
+      </article>
+
+      <!-- ЧАСТЬ III: СЕМИНАР 3 -->
+      <article class="example-box" style="margin-bottom: 2.5rem;">
+        <div class="example-box__badge" style="background-color: #007d79; color: #fff;">Часть III • Семинар 3</div>
+        <h2 class="example-box__title" style="font-size: 1.4rem;">Активность воды (aw), термодинамика гидратации, плазмолиз и барьеры ХАССП</h2>
+        
+        <div style="line-height: 1.7; font-size: 0.9375rem;">
+          <h3 style="margin-top: 1.25rem; color: var(--cds-text-primary); font-size: 1.15rem;">1. Вводный парадокс: почему мед не портится, а печенье отсыревает?</h3>
+          <p>
+            Натуральный пчелиный мед содержит около $18\text{--}20\%$ чистой воды. Свежий пшеничный хлеб содержит $35\text{--}40\%$ воды. Сухой крекер — всего $5\%$ влаги. 
+          </p>
+          <p>
+            Если бы скорость размножения бактерий определялась общей массой воды в образце ($W_m$), то мед должен был бы портиться быстрее крекера, а концентрированное сгущенное молоко было бы отличной средой для кишечной палочки. Однако в реальности мед стоит на полке годами без единого консерванта, хлеб покрывается плесенью на четвертый день, а оставленный открытым крекер стремительно впитывает влагу из воздуха и плесневеет.
+          </p>
+          <p>
+            Микроорганизмам важна не общая масса воды, а то, <strong>насколько эта вода свободна и термодинамически доступна для биохимических реакций</strong>.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">2. Давление пара, закон Рауля и активность воды ($a_w$)</h3>
+          <p>
+            Показатель активности воды ($a_w$, water activity) показывает отношение парциального давления пара воды над продуктом ($P$) к давлению насыщенного пара над дистиллированной водой ($P_0$) при той же температуре:
+          </p>
+          <div class="formula-box">$$a_w = \frac{P}{P_0(T)} = \frac{\text{ERH}}{100}$$</div>
+          <p>
+            Для идеальных водных растворов депрессия давления пара подчиняется закону Рауля:
+          </p>
+          <div class="formula-box">$$a_w \approx x_w = \frac{n_w}{n_w + \sum i \cdot n_s}$$</div>
+          <p>
+            где $i$ — изотонический коэффициент Вант-Гоффа (для сахарозы $i = 1$, для $NaCl$ $i \approx 1.85\text{--}1.9$). Ионы соли и молекулы сахарозы связывают молекулы воды в прочные гидратные оболочки. Энергия связи увеличивается, химический потенциал воды падает, и бактерия оказывается неспособна «высосать» такую воду из раствора.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">3. Капиллярные явления и формула Кельвина в пищевой матрице</h3>
+          <p>
+            В твердых и гелеобразных пищевых продуктах (сыр, сушеные овощи, сублимированное мясо) вода удерживается не только растворенными веществами, но и искривленной поверхностью пор и капилляров матрицы. Согласно закону капиллярной конденсации Кельвина:
+          </p>
+          <div class="formula-box">$$\ln a_w = -\frac{2 \sigma V_m \cos\theta}{r R T}$$</div>
+          <p>
+            В микропорах радиусом менее $5\text{ нм}$ капиллярное натяжение мениска снижает давление пара столь сильно, что активность воды падает ниже $0.80$ даже при полном отсутствии растворенной соли!
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">4. Осмотический стресс, плазмолиз и совместимые осмолиты</h3>
+          <p>
+            Цитоплазма бактерии находится под гидростатическим <em>тургорным давлением</em> ($0.2\text{--}2.0\text{ МПа}$), прижимающим плазматическую мембрану к жесткому пептидогликановому каркасу. 
+          </p>
+          <p>
+            При падении $a_w$ среды вода устремляется из цитоплазмы наружу по градиенту химического потенциала:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li>Развивается <strong>плазмолиз</strong>: объем цитоплазмы сокращается, мембрана отслаивается от клеточной стенки.</li>
+            <li>Внутренние белки сближаются и слипаются, останавливается транспорт питательных веществ.</li>
+            <li><strong>Адаптация бактерии:</strong> в первой быстрой фазе клетка закачивает ионы калия ($K^+$). Во второй фазе бактерия начинает синтезировать или поглощать из среды <em>совместимые осмолиты (Compatible Solutes)</em> — электронейтральные цвиттер-ионы (глицин-бетаин, L-пролин, трегалоза, эктоин). Эти молекулы удерживают воду внутри клетки, не нарушая третичную структуру ферментов.</li>
+          </ul>
+
+          <h3 style="margin-top: 1.5rem; color: var(--cds-text-primary); font-size: 1.15rem;">5. Зоны риска ComBase и барьерная технология Ляйстнера (Hurdle Technology)</h3>
+          <p>
+            В международной базе предиктивной микробиологии ComBase пищевые продукты ранжируются по $a_w$:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li><strong>$a_w \ge 0.98$ (Зона I):</strong> Свежее мясо, молоко, рыба. Размножаются все патогены.</li>
+            <li><strong>$0.95 \le a_w < 0.98$ (Зона II):</strong> Вареные колбасы, мягкие сыры. Рост <em>Pseudomonas</em>, сальмонелл, <em>C. botulinum</em>.</li>
+            <li><strong>$0.90 \le a_w < 0.95$ (Зона III):</strong> Сырокопченые колбасы, выдержанные сыры. Граница роста большинства палочковидных бактерий.</li>
+            <li><strong>$0.85 \le a_w < 0.90$ (Зона IV):</strong> Сушеная рыба, соленые сыры. <strong>Критический барьер золотистого стафилококка</strong> (<em>Staphylococcus aureus</em> растет до $a_w = 0.85$).</li>
+            <li><strong>$0.60 \le a_w < 0.85$ (Зона V):</strong> Джемы, мед, сухофрукты. Бактерии не растут. Возможен медленный рост осмофильных дрожжей и ксерофильных плесеней.</li>
+            <li><strong>$a_w < 0.60$ (Зона VI):</strong> Сухое молоко, печенье, макароны. Абсолютная микробиологическая стабильность.</li>
+          </ul>
+          <p>
+            <strong>Концепция барьеров Ляйстнера (Hurdle Technology):</strong> Чтобы не пересаливать и не портить органолептику продуктов химическими консервантами, на производстве объединяют несколько мягких субпороговых барьеров ($a_w \le 0.94$ + $pH \le 5.2$ + $E_h < 0$ + холод $+4^\circ\text{C}$). Ни один патоген не способен преодолеть одновременно четыре разнонаправленных метаболических барьера.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ===================================================================
+         ВКЛАДКА 2: 60 ВОПРОСОВ К КОЛЛОКВИУМУ
+         =================================================================== -->
+    <section id="colloquium1-tab-questions" class="cds--tab-panel" style="padding-top: 1.5rem;">
+      
+      <!-- Панель интерактивных фильтров -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;" id="colloquium-filter-bar">
+        <button class="cds--btn cds--btn--sm cds--btn--primary" data-filter="all">Все вопросы (60)</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary" data-filter="sem1">Тема 1: Кислотность и гомеостаз (1–20)</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary" data-filter="sem2">Тема 2: RedOx и биоэнергетика (21–40)</button>
+        <button class="cds--btn cds--btn--sm cds--btn--secondary" data-filter="sem3">Тема 3: Активность воды и ХАССП (41–60)</button>
+      </div>
+
+      <div class="cds--row" id="colloquium-questions-list">
+        
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 01</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Определение pH и pOH, термодинамическое обоснование константы автопротолиза воды $K_w$ и её зависимость от температуры.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 02</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Различие между титруемой и активной кислотностью пищевого продукта; методы их инструментального измерения.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 03</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Физический смысл ионной силы раствора ($I$) и предельный закон Дебая-Хюккеля.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 04</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Влияние солевого фона ($NaCl$) на коэффициент активности ионов гидроксония $\gamma_{H^+}$ и показания pH-метра.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 05</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Уравнение Гендерсона-Хассельбаха: вывод, графическое представление и точка полунейтрализации ($pH = pK_a$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 06</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Молекулярный механизм эффекта «кислотной ловушки» (acid trapping) в бактериальной клетке.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 07</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Почему недиссоциированная форма органической кислоты обладает антимикробным действием, а диссоциированный анион — практически нет?
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 08</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Роль мембранной $H^+$-АТФазы в откачке протонов и поддержании трансмембранного градиента $\Delta pH$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 09</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Энергетическая цена гомеостаза: почему при закислении среды бактерии прекращают деление до гибели клетки?
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 10</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Физико-химические свойства бензойной кислоты: растворимость $S_0$, константа $pK_a$ и границы антимикробной эффективности.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 11</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Сорбиновая кислота и сорбаты: механизм ингибирования ферментов клеточного дыхания (дегидрогеназ) и спектр действия.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 12</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Расчет критического значения $pH_{\text{крит}}$: условия предотвращения выпадения кристаллического осадка консерванта.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 13</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Сравнительная характеристика антимикробной активности уксусной, пропионовой, бензойной и сорбиновой кислот при одинаковом pH.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 14</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Механизм действия неорганических минеральных кислот ($HCl$, $H_3PO_4$) на бактерии в сравнении со слабыми органическими кислотами.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 15</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Механизмы кислотоустойчивости ацидофильных микроорганизмов (модификация мембранных липидов, системы декарбоксилирования аминокислот).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 16</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Буферная емкость пищевых сред: влияние белков, фосфатов и органических кислот на устойчивость к закислению.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 17</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Токсикологические нормы и гигиенические регламенты ТР ТС 029/2012 по совместному применению бензоатов и сорбатов.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 18</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Парадокс совместного применения соли и бензойной кислоты: влияние ионной силы на долю активной формы $HA$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 19</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Влияние pH среды на термоустойчивость микробных клеток и спор при пастеризации и стерилизации.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem1" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--green">Тема 1 • Кислотность и гомеостаз</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 20</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Граница $pH = 4.5$ как критический рубеж в микробиологии консервирования: связь с прорастанием спор Clostridium botulinum.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 21</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Определение RedOx-потенциала $E_h$ и стандартного водородного электрода (СВЭ).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 22</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Уравнение Нернста для RedOx-систем: зависимость потенциала от соотношения окисленной и восстановленной форм.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 23</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Влияние водородного показателя pH на величину $E_h$: вывод температурного коэффициента $-59.16\text{ мВ/pH}$ при $25^\circ\text{C}$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 24</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Физический смысл и расчет показателя Кларка $rH_2$; границы зон окисления, восстановления и нейтральности.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 25</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Классификация микроорганизмов по отношению к молекулярному кислороду: аэробы, анаэробы, факультативные, микроаэрофилы, аэротолерантные.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 26</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Диапазоны $E_h$, благоприятные для развития различных экологических групп микроорганизмов в пищевых продуктах.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 27</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Механизмы токсичности молекулярного кислорода для строгих анаэробов: образование супероксид-радикала, пероксида водорода и гидроксил-радикала.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 28</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Ферментативные системы антиоксидантной защиты: супероксиддисмутаза (СОД), каталаза, пероксидаза; их распределение у различных групп бактерий.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 29</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Роль природных редуцирующих веществ в пищевом сырье (глутатион, аскорбиновая кислота, цистеин, сахара) в формировании $E_h$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 30</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Влияние технологических факторов на $E_h$: аэрация, вакуумирование, термообработка, модифицированная газовая среда (МГС).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 31</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Биоэнергетика микробной клетки: понятие свободной энергии Гиббса $\Delta G^\circ'$ и макроэргических соединений (АТФ).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 32</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Взаимосвязь между разностью стандартных RedOx-потенциалов $\Delta E^\circ'$ и изменением свободной энергии $\Delta G^\circ' = -n F \Delta E^\circ'$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 33</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Субстратное фосфорилирование при гликолизе: выход АТФ, баланс восстановительных эквивалентов ($NADH$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 34</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Спиртовое и молочнокислое (гомо- и гетероферментативное) брожение: биохимические механизмы регенерации $NAD^+$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 35</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Окислительное фосфорилирование: организация дыхательной цепи, протонный градиент $\Delta\mu_{H^+}$, протон-движущая сила ($pmf$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 36</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Синтез АТФ на $\text{F}_0\text{F}_1$-АТФ-синтазе: механизм хемиосмотического сопряжения Митчелла.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 37</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Сравнительный энергетический КПД брожения и дыхания: почему аэробы накапливают на порядок больше биомассы на 1 г глюкозы?
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 38</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Эффект Пастера: механизм регуляции гликолиза в присутствии кислорода у факультативных анаэробов (дрожжей).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 39</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Анаэробное дыхание (нитратное, сульфатное, железоредукция): акцепторы электронов и экологическое значение в порче продуктов.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem2" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--purple">Тема 2 • RedOx и биоэнергетика</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 40</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Взаимное влияние $E_h$ и консервантов: синергизм антиоксидантов и антимикробных агентов в защите липидов и белков.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 41</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Определение активности воды $a_w$ через фугитивность и парциальное давление водяного пара ($a_w = P/P_0$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 42</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Почему показатель массовой доли влаги ($W_m$) не определяет микробиологическую стойкость пищевого продукта?
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 43</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Закон Рауля для идеальных растворов: зависимость понижения давления пара от мольной доли растворенного вещества.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 44</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Отклонения реальных пищевых растворов от закона Рауля; осмотический коэффициент и влияние гидратации ионов/сахаров.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 45</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Капиллярная конденсация и уравнение Кельвина: как микропористая структура продукта понижает $a_w$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 46</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Изотермы сорбции влаги: классификация типов изотерм (по Брунауэру) и технологическое значение сорбционного гистерезиса.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 47</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Формы связи влаги в пищевых продуктах по Ребиндеру: химическая, физико-химическая (адсорбционная, осмотическая), механическая (капиллярная).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 48</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Термодинамическое понятие полного водного потенциала $\Psi$ (МПа) и его составляющие (осмотический $\Psi_\pi$ и матричный $\Psi_m$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 49</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Физиологический механизм осмотического шока в гипертонической среде: плазмолиз, потеря тургора, компрессия цитоплазмы.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 50</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Совместимые осмолиты (compatible solutes): химическая природа (глицин-бетаин, пролин, эктоин, трегалоза) и критерии совместимости с белками.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 51</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Двухфазный механизм осмоадаптации бактерий: быстрая фаза накопления $K^+$ и медленная фаза синтеза/транспорта органических осмолитов.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 52</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Пороговые значения $a_w$ для основных таксономических групп: грамотрицательные бактерии, грамположительные бактерии, дрожжи, мицелиальные грибы.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 53</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Осмотолерантные, галофильные и ксерофильные микроорганизмы: физиологические механизмы выживания при экстремально низких $a_w$.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 54</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Staphylococcus aureus как индикаторный патоген: способность расти при аномально низком $a_w = 0.85$ (аэробно).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 55</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Минимальное значение $a_w$ для токсинообразования Clostridium botulinum типов A, B и E.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 56</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Шесть микробиологических зон риска активности воды по классификации ComBase (от $a_w > 0.98$ до $a_w < 0.60$).
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 57</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Влияние температуры на величину $a_w$ пищевого продукта: уравнение Клаузиуса-Клапейрона и риски образования конденсата при транспортировке.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 58</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Барьерная концепция Ляйстнера (Hurdle Technology): механизмы гомеостатического истощения, метаболического коллапса и реакции на стресс.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 59</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Применение $a_w$ в качестве критического предела (Critical Limit) при мониторинге ККТ в системе ХАССП на пищевых производствах.
+              </p>
+            </div>
+          </div>
+        </div>\n
+        <div class="cds--col-6 colloquium-q-card" data-category="sem3" style="margin-bottom: 1rem;">
+          <div class="cds--tile" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--cds-interactive-01);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="cds--tag cds--tag--sm cds--tag--teal">Тема 3 • Активность воды и ХАССП</span>
+                <span style="font-size: 0.8125rem; font-weight: bold; color: var(--cds-text-secondary);">Вопрос 60</span>
+              </div>
+              <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--cds-text-primary);">
+                Сравнительная эффективность хлорида натрия, сахарозы, глицерина и сорбита как депрессоров активности воды.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         ВКЛАДКА 3: ЭТАЛОННЫЕ ТИПОВЫЕ ОТВЕТЫ (9 КЕЙСОВ)
+         =================================================================== -->
+    <section id="colloquium1-tab-answers" class="cds--tab-panel" style="padding-top: 1.5rem;">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Разбор 9 типовых экзаменационных вопросов Модуля 1</h2>
+        <p style="color: var(--cds-text-secondary); font-size: 0.875rem;">
+          Каждый ответ составлен по эталонному шаблону кафедры: физико-химический закон, клеточный механизм действия и технологический вывод для пищевой промышленности.
+        </p>
+      </div>
+
+      <div id="colloquium-answers-accordion">
+        
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 1 • Тема 1 • Кислотность и гомеостаз</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 6</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Механизм «кислотной ловушки» (Acid Trapping) слабых органических кислот
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              В чем заключается молекулярный механизм антимикробного действия недиссоциированных молекул слабых органических кислот (эффект «кислотной ловушки») и почему сильные минеральные кислоты при умеренных концентрациях менее токсичны для протопласта?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Закон действующих масс и уравнение Гендерсона-Хассельбаха: $$\alpha_{HA} = \frac{[HA]}{C_{tot}} = \frac{1}{1 + 10^{pH - pK_a}}$$ При $pH < pK_a$ кислота существует преимущественно в электронейтральной липофильной форме $HA$. Коэффициент диффузии $HA$ сквозь фосфолипидный бислой мембраны на 4–6 порядков выше, чем для гидратированного протона $H_3O^+$ или заряженного аниона $A^-$.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              1. Молекулы $HA$ свободно диффундируют в цитоплазму клетки.<br>2. Внутри клетки цитоплазма нейтральна ($pH_{in} \approx 7.2$). Попадая в нейтральную среду, кислота мгновенно распадается: $HA \rightarrow H^+ + A^-$.<br>3. Образовавшийся анион $A^-$ и протон $H^+$ несут заряды и не могут диффундировать обратно через липидный барьер. Они оказываются заперты внутри.<br>4. Внутренний водородный показатель стремительно падает ($pH_{in} < 5.5$), вызывая денатурацию ключевых ферментов гликолиза (фосфофруктокиназы) и репликации ДНК.<br>5. Клетка пытается спастись, запуская мембранную $H^+$-АТФазу для выкачивания протонов. Это приводит к полному истощению пула АТФ, падению трансмембранного потенциала $\Delta\psi$ и метаболическому коллапсу.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              Для эффективной консервации бензоатами (E211) и сорбатами (E202) технологический $pH$ продукта должен быть ниже $pK_a$ кислоты ($pH < 4.2$ для бензойной и $pH < 4.8$ для сорбиновой). В нейтральных продуктах ($pH > 6.0$) данные консерванты практически бесполезны.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 2 • Тема 1 • Кислотность и гомеостаз</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 4</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Влияние солевого фона на активность протонов по теории Дебая-Хюккеля
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Каким образом внесение хлорида натрия (NaCl) в концентрациях 1–5% влияет на коэффициент активности протонов $\gamma_{H^+}$ и почему реальная реакционная способность кислоты в соленом маринаде отличается от показаний лабораторного pH-метра?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Теория электростатического экранирования Дебая-Хюккеля: $$I = \frac{1}{2} \sum c_i z_i^2, \quad \log_{10} \gamma_{H^+} = -0.51 \cdot z^2 \cdot \frac{\sqrt{I}}{1 + \sqrt{I}}, \quad a_{H^+} = \gamma_{H^+} \cdot [H^+]$$ При увеличении концентрации $NaCl$ ионная сила $I$ возрастает от $0.05$ до $0.8\text{ М}$.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Вокруг каждого катиона водорода формируется плотная ионная атмосфера из гидратированных анионов хлора ($Cl^-$). Электростатическое экранирование снижает термодинамический коэффициент активности $\gamma_{H^+}$ до значений $0.72\text{--}0.78$. Это означает, что «эффективная» концентрация протонов, участвующих в химических реакциях, на 20–30% ниже стехиометрической. Однако при очень высоких концентрациях соли ($>2\text{ М}$) свободная вода связывается в гидратные оболочки $Na^+$ и $Cl^-$, снижается диэлектрическая проницаемость среды $\varepsilon$, и активность протонов $a_{H^+}$ начинает парадоксально возрастать.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              При проектировании рецептур высокосолевых продуктов (рассольные сыры, соевые соусы, консервированные оливки) прямое измерение pH стеклянным электродом требует введения поправки на ионную силу $I$, чтобы гарантировать достаточную долю недиссоциированной формы $HA$ консерванта.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 3 • Тема 1 • Кислотность и гомеостаз</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 12</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Расчет критического показателя $pH_{\text{крит}}$ осаждения бензойной кислоты
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Что такое критический водородный показатель $pH_{\text{крит}}$ при внесении бензоата натрия в кислые напитки и как предотвратить брак в виде выпадения осадка кристаллов бензойной кислоты?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Суммарная растворимость слабой кислоты в зависимости от pH описывается формулой: $$S_{tot}(pH) = S_0 \cdot \left(1 + 10^{pH - pK_a}\right)$$ где $S_0 = 3.40\text{ г/л}$ (растворимость свободной бензойной кислоты в воде при $20^\circ\text{C}$), $pK_a = 4.19$. Условие выпадения осадка: внесенная концентрация свободной кислоты $C_{tot} > S_{tot}(pH)$. Критический pH равен: $$pH_{\text{крит}} = pK_a + \log_{10}\left(\frac{C_{tot}}{S_0} - 1\right)$$
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Бензоат натрия ($M = 144.11\text{ г/моль}$) легко растворяется в воде до сотен граммов на литр. Однако при добавлении в сильно кислый напиток ($pH < 3.0$) протоны связываются с бензоат-анионами, образуя свободную бензойную кислоту ($M = 122.12\text{ г/моль}$). Если концентрация свободной кислоты превышает предел растворимости $S_0$, термодинамическая система расслаивается, и кислота кристаллизуется в виде шелковистых белых игл, образующих муть и осадок на дне упаковки.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              При дозировке бензоата натрия $150\text{ мг/л}$ ($C_{tot} \approx 127\text{ мг/л}$) осадок в чистой воде не выпадает даже при низких pH, так как $127\text{ мг/л} < 3400\text{ мг/л}$. Однако в купажных сиропах и концентратах с содержанием бензоата $5\text{--}10\text{ г/л}$ подкисление лимонной кислотой ниже $pH_{\text{крит}} \approx 3.8\text{--}4.2$ неминуемо приводит к кристаллизации и порче сырья.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 4 • Тема 2 • RedOx и биоэнергетика</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 23</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Связь RedOx-потенциала $E_h$ с pH и физический смысл показателя Кларка $rH_2$
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Почему величина RedOx-потенциала $E_h$ линейно зависит от pH среды и каким образом показатель Кларка $rH_2$ позволяет объективно оценить окислительную емкость продукта?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Уравнение Нернста для сопряженных окислительно-восстановительных полуреакций с переносом протонов ($Ox + m H^+ + n e^- \rightleftharpoons Red$): $$E_h = E^\circ + \frac{2.303 R T}{n F} \log_{10} \frac{[Ox]}{[Red]} - \frac{m}{n} \cdot \frac{2.303 R T}{F} \cdot pH$$ При $m=n$ и $T=25^\circ\text{C}$ температурный коэффициент составляет $-(2.303 \cdot 8.314 \cdot 298.15 / 96485) = -0.05916\text{ В/pH} = -59.16\text{ мВ/pH}$. Показатель Кларка: $$rH_2 = \frac{E_h}{0.029} + 2 pH$$
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              В пищевых продуктах величина $E_h$ снижается просто при подщелачивании среды, даже если реальный состав газов и восстановителей не изменился. Показатель $rH_2$ численно равен $-\log_{10} P_{H_2}$ (парциальному давлению молекулярного водорода в атмосфере, находящейся в равновесии с раствором). Он полностью очищен от артефактов закисления и показывает истинный химический баланс восстановителей.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              Продукты с $rH_2 > 28$ (свежее молоко, соки на воздухе) требуют защиты от плесеней и аэробных бактерий. Продукты с $rH_2 < 15$ (вакуумированное мясо, герметичные консервы) требуют жесткого терморежима стерилизации или барьера по pH ($<4.5$), так как при $rH_2 < 15$ возможен рост смертельно опасного анаэроба <em>Clostridium botulinum</em>.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 5 • Тема 2 • RedOx и биоэнергетика</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 27</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Кислородная токсичность и антиоксидантная защита анаэробов vs аэробов
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              В чем заключается биохимическая природа токсичности молекулярного кислорода для строгих анаэробов и какие ферментативные системы обеспечивают устойчивость аэробных микроорганизмов?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Поэтапное одноэлектронное восстановление молекулярного кислорода генерирует активные формы кислорода (АФК): $$O_2 \xrightarrow{e^-} O_2^{\bullet-} \xrightarrow{e^-, 2H^+} H_2O_2 \xrightarrow{e^-, H^+} OH^\bullet + H_2O \xrightarrow{e^-, H^+} 2 H_2O$$ Гидроксильный радикал $OH^\bullet$ обладает экстремально высоким окислительным потенциалом ($+2.8\text{ В}$) и мгновенно окисляет любые органические макромолекулы.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              1. Строгие облигатные анаэробы (<em>Clostridium</em>, <em>Bacteroides</em>) эволюционировали в бескислородной биосфере. У них отсутствуют гены ферментов супероксиддисмутазы (СОД) и каталазы.<br>2. При контакте с воздухом автоокисление флавопротеинов анаэроба генерирует $O_2^{\bullet-}$ и $H_2O_2$. Накапливаясь, перекиси окисляют тиоловые группы ($-SH$) в активных центрах гидрогеназ и ферредоксинов, разрушая железо-серные кластеры $[4Fe-4S]$. Происходит необратимый лизис клеток.<br>3. Аэробы синтезируют каскад ферментов: СОД превращает $O_2^{\bullet-}$ в $H_2O_2$, а каталаза и пероксидазы немедленно разлагают пероксид до воды и кислорода: $2 H_2O_2 \rightarrow 2 H_2O + O_2$.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              В технологиях модифицированной газовой среды (МГС) для охлажденного мяса и полуфабрикатов удаление кислорода ($99.5\%\text{ } N_2 / CO_2$) подавляет аэробную гнилостную микрофлору (<em>Pseudomonas</em>), но требует строгого температурного контроля (не выше $+3^\circ\text{C}$), чтобы не допустить анаэробного размножения психротрофных клостридий.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 6 • Тема 2 • RedOx и биоэнергетика</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 37</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Биоэнергетический расчет дыхания и брожения с позиций выхода АТФ
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Каково термодинамическое обоснование разницы в выходе АТФ между брожением и аэробным дыханием (расчет $\Delta G^\circ'$ и сопряжения с хемиосмосом Митчелла)?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Уравнение Гиббса-Нернста: $$\Delta G^\circ' = -n F \Delta E^\circ'$$ При гликолизе расщепление глюкозы до лактата дает $\Delta G^\circ' \approx -197\text{ кДж/моль}$. Полное окисление глюкозы кислородом до $CO_2$ и $H_2O$ дает $\Delta G^\circ' \approx -2870\text{ кДж/моль}$.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              1. <strong>Брожение:</strong> синтез АТФ идет только путем субстратного фосфорилирования в гликолизе (фосфоглицераткиназа и пируваткиназа). Выход составляет ровно <strong>2 моль АТФ</strong> на 1 моль глюкозы. Синтез 1 моль АТФ требует $\approx +31.8\text{ кДж/моль}$. Энергетический КПД брожения составляет всего $(2 \times 31.8) / 197 \approx 32\%$, а подавляющая часть энергии остается законсервированной в молекулах молочной кислоты или этанола.<br>2. <strong>Дыхание:</strong> восстановительные эквиваленты ($10\text{ NADH} + 2\text{ FADH}_2$) сбрасывают электроны в дыхательную цепь. Энергия $\Delta G^\circ'$ расходуется на транслокацию протонов через мембрану, формируя электрохимический градиент $\Delta\mu_{H^+} = F\Delta\psi - 2.3 RT \Delta pH$. Молекулярная турбина $\text{F}_0\text{F}_1$-АТФ-синтазы синтезирует <strong>30–32 моль АТФ</strong> на 1 моль глюкозы.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              Экономический коэффициент выхода биомассы $Y_{X/S}$ (грамм микробной биомассы на грамм потребленного субстрата) для аэробов составляет $0.4\text{--}0.5\text{ г/г}$, а для анаэробов при брожении — всего $0.05\text{--}0.1\text{ г/г}$. Именно поэтому при аэрации порча продуктов и накопление бактериальной биомассы происходят во много раз стремительнее.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 7 • Тема 3 • Активность воды и ХАССП</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 42</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Различие между массовой влажностью $W_m$ и активностью воды $a_w$ (закон Рауля)
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Почему массовая доля влаги $W_m$ на этикетке продукта не коррелирует с микробиологической стабильностью (парадокс меда и хлеба) и каков термодинамический смысл закона Рауля при связывании воды сахарами и солью?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Термодинамическая активность воды $a_w = P/P_0 = \text{ERH}/100$. Закон Рауля для бинарных растворов: $$a_w \approx x_w = \frac{n_w}{n_w + \sum i \cdot n_s}$$ где $n_w = m_w / 18.015$, $n_s = m_s / M_s$, $i$ — коэффициент Вант-Гоффа.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Массовая влажность $W_m$ отражает лишь гравиметрическое количество молекул $H_2O$ в образце. Однако в меде ($W_m \approx 18\%$) на $18\text{ г}$ воды приходится $80\text{ г}$ моносахаридов (глюкозы и фруктозы, $M \approx 180\text{ г/моль}$). Мольное отношение сахаров к воде столь велико, что практически все молекулы воды вовлечены в прочные гидратные оболочки. Давление пара падает до $a_w \approx 0.60$. В хлебе же ($W_m \approx 38\%$) крахмал не растворен, а образует крупнопористый гель; осмотически активных молекул мало, и вода свободна ($a_w \approx 0.95$).
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              В пищевых стандартах и регламентах ХАССП единственным научно обоснованным критерием микробиологической стойкости является активность воды $a_w$, а не процент влаги $W_m$. При $a_w < 0.60$ размножение любых микроорганизмов полностью остановлено.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 8 • Тема 3 • Активность воды и ХАССП</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 49</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Физиология осмотического шока, плазмолиз и совместимые осмолиты
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              Каков молекулярный механизм осмотического шока в бактериальной клетке при снижении $a_w$ среды и какие адаптационные механизмы (совместимые осмолиты) позволяют гало- и осмотолерантным штаммам выживать в гипертонических средах?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Водный потенциал протопласта $\Psi = \frac{R T}{V_m} \ln a_w$. В физиологических условиях цитоплазма гипертонична по отношению к среде ($\Delta\Psi < 0$), что создает избыточное тургорное давление $0.2\text{--}2.0\text{ МПа}$, прижимающее плазмолемму к клеточной стенке.
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              1. <strong>Осмотический шок:</strong> при падении $a_w$ среды вода лавинообразно выходит из клетки через аквапорины. Развивается <em>плазмолиз</em>: объем цитоплазмы сокращается на 30–50%, протопласт сжимается, падают тургор и натяжение мембраны, прекращается деление клетки.<br>2. <strong>Фаза быстрой адаптации:</strong> механочувствительные каналы активируют импорт ионов калия ($K^+$) в обмен на протоны. Внутриклеточная концентрация $K^+$ возрастает до $1\text{ М}$, что временно выравнивает осмотическое давление.<br>3. <strong>Фаза долговременной адаптации:</strong> высокая ионная сила $K^+$ ингибирует метаболизм, поэтому бактерия заменяет калий на <em>совместимые осмолиты (Compatible Solutes)</em> — незаряженные или цвиттер-ионные молекулы: глицин-бетаин, L-пролин, трегалозу, эктоин. Они гидратируют ферменты, не денатурируя их структуру.
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              Золотистый стафилококк (<em>Staphylococcus aureus</em>) обладает высокоэффективной системой транспортеров глицин-бетаина (ProP и OpuD), что позволяет ему сохранять тургор и размножаться при аномально низком $a_w = 0.85$ ($10\%\text{ } NaCl$), создавая угрозу стафилококкового токсикоза в соленых продуктах.
+            </div>
+          </div>
+        </article>\n
+        <article class="example-box" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="example-box__badge" style="background-color: #9f1853; color: white;">Кейс 9 • Тема 3 • Активность воды и ХАССП</div>
+            <span class="cds--tag cds--tag--blue">Вопрос 58</span>
+          </div>
+          <h3 class="example-box__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            Барьерная технология Ляйстнера (Hurdle Technology) и мониторинг ККТ в ХАССП
+          </h3>
+          <div style="background-color: var(--cds-layer-accent); padding: 0.875rem 1rem; border-left: 3px solid #9f1853; margin-bottom: 1.25rem; border-radius: 2px;">
+            <strong style="color: var(--cds-text-primary); font-size: 0.875rem;">Экзаменационный вопрос:</strong>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.9375rem; line-height: 1.5;">
+              В чем заключается синергетический эффект барьерной технологии Ляйстнера и как научно обосновать выбор критических пределов (Critical Limits) при мониторинге критических контрольных точек (ККТ) в системе ХАССП?
+            </p>
+          </div>
+
+          <!-- 1. Закон -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: var(--cds-interactive-01); font-size: 1rem; margin-bottom: 0.5rem;">
+              1. Физико-химический закон и термодинамическое обоснование:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Концепция гомеостатического истощения Ляйстнера: совместное воздействие нескольких субингибиторных факторов (барьеров) приводит не к аддитивному, а к <strong>мультипликативному (синергетическому)</strong> подавлению метаболизма микроорганизмов: $$\text{Эффект} = f(a_w) \times f(pH) \times f(E_h) \times f(T) \times f(\text{консервант})$$
+            </div>
+          </div>
+
+          <!-- 2. Механизм -->
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="color: #6929c4; font-size: 1rem; margin-bottom: 0.5rem;">
+              2. Молекулярно-биологический механизм воздействия на клетку:
+            </h4>
+            <div style="font-size: 0.9375rem; line-height: 1.6;">
+              Если продукт имеет только один барьер, микроорганизмы мобилизуют специфическую систему стресс-ответа (например, $H^+$-АТФазу при закислении или аккумуляцию бетаина при падении $a_w$). Однако когда бактерия сталкивается одновременно с закислением ($pH=5.0$), осмотическим стрессом ($a_w=0.92$), глубоким анаэробиозом ($E_h < -100\text{ мВ}$) и охлаждением ($+4^\circ\text{C}$), клетка вынуждена активировать сразу четыре энергозатратных метаболических пути. Пул АТФ мгновенно истощается, и наступает состояние анабиоза или гибели (гомеостатический коллапс).
+            </div>
+          </div>
+
+          <!-- 3. Вывод ХАССП -->
+          <div style="background-color: var(--cds-layer); border: 1px solid var(--cds-border-subtle); padding: 0.875rem 1rem; border-radius: 4px;">
+            <h4 style="color: #198038; font-size: 0.9375rem; margin-bottom: 0.25rem;">
+              3. Инженерно-технологический вывод для пищевой промышленности:
+            </h4>
+            <div style="font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+              В системе ХАССП для сыровяленых колбас ККТ устанавливается на стадии ферментации и сушки. Критическими пределами служат одновременное достижение $pH \le 5.3$ (барьер 1) и снижение активности воды до $a_w \le 0.93$ (барьер 2) в сочетании с внесением нитрита натрия (барьер 3). Это гарантирует $100\%$-е подавление сальмонелл и листерий без пересушивания продукта.
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
   </main>

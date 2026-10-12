@@ -15,6 +15,9 @@ const App = {
     this.initNavigation();
     this.initTabs();
     this.initCatalogFilters();
+    // Инициализация фильтров вопросов Коллоквиума 1
+    this.initColloquiumFilters();
+
 
     // Инициализация калькуляторов, плеера слайдов и модуля тестирования
     if (typeof Calculators !== 'undefined') Calculators.init();
@@ -135,7 +138,7 @@ const App = {
 
   handleRouteHash() {
     const hash = window.location.hash.replace('#', '');
-    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'test'];
+    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'colloquium1', 'test'];
     if (validViews.includes(hash)) {
       this.switchView(hash);
     } else {
@@ -198,6 +201,7 @@ const App = {
       seminar1: document.getElementById('view-seminar1'),
       seminar2: document.getElementById('view-seminar2'),
       seminar3: document.getElementById('view-seminar3'),
+      colloquium1: document.getElementById('view-colloquium1'),
       test: document.getElementById('view-test')
     };
 
@@ -268,6 +272,50 @@ const App = {
   /* ------------------------------------------------------------------------
      4. ФИЛЬТРАЦИЯ КАРТОЧЕК В КАТАЛОГЕ (ДВУХУРОВНЕВЫЙ РУБРИКАТОР)
      ------------------------------------------------------------------------ */
+  
+  /* ------------------------------------------------------------------------
+     4.5. ФИЛЬТРАЦИЯ ВОПРОСОВ КОЛЛОКВИУМА 1
+     ------------------------------------------------------------------------ */
+  initColloquiumFilters() {
+    const filterBar = document.getElementById('colloquium-filter-bar');
+    if (!filterBar) return;
+
+    filterBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+
+      const filter = btn.getAttribute('data-filter');
+      const allBtns = filterBar.querySelectorAll('[data-filter]');
+      allBtns.forEach(b => {
+        b.classList.remove('cds--btn--primary');
+        b.classList.add('cds--btn--secondary');
+      });
+      btn.classList.remove('cds--btn--secondary');
+      btn.classList.add('cds--btn--primary');
+
+      const cards = document.querySelectorAll('.colloquium-q-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Обработчик кнопок data-tab-switch в шапке Коллоквиума
+    document.addEventListener('click', (e) => {
+      const switchBtn = e.target.closest('[data-tab-switch]');
+      if (!switchBtn) return;
+      const targetTabId = switchBtn.getAttribute('data-tab-switch');
+      const targetTab = document.querySelector(`[data-tab-target="${targetTabId}"]`);
+      if (targetTab) {
+        targetTab.click();
+      }
+    });
+  },
+
   initCatalogFilters() {
     const filterBtns = document.querySelectorAll('.catalog-filter-btn');
     const cards = document.querySelectorAll('.seminar-catalog-card');
