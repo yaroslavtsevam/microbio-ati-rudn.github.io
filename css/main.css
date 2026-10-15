@@ -61,6 +61,9 @@
   --cds-ui-02: var(--cds-layer-02);
   --cds-ui-03: var(--cds-border-subtle-01);
   --cds-border-subtle: var(--cds-border-subtle-01);
+  --cds-layer: var(--cds-layer-01);
+  --cds-layer-accent: var(--cds-layer-accent-01);
+  --cds-link-01: var(--cds-link-primary);
 }
 
 [data-carbon-theme="g100"] {
@@ -117,6 +120,9 @@
   --cds-ui-02: var(--cds-layer-02);
   --cds-ui-03: var(--cds-border-subtle-01);
   --cds-border-subtle: var(--cds-border-subtle-01);
+  --cds-layer: var(--cds-layer-01);
+  --cds-layer-accent: var(--cds-layer-accent-01);
+  --cds-link-01: var(--cds-link-primary);
 }
 
 /* 3. BASE RESET & BOX SIZING */
@@ -1726,5 +1732,185 @@ code, pre, kbd, samp {
 .info-plaque--teal {
   border-left-color: #0072c3;
 }
+
+/* ==========================================================================
+   19. COLLOQUIUM 1 MODULE (CARBON v11 THEME COMPLIANT)
+   ========================================================================== */
+
+/* Навигационная плашка быстрого перехода */
+.colloquium-nav-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-01);
+  border-left: 3px solid var(--cds-interactive-01);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.colloquium-nav-bar .colloquium-nav-link {
+  color: var(--cds-link-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.colloquium-nav-bar .colloquium-nav-link:hover {
+  color: var(--cds-link-primary-hover);
+  text-decoration: underline;
+}
+
+/* Карточки 60 вопросов */
+.colloquium-q-card {
+  margin-bottom: 1rem;
+}
+
+.colloquium-q-card .cds--tile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-01);
+  border-left: 4px solid var(--cds-interactive-01);
+  padding: 1rem;
+  border-radius: 2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.colloquium-q-card .cds--tile:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-tile);
+  background-color: var(--cds-layer-02);
+}
+
+/* Аккордеоны эталонных кейсов (Вкладка 3) */
+.colloquium-case-accordion {
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-01);
+  border-left: 4px solid var(--cds-interactive-01);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.colloquium-case-accordion[open] {
+  background-color: var(--cds-layer-01);
+  box-shadow: var(--shadow-tile);
+  border-color: var(--cds-border-strong-01);
+}
+
+.colloquium-case-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.colloquium-case-summary::-webkit-details-marker {
+  display: none;
+}
+
+.colloquium-case-summary:hover {
+  background-color: var(--cds-layer-accent-01);
+}
+
+.colloquium-case-summary:focus {
+  outline: 2px solid var(--cds-focus);
+  outline-offset: -2px;
+}
+
+.colloquium-case-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.colloquium-case-badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+}
+
+.colloquium-case-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--cds-text-primary);
+  margin: 0;
+}
+
+.colloquium-case-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--cds-text-secondary);
+  transition: transform 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.colloquium-case-accordion[open] .colloquium-case-chevron {
+  transform: rotate(180deg);
+}
+
+.colloquium-case-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--cds-border-subtle-01);
+  margin-top: 0.5rem;
+}
+
+.colloquium-question-box {
+  background-color: var(--cds-layer-accent-01);
+  padding: 0.875rem 1rem;
+  border-radius: 2px;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid #9f1853;
+}
+
+.colloquium-section-block {
+  margin-bottom: 1rem;
+}
+
+.colloquium-section-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--cds-text-primary);
+}
+
+.colloquium-section-body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--cds-text-primary);
+}
+
+.colloquium-ref-footer {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--cds-border-subtle-01);
+  font-size: 0.8125rem;
+  color: var(--cds-text-secondary);
+}
+
 
 

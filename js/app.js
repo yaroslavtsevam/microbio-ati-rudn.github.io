@@ -137,13 +137,39 @@ const App = {
   },
 
   handleRouteHash() {
-    const hash = window.location.hash.replace('#', '');
+    const rawHash = window.location.hash.replace('#', '');
     const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'colloquium1', 'test'];
-    if (validViews.includes(hash)) {
-      this.switchView(hash);
-    } else {
+
+    if (!rawHash) {
       this.switchView('catalog');
+      return;
     }
+
+    if (validViews.includes(rawHash)) {
+      this.switchView(rawHash);
+      return;
+    }
+
+    // Если хеш является внутристраничным якорем (colloquium-theme-*, question-*, case-*)
+    if (rawHash.startsWith('colloquium-') || rawHash.startsWith('theme-') || rawHash.startsWith('question-') || rawHash.startsWith('case-')) {
+      if (this.currentView !== 'colloquium1') {
+        this.switchView('colloquium1');
+      }
+      setTimeout(() => {
+        const targetEl = document.getElementById(rawHash);
+        if (targetEl) {
+          const parentPanel = targetEl.closest('.cds--tab-panel');
+          if (parentPanel && !parentPanel.classList.contains('cds--tab-panel--active')) {
+            const tabBtn = document.querySelector(`[data-tab-target="${parentPanel.id}"]`);
+            if (tabBtn) tabBtn.click();
+          }
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return;
+    }
+
+    this.switchView('catalog');
   },
 
   switchView(viewName) {
@@ -277,16 +303,74 @@ const App = {
      4.5. НАВИГАЦИЯ И ПЕРЕКЛЮЧЕНИЕ ТАБОВ КОЛЛОКВИУМА 1
      ------------------------------------------------------------------------ */
   initColloquiumFilters() {
-    // Обработчик кнопок data-tab-switch в шапке Коллоквиума
+    // 1. Кнопки переключения табов в шапке Коллоквиума
     document.addEventListener('click', (e) => {
       const switchBtn = e.target.closest('[data-tab-switch]');
-      if (!switchBtn) return;
-      const targetTabId = switchBtn.getAttribute('data-tab-switch');
-      const targetTab = document.querySelector(`[data-tab-target="${targetTabId}"]`);
-      if (targetTab) {
-        targetTab.click();
+      if (switchBtn) {
+        const targetTabId = switchBtn.getAttribute('data-tab-switch');
+        const targetTab = document.querySelector(`[data-tab-target="${targetTabId}"]`);
+        if (targetTab) {
+          targetTab.click();
+          targetTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        return;
+      }
+
+      // 2. Ссылки быстрой навигации по темам (#colloquium-theme-*, [data-scroll-to])
+      const anchorLink = e.target.closest('a[href^="#colloquium-theme-"], [data-scroll-to]');
+      if (anchorLink) {
+        e.preventDefault();
+        const targetId = anchorLink.getAttribute('data-scroll-to') || anchorLink.getAttribute('href').replace('#', '');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          const parentPanel = targetEl.closest('.cds--tab-panel');
+          if (parentPanel && !parentPanel.classList.contains('cds--tab-panel--active')) {
+            const tabBtn = document.querySelector(`[data-tab-target="${parentPanel.id}"]`);
+            if (tabBtn) tabBtn.click();
+          }
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', `#${targetId}`);
+          }, 50);
+        }
+        return;
+      }
+
+      // 3. Кнопки "Развернуть все / Свернуть все кейсы"
+      const toggleAllCasesBtn = e.target.closest('[data-colloquium-toggle-cases]');
+      if (toggleAllCasesBtn) {
+        const action = toggleAllCasesBtn.getAttribute('data-colloquium-toggle-cases');
+        const detailsList = document.querySelectorAll('#colloquium-answers-accordion details');
+        detailsList.forEach(d => {
+          d.open = action === 'expand';
+        });
+        return;
       }
     });
+
+    // 4. Фильтрация карточек вопросов (60 вопросов)
+    const filterBar = document.getElementById('colloquium-filter-bar');
+    if (filterBar) {
+      filterBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+        const filter = btn.getAttribute('data-filter');
+        filterBar.querySelectorAll('[data-filter]').forEach(b => {
+          b.className = 'cds--btn cds--btn--sm cds--btn--secondary';
+        });
+        btn.className = 'cds--btn cds--btn--sm cds--btn--primary';
+
+        const cards = document.querySelectorAll('.colloquium-q-card');
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
   },
 
   initCatalogFilters() {
