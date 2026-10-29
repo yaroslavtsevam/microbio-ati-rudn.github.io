@@ -8,6 +8,7 @@ assets/pdf/*instructor*
 *.secret*
 colloquium_01/
 *colloquium*
+!src/views/view-colloquium1.html
 
 # Серверные скрипты и ключи оценивания
 *.gs
