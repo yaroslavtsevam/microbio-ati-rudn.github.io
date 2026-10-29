@@ -1,0 +1,501 @@
+    <main id="view-catalog" class="cds--grid">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-banner__pretitle">Аграрно-технологический институт РУДН • Департамент техносферной безопасности</div>
+      <h1 class="hero-banner__title">Курс «Пищевая микробиология, санитария и гигиена»</h1>
+      <p class="hero-banner__lead">
+        Интерактивный учебно-методический комплекс семинарских и практических занятий для студентов бакалавриата направлений «Стандартизация и метрология» (27.03.01) и «Управление качеством» (27.03.02). Реализация концепции «Dry Lab» на основе компьютерного кинетического моделирования ComBase, цифровой микроскопии и аудита регламентов ТР ТС / ХАССП.
+      </p>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <button class="cds--btn cds--btn--primary" data-go-to="seminar0">
+          <span>Семинар 0: Базовая химия</span>
+          <span>🧪</span>
+        </button>
+        <button class="cds--btn cds--btn--secondary" data-go-to="lectures">
+          <span>Лекция 1: Слайды</span>
+          <span>📑</span>
+        </button>
+        <button class="cds--btn cds--btn--tertiary" data-go-to="seminar1">
+          <span>Семинар 1: Гомеостаз &amp; pH</span>
+          <span>→</span>
+        </button>
+        <button class="cds--btn cds--btn--tertiary" data-go-to="seminar2">
+          <span>Семинар 2: Редокс &amp; Eh</span>
+          <span>⚡</span>
+        </button>
+        <button class="cds--btn cds--btn--primary" data-go-to="seminar3">
+          <span>Семинар 3: Доступность воды (aw)</span>
+          <span>💧</span>
+        </button>
+        <button class="cds--btn cds--btn--primary" data-go-to="seminar4">
+          <span>Семинар 4: Классификация &amp; Древо жизни</span>
+          <span>🌳</span>
+        </button>
+        <button class="cds--btn cds--btn--ghost" data-go-to="test">
+          <span>Домашнее задание</span>
+          <span>⏱</span>
+        </button>
+      </div>
+
+      <div class="hero-banner__stats">
+        <div class="hero-stat">
+          <div class="hero-stat__value">19</div>
+          <div class="hero-stat__label">Семинаров (0–18)</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">45</div>
+          <div class="hero-stat__label">Слайдов Лекции 1</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">10</div>
+          <div class="hero-stat__label">Инженерных калькуляторов</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__value">100+</div>
+          <div class="hero-stat__label">Задач в базе контроля</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фильтр каталога (Рубрикатор) -->
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+      <div>
+        <h2 class="section-header__title">Календарно-тематический план занятий</h2>
+        <div class="section-header__desc">Фильтруйте по типу материалов или по тематическим разделам курса</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
+        <!-- Фильтр по типу материалов -->
+        <div style="display: flex; gap: 0.375rem; flex-wrap: wrap; align-items: center;" role="group" aria-label="Фильтр по типу">
+          <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--cds-text-secondary); margin-right: 0.25rem;">Тип:</span>
+          <button class="cds--btn cds--btn--sm cds--btn--primary catalog-filter-btn" data-filter="all">Все материалы</button>
+          <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="type-seminar">Семинары (19)</button>
+          <button class="cds--btn cds--btn--sm cds--btn--secondary catalog-filter-btn" data-filter="type-lecture">Лекции (1)</button>
+        </div>
+        <!-- Фильтр по тематике -->
+        <div style="display: flex; gap: 0.375rem; flex-wrap: wrap; align-items: center;" role="group" aria-label="Фильтр по разделу">
+          <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--cds-text-secondary); margin-right: 0.25rem;">Раздел:</span>
+          <button class="cds--btn cds--btn--sm cds--btn--ghost catalog-filter-btn" data-filter="intro">Вводные &amp; Основы</button>
+          <button class="cds--btn cds--btn--sm cds--btn--ghost catalog-filter-btn" data-filter="drylab">Практикумы Dry Lab</button>
+          <button class="cds--btn cds--btn--sm cds--btn--ghost catalog-filter-btn" data-filter="reg">Регламенты &amp; ТР ТС</button>
+          <button class="cds--btn cds--btn--sm cds--btn--ghost catalog-filter-btn" data-filter="haccp">ХАССП &amp; ИСО 22000</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Сетка карточек занятий курса -->
+    <div class="cds--row" id="catalog-cards-container">
+      
+      <!-- Семинар 0: Фундаментальная химия -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-interactive-01);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--blue">Семинар 0 • Пререквизит</span>
+            <span class="cds--tag cds--tag--green">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Фундаментальные основы физической и аналитической химии</h3>
+          <div class="cds--tile__subtitle">Размерности концентраций, разведения, кинетика, равновесие, диссоциация и буферы</div>
+          <div class="cds--tile__content">
+            Строгий расчет молярности, массовой доли, моляльности, титра, нормальности; закон разбавления и крест Пирсона; кинетика 1-го порядка и Аррениус; закон Оствальда, Kw, pH, гидролиз солей и буферные смеси. Включает 12 примеров и 4 калькулятора.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar0">
+              <span>Изучить Семинар 0 (12 примеров)</span>
+              <span>🧪 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Лекция 1: Морфология и ультраструктура -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="lecture" data-category="type-lecture intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-tag-text-purple);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--purple">Лекция 1 • Модуль 1</span>
+            <span class="cds--tag cds--tag--green">АКТИВНА</span>
+          </div>
+          <h3 class="cds--tile__title">Морфология, анатомия и классификация микроорганизмов</h3>
+          <div class="cds--tile__subtitle">Ультраструктура бактерий, грибов и вирусов (45 слайдов)</div>
+          <div class="cds--tile__content">
+            Полный иллюстративный атлас ультраструктур: пептидогликан, спорогенез, жгутиковый мотор, окраска по Граму, дрожжи и фаги. Доступен онлайн-плеер и скачивание в PPTX и PDF.
+          </div>
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--secondary" style="flex: 1;" data-go-to="lectures">
+              <span>Слайды</span>
+              <span>📑</span>
+            </button>
+            <a href="assets/presentations/Lecture_01_Microbiology.pptx" download class="cds--btn cds--btn--sm cds--btn--ghost" title="Скачать PPTX">
+              <span>PPTX</span>
+              <span>📥</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 1: Гомеостаз и консерванты -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-support-success);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--green">Семинар 1 • Неделя 1</span>
+            <span class="cds--tag cds--tag--green">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Физико-химические основы микробного гомеостаза и консерванты</h3>
+          <div class="cds--tile__subtitle">Свойства воды, теория Дебая-Хюккеля, pH, Гендерсон-Хассельбах и консерванты</div>
+          <div class="cds--tile__content">
+            Строение молекулы воды; ионная сила раствора и коэффициенты активности; автопротолиз воды и pH; уравнение Гендерсона-Хассельбаха; молекулярный механизм «кислотной ловушки» консервантов (E202, E211, E282); расчет навесок солей и предельной растворимости.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar1">
+              <span>Изучить Семинар 1</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 2: RedOx и Аэробиоз -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar intro">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-support-info, #0043ce);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--blue">Семинар 2 • Неделя 2</span>
+            <span class="cds--tag cds--tag--green">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Окислительно-восстановительный потенциал (Eh), rH₂ и аэробиоз</h3>
+          <div class="cds--tile__subtitle">Электрометрия Eh, показатель Кларка rH₂, биоэнергетика и дыхание</div>
+          <div class="cds--tile__content">
+            Термодинамика ОВР и уравнение Нернста с поправкой на pH; пересчет потенциалов электродов сравнения; критерий Кларка rH₂; биоэнергетическая «Редокс-башня»; защита от АФК (СОД, каталаза, пероксидаза). Включает 12 разобранных задач и 2 интерактивных калькулятора.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar2">
+              <span>Изучить Семинар 2 (12 примеров)</span>
+              <span>⚡ →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 3: Активность воды и ХАССП -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid var(--cds-interactive-01);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--blue">Семинар 3 • Неделя 3</span>
+            <span class="cds--tag cds--tag--green">АКТИВЕН</span>
+          </div>
+          <h3 class="cds--tile__title">Доступность воды для микроорганизмов: активность воды (aw) и ХАССП</h3>
+          <div class="cds--tile__subtitle">Энергетический статус воды, уравнение Кельвина, плазмолиз и теория барьеров</div>
+          <div class="cds--tile__content">
+            Макроскопическая влажность (ГОСТ 33319) и титрование по Карлу Фишеру; давление пара и уравнение Антуана; термодинамическая активность воды (aw) и ERH; нанопоры матрицы и уравнение Кельвина; осмотический стресс, плазмолиз и расход АТФ; 6 зон риска ComBase и барьеры ХАССП. Включает 12 примеров и 2 калькулятора.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar3">
+              <span>Изучить Семинар 3 (aw, 12 примеров)</span>
+              <span>💧 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+            <!-- Карточка: Коллоквиум 1 (Рубежный контроль Модуля 1) -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="colloquium" data-category="type-seminar exam">
+        <div class="cds--tile cds--tile--active" style="border-top: 4px solid #ee5396; background: var(--cds-layer-01);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--magenta">Коллоквиум 1 • Рубежный контроль</span>
+            <span class="cds--tag cds--tag--purple">МОДУЛЬ 1</span>
+          </div>
+          <h3 class="cds--tile__title">Подготовка к коллоквиуму 1: Гомеостаз, RedOx и Активность воды</h3>
+          <div class="cds--tile__subtitle">Синтез теории Семинаров 1–3, 60 экзаменационных вопросов и 9 типовых ответов</div>
+          <div class="cds--tile__content">
+            Комплексный теоретический путеводитель: термодинамика воды, шкала pH, acid trapping, теория Дебая-Хюккеля, потенциал Eh и показатель rH2 по Нернсту, биоэнергетика дыхания и брожения, активность воды aw по Раулю и Кельвину, плазмолиз, совместимые осмолиты и барьеры ХАССП.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%; background-color: #9f1853;" data-go-to="colloquium1">
+              <span>Подготовка к коллоквиуму 1 (60 вопросов)</span>
+              <span>🎓 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 4 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar taxonomy molbio">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 4 • Неделя 4</span>
+            <span class="cds--tag cds--tag--cyan">Молекулярная систематика</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар 4: Современная классификация микроорганизмов</h3>
+          <div class="cds--tile__subtitle">Филогенетическое древо (Tree of Life), молекулярные методы и ГОСТы РФ</div>
+          <div class="cds--tile__content">
+            Эволюция систем классификации, переход на 16S рРНК, ANI и MALDI-TOF. Нормативные группы ТР ТС 021/2011 и ГОСТ ISO 7218. Биотехнологический потенциал эубактерий, архей, водорослей и грибов.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <button class="cds--btn cds--btn--sm cds--btn--primary" style="width: 100%;" data-go-to="seminar4">
+              <span>Изучить Семинар 4 (Теория, ГОСТ, 27 вопросов)</span>
+              <span>🌳 →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 5 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 5 • Неделя 5</span>
+            <span class="cds--tag cds--tag--purple">Работа 3–4 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 3–4: Предиктивное моделирование &amp; ГОСТ ISO 7218</h3>
+          <div class="cds--tile__subtitle">Кинетика роста в ComBase и расчет КМАФАнМ/БГКП по ТР ТС 021/2011</div>
+          <div class="cds--tile__content">
+            Комплексный практикум: кинетика популяционного роста E. coli в ComBase Predictor и формула средневзвешенного счета колоний стандарта ГОСТ ISO 7218 по серийным разведениям чашек Петри.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 5)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 6 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 6 • Неделя 6</span>
+            <span class="cds--tag cds--tag--blue">Нормативный аудит</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Требования безопасности к сырью и продукции</h3>
+          <div class="cds--tile__subtitle">Сравнительный аудит приложений ТР ТС 021, 033, 034, ТР ЕАЭС 040</div>
+          <div class="cds--tile__content">
+            Кросс-отраслевой сравнительный аудит критериев промышленной стерильности, нормирования КМАФАнМ, патогенов и сальмонелл для молока, мяса и рыбы.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 6)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 7 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 7 • Неделя 7</span>
+            <span class="cds--tag cds--tag--blue">Кейс-исследование</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Патогены пищевых цепей: Salmonella и Campylobacter</h3>
+          <div class="cds--tile__subtitle">Зоонозные риски птицеводческой и мясной индустрии</div>
+          <div class="cds--tile__content">
+            Анализ вертикальной и горизонтальной контаминации куриных яиц и тушек бройлеров. Решение ситуационных задач по локализации точек обсеменения.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 7)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 8 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 8 • Неделя 8</span>
+            <span class="cds--tag cds--tag--purple">Работа 5 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 5: Токсикоинфекции и энтеротоксины S. aureus</h3>
+          <div class="cds--tile__subtitle">Кинетика накопления термоустойчивых энтеротоксинов</div>
+          <div class="cds--tile__content">
+            Разница между гибелью клетки бактерии и термоинактивацией токсина. Экспертный аудит производственного инцидента с творожной массой при сбое охлаждения.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 8)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 9 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 9 • Неделя 9</span>
+            <span class="cds--tag cds--tag--purple">Работа 7 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 6: Спорообразующие анаэробы и концепция 12D</h3>
+          <div class="cds--tile__subtitle">Стерилизация консервов и расчет F0 для Clostridium botulinum</div>
+          <div class="cds--tile__content">
+            Формулы Бигелоу (D- и z-значения), расчет нормативного стерилизующего эффекта F0 = 12D, ГОСТ 30425-97. Физическое обоснование температурных режимов.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 9)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 10 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 10 • Неделя 10</span>
+            <span class="cds--tag cds--tag--purple">Работа 6 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 7: Психротрофные патогены: Listeria monocytogenes</h3>
+          <div class="cds--tile__subtitle">Холодовая цепь и безопасность продукции Ready-to-Eat</div>
+          <div class="cds--tile__content">
+            Предиктивное моделирование роста листерий при +4°C vs +9°C во вскрытой упаковке колбасы. Обоснование предупреждающей потребительской маркировки по ТР ТС 022.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 10)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 11 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 11 • Неделя 11</span>
+            <span class="cds--tag cds--tag--purple">Работа 8 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 8: Эпидемиологический детектив расследования</h3>
+          <div class="cds--tile__subtitle">Локализация источника вспышки и диаграмма Исикавы</div>
+          <div class="cds--tile__content">
+            Разбор реальных материалов вспышек FDA CORE / Роспотребнадзора. Анализ инкубационных интервалов, построение диаграммы «рыбий скелет» и план CAPA.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 11)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 12 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 12 • Неделя 12</span>
+            <span class="cds--tag cds--tag--purple">Работа 9 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 9: Полезная микробиота: ферментация и МКБ</h3>
+          <div class="cds--tile__subtitle">Стандартизация стартовых заквасочных культур молочных производств</div>
+          <div class="cds--tile__content">
+            Механизм коагуляции казеина молока, расчет сдвига изоэлектрической точки (pH 4.6), спектр бактериоцинов и барьерные свойства заквасок (йогурт, кефир).
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 12)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 13 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar intro">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 13 • Неделя 13</span>
+            <span class="cds--tag cds--tag--blue">Диагностика дефектов</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Микробиология порчи пищевой продукции</h3>
+          <div class="cds--tile__subtitle">Плесневение, ослизнение, гниение, прокисание, бомбаж</div>
+          <div class="cds--tile__content">
+            Классификационный альбом дефектов: болезни хлеба (тягучая болезнь B. subtilis), бомбаж консервов vs плоскокислая порча G. stearothermophilus.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 13)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 14 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 14 • Неделя 14</span>
+            <span class="cds--tag cds--tag--purple">Работа 10 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 10: Санитарная микробиология и программа смывов</h3>
+          <div class="cds--tile__subtitle">Проектирование смывного мониторинга по ГОСТ ISO 18593-2023</div>
+          <div class="cds--tile__content">
+            Координатная привязка 8 критических точек смывов цеха по 4 зонам гигиенической опасности, подбор нейтрализаторов дезинфектантов и регламент контроля.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 14)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 15 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 15 • Неделя 15</span>
+            <span class="cds--tag cds--tag--red">СМБПП &amp; ХАССП</span>
+          </div>
+          <h3 class="cds--tile__title">Семинар: Системы менеджмента безопасности: ХАССП</h3>
+          <div class="cds--tile__subtitle">Принципы ХАССП и требования стандартов ГОСТ Р ИСО 22000</div>
+          <div class="cds--tile__content">
+            Сопоставительный анализ ГОСТ Р 51705.1-2001 и ГОСТ Р ИСО 22000-2019. Разграничение программ предварительных условий (PRP, OPRP) и критических точек.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 15)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 16 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 16 • Неделя 16</span>
+            <span class="cds--tag cds--tag--purple">Работа 11 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 11: Идентификация опасностей и определение ККТ</h3>
+          <div class="cds--tile__subtitle">Логическое «дерево решений» Codex/ISO и план ХАССП</div>
+          <div class="cds--tile__content">
+            Практическое определение критических контрольных точек (ККТ) на технологической схеме пастеризации сока/молока и валидация критических пределов.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 16)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 17 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar drylab reg">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 17 • Неделя 17</span>
+            <span class="cds--tag cds--tag--purple">Работа 12 (Dry Lab)</span>
+          </div>
+          <h3 class="cds--tile__title">Практикум 12: Экспертиза протокола испытаний: выпуск партии</h3>
+          <div class="cds--tile__subtitle">Сравнительный аудит протоколов аккредитованных лабораторий</div>
+          <div class="cds--tile__content">
+            Ролевая экспертиза реальных протоколов с замаскированными несоответствиями (сметана, вареная колбаса, рыба). Формирование официального мотивированного вердикта.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 17)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Семинар 18 -->
+      <div class="cds--col-4 seminar-catalog-card" data-type="seminar" data-category="type-seminar intro haccp">
+        <div class="cds--tile">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="cds--tag cds--tag--gray">Семинар 18 • Неделя 18</span>
+            <span class="cds--tag cds--tag--red">Дифференцированный зачет</span>
+          </div>
+          <h3 class="cds--tile__title">Итоговый семинар: Защита комплексного кейс-проекта</h3>
+          <div class="cds--tile__subtitle">Круглый стол и защита досье безопасности пищевого продукта</div>
+          <div class="cds--tile__content">
+            Защита студенческих проектных портфолио сквозной оценки безопасности «от поля до полки»: предиктивная кинетика, нормативная база ТР ТС, ККТ ХАССП.
+          </div>
+          <div style="margin-top: 1.25rem;">
+            <span class="cds--tag cds--tag--gray" style="width: 100%; text-align: center; display: block;">По расписанию (Неделя 18)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       3. ПРЕДСТАВЛЕНИЕ 2: СЕМИНАР 1 (МАТЕРИАЛЫ ДЛЯ СТУДЕНТОВ)
+       ===================================================================== -->
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ 2: ЛЕКЦИОННЫЙ РАЗДЕЛ (ИНТЕРАКТИВНЫЙ ПЛЕЕР СЛАЙДОВ)
+       ===================================================================== -->

@@ -1,0 +1,158 @@
+  <main id="view-test" class="cds--grid" style="display: none;">
+    
+    <!-- Верхняя фиксированная плашка таймера (скрыта до старта) -->
+    <div id="test-timer-bar" class="test-timer-bar" style="display: none;">
+      <div>
+        <div class="test-timer__label">Оставшееся время выполнения домашнего задания</div>
+        <div class="test-timer__display">
+          <span class="test-timer__time" id="test-timer-clock">30:00</span>
+          <span style="font-size: 0.8125rem; color: var(--cds-text-secondary);">из 30 минут</span>
+        </div>
+      </div>
+      <div id="test-timer-student" class="test-timer__student-meta">
+        Студент не зарегистрирован
+      </div>
+    </div>
+
+    <!-- ШАГ 1: ФОРМА РЕГИСТРАЦИИ СТУДЕНТА -->
+    <div id="test-step-registration" style="max-width: 680px; margin: 2rem auto;">
+      <div class="cds--tile" style="border-top: 4px solid var(--cds-interactive-01);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <span class="cds--tag cds--tag--blue" id="test-header-badge">Домашнее задание</span>
+          <span class="cds--tag cds--tag--green">100 баллов БРС</span>
+        </div>
+        <h2 class="hero-banner__title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+          Выполнение домашнего задания
+        </h2>
+        <p style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+          Выберите тему занятия. Система сформирует индивидуальный билет из 6 расчетных задач с автоматической серверной проверкой, выдачей электронной квитанции и синхронизацией с Google Drive преподавателя.
+        </p>
+
+        <div id="reg-error-box" class="cds--inline-notification cds--inline-notification--error" style="display: none;"></div>
+
+        <!-- Выбор темы теста -->
+        <div class="cds--form-item" style="margin-bottom: 1.25rem;">
+          <label class="cds--label" for="student-test-topic">Тематический модуль домашнего задания <span style="color: var(--cds-support-error);">*</span>:</label>
+          <select class="cds--select-input" id="student-test-topic" style="width: 100%; font-size: 0.9375rem; padding: 0.5rem 0.75rem; height: 42px;">
+            <option value="sem0" selected>Семинар 0: Фундаментальная химия (6 задач, 30 минут, банк 60 задач)</option>
+            <option value="sem1">Семинар 1: Физико-химия микробного гомеостаза (6 задач, 30 минут, банк 20 задач)</option>
+            <option value="sem2">Семинар 2: Окислительно-восстановительный потенциал и биоэнергетика (6 задач, 30 минут, банк 36 задач)</option>
+            <option value="sem3">Семинар 3: Доступность воды, активность воды (aw) и ХАССП (6 задач, 30 минут, банк 36 задач)</option>
+          </select>
+          <div id="test-topic-description" style="font-size: 0.8125rem; margin-top: 0.4rem; color: var(--cds-interactive-01);">
+            ⏱ <strong>30 минут</strong> • <strong>6 расчетных задач</strong> (по 1 из 6 категорий базовой химии) • Максимум: 100 баллов
+          </div>
+        </div>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-surname">Фамилия <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-surname" placeholder="Например: Иванов" required>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-name">Имя <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-name" placeholder="Например: Иван" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-group">Учебная группа <span style="color: var(--cds-support-error);">*</span>:</label>
+              <input type="text" class="cds--text-input" id="student-group" placeholder="Например: АТИ-301" required>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="student-specialty">Направление подготовки:</label>
+              <select class="cds--select" id="student-specialty">
+                <option value="27.03.01 Стандартизация и метрология">27.03.01 Стандартизация и метрология</option>
+                <option value="27.03.02 Управление качеством">27.03.02 Управление качеством</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--inline-notification cds--inline-notification--info" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+          <strong>Правила регламента:</strong> На выполнение отводится 30 минут. При истечении времени таймера ответы будут автоматически зафиксированы и отправлены.
+        </div>
+
+        <button type="button" class="cds--btn cds--btn--primary" id="btn-start-test" style="width: 100%;">
+          <span>Приступить к домашнему заданию (30 минут)</span>
+          <span>⏱ →</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ШАГ 2: АКТИВНАЯ СЕССИЯ ТЕСТИРОВАНИЯ -->
+    <div id="test-step-active" style="display: none; max-width: 960px; margin: 1.5rem auto;">
+      <div id="test-tasks-container">
+        <!-- Задачи отрисовываются динамически через test-session.js -->
+      </div>
+
+      <div class="cds--tile" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+        <div>
+          <div style="font-weight: 600; color: var(--cds-text-primary);">Проверьте все введенные ответы</div>
+          <div style="font-size: 0.8125rem; color: var(--cds-text-secondary);">Все 6 ответов будут зафиксированы и переданы на Google Drive преподавателя</div>
+        </div>
+        <button type="button" class="cds--btn cds--btn--primary" id="btn-submit-test">
+          <span>Сдать домашнее задание на проверку</span>
+          <span>✓</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ШАГ 3: ЭЛЕКТРОННАЯ КВИТАНЦИЯ О СДАЧЕ -->
+    <div id="test-step-receipt" style="display: none;">
+      <div class="receipt-box">
+        <span class="cds--tag cds--tag--green">ДОМАШНЕЕ ЗАДАНИЕ СДАНО</span>
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-top: 0.5rem;">Электронная квитанция о сдаче домашнего задания</h2>
+        
+        <div class="receipt-token" id="receipt-token-code">RUDN-MB-XXXX-YYYY</div>
+
+        <div id="receipt-student-info" style="font-size: 0.875rem; color: var(--cds-text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+          <!-- Метаданные студента -->
+        </div>
+
+        <div id="receipt-sync-status" class="cds--inline-notification cds--inline-notification--success">
+          Результаты успешно переданы на Google Drive преподавателя.
+        </div>
+
+        <table class="cds--data-table" style="text-align: left; margin-top: 1.5rem;">
+          <thead>
+            <tr>
+              <th>Номер</th>
+              <th>Категория задачи</th>
+              <th>Ваш ответ</th>
+              <th>Ход решения</th>
+            </tr>
+          </thead>
+          <tbody id="receipt-answers-body">
+            <!-- Строки ответов -->
+          </tbody>
+        </table>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <button type="button" class="cds--btn cds--btn--secondary" id="btn-download-receipt">
+            <span>Скачать квитанцию (TXT)</span>
+            <span>↓</span>
+          </button>
+          <button type="button" class="cds--btn cds--btn--primary" data-go-to="seminar1">
+            <span>Вернуться к материалам Семинара 1</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =====================================================================
+       5. CARBON FOOTER
+       ===================================================================== -->
+  <footer class="cds--footer">
+    <div class="cds--footer__content">

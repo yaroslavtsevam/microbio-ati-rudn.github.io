@@ -1,0 +1,1735 @@
+  <main id="view-seminar3" class="cds--grid" style="display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Семинар 3 • Неделя 3 • Физико-химические факторы среды</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Доступность воды для микроорганизмов: активность воды ($a_w$), термодинамика, капиллярные явления и ХАССП
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Связанная vs свободная влага, метрология влажности (ГОСТ), парциальное давление и уравнение Антуана, капиллярная депрессия по Кельвину, плазмолиз, осморегуляция и 6 зон риска ComBase
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="assets/pdf/student_handout_sem3.pdf" download class="cds--btn cds--btn--secondary">
+          <span>Скачать раздатку (PDF)</span>
+          <span>📄</span>
+        </a>
+        <button class="cds--btn cds--btn--primary" data-go-to="test" data-test-topic="sem3">
+          <span>Домашнее задание: Семинар 3 (30 мин)</span>
+          <span>⏱</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Вкладки Семинара 3 -->
+    <div class="cds--tabs" role="tablist">
+      <button class="cds--tab cds--tab--selected" data-tab-target="sem3-tab-theory" role="tab">
+        1. Теория и механизмы (6 модулей + 5 схем)
+      </button>
+      <button class="cds--tab" data-tab-target="sem3-tab-examples" role="tab">
+        2. Разобранные примеры и практикум Dry Lab (14 задач)
+      </button>
+      <button class="cds--tab" data-tab-target="sem3-tab-calculators" role="tab">
+        3. Инженерные калькуляторы (2 шт.)
+      </button>
+      <button class="cds--tab" data-tab-target="sem3-tab-tables" role="tab">
+        4. Справочные таблицы
+      </button>
+    </div>
+
+    <!-- ===================================================================
+         ТАБ 1: ТЕОРИЯ И МЕХАНИЗМЫ ДОСТУПНОСТИ ВОДЫ (6 МОДУЛЕЙ + 5 СХЕМ)
+         =================================================================== -->
+    <section id="sem3-tab-theory" class="cds--tab-panel cds--tab-panel--active" role="tabpanel">
+
+      <!-- МОДУЛЬ 1: Вводный парадокс -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Вводный модуль</span>
+        <h2 style="margin-bottom: 0.75rem;">1. Вводный парадокс: почему процент влаги на этикетке не говорит о безопасности?</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Представьте три пищевых продукта на полке сухого склада пищевого комбината:
+        </p>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Продукт 1</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Натуральный пчелиный мед</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Содержит около <strong>18–20%</strong> воды. Способен храниться годами при комнатной температуре без малейших признаков микробной порчи.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--red" style="margin-bottom: 0.5rem;">Продукт 2</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Свежий пшеничный хлеб</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Содержит около <strong>35–40%</strong> воды. Покрывается буйными колониями плесени уже через 3–5 дней хранения во влажном пакете.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Продукт 3</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Сухое печенье (крекер)</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Содержит всего <strong>5%</strong> воды, но если оставить его в открытой упаковке во влажном цехе, оно моментально отсыревает и плесневеет.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Если бы скорость размножения бактерий и плесеней зависела исключительно от абсолютного количества граммов воды в пищевой матрице, мед и сухое печенье вели бы себя одинаково, а густой концентрированный сахарный сироп являлся бы прекрасной питательной средой для кишечной палочки.
+        </p>
+
+        <div class="info-plaque info-plaque--purple" style="margin-bottom: 1.5rem;">
+          <strong>Главный закон доступности воды в пищевой микробиологии:</strong>
+          <br>
+          Микроорганизмам важна не общая масса воды в продукте, а то, <em>насколько эта вода свободна от физико-химических связей и термодинамически доступна для биохимических реакций и осмотического поглощения клеткой</em>.
+        </div>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          В сложной гетерогенной пищевой матрице вода никогда не существует в однородном состоянии. Она разделяется на три ключевые фракции в зависимости от прочности связи с биополимерами и растворенными веществами:
+        </p>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%; border-left: 3px solid #0f62fe;">
+              <h4 style="margin: 0 0 0.5rem 0; color: #0f62fe;">1. Прочно связанная вода</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Мономолекулярный слой (БЭТ)</strong>, адсорбированный на полярных группах белков и крахмала. Энергия связи достигает 40–80 кДж/моль.
+              </p>
+              <ul style="font-size: 0.75rem; color: var(--cds-text-secondary); margin: 0; padding-left: 1.1rem; line-height: 1.4;">
+                <li>Активность воды: $a_w < 0{,}30$</li>
+                <li>Не замерзает вплоть до $-40^\circ\text{C}$</li>
+                <li>Не является растворителем</li>
+                <li><strong>Абсолютно недоступна микробам</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%; border-left: 3px solid #6929c4;">
+              <h4 style="margin: 0 0 0.5rem 0; color: #8a3ffc;">2. Рыхло связанная вода</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Полимолекулярные слои</strong> и влага, сконденсированная в микропорах ($r < 50\text{ нм}$), а также осмотически удержанная молекулами сахарозы и солей.
+              </p>
+              <ul style="font-size: 0.75rem; color: var(--cds-text-secondary); margin: 0; padding-left: 1.1rem; line-height: 1.4;">
+                <li>Активность воды: $a_w = 0{,}30\dots 0{,}80$</li>
+                <li>Замерзает при $-5\dots -20^\circ\text{C}$</li>
+                <li>Ограниченная реакционная способность</li>
+                <li><strong>Доступна ксерофилам и плесеням</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%; border-left: 3px solid #da1e28;">
+              <h4 style="margin: 0 0 0.5rem 0; color: #da1e28;">3. Свободная вода</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Макрокапилляры ($r > 1\text{ мкм}$)</strong> и влага, иммобилизованная в гелевых сетках. По свойствам полностью идентична чистой воде.
+              </p>
+              <ul style="font-size: 0.75rem; color: var(--cds-text-secondary); margin: 0; padding-left: 1.1rem; line-height: 1.4;">
+                <li>Активность воды: $a_w = 0{,}80\dots 0{,}99$</li>
+                <li>Замерзает около $0^\circ\text{C}$</li>
+                <li>Свободный переносчик питательных веществ</li>
+                <li><strong>Среда бурного роста бактерий</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="scheme-container">
+  <div class="scheme-header">
+    Схема 1 • Формы связи влаги в гетерогенной пищевой матрице (Связанная vs Свободная вода)
+  </div>
+  <svg class="scheme-svg" viewBox="0 0 920 380" width="100%" height="auto">
+    <rect width="100%" height="100%" rx="6" fill="var(--svg-bg, #161616)"/>
+
+    <!-- Колонка 1: Прочно связанная вода -->
+    <rect x="25" y="30" width="270" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#4589ff" stroke-width="2"/>
+    <rect x="25" y="30" width="270" height="42" rx="6" fill="#0f62fe"/>
+    <text x="160" y="56" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">ПРОЧНО СВЯЗАННАЯ ВЛАГА</text>
+    
+    <text x="40" y="95" fill="var(--cds-link-primary, #78a9ff)" font-size="12" font-weight="600">• Мономолекулярный слой (БЭТ)</text>
+    <text x="40" y="115" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Энергия связи: до 40–80 кДж/моль</text>
+    
+    <text x="40" y="145" fill="var(--cds-link-primary, #78a9ff)" font-size="12" font-weight="600">• Ион-дипольные &amp; H-связи</text>
+    <text x="40" y="165" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Гидратные оболочки белков, солей</text>
+    
+    <text x="40" y="195" fill="var(--cds-link-primary, #78a9ff)" font-size="12" font-weight="600">• Термодинамика &amp; свойства:</text>
+    <text x="40" y="215" fill="var(--svg-text-title, #f4f4f4)" font-size="11">aw &lt; 0.30 • Δμw &lt;&lt; 0</text>
+    <text x="40" y="235" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Не замерзает до -40°C</text>
+    <text x="40" y="255" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Не является растворителем</text>
+    
+    <rect x="35" y="280" width="250" height="55" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+    <text x="160" y="302" fill="#42be65" font-size="11" font-weight="700" text-anchor="middle">МИКРОБИОЛОГИЧЕСКИЙ СТАТУС:</text>
+    <text x="160" y="322" fill="var(--svg-text-title, #f4f4f4)" font-size="11" text-anchor="middle">Абсолютно недоступна для клеток</text>
+
+    <!-- Колонка 2: Рыхло связанная вода -->
+    <rect x="325" y="30" width="270" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#8a3ffc" stroke-width="2"/>
+    <rect x="325" y="30" width="270" height="42" rx="6" fill="#6929c4"/>
+    <text x="460" y="56" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">РЫХЛО СВЯЗАННАЯ ВЛАГА</text>
+    
+    <text x="340" y="95" fill="#be95ff" font-size="12" font-weight="600">• Полимолекулярные слои</text>
+    <text x="340" y="115" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Капиллярно сконденсированная (r &lt; 50 нм)</text>
+    
+    <text x="340" y="145" fill="#be95ff" font-size="12" font-weight="600">• Осмотически удержанная</text>
+    <text x="340" y="165" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Связана растворенными сахарами, солями</text>
+    
+    <text x="340" y="195" fill="#be95ff" font-size="12" font-weight="600">• Термодинамика &amp; свойства:</text>
+    <text x="340" y="215" fill="var(--svg-text-title, #f4f4f4)" font-size="11">aw = 0.30 … 0.80</text>
+    <text x="340" y="235" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Замерзает при пониженных t (-5…-20°C)</text>
+    <text x="340" y="255" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Ограниченная реакционная способность</text>
+    
+    <rect x="335" y="280" width="250" height="55" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+    <text x="460" y="302" fill="#f1c21b" font-size="11" font-weight="700" text-anchor="middle">МИКРОБИОЛОГИЧЕСКИЙ СТАТУС:</text>
+    <text x="460" y="322" fill="var(--svg-text-title, #f4f4f4)" font-size="11" text-anchor="middle">Доступна ксерофилам &amp; плесеням</text>
+
+    <!-- Колонка 3: Свободная вода -->
+    <rect x="625" y="30" width="270" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#da1e28" stroke-width="2"/>
+    <rect x="625" y="30" width="270" height="42" rx="6" fill="#da1e28"/>
+    <text x="760" y="56" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">СВОБОДНАЯ ВЛАГА</text>
+    
+    <text x="640" y="95" fill="#ff8389" font-size="12" font-weight="600">• Макрокапилляры (r &gt; 1 мкм)</text>
+    <text x="640" y="115" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Иммобилизованная в геле &amp; ткани</text>
+    
+    <text x="640" y="145" fill="#ff8389" font-size="12" font-weight="600">• Свойства чистой воды:</text>
+    <text x="640" y="165" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Идеальный растворитель и переносчик</text>
+    
+    <text x="640" y="195" fill="#ff8389" font-size="12" font-weight="600">• Термодинамика &amp; свойства:</text>
+    <text x="640" y="215" fill="var(--svg-text-title, #f4f4f4)" font-size="11">aw = 0.80 … 0.99 • Δμw ≈ 0</text>
+    <text x="640" y="235" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Замерзает около 0°C</text>
+    <text x="640" y="255" fill="var(--svg-text-muted, #c6c6c6)" font-size="11">Высокая диффузия субстратов</text>
+    
+    <rect x="635" y="280" width="250" height="55" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+    <text x="760" y="302" fill="#fa4d56" font-size="11" font-weight="700" text-anchor="middle">МИКРОБИОЛОГИЧЕСКИЙ СТАТУС:</text>
+    <text x="760" y="322" fill="var(--svg-text-title, #f4f4f4)" font-size="11" text-anchor="middle">Бурный рост бактерий и патогенов</text>
+  </svg>
+</div>
+      </div>
+
+      <!-- МОДУЛЬ 2: Уровень 1 - Макроскопическая влажность -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Уровень 1</span>
+        <h2 style="margin-bottom: 0.75rem;">2. Уровень 1: Макроскопическая влажность (формулы, физический смысл и метрология)</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Самый очевидный способ оценить содержание влаги в пищевом сырье — взвесить образец на аналитических весах, удалить из него воду высушиванием и вновь взвесить сухой остаток. Концептуальный баланс массы образца выглядит следующим образом:
+        </p>
+
+        <div style="background: var(--cds-ui-01, #f4f4f4); border: 1px solid var(--cds-ui-03, #e0e0e0); border-radius: 4px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; text-align: center; font-family: monospace; font-size: 0.9375rem;">
+          Исходный влажный образец ($m_0$) = Абсолютно сухое вещество ($m_d$) + Испаренная вода ($m_w$)
+        </div>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0;">Массовая доля влаги ($W_m$)</h4>
+              <div class="formula-box">$$W_m = \frac{m_w}{m_0} \times 100\% = \frac{m_0 - m_d}{m_0} \times 100\%$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; line-height: 1.5;">
+                <strong>Базис влажной массы (Wet Basis):</strong> показывает, сколько граммов воды содержится в 100 г исходного продукта. Обязательный показатель на маркировке готовой продукции, в регламентах ТР ТС и стандартах ГОСТ.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0;">Влагосодержание ($u$)</h4>
+              <div class="formula-box">$$u = \frac{m_w}{m_d} = \frac{W_m}{100 - W_m} \quad [\text{г/г}]$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; line-height: 1.5;">
+                <strong>Базис сухого вещества (Dry Basis):</strong> показывает, сколько граммов воды приходится на 1 г абсолютно сухого вещества матрицы.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0;">Объемная влажность ($W_v$)</h4>
+              <div class="formula-box">$$W_v = \frac{V_w}{V_{tot}} \times 100\% = W_m \cdot \frac{\rho_{sample}}{\rho_w}$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; line-height: 1.5;">
+                Доля объема матрицы, занятая жидкой водой ($\rho_w \approx 1{,}00\ \text{г/см}^3$). Определяет сечение водных каналов, по которым способны мигрировать бактерии в плотных сырах и колбасах.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-plaque info-plaque--cyan" style="margin-bottom: 1.5rem;">
+          <strong>Почему инженеры-технологи рассчитывают процессы сушки именно через влагосодержание $u$, а не $W_m$?</strong>
+          <br>
+          При высушивании продукта (зерна, макарон, мяса, сухого молока) общая масса влажного образца $m_0$ непрерывно убывает, что делает вычисление тепломассообменных балансов переменным и трудоемким. Напротив, масса абсолютно сухого вещества $m_d$ остается строго неизменной на протяжении всего технологического цикла! Поэтому кинетические кривые сушки, расход энергии и материальные балансы сушилок рассчитываются строго по безразмерному влагосодержанию $u$.
+        </div>
+
+        <h3 style="margin-bottom: 0.75rem;">Как влажность измеряют в заводской лаборатории?</h3>
+        
+        <div class="cds--row" style="margin-bottom: 1rem;">
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Метод 1 • ГОСТ 33319-2015</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Термогравиметрия (высушивание в сушильном шкафу)</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Сущность:</strong> Навеску продукта в металлическом бюксе сушат при температуре $100\text{--}105^\circ\text{C}$ (для мяса по ГОСТ — $103\pm 2^\circ\text{C}$) до постоянной массы (пока убыль между взвешиваниями не станет $< 0{,}001\text{ г}$).
+              </p>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Плюсы:</strong> Арбитражный официальный метод, доступен, дешев, надежен. Предел повторяемости двух параллелей: $r \le 0{,}50\%$.
+              </p>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0; color: var(--cds-support-error);">
+                <strong>Ограничения:</strong> Улетучивание эфирных масел и спиртов дает ложно завышенную влажность. А карамелизация сахаров при $105^\circ\text{C}$ сопровождается химическим выделением вторичной воды конденсации.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Метод 2 • Высокоточная химия</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Кулонометрическое титрование по Карлу Фишеру</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Сущность:</strong> Селективная химическая реакция между водой и специализированным реактивом (йод, $\text{SO}_2$ и основание в метаноле) в соотношении строго 1:1:
+                $$\text{I}_2 + \text{SO}_2 + \text{H}_2\text{O} + 3\text{Base} \rightarrow \dots$$
+                Количество йода генерируется током, расчет массы воды ведется по закону Фарадея: $m_w = \frac{Q \cdot M}{z \cdot F}$.
+              </p>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                <strong>Плюсы:</strong> Измеряет истинную молекулярную воду $\text{H}_2\text{O}$ даже в микроколичествах (от 10 ppm), исключая погрешность от летучих органических веществ.
+              </p>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0; color: #8a3ffc;">
+                <strong>Применение:</strong> Кондитерские жиры, шоколад, сухое молоко, экстракты пряностей.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- МОДУЛЬ 3: Уровень 2 - Давление пара и влажность воздуха -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Уровень 2</span>
+        <h2 style="margin-bottom: 0.75rem;">3. Уровень 2: Как вода испаряется — Давление пара, уравнение Антуана и влажность воздуха</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Перейдем от взвешивания массы к молекулярной картине: почему из одних продуктов воде легко испариться, а из других — чрезвычайно трудно?
+        </p>
+
+        <h4 style="margin-bottom: 0.5rem;">Опыт с закрытой откачанной колбой: природа давления пара</h4>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Представим герметичную стеклянную колбу в термостате, из которой полностью откачали воздух:
+        </p>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0; color: #0f62fe;">Колба 1: Чистая дистиллированная вода</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.6; margin: 0;">
+                Молекулы воды непрерывно вылетают с зеркала жидкости в газовую фазу за счет тепловой кинетической энергии и одновременно конденсируются обратно. Быстро наступает динамическое равновесие. Скопившийся пар создает давление на стенки сосуда — <strong>давление насыщенного пара чистой воды ($P_0$)</strong>. При заданной температуре выше этого значения давление пара подняться не может.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0; color: #8a3ffc;">Колба 2: Водный раствор сахара или соли</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.6; margin: 0;">
+                Ионы $\text{Na}^+$, $\text{Cl}^-$ и молекулы сахарозы образуют с молекулами воды прочные гидратные оболочки («держат» воду ион-дипольными и водородными связями). Молекулам воды становится значительно труднее оторваться от поверхности. В воздухе над раствором молекул пара скапливается меньше. Давление пара над продуктом <strong>$P$ всегда меньше, чем над чистой водой: $P < P_0$</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0;">Уравнение Антуана для $P_0(T)$ чистой воды</h4>
+              <div class="formula-box">$$\lg(P_0) = 8{,}07131 - \frac{1730{,}63}{T(^\circ\text{C}) + 233{,}426} \quad [\text{мм рт. ст.}]$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; line-height: 1.5;">
+                Для перевода в систему СИ: $P_0(\text{Па}) = P_0(\text{мм рт. ст.}) \times 133{,}322$.<br>
+                • При $+4^\circ\text{C}$ (холод): $P_0 \approx 813{,}2\text{ Па}$ ($6{,}10\text{ мм рт. ст.}$)<br>
+                • При $+20^\circ\text{C}$ (комната): $P_0 \approx 2338{,}8\text{ Па}$ ($17{,}54\text{ мм рт. ст.}$)<br>
+                • При $+25^\circ\text{C}$ (стандарт): $P_0 \approx 3167{,}1\text{ Па}$ ($23{,}76\text{ мм рт. ст.}$)<br>
+                • При $+37^\circ\text{C}$ (оптимум): $P_0 \approx 6275{,}6\text{ Па}$ ($47{,}07\text{ мм рт. ст.}$)
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="slide-info-card" style="height: 100%;">
+              <h4 style="margin: 0 0 0.5rem 0;">Относительная (RH) и равновесная (ERH) влажность</h4>
+              <div class="formula-box">$$\text{RH} = \frac{P_{air}}{P_0} \times 100\%, \quad \text{ERH} = \frac{P}{P_0} \times 100\%$$</div>
+              <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin: 0; line-height: 1.5;">
+                $\text{RH}$ — реальная влажность воздуха в помещении цеха/склада.<br>
+                $\text{ERH}$ — равновесная относительная влажность воздуха над продуктом в замкнутой упаковке.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-plaque info-plaque--purple" style="margin-bottom: 1.5rem;">
+          <strong>«Золотое правило технолога» по влагообмену при хранении:</strong>
+          <br>
+          • Если влажность воздуха на складе выше равновесной влажности продукта ($\text{RH}_{\text{склад}} > \text{ERH}_{\text{продукт}}$), градиент давления пара $\Delta P > 0$: продукт <strong>жадно впитывает влагу из воздуха</strong> (отсыревает, теряет хрусткость, на поверхности создаются условия для плесеней).<br>
+          • Если влажность воздуха ниже равновесной ($\text{RH}_{\text{склад}} < \text{ERH}_{\text{продукт}}$), градиент $\Delta P < 0$: продукт <strong>высыхает</strong> (теряет товарную массу, черствеет и растрескивается).
+        </div>
+
+        <div class="scheme-container">
+  <div class="scheme-header">
+    Схема 2 • Термодинамическая шкала активности воды (aw / ERH) и пороговые зоны микробного роста
+  </div>
+  <svg class="scheme-svg" viewBox="0 0 920 400" width="100%" height="auto">
+    <rect width="100%" height="100%" rx="6" fill="var(--svg-bg, #161616)"/>
+
+    <!-- Верхняя шкала активности воды -->
+    <text x="40" y="38" fill="var(--svg-text-title, #f4f4f4)" font-size="13" font-weight="700">ШКАЛА АКТИВНОСТИ ВОДЫ aw (0.00 … 1.00) И ЗОНЫ МИКРОБИОЛОГИЧЕСКОГО РИСКА (ComBase)</text>
+
+    <!-- Полоса зон -->
+    <rect x="40" y="55" width="210" height="28" fill="#da1e28"/>
+    <text x="145" y="73" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 1 • aw ≥ 0.95</text>
+
+    <rect x="250" y="55" width="160" height="28" fill="#fa4d56"/>
+    <text x="330" y="73" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 2 • 0.91…0.95</text>
+
+    <rect x="410" y="55" width="130" height="28" fill="#ff832b"/>
+    <text x="475" y="73" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 3 • 0.86…0.91</text>
+
+    <rect x="540" y="55" width="160" height="28" fill="#f1c21b"/>
+    <text x="620" y="73" fill="#161616" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 4 • 0.70…0.86</text>
+
+    <rect x="700" y="55" width="100" height="28" fill="#42be65"/>
+    <text x="750" y="73" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 5</text>
+
+    <rect x="800" y="55" width="80" height="28" fill="#198038"/>
+    <text x="840" y="73" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">ЗОНА 6</text>
+
+    <!-- Карточки микроорганизмов по зонам -->
+    <!-- Зона 1 -->
+    <rect x="40" y="95" width="200" height="280" rx="4" fill="var(--svg-card-bg, #262626)" stroke="#da1e28" stroke-width="1.5"/>
+    <text x="50" y="120" fill="#ff8389" font-size="12" font-weight="700">Грам(-) бактерии</text>
+    <text x="50" y="140" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Pseudomonas spp. (0.97)</text>
+    <text x="50" y="160" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Salmonella spp. (0.95)</text>
+    <text x="50" y="180" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• E. coli (0.95)</text>
+    <text x="50" y="205" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">Продукты: парное мясо,</text>
+    <text x="50" y="220" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">молоко, свежая рыба</text>
+    <rect x="48" y="325" width="184" height="40" rx="3" fill="var(--svg-inner-box, #161616)"/>
+    <text x="140" y="342" fill="#fa4d56" font-size="10" font-weight="700" text-anchor="middle">СКОРОПОРТЯЩИЕСЯ</text>
+    <text x="140" y="356" fill="var(--svg-text-muted, #c6c6c6)" font-size="9" text-anchor="middle">Холодовая цепь t ≤ +4°C</text>
+
+    <!-- Зона 2 -->
+    <rect x="250" y="95" width="150" height="280" rx="4" fill="var(--svg-card-bg, #262626)" stroke="#fa4d56"/>
+    <text x="260" y="120" fill="#ff8389" font-size="12" font-weight="700">Клостридии</text>
+    <text x="260" y="140" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• C. botulinum (0.935)</text>
+    <text x="260" y="160" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Bacillus cereus (0.93)</text>
+    <text x="260" y="185" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">Продукты: вареные</text>
+    <text x="260" y="200" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">колбасы, мягкие сыры</text>
+    <rect x="256" y="325" width="138" height="40" rx="3" fill="var(--svg-inner-box, #161616)"/>
+    <text x="325" y="342" fill="#ff832b" font-size="10" font-weight="700" text-anchor="middle">БОТУЛИЗМ БЛОК</text>
+    <text x="325" y="356" fill="var(--svg-text-muted, #c6c6c6)" font-size="9" text-anchor="middle">Предел при aw &lt; 0.91</text>
+
+    <!-- Зона 3 -->
+    <rect x="410" y="95" width="125" height="280" rx="4" fill="var(--svg-card-bg, #262626)" stroke="#ff832b"/>
+    <text x="420" y="120" fill="#ff832b" font-size="12" font-weight="700">Стафилококки</text>
+    <text x="420" y="140" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• S. aureus аэробно</text>
+    <text x="420" y="155" fill="#f1c21b" font-size="10">(порог aw = 0.86)</text>
+    <text x="420" y="180" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">Сырокопченые</text>
+    <text x="420" y="195" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">колбасы, салями</text>
+    <rect x="415" y="325" width="115" height="40" rx="3" fill="var(--svg-inner-box, #161616)"/>
+    <text x="472" y="342" fill="#f1c21b" font-size="9.5" font-weight="700" text-anchor="middle">ЭНТЕРОТОКСИНЫ</text>
+    <text x="472" y="356" fill="var(--svg-text-muted, #c6c6c6)" font-size="9" text-anchor="middle">Опасность при aw &gt; 0.86</text>
+
+    <!-- Зона 4 -->
+    <rect x="545" y="95" width="145" height="280" rx="4" fill="var(--svg-card-bg, #262626)" stroke="#f1c21b"/>
+    <text x="555" y="120" fill="#f1c21b" font-size="12" font-weight="700">Плесени / Дрожжи</text>
+    <text x="555" y="140" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Penicillium (0.80)</text>
+    <text x="555" y="160" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Aspergillus (0.75)</text>
+    <text x="555" y="185" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">Джемы, варенье,</text>
+    <text x="555" y="200" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">мука, сухофрукты</text>
+    <rect x="550" y="325" width="135" height="40" rx="3" fill="var(--svg-inner-box, #161616)"/>
+    <text x="617" y="342" fill="#42be65" font-size="9.5" font-weight="700" text-anchor="middle">БАКТЕРИИ СТОП</text>
+    <text x="617" y="356" fill="var(--svg-text-muted, #c6c6c6)" font-size="9" text-anchor="middle">Риск только микотоксинов</text>
+
+    <!-- Зона 5 & 6 -->
+    <rect x="700" y="95" width="180" height="280" rx="4" fill="var(--svg-card-bg, #262626)" stroke="#42be65"/>
+    <text x="710" y="120" fill="#6fdc8c" font-size="12" font-weight="700">Ксерофилы &amp; Предел</text>
+    <text x="710" y="140" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Zygosaccharomyces (0.62)</text>
+    <text x="710" y="160" fill="var(--svg-text-title, #f4f4f4)" font-size="11">• Xeromyces bisporus (0.605)</text>
+    <line x1="710" y1="180" x2="870" y2="180" stroke="#da1e28" stroke-dasharray="3,2"/>
+    <text x="710" y="198" fill="#ff8389" font-size="10" font-weight="700">ПРЕДЕЛ ЖИЗНИ: aw &lt; 0.60</text>
+    <text x="710" y="215" fill="var(--svg-text-muted, #c6c6c6)" font-size="10">Мед, печенье, сухое молоко</text>
+    <rect x="706" y="325" width="168" height="40" rx="3" fill="var(--svg-inner-box, #161616)"/>
+    <text x="790" y="342" fill="#42be65" font-size="10" font-weight="700" text-anchor="middle">ПОЛНАЯ СТАБИЛЬНОСТЬ</text>
+    <text x="790" y="356" fill="var(--svg-text-muted, #c6c6c6)" font-size="9" text-anchor="middle">Деление невозможно</text>
+  </svg>
+</div>
+
+        <h4 style="margin: 1.5rem 0 0.75rem 0;">Микробиологический статус 6 зон риска ComBase:</h4>
+        <div style="overflow-x: auto; margin-bottom: 0.5rem;">
+          <table class="cds--data-table">
+            <thead>
+              <tr>
+                <th>Зона риска</th>
+                <th>Диапазон $a_w$</th>
+                <th>Микробиологический статус</th>
+                <th>Критические контрольные действия ХАССП</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong style="color: #da1e28;">Зона 1: Критический риск</strong></td>
+                <td>$a_w \ge 0{,}95$</td>
+                <td>Оптимум для гнилостных грамотрицательных палочек (<em>Pseudomonas, Salmonella, E. coli</em>). Свежее мясо, молоко, рыба.</td>
+                <td>Непрерывная холодильная цепь $t \le +4^\circ\text{C}$, термообработка, строгий контроль времени реализации.</td>
+              </tr>
+              <tr>
+                <td><strong style="color: #fa4d56;">Зона 2: Высокий риск</strong></td>
+                <td>$a_w = 0{,}91\dots 0{,}95$</td>
+                <td>Риск вегетации спорообразующих анаэробов (<em>Clostridium botulinum</em>) и бацилл. Вареные колбасы, мягкие сыры.</td>
+                <td>Гарантия снижения $a_w < 0{,}935$ для блока ботулизма, либо сочетанная стерилизация ($F_0 \ge 3$).</td>
+              </tr>
+              <tr>
+                <td><strong style="color: #ff832b;">Зона 3: Стафилококковый риск</strong></td>
+                <td>$a_w = 0{,}86\dots 0{,}91$</td>
+                <td>Аэробный рост <em>Staphylococcus aureus</em> с синтезом термостабильных энтеротоксинов. Сырокопченые колбасы, твердый сыр.</td>
+                <td>Вакуумирование (анаэробиоз подавляет токсинообразование при $a_w < 0{,}91$), поддержание $\text{pH} < 5{,}2$.</td>
+              </tr>
+              <tr>
+                <td><strong style="color: #f1c21b;">Зона 4: Микологический риск</strong></td>
+                <td>$a_w = 0{,}70\dots 0{,}86$</td>
+                <td>Полный бактериостаз. Риск размножения микромицетов (<em>Penicillium, Aspergillus</em>) и накопления микотоксинов. Джемы, мука.</td>
+                <td>Внесение сорбата калия E202, герметичная барьерная упаковка с сухим воздухом ($\text{RH} < \text{ERH}$).</td>
+              </tr>
+              <tr>
+                <td><strong style="color: #42be65;">Зона 5: Ксерофильная зона</strong></td>
+                <td>$a_w = 0{,}60\dots 0{,}70$</td>
+                <td>Рост обычных плесеней остановлен. Риск только ксерофилов (<em>Wallemia sebi</em>) и осмофильных дрожжей (<em>Zygosaccharomyces</em>). Мед, сухофрукты.</td>
+                <td>Контроль герметичности упаковки для предотвращения поверхностной конденсации влаги.</td>
+              </tr>
+              <tr style="background: var(--cds-layer-02); font-weight: 700;">
+                <td><strong style="color: #198038;">Зона 6: Биостабильность</strong></td>
+                <td>$a_w < 0{,}60$</td>
+                <td><strong>Абсолютный биологический предел:</strong> ни один микроорганизм на Земле не способен делиться! Сухари, сухое молоко.</td>
+                <td>Барьер от влагопоглощения из атмосферы цеха/склада. Мониторинг точки росы при хранении.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- МОДУЛЬ 4: Уровень 3 - Физиология клетки и Активность воды -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--red" style="margin-bottom: 0.5rem;">Уровень 3</span>
+        <h2 style="margin-bottom: 0.75rem;">4. Уровень 3: Физиология клетки и Активность воды ($a_w$): плазмолиз и осморегуляция</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Показатель <strong>активности воды ($a_w$, water activity)</strong> численно связывает давление пара с термодинамическим состоянием клеточной цитоплазмы:
+        </p>
+
+        <div class="formula-box" style="font-size: 1.125rem;">$$a_w = \frac{P}{P_0(T)} = \frac{\text{ERH}}{100}$$</div>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Для чистой дистиллированной воды $a_w = 1{,}000$; для абсолютно сухого вещества $a_w = 0{,}000$; для пищевых продуктов $0 < a_w < 1$. Термодинамически активность воды прямо связана с химическим потенциалом воды: $\Delta\mu_w = \mu_w - \mu_w^\circ = R \cdot T \cdot \ln(a_w)$.
+        </p>
+
+        <div class="info-plaque info-plaque--red" style="margin: 1.5rem 0;">
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.9375rem;">Физиология бактериальной клетки: что происходит при депрессии $a_w$?</h4>
+          <p style="margin: 0 0 0.5rem 0; font-size: 0.875rem; line-height: 1.6;">
+            Микробная клетка — это замкнутый микроскопический мешочек, наполненный цитоплазмой. Внутри нее растворен плотный коктейль из белков, ферментов, нуклеиновых кислот и ионов, поэтому собственный внутренний показатель цитоплазмы равен <strong>$a_w(\text{int}) \approx 0{,}990\text{--}0{,}995$</strong>. Цитоплазматическая мембрана полупроницаема: через аквапорины вода диффундирует свободно, а крупные молекулы и ионы наружу не выходят.
+          </p>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.6;">
+            <li><strong>Изотоническое состояние ($a_w \ge 0{,}99$):</strong> Внутри клетки поддерживается тургорное давление $0{,}3\text{--}0{,}5\text{ МПа}$. Тургор прижимает мембрану к жесткому пептидогликану клеточной стенки, что необходимо для сборки муреина и бинарного деления.</li>
+            <li><strong>Осмотический шок:</strong> При помещении в среду с пониженным $a_w$ (рассол, сироп, вяленое мясо) возникает градиент химического потенциала ($\Delta\mu_w < 0$). Вода по закону осмоса стремительно выходит из клетки наружу.</li>
+            <li><strong>Плазмолиз:</strong> Объем цитоплазмы резко сокращается. Тургор падает до нуля, протопласт сморщивается, и мембрана отслаивается от пептидогликановой стенки. Синтез клеточной стенки блокируется, деление прекращается.</li>
+            <li><strong>Осморегуляторный тупик:</strong> Чтобы не погибнуть, клетка экстренно включает калиевые помпы ($K^+$) и тратит резервы энергии на синтез совместимых осмолитов (пролин, трегалоза, глицин-бетаин). Этот процесс истощает весь пул молекул АТФ. Наступает бактериостаз или гибель.</li>
+          </ul>
+        </div>
+
+        <div class="scheme-container">
+  <div class="scheme-header">
+    Схема 3 • Молекулярный механизм плазмолиза и осморегуляторный ответ бактериальной клетки
+  </div>
+  <svg class="scheme-svg" viewBox="0 0 920 380" width="100%" height="auto">
+    <rect width="100%" height="100%" rx="6" fill="var(--svg-bg, #161616)"/>
+
+    <!-- Левая клетка: Нормальное изотоническое состояние -->
+    <g transform="translate(30, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#4589ff" stroke-width="1.5"/>
+      <text x="210" y="32" fill="var(--cds-link-primary, #78a9ff)" font-size="13" font-weight="700" text-anchor="middle">ИЗОТОНИЯ: ВЫСОКИЙ ТУРГОР (aw ≥ 0.99)</text>
+
+      <!-- Клеточная стенка -->
+      <rect x="55" y="60" width="310" height="180" rx="30" fill="none" stroke="#6929c4" stroke-width="5"/>
+      <text x="210" y="80" fill="#be95ff" font-size="10.5" font-weight="600" text-anchor="middle">Пептидогликановая клеточная стенка</text>
+
+      <!-- Плазматическая мембрана (прижата к стенке) -->
+      <rect x="65" y="90" width="290" height="140" rx="22" fill="#0f62fe" fill-opacity="0.25" stroke="#4589ff" stroke-width="2.5"/>
+      
+      <!-- Цитоплазма -->
+      <text x="210" y="136" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">ЦИТОПЛАЗМА КЛЕТКИ</text>
+      <text x="210" y="156" fill="var(--svg-text-muted, #c6c6c6)" font-size="11" text-anchor="middle">aw(int) ≈ 0.990 … 0.995</text>
+      <text x="210" y="176" fill="#42be65" font-size="11" font-weight="600" text-anchor="middle">Тургорное давление: 0.3 … 0.5 МПа</text>
+      <text x="210" y="196" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5" text-anchor="middle">Ферменты гидратированы • Идет деление</text>
+
+      <rect x="25" y="255" width="370" height="50" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <text x="210" y="275" fill="#42be65" font-size="11" font-weight="700" text-anchor="middle">СТАТУС: АКТИВНЫЙ РОСТ И РЕПРОДУКЦИЯ</text>
+      <text x="210" y="293" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">Равновесие химических потенциалов: Δμw ≈ 0</text>
+    </g>
+
+    <!-- Правая клетка: Плазмолиз при гипертоническом шоке -->
+    <g transform="translate(470, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#da1e28" stroke-width="1.5"/>
+      <text x="210" y="24" fill="#ff8389" font-size="12" font-weight="700" text-anchor="middle">ГИПЕРОСМОТИЧЕСКИЙ СТРЕСС</text>
+      <text x="210" y="40" fill="#ff8389" font-size="11" font-weight="600" text-anchor="middle">Плазмолиз мембраны (aw &lt; 0.92)</text>
+
+      <!-- Ригидная стенка сохраняет форму -->
+      <rect x="55" y="60" width="310" height="180" rx="30" fill="none" stroke="#6929c4" stroke-width="5"/>
+      <text x="210" y="80" fill="#be95ff" font-size="10.5" font-weight="600" text-anchor="middle">Ригидный пептидогликановый каркас</text>
+
+      <!-- Отток воды (стрелки H2O наружу) -->
+      <path d="M 45 135 L 15 135 M 23 128 L 15 135 L 23 142" stroke="#4589ff" stroke-width="2.5" fill="none"/>
+      <text x="20" y="120" fill="var(--cds-link-primary, #78a9ff)" font-size="10" font-weight="700">H2O</text>
+      
+      <path d="M 375 135 L 405 135 M 397 128 L 405 135 L 397 142" stroke="#4589ff" stroke-width="2.5" fill="none"/>
+      <text x="380" y="120" fill="var(--cds-link-primary, #78a9ff)" font-size="10" font-weight="700">H2O</text>
+
+      <!-- Сморщенный протопласт (отслоение от стенки) -->
+      <ellipse cx="210" cy="138" rx="90" ry="38" fill="#da1e28" fill-opacity="0.3" stroke="#fa4d56" stroke-width="2" stroke-dasharray="4 3"/>
+      
+      <text x="210" y="134" fill="#ffffff" font-size="11.5" font-weight="700" text-anchor="middle">СЖАТИЕ ЦИТОПЛАЗМЫ</text>
+      <text x="210" y="150" fill="#ff8389" font-size="10" font-weight="600" text-anchor="middle">Тургор = 0 • Отрыв мембраны</text>
+      
+      <!-- Осмолиты и метаболический блок вне сжатого эллипса -->
+      <rect x="70" y="190" width="280" height="44" rx="4" fill="var(--svg-inner-box, #161616)" stroke="#f1c21b" stroke-dasharray="3,2"/>
+      <text x="210" y="207" fill="#f1c21b" font-size="10" text-anchor="middle">Накопление K⁺, пролина, бетаина</text>
+      <text x="210" y="224" fill="#ff832b" font-size="10" font-weight="700" text-anchor="middle">РАСХОД АТФ ──► МЕТАБОЛИЧЕСКИЙ БЛОК</text>
+
+      <rect x="25" y="255" width="370" height="50" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <text x="210" y="275" fill="#fa4d56" font-size="11" font-weight="700" text-anchor="middle">БАКТЕРИОСТАЗ ИЛИ ОТМИРАНИЕ</text>
+      <text x="210" y="293" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">Энергия уходит на осморегуляцию, деление остановлено</text>
+    </g>
+  </svg>
+</div>
+
+        <h4 style="margin: 1.5rem 0 0.75rem 0;">Пороговые границы $a_w$ для ключевых групп микроорганизмов:</h4>
+        <div style="overflow-x: auto;">
+          <table class="cds--data-table">
+            <thead>
+              <tr>
+                <th>Порог $a_w$</th>
+                <th>Ингибируемая группа микробиоты</th>
+                <th>Типичные представители</th>
+                <th>Примеры пищевых матриц</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>$0{,}95$</strong></td>
+                <td>Грамотрицательные палочки (гнилостные &amp; токсикоинфекции)</td>
+                <td><em>Pseudomonas, Salmonella, E. coli</em></td>
+                <td>Свежее мясо, молоко, рыба ($a_w \approx 0{,}99$)</td>
+              </tr>
+              <tr>
+                <td><strong>$0{,}91$</strong></td>
+                <td>Спорообразующие анаэробы (ботулизм)</td>
+                <td><em>Clostridium botulinum, Bacillus cereus</em></td>
+                <td>Вареные колбасы, мягкие сыры ($a_w \approx 0{,}92\text{--}0{,}95$)</td>
+              </tr>
+              <tr>
+                <td><strong>$0{,}86$</strong></td>
+                <td>Патогенные кокки (синтез энтеротоксинов)</td>
+                <td><em>Staphylococcus aureus</em> (аэробный рост)</td>
+                <td>Сырокопченые колбасы, твердый сыр ($a_w \approx 0{,}88\text{--}0{,}90$)</td>
+              </tr>
+              <tr>
+                <td><strong>$0{,}80$</strong></td>
+                <td>Обычные микромицеты и дрожжи</td>
+                <td><em>Penicillium, Aspergillus</em>, пекарские дрожжи</td>
+                <td>Варенье, мука, сухофрукты ($a_w \approx 0{,}75\text{--}0{,}82$)</td>
+              </tr>
+              <tr>
+                <td><strong>$0{,}65$</strong></td>
+                <td>Ксерофильные (засухоустойчивые) плесени</td>
+                <td><em>Wallemia sebi, Xeromyces bisporus</em></td>
+                <td>Сухие крупы, сухое печенье, овсяные хлопья</td>
+              </tr>
+              <tr>
+                <td><strong>$0{,}60$</strong></td>
+                <td>Осмофильные дрожжи</td>
+                <td><em>Zygosaccharomyces rouxii</em></td>
+                <td>Мед, уваренная патока, изюм глубокой сушки</td>
+              </tr>
+              <tr style="background: var(--cds-layer-02); font-weight: 700;">
+                <td><strong>&lt; $0{,}60$</strong></td>
+                <td colspan="3" style="color: var(--cds-support-success);">
+                  АБСОЛЮТНЫЙ ПРЕДЕЛ ЖИЗНИ: ни один известный микроорганизм не способен делиться без дополнительного увлажнения!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- МОДУЛЬ 5: Уровень 4 - Капиллярные явления и нанопоры -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--teal" style="margin-bottom: 0.5rem;">Уровень 4</span>
+        <h2 style="margin-bottom: 0.75rem;">5. Уровень 4: Вода в капиллярах и порах — Матричный потенциал ($\Psi_m$) и уравнение Кельвина</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          В пористых сухих продуктах (хлебная корка, сухари, мука, сухое печенье) нет высоких концентраций соли или сахара. Почему же вода в них удерживается матрицей с огромной силой?
+        </p>
+
+        <h4 style="margin-bottom: 0.5rem;">Капиллярный эффект и вогнутый мениск</h4>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Вспомните стеклянную капиллярную трубочку: вода смачивает ее гидрофильные стенки и поднимается вверх вопреки гравитации, формируя <strong>вогнутый мениск</strong>. Пищевая матрица на микро- и наноуровне пронизана миллиардами пор. Вода взаимодействует с гидрофильными биополимерами (белки, крахмал, клетчатка). Сила, с которой пористый каркас удерживает воду за счет капиллярных явлений, называется <strong>матричным потенциалом ($\Psi_m$)</strong>.
+        </p>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Из-за поверхностного натяжения искривленной поверхности давление пара над вогнутым мениском резко падает в строгом соответствии с <strong>уравнением Кельвина</strong>:
+        </p>
+
+        <div class="formula-box">$$\ln(a_w) = -\frac{2\gamma \cdot V_m \cdot \cos\theta}{r \cdot R \cdot T}$$</div>
+
+        <p style="font-size: 0.8125rem; color: var(--cds-text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">
+          где $\gamma \approx 0{,}0728\text{ Н/м}$ — поверхностное натяжение воды при $20^\circ\text{C}$; $V_m = 1{,}80 \times 10^{-5}\text{ м}^3/\text{моль}$ — молярный объем воды; $\theta$ — краевой угол смачивания ($\cos\theta \approx 1$); $r$ — радиус поры матрицы (м).<br>
+          <strong>Физический вывод:</strong> чем уже пора ($r < 50\text{ нм}$), тем сильнее вогнут мениск, тем прочнее заперта вода и тем ниже локальная активность воды ($a_w$). При $r = 10\text{ нм} \implies a_w \approx 0{,}898$; при $r = 5\text{ нм} \implies a_w \approx 0{,}807$! Вода связана капиллярно даже без добавления осмотиков!
+        </p>
+
+        <div class="info-plaque info-plaque--cyan" style="margin-bottom: 1.5rem;">
+          <strong>Биологическая дуэль: почему на сухих пористых продуктах плесень побеждает бактерии?</strong>
+          <br>
+          1. <strong>Бактерии ($d = 1\text{--}2\ \mu\text{m}$):</strong> Одноклеточные организмы в десятки раз крупнее микропор матрицы ($20\text{--}50\text{ нм}$). Они физически не могут протиснуться внутрь капилляров (эффект исключения пор). Бактерии остаются на внешней поверхности, а матричный потенциал удерживает воду внутри. Бактерии погибают от жажды.
+          <br>
+          2. <strong>Мицелиальные плесени:</strong> Растут нитями — <strong>гифами</strong>. Кончик гифы проникает в микротрещины, развивая апикальный всасывающий тургор до $1\text{--}2\ \text{МПа}$ и буквально высасывая капиллярную воду.
+          <br>
+          Именно поэтому черствый хлеб, сухое печенье, зерно и древесина никогда не гниют бактериально, а плесневеют!
+        </div>
+
+        <div class="scheme-container">
+  <div class="scheme-header">
+    Схема 4 • Капиллярное удерживание воды (уравнение Кельвина) и конкуренция бактерий/плесеней
+  </div>
+  <svg class="scheme-svg" viewBox="0 0 920 380" width="100%" height="auto">
+    <rect width="100%" height="100%" rx="6" fill="var(--svg-bg, #161616)"/>
+
+    <!-- Левая часть: Нанопора матрицы и вогнутый мениск -->
+    <g transform="translate(30, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#4589ff" stroke-width="1.5"/>
+      <text x="210" y="32" fill="var(--cds-link-primary, #78a9ff)" font-size="13" font-weight="700" text-anchor="middle">НАНОПОРА МАТРИЦЫ (УРАВНЕНИЕ КЕЛЬВИНА)</text>
+
+      <!-- Стенки поры -->
+      <rect x="50" y="55" width="60" height="185" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <rect x="310" y="55" width="60" height="185" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <text x="80" y="150" fill="var(--svg-text-muted, #c6c6c6)" font-size="11" text-anchor="middle" transform="rotate(-90, 80, 150)">Стенка матрицы</text>
+      <text x="340" y="150" fill="var(--svg-text-muted, #c6c6c6)" font-size="11" text-anchor="middle" transform="rotate(90, 340, 150)">Стенка матрицы</text>
+
+      <!-- Вода в поре с вогнутым мениском -->
+      <path d="M 110 135 Q 210 195 310 135 L 310 240 L 110 240 Z" fill="#0f62fe" fill-opacity="0.35" stroke="#4589ff" stroke-width="2"/>
+      
+      <!-- Мениск и радиус кривизны -->
+      <line x1="110" y1="135" x2="310" y2="135" stroke="#f1c21b" stroke-dasharray="3,3"/>
+      <text x="210" y="115" fill="#f1c21b" font-size="11" font-weight="600" text-anchor="middle">Вогнутый мениск: P &lt; P0</text>
+
+      <rect x="120" y="180" width="180" height="42" rx="4" fill="var(--svg-inner-box, #161616)" stroke="#4589ff"/>
+      <text x="210" y="198" fill="var(--svg-text-title, #f4f4f4)" font-size="10.5" font-weight="700" text-anchor="middle">ln(aw) = - (2γ Vm cosθ)/(r R T)</text>
+      <text x="210" y="214" fill="#78a9ff" font-size="9.5" text-anchor="middle">при r = 10 нм ──► aw ≈ 0.898</text>
+
+      <rect x="20" y="255" width="380" height="50" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <text x="210" y="275" fill="#f1c21b" font-size="11" font-weight="700" text-anchor="middle">ДЕПРЕССИЯ aw: НАНОПОРЫ СВЯЗЫВАЮТ ВОДУ</text>
+      <text x="210" y="293" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">Вода заперта в капиллярах даже без добавления соли!</text>
+    </g>
+
+    <!-- Правая часть: Конкуренция Бактерии vs Грибы -->
+    <g transform="translate(470, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#8a3ffc" stroke-width="1.5"/>
+      <text x="210" y="32" fill="#be95ff" font-size="13" font-weight="700" text-anchor="middle">КОНКУРЕНЦИЯ: БАКТЕРИИ VS МИКРОМИЦЕТЫ</text>
+
+      <!-- Бактерия: Исключение -->
+      <rect x="15" y="55" width="390" height="98" rx="4" fill="var(--svg-inner-box, #161616)" stroke="#da1e28"/>
+      <circle cx="45" cy="104" r="22" fill="#da1e28" fill-opacity="0.3" stroke="#fa4d56" stroke-width="2"/>
+      <text x="45" y="108" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">1–2 мкм</text>
+      
+      <text x="78" y="78" fill="#ff8389" font-size="11.5" font-weight="700">Бактерии (размер d = 0.5 … 2.0 мкм)</text>
+      <text x="78" y="96" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5">• Исключены из нанопор матрицы (r &lt; 50 нм)</text>
+      <text x="78" y="114" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5">• Не могут извлечь капиллярно связанную воду</text>
+      <text x="78" y="136" fill="#fa4d56" font-size="10.5" font-weight="700">Итог: Полный бактериостаз при aw &lt; 0.90</text>
+
+      <!-- Плесень: Апикальный тургор -->
+      <rect x="15" y="165" width="390" height="140" rx="4" fill="var(--svg-inner-box, #161616)" stroke="#24a148"/>
+      <path d="M 30 240 C 45 215, 60 265, 75 235" stroke="#42be65" stroke-width="6" stroke-linecap="round" fill="none"/>
+      
+      <text x="82" y="188" fill="#6fdc8c" font-size="11.5" font-weight="700">Мицелиальные грибы (Penicillium, Aspergillus)</text>
+      <text x="82" y="207" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5">• Верхушечный апикальный рост гиф в микропоры</text>
+      <text x="82" y="225" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5">• Всасывающий тургор кончика гифы: 0.5 … 2.0 МПа</text>
+      <text x="82" y="243" fill="var(--svg-text-muted, #c6c6c6)" font-size="10.5">• Преодолевают капиллярное матричное разрежение</text>
+      <text x="82" y="272" fill="#42be65" font-size="11" font-weight="700">Плесени доминируют на сухих пористых матрицах!</text>
+    </g>
+  </svg>
+</div>
+      </div>
+
+      <!-- МОДУЛЬ 6: Барьерная концепция ХАССП -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <span class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Технология ХАССП</span>
+        <h2 style="margin-bottom: 0.75rem;">6. Барьерная концепция стабилизации ХАССП (Л. Ляйстнер) и Изотермы сорбции</h2>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Связь между влажностью продукта $W_m$ и активностью воды $a_w$ описывается <strong>изотермой сорбции паров воды</strong> (S-образная кривая БЭТ):
+        </p>
+
+        <div class="cds--row" style="margin-bottom: 1.5rem;">
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Зона I: aw &lt; 0.25</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Мономолекулярный слой</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Вода прочно хемосорбирована на полярных группах. Полный метаболический анабиоз ферментов и микроорганизмов.
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Зона II: aw = 0.25…0.75</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Полимолекулярные слои</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Пластификация полимеров, набухание биоматрицы. Медленные химические реакции (окисление жиров, меланоидинообразование).
+              </p>
+            </div>
+          </div>
+          <div class="cds--col-4">
+            <div class="slide-info-card" style="height: 100%;">
+              <div class="cds--tag cds--tag--red" style="margin-bottom: 0.5rem;">Зона III: aw &gt; 0.75</div>
+              <h4 style="margin: 0 0 0.5rem 0;">Свободная капиллярная влага</h4>
+              <p style="font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                Вода в макропорах. Среда активной диффузии питательных веществ, ферментативного гидролиза и бурного микробного роста.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-plaque info-plaque--teal" style="margin-bottom: 1.5rem;">
+          <strong>Гистерезис сорбции:</strong> Кривая десорбции (сушка продукта) всегда лежит выше кривой адсорбции (увлажнение сухого продукта). Это означает, что при одном и том же значении массовой доли влаги $W_m$ продукт после сушки обладает более низкой $a_w$, чем продукт, набравший влагу из воздуха!
+        </div>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Чтобы обеспечить микробиологическую стабильность пищевого продукта без экстремального пересушивания (сохраняя органолептику, сочность и структуру), выдающийся микробиолог Лотар Ляйстнер разработал <strong>теорию барьеров (Hurdle Technology)</strong>: комбинация нескольких сублетальных факторов консервирования ($a_w$, $\text{pH}$, температура $t$, вакуум $\text{Eh}$, биоконсерванты).
+        </p>
+
+        <div class="scheme-container">
+  <div class="scheme-header">
+    Схема 5 • Изотерма сорбции паров воды и барьерная концепция ХАССП (Hurdle Technology)
+  </div>
+  <svg class="scheme-svg" viewBox="0 0 920 380" width="100%" height="auto">
+    <rect width="100%" height="100%" rx="6" fill="var(--svg-bg, #161616)"/>
+
+    <!-- Левая половина: S-образная кривая сорбции БЭТ -->
+    <g transform="translate(30, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#4589ff" stroke-width="1.5"/>
+      <text x="210" y="30" fill="var(--cds-link-primary, #78a9ff)" font-size="13" font-weight="700" text-anchor="middle">ИЗОТЕРМА СОРБЦИИ ВОДЫ (Wm vs aw)</text>
+
+      <!-- Оси координат -->
+      <line x1="50" y1="260" x2="380" y2="260" stroke="var(--svg-text-title, #f4f4f4)" stroke-width="2"/>
+      <line x1="50" y1="260" x2="50" y2="55" stroke="var(--svg-text-title, #f4f4f4)" stroke-width="2"/>
+      <text x="375" y="280" fill="var(--svg-text-title, #f4f4f4)" font-size="11" font-weight="700">aw</text>
+      <text x="20" y="158" fill="var(--svg-text-title, #f4f4f4)" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 20, 158)">Влажность Wm, %</text>
+
+      <!-- Зоны I, II, III фоновые полосы -->
+      <rect x="50" y="55" width="90" height="205" fill="#0f62fe" fill-opacity="0.1"/>
+      <rect x="140" y="55" width="140" height="205" fill="#8a3ffc" fill-opacity="0.1"/>
+      <rect x="280" y="55" width="100" height="205" fill="#da1e28" fill-opacity="0.1"/>
+
+      <!-- S-образная кривая -->
+      <path d="M 50 255 C 80 240, 110 225, 140 215 C 200 200, 250 170, 280 130 C 310 90, 340 65, 365 60" fill="none" stroke="#42be65" stroke-width="4"/>
+
+      <!-- Метки зон -->
+      <text x="95" y="245" fill="var(--cds-link-primary, #78a9ff)" font-size="10" font-weight="700" text-anchor="middle">Зона I</text>
+      <text x="95" y="257" fill="var(--svg-text-muted, #8d8d8d)" font-size="9" text-anchor="middle">Монослой</text>
+
+      <text x="210" y="245" fill="#be95ff" font-size="10" font-weight="700" text-anchor="middle">Зона II</text>
+      <text x="210" y="257" fill="var(--svg-text-muted, #8d8d8d)" font-size="9" text-anchor="middle">Полимолекулярная</text>
+
+      <text x="330" y="245" fill="#ff8389" font-size="10" font-weight="700" text-anchor="middle">Зона III</text>
+      <text x="330" y="257" fill="var(--svg-text-muted, #8d8d8d)" font-size="9" text-anchor="middle">Свободная</text>
+
+      <!-- Отметки aw на оси -->
+      <text x="140" y="275" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">0.25</text>
+      <text x="280" y="275" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">0.75</text>
+      <text x="365" y="275" fill="var(--svg-text-muted, #c6c6c6)" font-size="10" text-anchor="middle">1.00</text>
+
+      <text x="210" y="305" fill="var(--svg-text-title, #f4f4f4)" font-size="10" text-anchor="middle">Гистерезис сорбции: Десорбция (сушка) ≠ Адсорбция (увлажнение)</text>
+    </g>
+
+    <!-- Правая половина: Барьерная технология Ляйстнера -->
+    <g transform="translate(470, 30)">
+      <rect x="0" y="0" width="420" height="320" rx="6" fill="var(--svg-card-bg, #262626)" stroke="#24a148" stroke-width="1.5"/>
+      <text x="210" y="30" fill="#6fdc8c" font-size="13" font-weight="700" text-anchor="middle">КОНЦЕПЦИЯ БАРЬЕРОВ ХАССП (Л. ЛЯЙСТНЕР)</text>
+
+      <!-- Барьеры как препятствия -->
+      <g transform="translate(25, 60)">
+        <!-- Барьер 1: aw -->
+        <rect x="0" y="30" width="45" height="150" fill="#0f62fe" rx="3"/>
+        <text x="22" y="110" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 22, 110)">aw ≤ 0.88</text>
+
+        <!-- Барьер 2: pH -->
+        <rect x="75" y="50" width="45" height="130" fill="#6929c4" rx="3"/>
+        <text x="97" y="120" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 97, 120)">pH ≤ 5.2</text>
+
+        <!-- Барьер 3: Temp -->
+        <rect x="150" y="20" width="45" height="160" fill="#0072c3" rx="3"/>
+        <text x="172" y="105" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 172, 105)">t ≤ +4°C</text>
+
+        <!-- Барьер 4: Eh / rH2 -->
+        <rect x="225" y="60" width="45" height="120" fill="#8a3ffc" rx="3"/>
+        <text x="247" y="125" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 247, 125)">Вакуум / Eh</text>
+
+        <!-- Барьер 5: Консервант -->
+        <rect x="300" y="70" width="45" height="110" fill="#198038" rx="3"/>
+        <text x="322" y="130" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90, 322, 130)">Сорбат E202</text>
+      </g>
+
+      <rect x="20" y="245" width="380" height="62" rx="4" fill="var(--svg-inner-box, #161616)" stroke="var(--svg-border, #393939)"/>
+      <text x="210" y="265" fill="var(--svg-text-title, #f4f4f4)" font-size="11" font-weight="600" text-anchor="middle">Синергетический эффект барьеров ХАССП:</text>
+      <text x="210" y="283" fill="#42be65" font-size="10" text-anchor="middle">Каждый фактор в отдельности недостаточен,</text>
+      <text x="210" y="298" fill="#42be65" font-size="10" font-weight="600" text-anchor="middle">но в комбинации они гарантируют стерильность и стабильность!</text>
+    </g>
+  </svg>
+</div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         ТАБ 2: РАЗОБРАННЫЕ ПРИМЕРЫ И ПРАКТИКУМ DRY LAB (14 ЗАДАЧ)
+         =================================================================== -->
+        <section id="sem3-tab-examples" class="cds--tab-panel" role="tabpanel">
+
+      <!-- ===================================================================
+           РАЗДЕЛ 3.1: ФЛАГМАНСКИЕ ПРАКТИЧЕСКИЕ КЕЙСЫ (DRY LAB & ХАССП)
+           =================================================================== -->
+
+      <!-- Пример 3.1 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.1. Метрологический расчет влажности мясного фарша и арбитражный контроль сходимости параллелей</h4>
+          <span class="cds--tag cds--tag--blue">Флагманский кейс 1 • Лабораторный практикум ГОСТ 33319</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Лаборатория контроля качества мясокомбината проводит входной контроль партии говяжьего фарша для пельменей по ГОСТ 33319-2015 методом высушивания в бюксе при $103\pm 2^\circ\text{C}$ до постоянной массы. Анализ выполнен в двух параллельных бюксах.<br>
+          <strong>Экспериментальные данные:</strong><br>
+          • Бюкс №1 пустой с крышкой: $m_{b1} = 19{,}8240\text{ г}$<br>
+          • Бюкс №1 с навеской фарша до сушки: $m_{b1+0} = 24{,}8540\text{ г}$<br>
+          • Бюкс №1 с навеской после высушивания: $m_{b1+d} = 21{,}2330\text{ г}$<br>
+          • Для параллельного Бюкса №2 рассчитанная массовая доля влаги составила $W_{m2} = 72{,}55\%$<br>
+          • Норматив сходимости ГОСТ 33319 (предел повторяемости $r$): расхождение между параллелями не должно превышать $0{,}50\%$.<br>
+          <strong>Вопрос:</strong> Рассчитайте навеску фарша $m_0$, массу испаренной влаги $m_w$, массовую долю влаги $W_{m1}$ и влагосодержание на сухое вещество $u_1$. Проведите аудит сходимости по ГОСТ и вынесите вердикт о выдаче протокола испытаний.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Метод основан на изотермическом удалении физиологически свободной и капиллярно связанной воды испарением при $103^\circ\text{C}$ до стабилизации массы сухого белково-минерального каркаса. При охлаждении бюксы помещают в эксикатор с осушителем для предотвращения вторичной гигроскопической сорбции влаги из воздуха.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $m_0 = m_{b1+0} - m_{b1}$, $m_d = m_{b1+d} - m_{b1}$, $m_w = m_0 - m_d$.<br>
+            Формулы: $W_m = \frac{m_w}{m_0} \times 100\%$, $u = \frac{m_w}{m_d}$, критерий повторяемости стандарта: $|W_{m1} - W_{m2}| \le r = 0{,}50\%$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            • <em>Шаг 1:</em> Масса навески фарша до сушки: $m_0 = 24{,}8540 - 19{,}8240 = \mathbf{5{,}0300\text{ г}}$.<br>
+            • <em>Шаг 2:</em> Масса сухого остатка фарша: $m_d = 21{,}2330 - 19{,}8240 = \mathbf{1{,}4090\text{ г}}$.<br>
+            • <em>Шаг 3:</em> Масса испарившейся воды: $m_w = 5{,}0300 - 1{,}4090 = \mathbf{3{,}6210\text{ г}}$.<br>
+            • <em>Шаг 4:</em> Массовая доля влаги (Wet Basis): $W_{m1} = \frac{3{,}6210}{5{,}0300} \times 100\% = 71{,}988\% \approx \mathbf{71{,}99\%}$.<br>
+            • <em>Шаг 5:</em> Влагосодержание на сухое вещество (Dry Basis): $u_1 = \frac{3{,}6210}{1{,}4090} \approx \mathbf{2{,}570\text{ г/г}}$.<br>
+            • <em>Шаг 6:</em> Аудит сходимости: $|71{,}99\% - 72{,}55\%| = \mathbf{0{,}56\%}$. Так как $0{,}56\% > 0{,}50\%$, предел повторяемости стандарта превышен на $0{,}06\%$!
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: $m_0 = 5{,}0300\text{ г}$; $W_{m1} = 71{,}99\%$; $u_1 = 2{,}570\text{ г/г}$; расхождение $0{,}56\% > 0{,}50\%$. Результаты не соответствуют ГОСТ 33319-2015, выдавать протокол испытаний запрещено. Требуется повторный анализ двух свежих навесок.
+        </div>
+      </div>
+
+      <!-- Пример 3.2 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.2. Экспресс-оценка микробиологической безопасности клубничного мармелада по активности воды</h4>
+          <span class="cds--tag cds--tag--purple">Флагманский кейс 2 • Практикум ХАССП</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Кондитерская фабрика разработала желейный клубничный мармелад для детского питания со сниженной закладкой сахара с целью уменьшения калорийности. Инженер отдела контроля качества измерил параметры равновесия в рабочей камере при температуре $20^\circ\text{C}$:<br>
+          • Давление насыщенного пара чистой воды при $20^\circ\text{C}$: $P_0 = 2338\text{ Па}$;<br>
+          • Зафиксированное датчиком парциальное давление водяного пара над мармеладом: $P = 2057\text{ Па}$.<br>
+          <strong>Вопрос:</strong> Рассчитайте активность воды $a_w$ и равновесную влажность воздуха $\text{ERH}$ мармелада. Проведите микробиологическую экспертизу по ComBase и сформулируйте рекомендации для технологов по обеспечению стабильности в системе ХАССП.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Активность воды ($a_w$) определяет химический потенциал и доступность растворителя для метаболизма клеток. Снижение закладки сахара уменьшает осмотическое давление и повышает $a_w$, создавая условия для развития осмотолерантных патогенов (<em>S. aureus</em>) и ксерофильных плесеней.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $P_0 = 2338\text{ Па}$, $P = 2057\text{ Па}$.<br>
+            Формулы: $a_w = \frac{P}{P_0}$, $\text{ERH} = a_w \times 100\%$. Пороги развития: <em>Salmonella</em> ($0{,}95$), <em>C. botulinum</em> ($0{,}91$), <em>S. aureus</em> ($0{,}86$), плесени ($0{,}80$).
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            • <em>Шаг 1:</em> Расчет активности воды и равновесной относительной влажности:<br>
+            $$a_w = \frac{2057}{2338} \approx \mathbf{0{,}880}, \quad \text{ERH} = 0{,}880 \times 100\% = \mathbf{88{,}0\%}$$
+            • <em>Шаг 2:</em> Оценка микробиологических рисков по барьерной шкале ComBase:<br>
+            Грамотрицательные токсикоинфекции ($a_w < 0{,}95$) и ботулизм ($a_w < 0{,}91$) заблокированы. Однако порог для <em>Staphylococcus aureus</em> ($0{,}86$) превышен ($0{,}88 > 0{,}86$) — критический риск накопления энтеротоксина! Порог для плесеней ($0{,}80$) также превышен — неизбежна быстрая порча.<br>
+            • <em>Шаг 3:</em> Рекомендации по системе ХАССП: введение безопасных водосвязывающих полиолов (глицерин/сорбитол) для снижения $a_w \le 0{,}75$, либо внесение консерванта E202 (сорбат калия при $\text{pH} < 4{,}5$) с барьерной вакуумной упаковкой.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: $a_w = 0{,}880$; $\text{ERH} = 88{,}0\%$. Рецептура технологически небезопасна (критический риск токсинообразования <em>S. aureus</em> и развития плесеней). Необходима корректировка рецептуры снижением $a_w \le 0{,}75$ полиолами или консервация E202 с вакуумной упаковкой.
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           РАЗДЕЛ 3.2: ВЛАЖНОСТЬ, СУШКА И МЕТРОЛОГИЯ ГОСТ
+           =================================================================== -->
+
+      <!-- Пример 3.3 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.3. Метрологический расчет влажности мясного фарша по ГОСТ 33319-2015</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 3.1: Влажность и сушка</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> В арбитражной испытательной лаборатории проведено определение массовой доли влаги рубленого мясного полуфабриката методом сушки в бюксе при $103\pm 2^\circ\text{C}$ до постоянной массы. Масса сухого бюкса $m_b = 24{,}3120\text{ г}$, масса бюкса с навеской до сушки $m_{b+0} = 29{,}3245\text{ г}$, масса бюкса после высушивания $m_{b+d} = 25{,}6155\text{ г}$.<br>
+          <strong>Вопрос:</strong> Рассчитайте массу анализируемой навески $m_0$, массу испаренной влаги $m_w$ и массовую долю влаги $W_m$ в процентах.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Метод основан на изотермическом удалении физиологически свободной и капиллярно связанной воды испарением при температуре выше точки кипения чистой воды ($103^\circ\text{C}$). Массовая доля влаги выражается по формуле Wet Basis: $W_m = \frac{m_w}{m_0} \times 100\%$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $m_b = 24{,}3120\text{ г}$; $m_{b+0} = 29{,}3245\text{ г}$; $m_{b+d} = 25{,}6155\text{ г}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            1. Масса навески до сушки: $m_0 = 29{,}3245 - 24{,}3120 = 5{,}0125\text{ г}$.<br>2. Масса сухого остатка: $m_d = 25{,}6155 - 24{,}3120 = 1{,}3035\text{ г}$.<br>3. Масса испаренной влаги: $m_w = m_0 - m_d = 5{,}0125 - 1{,}3035 = 3{,}7090\text{ г}$.<br>4. Массовая доля влаги: $W_m = \frac{3{,}7090}{5{,}0125} \times 100\% = 73{,}995\% \approx 74{,}00\%$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Масса навески $m_0 = 5{,}0125\text{ г}$, испаренная вода $m_w = 3{,}7090\text{ г}$, влажность $W_m = \mathbf{74{,}00\%}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.4 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.4. Расчет влагосодержания на сухое вещество (u)</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 3.1: Влажность и сушка</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> В мясном фарше с массовой долей влаги $W_m = 74{,}00\%$ масса испаренной влаги составляет $m_w = 3{,}7090\text{ г}$, а масса сухого белково-минерального каркаса $m_d = 1{,}3035\text{ г}$.<br>
+          <strong>Вопрос:</strong> Рассчитайте влагосодержание на абсолютно сухое вещество $u$ в г влаги / г сухого вещества.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            В отличие от относительной влажности $W_m$, влагосодержание $u$ (Dry Basis) соотносит массу подвижного растворителя с неизменной массой скелета матрицы, что необходимо для кинетики сушки.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $u = \frac{m_w}{m_d} = \frac{W_m}{100 - W_m} \quad [\text{г/г}]$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $u = \frac{3{,}7090}{1{,}3035} = 2{,}8454\text{ г/г} \approx \mathbf{2{,}85\text{ г/г}}$.<br>Проверка через формулу влажности: $u = \frac{74{,}00}{100 - 74{,}00} = \frac{74{,}00}{26{,}00} = 2{,}846\text{ г/г}$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Влагосодержание $u = \mathbf{2{,}85\text{ г/г}}$ (на 1 г сухого вещества приходится 2,85 г воды).
+        </div>
+      </div>
+
+      <!-- Пример 3.5 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.5. Объемная влажность полутвердого сыра ($W_v$)</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 3.1: Объемная влажность</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Образец полутвердого сыра типа «Российский» имеет массовую долю влаги $W_m = 42{,}50\%$ и кажущуюся плотность монолита $\rho = 1{,}12\text{ г/см}^3$ ($\rho_w = 1{,}00\text{ г/см}^3$).<br>
+          <strong>Вопрос:</strong> Рассчитайте объемную долю жидкой фазы $W_v$ в процентах.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Объемная влажность определяет долю порового пространства, занятого водным раствором солей, и характеризует эффективное сечение диффузии молочной кислоты и консервантов.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $W_v = W_m \cdot \frac{\rho_{sample}}{\rho_w} \quad [\%]$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $W_v = 42{,}50 \times \frac{1{,}12}{1{,}00} = 47{,}60\%$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Объемная влажность сыра $W_v = \mathbf{47{,}6\%}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.6 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.6. Проверка сходимости параллельных определений по ГОСТ ISO 712</h4>
+          <span class="cds--tag cds--tag--blue">Раздел 3.1: Метрология ГОСТ</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> При анализе пробы муки получены результаты двух параллельных определений: $W_{m,1} = 14{,}15\%$ и $W_{m,2} = 14{,}48\%$. Нормативный предел повторяемости стандарта составляет $r_{lim} = 0{,}50\%$.<br>
+          <strong>Вопрос:</strong> Оцените метрологическую сходимость анализа и рассчитайте абсолютное расхождение $|W_{m,1} - W_{m,2}|$.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Результаты признаются достоверными, если абсолютное расхождение между параллельными навесками не превышает нормативный предел повторяемости стандарта: $|W_{m,1} - W_{m,2}| \le r_{lim}$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $\Delta = |14{,}15 - 14{,}48| = 0{,}33\%$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            Поскольку $0{,}33\% \le 0{,}50\%$, условие сходимости соблюдено. Среднее арифметическое значение составляет $\bar{W}_m = \frac{14{,}15 + 14{,}48}{2} = 14{,}32\%$. Анализ не требует повторения.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Расхождение $\mathbf{0{,}33\%}$ (сходимость подтверждена).
+        </div>
+      </div>
+
+      <!-- Пример 3.7 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.7. Кулонометрическое титрование влаги глазури по ГОСТ ISO 760</h4>
+          <span class="cds--tag cds--tag--cyan">Раздел 3.1: Метод Карла Фишера</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Навеска шоколадной глазури массой $m_0 = 1{,}2500\text{ г}$ протитрована на кулонометре Карла Фишера. Электрохимическая ячейка сгенерировала заряд $Q = 145{,}0\text{ Кл}$ ($M = 18{,}015\text{ г/моль}$, $z = 2$, $F = 96485\text{ Кл/моль}$).<br>
+          <strong>Вопрос:</strong> Рассчитайте массу выделившейся истинной воды $m_w$ (мг) и массовую долю влаги $W_m$ в процентах.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            Электрохимическая генерация йода: $2\text{I}^- - 2e^- \to \text{I}_2$. По закону Фарадея масса прореагировавшей воды: $m_w = \frac{Q \cdot M}{z \cdot F}$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $m_w = \frac{145{,}0 \times 18{,}0153}{2 \times 96485} = \frac{2612{,}22}{192970} = 0{,}013537\text{ г} = 13{,}54\text{ мг}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $W_m = \frac{0{,}013537}{1{,}2500} \times 100\% = 1{,}083\% \approx \mathbf{1{,}08\%}$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Масса воды $m_w = 13{,}54\text{ мг}$, влажность глазури $W_m = \mathbf{1{,}08\%}$.
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           РАЗДЕЛ 3.3: АКТИВНОСТЬ ВОДЫ, УРАВНЕНИЕ АНТУАНА И ТЕРМОДИНАМИКА
+           =================================================================== -->
+
+      <!-- Пример 3.8 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.8. Давление насыщенного пара чистой воды при 25°C</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 3.2: Формула Антуана</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Для чистой воды константы Антуана равны: $A = 8{,}07131$, $B = 1730{,}63$, $C = 233{,}426$ ($P_0$ в мм рт. ст., $T$ в °C).<br>
+          <strong>Вопрос:</strong> Рассчитайте давление пара $P_0$ при температуре $25{,}0^\circ\text{C}$ в Паскалях ($1\text{ мм рт. ст.} = 133{,}322\text{ Па}$).
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $\log_{10} P_0 = A - \frac{B}{T + C}$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $\log_{10} P_0 = 8{,}07131 - \frac{1730{,}63}{25 + 233{,}426} = 8{,}07131 - \frac{1730{,}63}{258{,}426} = 8{,}07131 - 6{,}69681 = 1{,}37450$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $P_0 = 10^{1{,}37450} = 23{,}686\text{ мм рт. ст.}$; $P_0 = 23{,}686 \times 133{,}322 = 3157{,}9\text{ Па}$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Давление пара $P_0 = \mathbf{3157{,}9\text{ Па}}$ (3,16 кПа).
+        </div>
+      </div>
+
+      <!-- Пример 3.9 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.9. Равновесное давление пара над мякишем хлеба</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 3.2: Активность воды и ERH</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Свежий пшеничный хлеб имеет активность воды $a_w = 0{,}950$ при $20{,}0^\circ\text{C}$ ($P_0(20^\circ\text{C}) = 2338{,}8\text{ Па}$).<br>
+          <strong>Вопрос:</strong> Рассчитайте равновесное парциальное давление водяного пара $P$ над хлебом в Паскалях.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $a_w = \frac{P}{P_0(T)} \implies P = a_w \cdot P_0(T)$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $P = 0{,}950 \times 2338{,}8 = 2221{,}86\text{ Па} \approx \mathbf{2221{,}9\text{ Па}}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            Если окружающий воздух имеет относительную влажность $\text{RH} < 95\%$, хлеб будет самопроизвольно терять влагу (черстветь и высыхать). При $\text{RH} > 95\%$ — поглощать влагу, провоцируя развитие плесеней через 48 часов.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Давление пара $P = \mathbf{2221{,}9\text{ Па}}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.10 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.10. Термодинамический расчет aw и химического потенциала наполнителя</h4>
+          <span class="cds--tag cds--tag--purple">Раздел 3.2: Химический потенциал</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> В герметичной термостатированной ячейке при $25{,}0^\circ\text{C}$ ($298{,}15\text{ К}$) парциальное давление пара над ягодным наполнителем составило $P = 2515\text{ Па}$ ($P_0 = 3169\text{ Па}$).<br>
+          <strong>Вопрос:</strong> Рассчитайте активность воды $a_w$, $\text{ERH}$ (%) и изменение химического потенциала воды $\Delta\mu_w$ в Дж/моль.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $a_w = \frac{P}{P_0}$; $\Delta\mu_w = R T \ln a_w$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $a_w = \frac{2515}{3169} = 0{,}7936 \approx \mathbf{0{,}794}$; $\text{ERH} = 0{,}7936 \times 100\% = \mathbf{79{,}4\%}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $\Delta\mu_w = 8{,}314 \times 298{,}15 \times \ln(0{,}7936) = 2478{,}82 \times (-0{,}23114) = \mathbf{-572{,}9\text{ Дж/моль}}$.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: $a_w = \mathbf{0{,}794}$, $\text{ERH} = \mathbf{79{,}4\%}$, $\Delta\mu_w = \mathbf{-572{,}9\text{ Дж/моль}}$.
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           РАЗДЕЛ 3.4: КАПИЛЛЯРНЫЕ ЯВЛЕНИЯ, ОСМОТИЧЕСКИЙ СКАЧОК И БАРЬЕРЫ ХАССП
+           =================================================================== -->
+
+      <!-- Пример 3.11 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.11. Капиллярная депрессия aw в гидрофильной нанопоре 10 нм</h4>
+          <span class="cds--tag cds--tag--teal">Раздел 3.3: Закон Кельвина</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> В нанопоре белкового геля радиусом $r = 10{,}0\text{ нм}$ ($10^{-8}\text{ м}$) при $20{,}0^\circ\text{C}$ ($293{,}15\text{ К}$) поверхностное натяжение $\sigma = 0{,}0728\text{ Н/м}$, $V_m = 1{,}80\times 10^{-5}\text{ м}^3/\text{моль}$, $\cos\theta = 1$.<br>
+          <strong>Вопрос:</strong> Рассчитайте активность воды $a_w$ над капиллярным мениском по уравнению Кельвина.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $\ln a_w = -\frac{2 \sigma V_m \cos\theta}{r R T}$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $\ln a_w = -\frac{2 \times 0{,}0728 \times 1{,}80\times 10^{-5}}{10^{-8} \times 8{,}314 \times 293{,}15} = -\frac{2{,}6208\times 10^{-6}}{2{,}43725\times 10^{-5}} = -0{,}10753$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $a_w = \exp(-0{,}10753) = 0{,}89805 \approx \mathbf{0{,}898}$.<br>Вывод: Сужение пор матрицы до 10 нм снижает активность воды до 0,898, полностью блокируя развитие бактерий без химических добавок!
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Активность воды $a_w = \mathbf{0{,}898}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.12 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.12. Полный водный потенциал ($\Psi$) солевого рассола для сыра</h4>
+          <span class="cds--tag cds--tag--teal">Раздел 3.3: Водный потенциал</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Концентрированный рассол для посола сыра имеет активность воды $a_w = 0{,}880$ при температуре $20{,}0^\circ\text{C}$ ($293{,}15\text{ К}$, $\bar{V}_w = 1{,}80\times 10^{-5}\text{ м}^3/\text{моль}$).<br>
+          <strong>Вопрос:</strong> Рассчитайте полный водный потенциал $\Psi$ в мегапаскалях (МПа).
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $\Psi = \frac{R T}{\bar{V}_w} \ln a_w \times 10^{-6} \quad [\text{МПа}]$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $\frac{R T}{\bar{V}_w} = \frac{8{,}314 \times 293{,}15}{1{,}80\times 10^{-5}} = 135{,}403\times 10^6\text{ Па} = 135{,}403\text{ МПа}$.<br>$\ln(0{,}880) = -0{,}12783$.<br>$\Psi = 135{,}403 \times (-0{,}12783) = -17{,}308\text{ МПа} \approx \mathbf{-17{,}31\text{ МПа}}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            Потенциал $-17{,}31\text{ МПа}$ создает гигантскую сосущую силу, вытягивающую воду из любой попавшей клетки.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Водный потенциал $\Psi = \mathbf{-17{,}31\text{ МПа}}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.13 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.13. Осмотический скачок давления при плазмолизе Escherichia coli</h4>
+          <span class="cds--tag cds--tag--magenta">Раздел 3.3: Осмотический скачок</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> Клетка <em>E. coli</em> ($a_{w,int} = 0{,}995$) внесена в рассол с $a_{w,ext} = 0{,}920$ при $25{,}0^\circ\text{C}$ ($298{,}15\text{ К}$, $\bar{V}_w = 1{,}80\times 10^{-5}\text{ м}^3/\text{моль}$).<br>
+          <strong>Вопрос:</strong> Рассчитайте градиент химического потенциала $\Delta\mu_w$ (Дж/моль) и осмотическое давление плазмолиза $\Delta\Pi$ в МПа.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $\Delta\mu_w = R T \ln\left(\frac{a_{w,ext}}{a_{w,int}}\right)$; $\Delta\Pi = -\frac{\Delta\mu_w}{\bar{V}_w} \times 10^{-6}$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $\frac{a_{w,ext}}{a_{w,int}} = \frac{0{,}920}{0{,}995} = 0{,}92462$.<br>$\Delta\mu_w = 8{,}314 \times 298{,}15 \times \ln(0{,}92462) = 2478{,}82 \times (-0{,}07837) = \mathbf{-194{,}3\text{ Дж/моль}}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            $\Delta\Pi = \frac{194{,}3}{1{,}80\times 10^{-5}} \times 10^{-6} = \mathbf{10{,}79\text{ МПа}}$ (около 107 атмосфер!).
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: $\Delta\mu_w = \mathbf{-194{,}3\text{ Дж/моль}}$, скачок тургора $\Delta\Pi = \mathbf{10{,}79\text{ МПа}}$.
+        </div>
+      </div>
+
+      <!-- Пример 3.14 -->
+      <div class="example-card">
+        <div class="example-card__header">
+          <h4 class="example-card__title">Пример 3.14. Рецептурный расчет барьера NaCl для подавления ботулизма в соусе</h4>
+          <span class="cds--tag cds--tag--green">Раздел 3.4: Барьеры ХАССП</span>
+        </div>
+        <div class="example-card__scenario">
+          <strong>Текст задачи:</strong> В соусе исходная активность воды составляет $a_w = 0{,}985$. Для гарантии подавления токсинообразования <em>Clostridium botulinum</em> активность воды необходимо снизить до критического предела $a_w \le 0{,}935$ ($\Delta a_w = 0{,}050$). Каждый $1{,}0\%$ добавленного NaCl снижает $a_w$ на $0{,}0062$.<br>
+          <strong>Вопрос:</strong> Рассчитайте необходимую массовую концентрацию NaCl в соусе в процентах.
+        </div>
+        <div class="example-card__solution">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>1. Физико-химическая и биологическая сущность процесса:</strong><br>
+            $C(\text{NaCl}) = \frac{\Delta a_w}{k_{NaCl}} \quad [\%]$.
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>2. Исходные параметры, формулы и физические константы:</strong><br>
+            $C(\text{NaCl}) = \frac{0{,}050}{0{,}0062} = 8{,}0645\% \approx \mathbf{8{,}06\%}$.
+          </div>
+          <div>
+            <strong>3. Пошаговый расчет и математические выкладки:</strong><br>
+            Концентрация соли $8{,}06\%$ делает соус слишком соленым для потребителя. Оптимальное решение по Ляйстнеру — комбинация барьеров: внесение $3{,}5\%$ NaCl ($a_w \approx 0{,}96$) в сочетании с подкислением лимонной кислотой до $pH \le 4{,}4$, что гарантирует микробиологическую стабильность без потери вкуса.
+          </div>
+        </div>
+        <div class="example-card__answer">
+          Ответ: Требуемая концентрация соли $C(\text{NaCl}) = \mathbf{8{,}06\%}$.
+        </div>
+      </div>
+
+    </section>
+<section id="sem3-tab-calculators" class="cds--tab-panel" role="tabpanel">
+
+<!-- Калькулятор 1 -->
+      <div class="cds--tile" style="margin-bottom: 2rem;">
+        <div class="cds--header__name-prefix">Инструмент 1 • Лабораторная метрология ГОСТ</div>
+        <h3 style="margin-bottom: 0.5rem;">Анализатор термогравиметрии и конвертер влажности</h3>
+        <p style="color: var(--cds-text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">
+          Автоматический расчет протокола высушивания по ГОСТ 33319-2015, пересчет размерностей ($W_m$, $u$, $W_v$) и арбитражная проверка предела повторяемости стандарта ($r_{lim}$).
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-mtare">Масса пустого бюкса с крышкой $m_b$ (г):</label>
+              <input type="number" step="0.0001" class="cds--text-input" id="sem3-calc1-mtare" value="19.8240">
+            </div>
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-mwet">Масса бюкса с навеской до высушивания $m_{b+0}$ (г):</label>
+              <input type="number" step="0.0001" class="cds--text-input" id="sem3-calc1-mwet" value="24.8540">
+            </div>
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-mdry">Масса бюкса с навеской после высушивания $m_{b+d}$ (г):</label>
+              <input type="number" step="0.0001" class="cds--text-input" id="sem3-calc1-mdry" value="21.2330">
+            </div>
+          </div>
+          <div class="cds--col-6">
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-density">Плотность продукта $\rho$ ($\text{г/см}^3$):</label>
+              <input type="number" step="0.01" class="cds--text-input" id="sem3-calc1-density" value="1.00">
+            </div>
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-rlim">Предел сходимости ГОСТ $r_{lim}$ (%):</label>
+              <input type="number" step="0.01" class="cds--text-input" id="sem3-calc1-rlim" value="0.50">
+            </div>
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc1-parallel">Вторая параллельная проба $W_{m,2}$ (%) (опционально):</label>
+              <input type="number" step="0.01" class="cds--text-input" id="sem3-calc1-parallel" value="72.55">
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="cds--btn cds--btn--primary" id="sem3-calc1-btn" style="margin-top: 1rem;">
+          <span>Рассчитать метрологию влажности</span>
+          <span>⚡</span>
+        </button>
+
+        <!-- Карточка результатов Калькулятора 1 -->
+        <div style="background: var(--cds-ui-01, #f4f4f4); padding: 1.25rem; border-radius: 4px; border: 1px solid var(--cds-ui-03, #e0e0e0); margin-top: 1.5rem;">
+          <h4 style="margin-bottom: 1rem;">Протокол аналитического расчета:</h4>
+          <div class="cds--row" style="margin-bottom: 0.75rem;">
+            <div class="cds--col-4">Навеска сырья ($m_0$): <strong id="sem3-calc1-out-m0">—</strong></div>
+            <div class="cds--col-4">Испаренная влага ($m_w$): <strong id="sem3-calc1-out-mw">—</strong></div>
+            <div class="cds--col-4">Массовая доля влаги ($W_m$): <strong id="sem3-calc1-out-wm" style="color: #0f62fe;">—</strong></div>
+          </div>
+          <div class="cds--row" style="margin-bottom: 0.75rem;">
+            <div class="cds--col-6">Влагосодержание на сухое вещество ($u$): <strong id="sem3-calc1-out-u">—</strong></div>
+            <div class="cds--col-6">Объемная влажность ($W_v$): <strong id="sem3-calc1-out-wv">—</strong></div>
+          </div>
+          <div style="border-top: 1px solid var(--cds-ui-03, #e0e0e0); padding-top: 0.75rem; margin-top: 0.75rem;">
+            Метрологический вердикт ГОСТ: <strong id="sem3-calc1-out-verdict" style="color: #24a148;">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Калькулятор 2 -->
+      <div class="cds--tile">
+        <div class="cds--header__name-prefix">Инструмент 2 • Термодинамика &amp; ХАССП</div>
+        <h3 style="margin-bottom: 0.5rem;">Предиктор термодинамического барьера $a_w$ и рисков ComBase</h3>
+        <p style="color: var(--cds-text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">
+          Расчет давления насыщенного пара по Антуану $P_0(T)$, активности воды (по давлению пара, влажности воздуха или капиллярному радиусу пор по Кельвину), полного водного потенциала $\Psi$ и автоматическая классификация микробиологических рисков по 6 зонам ComBase.
+        </p>
+
+        <div class="cds--row">
+          <div class="cds--col-4">
+            <div class="cds--form-item">
+              <label class="cds--label" for="sem3-calc2-temp">Температура системы $T$ (°C):</label>
+              <input type="number" step="0.1" class="cds--text-input" id="sem3-calc2-temp" value="20.0">
+            </div>
+          </div>
+          <div class="cds--col-8">
+            <div class="cds--form-item">
+              <label class="cds--label">Режим задания термодинамического состояния:</label>
+              <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                  <input type="radio" name="sem3-calc2-mode" value="p" checked>
+                  <span>Парциальное давление пара $P$ (Па)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                  <input type="radio" name="sem3-calc2-mode" value="erh">
+                  <span>Равновесная влажность $\text{ERH}$ (%)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                  <input type="radio" name="sem3-calc2-mode" value="r">
+                  <span>Радиус пор матрицы $r$ (нм, Кельвин)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cds--form-item" style="margin-top: 1rem;">
+          <label class="cds--label" id="sem3-calc2-val-label" for="sem3-calc2-val">
+            Парциальное давление пара над продуктом $P$ (Па):
+          </label>
+          <input type="number" step="0.1" class="cds--text-input" id="sem3-calc2-val" value="2057">
+          <div class="cds--label" id="sem3-calc2-val-hint" style="font-size: 0.75rem; margin-top: 0.25rem; color: var(--cds-text-secondary);">
+            Равновесное давление водяного пара над поверхностью продукта при температуре $T$.
+          </div>
+        </div>
+
+        <button type="button" class="cds--btn cds--btn--primary" id="sem3-calc2-btn" style="margin-top: 1rem;">
+          <span>Рассчитать aw, водный потенциал и риски ComBase</span>
+          <span>⚡</span>
+        </button>
+
+        <!-- Результаты Калькулятора 2 -->
+        <div style="background: var(--cds-ui-01, #f4f4f4); padding: 1.25rem; border-radius: 4px; border: 1px solid var(--cds-ui-03, #e0e0e0); margin-top: 1.5rem;">
+          <h4 style="margin-bottom: 1rem;">Термодинамические показатели и матрица рисков:</h4>
+          
+          <div class="cds--row" style="margin-bottom: 1rem;">
+            <div class="cds--col-3">Давление насыщенного пара ($P_0$): <strong id="sem3-calc2-out-p0">—</strong></div>
+            <div class="cds--col-3">Активность воды ($a_w$): <strong id="sem3-calc2-out-aw" style="font-size: 1.125rem; color: #0f62fe;">—</strong></div>
+            <div class="cds--col-3">Равновесная влажность ($\text{ERH}$): <strong id="sem3-calc2-out-erh">—</strong></div>
+            <div class="cds--col-3">Водный потенциал ($\Psi$): <strong id="sem3-calc2-out-psi">—</strong></div>
+          </div>
+
+          <!-- Динамический бейдж ComBase -->
+          <div style="border-top: 1px solid var(--cds-ui-03, #e0e0e0); padding-top: 1rem; margin-top: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span id="sem3-calc2-out-zone-badge" style="padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 700; font-size: 0.875rem; background: #da1e28; color: #fff;">
+                Зона 1: Критический риск
+              </span>
+            </div>
+            <p id="sem3-calc2-out-zone-desc" style="line-height: 1.5; margin-bottom: 0.5rem; color: var(--cds-text-primary);">
+              Оптимум для грамотрицательных психротрофов и энтеропатогенов...
+            </p>
+            <div style="background: var(--cds-ui-02, #ffffff); padding: 0.75rem; border-left: 3px solid #0f62fe; font-size: 0.875rem;">
+              <strong>Критические действия ХАССП:</strong> <span id="sem3-calc2-out-zone-action">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         ТАБ 4: СПРАВОЧНЫЕ ТАБЛИЦЫ
+         =================================================================== -->
+    <section id="sem3-tab-tables" class="cds--tab-panel" role="tabpanel">
+
+<div style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1rem;">1. Фундаментальные физико-химические константы чистой воды</h3>
+        <table class="cds--data-table">
+          <thead>
+            <tr>
+              <th>Символ</th>
+              <th>Наименование константы</th>
+              <th>Численное значение</th>
+              <th>Размерность</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$R$</td>
+              <td>Универсальная газовая постоянная</td>
+              <td>$8{,}31446$</td>
+              <td>Дж/(моль·К)</td>
+            </tr>
+            <tr>
+              <td>$\bar{V}_w$</td>
+              <td>Парциальный молярный объем воды ($20^\circ\text{C}$)</td>
+              <td>$1{,}80 \times 10^{-5}$</td>
+              <td>$\text{м}^3/\text{моль}$ ($18{,}0\text{ см}^3/\text{моль}$)</td>
+            </tr>
+            <tr>
+              <td>$\sigma$</td>
+              <td>Поверхностное натяжение чистой воды ($20^\circ\text{C}$)</td>
+              <td>$0{,}0728$ ($72{,}8$)</td>
+              <td>Н/м (мН/м)</td>
+            </tr>
+            <tr>
+              <td>$\rho_w$</td>
+              <td>Плотность воды при $20^\circ\text{C}$</td>
+              <td>$0{,}9982 \approx 1{,}00$</td>
+              <td>$\text{г/см}^3$</td>
+            </tr>
+            <tr>
+              <td>$M_{\text{H}_2\text{O}}$</td>
+              <td>Молярная масса воды</td>
+              <td>$18{,}0153$</td>
+              <td>г/моль</td>
+            </tr>
+            <tr>
+              <td>$F$</td>
+              <td>Постоянная Фарадея (титрование Карла Фишера)</td>
+              <td>$96\,485{,}3$</td>
+              <td>Кл/моль</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1rem;">2. Давление насыщенного пара чистой воды $P_0(T)$ по уравнению Антуана</h3>
+        <table class="cds--data-table">
+          <thead>
+            <tr>
+              <th>Температура, °C</th>
+              <th>Давление $P_0$, мм рт. ст.</th>
+              <th>Давление $P_0$, Па</th>
+              <th>Технологический статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$0{,}0$</td>
+              <td>$4{,}58$</td>
+              <td>$611{,}3$</td>
+              <td>Точка кристаллизации льда</td>
+            </tr>
+            <tr>
+              <td>$+4{,}0$</td>
+              <td>$6{,}10$</td>
+              <td>$813{,}2$</td>
+              <td>Холодильная цепь ХАССП</td>
+            </tr>
+            <tr>
+              <td>$+10{,}0$</td>
+              <td>$9{,}21$</td>
+              <td>$1227{,}9$</td>
+              <td>Охлаждаемый разделочный цех</td>
+            </tr>
+            <tr>
+              <td>$+20{,}0$</td>
+              <td>$17{,}54$</td>
+              <td>$2338{,}8$</td>
+              <td>Стандартная комнатная температура</td>
+            </tr>
+            <tr>
+              <td>$+25{,}0$</td>
+              <td>$23{,}76$</td>
+              <td>$3167{,}1$</td>
+              <td>Стандартные термодинамические условия</td>
+            </tr>
+            <tr>
+              <td>$+37{,}0$</td>
+              <td>$47{,}07$</td>
+              <td>$6275{,}6$</td>
+              <td>Оптимум культивирования мезофилов</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1rem;">3. Микробиологические пороги активности воды ($a_w$) и таксономические группы</h3>
+        <table class="cds--data-table">
+          <thead>
+            <tr>
+              <th>Группа микроорганизмов</th>
+              <th>Порог $a_{w,\min}$</th>
+              <th>Типичные представители</th>
+              <th>Продукты риска</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Грамотрицательные палочки</strong></td>
+              <td>$0{,}95$</td>
+              <td><em>Pseudomonas, Salmonella, E. coli</em></td>
+              <td>Свежее мясо, птица, сырое молоко</td>
+            </tr>
+            <tr>
+              <td><strong>Спорообразующие бациллы и клостридии</strong></td>
+              <td>$0{,}91\dots 0{,}93$</td>
+              <td><em>Clostridium botulinum, Bacillus cereus</em></td>
+              <td>Вареные колбасы, консервы, мягкие сыры</td>
+            </tr>
+            <tr>
+              <td><strong>Факультативные галоацидотолеранты</strong></td>
+              <td>$0{,}86$</td>
+              <td><em>Staphylococcus aureus</em></td>
+              <td>Заварные кремы, ветчина, полутвердые сыры</td>
+            </tr>
+            <tr>
+              <td><strong>Обычные плесени и дрожжи</strong></td>
+              <td>$0{,}80$</td>
+              <td><em>Penicillium, Aspergillus, Saccharomyces</em></td>
+              <td>Хлеб, джемы, пастила, мармелад</td>
+            </tr>
+            <tr>
+              <td><strong>Галофилы</strong></td>
+              <td>$0{,}75$</td>
+              <td><em>Halococcus, Debaryomyces hansenii</em></td>
+              <td>Сельдь пряного посола, рассолы</td>
+            </tr>
+            <tr>
+              <td><strong>Ксерофильные грибы</strong></td>
+              <td>$0{,}65$</td>
+              <td><em>Wallemia sebi, Xeromyces bisporus</em></td>
+              <td>Мука, сухофрукты, пряности</td>
+            </tr>
+            <tr>
+              <td><strong>Осмофильные дрожжи</strong></td>
+              <td>$0{,}60$</td>
+              <td><em>Zygosaccharomyces rouxii</em></td>
+              <td>Мед, сиропы, сгущенное молоко с сахаром</td>
+            </tr>
+            <tr>
+              <td><strong>Абсолютный биологический предел</strong></td>
+              <td>$< 0{,}60$</td>
+              <td><em>Полный метаболический анабиоз</em></td>
+              <td>Сухое молоко, сухари, макароны</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1rem;">4. Типовые диапазоны влажности ($W_m$) и активности воды ($a_w$) пищевой продукции</h3>
+        <table class="cds--data-table">
+          <thead>
+            <tr>
+              <th>Наименование продукта</th>
+              <th>Влажность $W_m$, %</th>
+              <th>Активность воды $a_w$</th>
+              <th>Зона риска ComBase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Охлажденное мясо, рыба</td>
+              <td>$70\dots 75\%$</td>
+              <td>$0{,}99\dots 1{,}00$</td>
+              <td>Зона 1: Критический бактериальный риск</td>
+            </tr>
+            <tr>
+              <td>Вареная колбаса («Докторская»)</td>
+              <td>$60\dots 65\%$</td>
+              <td>$0{,}96\dots 0{,}98$</td>
+              <td>Зона 1: Бактериальный риск</td>
+            </tr>
+            <tr>
+              <td>Сыр Российский (полутвердый)</td>
+              <td>$40\dots 44\%$</td>
+              <td>$0{,}93\dots 0{,}96$</td>
+              <td>Зона 2: Спорообразующий риск</td>
+            </tr>
+            <tr>
+              <td>Сырокопченая колбаса («Брауншвейгская»)</td>
+              <td>$25\dots 30\%$</td>
+              <td>$0{,}85\dots 0{,}88$</td>
+              <td>Зона 3: Стафилококковый риск</td>
+            </tr>
+            <tr>
+              <td>Мякиш пшеничного хлеба</td>
+              <td>$40\dots 45\%$</td>
+              <td>$0{,}94\dots 0{,}96$</td>
+              <td>Зона 2: Споры B. subtilis («картофельная болезнь»)</td>
+            </tr>
+            <tr>
+              <td>Мучной бисквит</td>
+              <td>$18\dots 22\%$</td>
+              <td>$0{,}82\dots 0{,}88$</td>
+              <td>Зона 4: Микологический риск плесеней</td>
+            </tr>
+            <tr>
+              <td>Фруктово-ягодный джем</td>
+              <td>$28\dots 34\%$</td>
+              <td>$0{,}75\dots 0{,}82$</td>
+              <td>Зона 4: Плесени и осмотолерантные дрожжи</td>
+            </tr>
+            <tr>
+              <td>Натуральный пчелиный мед</td>
+              <td>$16\dots 20\%$</td>
+              <td>$0{,}60\dots 0{,}65$</td>
+              <td>Зона 5: Ксерофильно-осмофильная зона</td>
+            </tr>
+            <tr>
+              <td>Сухое молоко цельное</td>
+              <td>$3\dots 5\%$</td>
+              <td>$0{,}18\dots 0{,}25$</td>
+              <td>Зона 6: Абсолютная биостабильность</td>
+            </tr>
+            <tr>
+              <td>Сухари, галеты</td>
+              <td>$6\dots 9\%$</td>
+              <td>$0{,}25\dots 0{,}35$</td>
+              <td>Зона 6: Абсолютная биостабильность</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ: СЕМИНАР 4 (СОВРЕМЕННАЯ КЛАССИФИКАЦИЯ МИКРООРГАНИЗМОВ)
+       ===================================================================== -->

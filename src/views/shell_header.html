@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru" data-carbon-theme="white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пищевая микробиология, санитария и гигиена • АТИ РУДН</title>
+  <meta name="description" content="Учебный портал семинарских и практических занятий курса «Пищевая микробиология, санитария и гигиена» для направлений «Стандартизация и метрология» и «Управление качеством» АТИ РУДН.">
+
+  <!-- IBM Carbon Fonts & Design System Styles -->
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/sans.css">
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/mono.css">
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles@1.59.0/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       1. IBM CARBON UI SHELL: HEADER
+       ===================================================================== -->
+  <header class="cds--header" role="banner">
+    <div class="cds--header__left">
+      <a href="#catalog" class="cds--header__name" data-nav="catalog">
+        <span class="cds--header__name-prefix">РУДН • АТИ</span>
+        <span>Пищевая микробиология</span>
+        <span class="cds--header__badge">Dry Lab</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul class="cds--header__nav" role="menubar">
+          <!-- 1. Каталог курса -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#catalog" class="cds--header__menu-link cds--header__menu-link--active" role="menuitem" data-nav="catalog">
+              Каталог курса
+            </a>
+          </li>
+
+          <!-- 2. Выпадающее меню: Лекции -->
+          <li class="cds--header__submenu" data-header-submenu role="none">
+            <button type="button" 
+                    class="cds--header__menu-title" 
+                    aria-haspopup="menu" 
+                    aria-expanded="false" 
+                    aria-controls="header-menu-lectures"
+                    data-submenu-trigger="lectures">
+              <span>Лекции</span>
+              <svg class="cds--header__menu-arrow" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/>
+              </svg>
+            </button>
+            <ul class="cds--header__menu" id="header-menu-lectures" role="menu" aria-label="Лекции курса">
+              <li role="none">
+                <a href="#lectures" class="cds--header__menu-item-link" role="menuitem" data-nav="lectures">
+                  <span class="cds--tag cds--tag--sm cds--tag--purple" style="margin-right: 8px;">Лекция 1</span>
+                  <span>Морфология и ультраструктура (45 слайдов)</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 3. Выпадающее меню: Семинары и практикумы -->
+          <li class="cds--header__submenu" data-header-submenu role="none">
+            <button type="button" 
+                    class="cds--header__menu-title" 
+                    aria-haspopup="menu" 
+                    aria-expanded="false" 
+                    aria-controls="header-menu-seminars"
+                    data-submenu-trigger="seminars">
+              <span>Семинары</span>
+              <svg class="cds--header__menu-arrow" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/>
+              </svg>
+            </button>
+            <ul class="cds--header__menu" id="header-menu-seminars" role="menu" aria-label="Семинары и практикумы">
+              <li role="none">
+                <a href="#seminar0" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar0">
+                  <span class="cds--tag cds--tag--sm cds--tag--blue" style="margin-right: 8px;">Сем 0</span>
+                  <span>Фундаментальная химия (Пререквизит)</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar1" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar1">
+                  <span class="cds--tag cds--tag--sm cds--tag--green" style="margin-right: 8px;">Сем 1</span>
+                  <span>Физико-химия гомеостаза и консерванты</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar2" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar2">
+                  <span class="cds--tag cds--tag--sm cds--tag--purple" style="margin-right: 8px;">Сем 2</span>
+                  <span>RedOx-потенциал, rH₂ и биоэнергетика</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar3" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar3">
+                  <span class="cds--tag cds--tag--sm cds--tag--teal" style="margin-right: 8px;">Сем 3</span>
+                  <span>Доступность воды, aw и ХАССП</span>
+                </a>
+              </li>
+              <li role="none">
+                <a href="#seminar4" class="cds--header__menu-item-link" role="menuitem" data-nav="seminar4">
+                  <span class="cds--tag cds--tag--sm cds--tag--cyan" style="margin-right: 8px;">Сем 4</span>
+                  <span>Современная классификация микроорганизмов</span>
+                </a>
+              </li>
+              <li class="cds--header__menu-divider" role="separator"></li>
+              <li role="none">
+                <a href="#catalog" class="cds--header__menu-item-link" role="menuitem" data-nav="catalog" style="color: #78a9ff; font-size: 0.8125rem;">
+                  <span>Все занятия курса (0–18) в каталоге →</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+                    <!-- 3.5. Коллоквиум 1 -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#colloquium1" class="cds--header__menu-link" role="menuitem" data-nav="colloquium1">
+              <span>Коллоквиум 1</span>
+              <span class="cds--tag cds--tag--sm cds--tag--magenta" style="margin-left: 6px; font-size: 0.6875rem;">Теория • 60 вопросов</span>
+            </a>
+          </li>
+
+<!-- 4. Домашнее задание -->
+          <li class="cds--header__menu-item" role="none">
+            <a href="#test" class="cds--header__menu-link" role="menuitem" data-nav="test">
+              <span>Домашнее задание</span>
+              <span class="cds--tag cds--tag--sm cds--tag--green" style="margin-left: 6px; font-size: 0.6875rem;">30 мин</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="cds--header__global">
+      <button type="button" class="cds--header__action" id="btn-theme-toggle" title="Переключить тему (Светлая / Темная Carbon)">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="https://github.com/yaroslavtsevam/microbio-ati-rudn.github.io" target="_blank" rel="noopener noreferrer" class="cds--header__action" title="Репозиторий на GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       2. ПРЕДСТАВЛЕНИЕ 1: КАТАЛОГ СЕМИНАРОВ И ПРАКТИКУМОВ (1–18)
+       ===================================================================== -->

@@ -1,0 +1,74 @@
+  <main id="view-lectures" class="cds--grid" style="display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Лекционный комплекс • Модуль 1</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Лекция 1: Морфология, анатомия и классификация микроорганизмов
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Ультраструктура бактерий, пептидогликан, спорогенез, жгутиковый аппарат, микология и вирусология • 45 слайдов • 26 научных иллюстраций высокого разрешения (200 DPI)
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="assets/presentations/Lecture_01_Microbiology.pptx" download class="cds--btn cds--btn--primary">
+          <span>Скачать презентацию (PPTX, 9.3 МБ)</span>
+          <span>📥</span>
+        </a>
+        <a href="assets/pdf/Lecture_01_Microbiology.pdf" download class="cds--btn cds--btn--secondary">
+          <span>Скачать слайды (PDF, 14.7 МБ)</span>
+          <span>📄</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Интерактивный плеер презентации -->
+    <div class="presentation-wrapper" id="presentation-player-wrapper">
+      <!-- Панель управления плеером -->
+      <div class="presentation-toolbar">
+        <div class="presentation-toolbar__left">
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--secondary" id="btn-slide-prev" title="Предыдущий слайд (←)">
+            <span>← Назад</span>
+          </button>
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--primary" id="btn-slide-next" title="Следующий слайд (→ или Space)">
+            <span>Вперед →</span>
+          </button>
+          <span class="cds--tag cds--tag--blue" id="slide-counter-badge">1 / 45</span>
+        </div>
+
+        <div class="presentation-toolbar__right">
+          <label for="select-slide-jump" class="cds--label" style="margin: 0; font-size: 0.75rem;">Перейти к слайду:</label>
+          <select class="cds--select-input" id="select-slide-jump" style="max-width: 320px; font-size: 0.8125rem; padding: 0.25rem 0.5rem; height: 32px;">
+            <!-- Заполняется динамически через slides-player.js -->
+          </select>
+          <button type="button" class="cds--btn cds--btn--sm cds--btn--ghost" id="btn-slide-fullscreen" title="На весь экран (F)">
+            <span>⛶ Полный экран</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Прогресс-бар -->
+      <div class="slide-progress-container">
+        <div class="slide-progress-bar" id="slide-progress-fill"></div>
+      </div>
+
+      <!-- Контейнер слайда (16:9) -->
+      <div class="slide-viewport" id="slide-viewport">
+        <!-- Слайд рендерится через SlidesPlayer.js -->
+      </div>
+
+      <!-- Футер плеера с подсказками клавиш -->
+      <div class="presentation-footer-bar">
+        <div>
+          <strong>Управление с клавиатуры:</strong> <kbd>←</kbd> / <kbd>→</kbd> — переключение слайдов • <kbd>Space</kbd> — следующий • <kbd>F</kbd> — полный экран • <kbd>Home</kbd> / <kbd>End</kbd> — в начало / конец
+        </div>
+        <div>
+          Кафедра техносферной безопасности АТИ РУДН • 2026
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ 3: СЕМИНАР 0 (ФУНДАМЕНТАЛЬНАЯ ХИМИЯ)
+       ===================================================================== -->

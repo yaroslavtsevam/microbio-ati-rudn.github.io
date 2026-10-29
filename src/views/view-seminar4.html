@@ -1,0 +1,513 @@
+  <main id="view-seminar4" class="cds--grid" style="display: none;">
+      
+      <!-- Hero Banner Семинара 4 -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="cds--header__name-prefix">Семинар 4 • Неделя 4 • Биологическая систематика и стандартизация</div>
+          <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+            Современная систематика и классификация микроорганизмов
+          </h1>
+          <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+            Молекулярно-филогенетические основы, нормативная база РФ (ГОСТ / ТР ТС), универсальное древо жизни (Tree of Life), биотехнологический потенциал эубактерий, архей, водорослей и грибов
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="assets/pdf/Prescott_Universal_Tree_of_Life.pdf" target="_blank" class="cds--btn cds--btn--secondary">
+            <span>Древо жизни (PDF)</span>
+            <span>🌳</span>
+          </a>
+          <a href="assets/pdf/Prescott_Molecular_Identification_16S_MALDI.pdf" target="_blank" class="cds--btn cds--btn--secondary">
+            <span>Молекулярные методы (PDF)</span>
+            <span>🧬</span>
+          </a>
+          <a href="assets/pdf/Jay_Food_Taxonomy_Genera.pdf" target="_blank" class="cds--btn cds--btn--secondary">
+            <span>Таксономия пищевых родов (PDF)</span>
+            <span>📖</span>
+          </a>
+          <button class="cds--btn cds--btn--primary" data-tab-switch="sem4-tab-questions">
+            <span>Вопросы к экзамену (27 тем)</span>
+            <span>❓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Вкладки Семинара 4 -->
+      <div class="cds--tabs" role="tablist">
+        <button class="cds--tab cds--tab--selected" data-tab-target="sem4-tab-theory" role="tab">
+          1. Фундаментальная теория и филогения
+        </button>
+        <button class="cds--tab" data-tab-target="sem4-tab-standards" role="tab">
+          2. Нормативная база РФ и ГОСТы
+        </button>
+        <button class="cds--tab" data-tab-target="sem4-tab-cases" role="tab">
+          3. Практические кейсы (4 задачи)
+        </button>
+        <button class="cds--tab" data-tab-target="sem4-tab-questions" role="tab">
+          4. Экзаменационные вопросы (27 вопросов с ответами)
+        </button>
+      </div>
+
+      <!-- ===================================================================
+           ТАБ 1: ТЕОРИЯ И ФИЛОГЕНИЯ
+           =================================================================== -->
+      <section id="sem4-tab-theory" class="cds--tab-panel cds--tab-panel--active" role="tabpanel">
+
+        <!-- Модуль 1: Эволюция классификаций -->
+        <div class="cds--tile" style="margin-bottom: 2rem;">
+          <span class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Раздел 1 • Эволюция систем классификации</span>
+          <h2 style="margin-bottom: 0.75rem;">1. Искусственные vs естественные системы: почему наука перешла на молекулярные методы?</h2>
+          
+          <p style="margin-bottom: 1rem; line-height: 1.6;">
+            Исторически систематика микроорганизмов строилась на <strong>искусственных (фенотипических)</strong> системах (определители Дэвида Берджи первых 9 изданий), где бактерии группировались по морфологии (кокки, палочки), окраске по Граму, подвижности и биохимическим тестам (сбраживание сахаров, образование индола и сероводорода, каталазная активность).
+          </p>
+
+          <div style="background-color: var(--cds-layer-02, #262626); border-left: 4px solid #0f62fe; padding: 1rem; margin-bottom: 1.25rem;">
+            <strong>Три непреодолимых кризиса фенотипической классификации:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1.25rem; line-height: 1.6;">
+              <li><strong>Морфологическая бедность и конвергенция:</strong> тысячи неродственных видов бактерий выглядят под микроскопом одинаково. Одинаковые биохимические свойства (например, молочнокислое брожение) возникали многократно и независимо в разных филогенетических ветвях.</li>
+              <li><strong>«Микробная темная материя» и феномен VBNC:</strong> согласно парадоксу Стейли-Конрада (<em>The Great Plate Count Anomaly</em>), при прямом микроскопировании обнаруживается в 100–10 000 раз больше бактерий, чем вырастает на чашках Петри. Более 99% бактерий биосферы не культивируются на стандартных средах! Кроме того, пищевые патогены (<em>Campylobacter</em>, <em>Listeria</em>, <em>Salmonella</em>) переходят в жизнеспособное, но некультивируемое состояние (VBNC), оставаясь инфекционными.</li>
+              <li><strong>Горизонтальный перенос генов (HGT):</strong> плазмидный обмен генами патогенности и ферментации между далекими видами стирает фенотипические различия.</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="assets/images/rrna_signature_secondary_structure.png" alt="Вторичная структура рРНК" style="max-width: 100%; max-height: 420px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <div style="font-size: 0.8125rem; color: #8d8d8d; margin-top: 0.5rem;">
+              Вторичная структура рибосомальной РНК трех доменов жизни (Bacteria, Archaea, Eukarya) и консервативные участки. Источник: <em>Prescott's Microbiology</em>, с. 36.
+            </div>
+          </div>
+        </div>
+
+        <!-- Модуль 2: Молекулярные методы -->
+        <div class="cds--tile" style="margin-bottom: 2rem;">
+          <span class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Раздел 2 • Молекулярный арсенал</span>
+          <h2 style="margin-bottom: 0.75rem;">2. Молекулярно-генетические и биофизические методы идентификации</h2>
+          
+          <div class="cds--grid" style="padding: 0; margin-bottom: 1.5rem;">
+            <div class="cds--row">
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1rem;">
+                <div style="background: var(--cds-layer-02, #262626); padding: 1.25rem; border-radius: 4px; height: 100%;">
+                  <h4 style="color: #4589ff; margin-bottom: 0.5rem;">🧬 Ген 16S рРНК и ITS</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.5;">
+                    Универсальный молекулярный хронометр Карла Вёзе (~1540 п.н.). Содержит чередование консервативных районов (для универсальных праймеров 27F/1492R) и <strong>9 гипервариабельных районов (V1–V9)</strong>. Для микромицетов и дрожжей золотым стандартом является спейсерный кластер <strong>ITS1-5.8S-ITS2</strong>.
+                  </p>
+                  <div style="font-size: 0.8125rem; background: #161616; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                    <strong>Пороги демаркации:</strong> &lt; 95,0% — разные роды; 95,0–98,65% — один род, разные виды; &ge; 98,7% — кандидат в один вид.
+                  </div>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1rem;">
+                <div style="background: var(--cds-layer-02, #262626); padding: 1.25rem; border-radius: 4px; height: 100%;">
+                  <h4 style="color: #33b1ff; margin-bottom: 0.5rem;">📊 Индекс ANI и MLST</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.5;">
+                    <strong>ANI (Average Nucleotide Identity):</strong> полногеномный биоинформатический стандарт демаркации видов (заменил классическую ДНК-ДНК гибридизацию). Значение <strong>ANI &ge; 95–96%</strong> демаркирует единый биологический вид.<br>
+                    <strong>MLST:</strong> мультилокусное типирование по 7 генам «домашнего хозяйства» (<em>housekeeping</em>) для различения штаммов и эпидемиологических вспышек.
+                  </p>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1rem;">
+                <div style="background: var(--cds-layer-02, #262626); padding: 1.25rem; border-radius: 4px; height: 100%;">
+                  <h4 style="color: #42be65; margin-bottom: 0.5rem;">⚡ MALDI-TOF MS (ГОСТ ISO 7218-2015)</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.5;">
+                    Лазерная десорбция/ионизация рибосомальных белков (2–20 кДа) за 5 минут. Логарифмический коэффициент совпадения (Score Value):
+                  </p>
+                  <ul style="font-size: 0.8125rem; margin-left: 1rem; margin-top: 0.25rem;">
+                    <li><strong>Score &ge; 2,300:</strong> высоковероятная видовая идентификация;</li>
+                    <li><strong>2,000–2,299:</strong> надежный род, вероятный вид;</li>
+                    <li><strong>1,700–1,999:</strong> вероятный род (нужен перепосев/ПЦР);</li>
+                    <li><strong>&lt; 1,700:</strong> результат ненадежен.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1rem;">
+                <div style="background: var(--cds-layer-02, #262626); padding: 1.25rem; border-radius: 4px; height: 100%;">
+                  <h4 style="color: #ff7eb6; margin-bottom: 0.5rem;">🧪 Метагеномика и NGS</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.5;">
+                    Высокопроизводительное секвенирование тотальной ДНК без культивирования на средах. Позволяет исследовать состав сложных микробных консорциумов заквасок сыров, кисломолочных продуктов, винных дрожжей и биопленок пищевого цеха.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="assets/images/phylogenetic_tree_construction_ani.png" alt="Принципы конструирования филогенетических древ" style="max-width: 100%; max-height: 420px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <div style="font-size: 0.8125rem; color: #8d8d8d; margin-top: 0.5rem;">
+              Методология построения дистанционных филогенетических матриц и алгоритмы объединения соседей (Neighbor-Joining). <em>Prescott's Microbiology</em>, с. 37.
+            </div>
+          </div>
+        </div>
+
+        <!-- Модуль 3: Универсальное древо жизни (Tree of Life) -->
+        <div class="cds--tile" style="margin-bottom: 2rem;">
+          <span class="cds--tag cds--tag--teal" style="margin-bottom: 0.5rem;">Раздел 3 • Архитектура древа жизни (Tree of Life)</span>
+          <h2 style="margin-bottom: 0.75rem;">3. Трехдоменная система Карла Вёзе: бактерии, археи, эукариоты</h2>
+
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="assets/images/tree_of_life_three_domains.png" alt="Универсальное филогенетическое древо Вёзе" style="max-width: 100%; max-height: 460px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <div style="font-size: 0.8125rem; color: #8d8d8d; margin-top: 0.5rem;">
+              Универсальное филогенетическое древо жизни Карла Вёзе. Источник: <em>Prescott's Microbiology</em>, с. 29.
+            </div>
+          </div>
+
+          <div class="cds--grid" style="padding: 0;">
+            <div class="cds--row">
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1.5rem;">
+                <div style="border: 1px solid #393939; padding: 1.25rem; border-radius: 4px; background: var(--cds-layer-01, #1e1e1e); height: 100%;">
+                  <span class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Домен Bacteria (Эубактерии)</span>
+                  <h4 style="margin-bottom: 0.5rem;">Истинные бактерии в пищевой цепи</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.6;">
+                    Пептидогликановая клеточная стенка (муреин) с NAG и NAM, $eta(1	o 4)$-связи, чувствительны к пенициллину и лизоциму. Сложноэфирная связь в мембранах.<br><br>
+                    <strong>Ключевые филумы:</strong><br>
+                    • <em>Pseudomonadota</em> (Proteobacteria): энтеробактерии (<em>E. coli</em>, <em>Salmonella</em>), психротрофы порчи (<em>Pseudomonas fluorescens</em>);<br>
+                    • <em>Bacillota</em> (Firmicutes): спорообразователи (<em>Bacillus</em>, <em>Clostridium</em>) и молочнокислые бактерии (LAB: <em>Lactobacillus</em>, <em>Lactococcus</em>, <em>Streptococcus</em>);<br>
+                    • <em>Actinomycetota</em> (Actinobacteria): бифидобактерии (<em>Bifidobacterium</em>) — важнейшие кишечные пробиотики.
+                  </p>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1.5rem;">
+                <div style="border: 1px solid #393939; padding: 1.25rem; border-radius: 4px; background: var(--cds-layer-01, #1e1e1e); height: 100%;">
+                  <span class="cds--tag cds--tag--magenta" style="margin-bottom: 0.5rem;">Домен Archaea (Археи)</span>
+                  <h4 style="margin-bottom: 0.5rem;">Молекулярная цитология и биотехнология</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.6;">
+                    <strong>Мембраны:</strong> простая эфирная связь (<em>ether</em>) с изопреноидными фитанильными цепями $	ext{C}_{20}$; у гипертермофилов — тетраэфирный монослой бифитанила $	ext{C}_{40}$, устойчивый к кипению.<br>
+                    <strong>Стенка:</strong> псевдомуреин с NAT вместо NAM, $eta(1	o 3)$-связи или только S-слой. Абсолютная устойчивость к пенициллину и лизоциму!<br>
+                    <strong>Безопасность:</strong> среди архей <em>нет патогенов человека</em>!<br>
+                    <strong>Биотехнология:</strong> экстремозимы (термостабильная ДНК-полимераза <em>Pfu</em> из <em>Pyrococcus furiosus</em> с коррекцией ошибок), метаногенные археи анаэробных метантенков для генерации биогаза ($	ext{CH}_4$).
+                  </p>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1.5rem;">
+                <div style="border: 1px solid #393939; padding: 1.25rem; border-radius: 4px; background: var(--cds-layer-01, #1e1e1e); height: 100%;">
+                  <span class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Водоросли &amp; Цианобактерии</span>
+                  <h4 style="margin-bottom: 0.5rem;">Фототрофы и гидроколлоиды</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.6;">
+                    <strong>Цианобактерии:</strong> <em>Arthrospira (Spirulina)</em> — прокариоты с легкоперевариваемой грамотрицательной стенкой, 60–70% полноценного белка, пигмент фикоцианин.<br>
+                    <strong>Эукариотические микроводоросли:</strong> <em>Chlorella vulgaris</em> (прочная целлюлозная стенка), <em>Dunaliella salina</em> (&beta;-каротин E160a), <em>Crypthecodinium</em> (омега-3 ПНЖК: DHA, EPA).<br>
+                    <strong>Пищевые гидроколлоиды:</strong> агар-агар (E406) и каррагинаны (E407) из красных водорослей; альгинаты натрия (E401) из бурых водорослей (<em>Laminaria</em>).
+                  </p>
+                </div>
+              </div>
+
+              <div class="cds--col-md-4 cds--col-lg-6" style="margin-bottom: 1.5rem;">
+                <div style="border: 1px solid #393939; padding: 1.25rem; border-radius: 4px; background: var(--cds-layer-01, #1e1e1e); height: 100%;">
+                  <span class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Царство Грибы (Fungi)</span>
+                  <h4 style="margin-bottom: 0.5rem;">Дрожжи, плесени и микотоксины</h4>
+                  <p style="font-size: 0.875rem; line-height: 1.6;">
+                    Стенка из хитина и &beta;-глюканов, мембраны с эргостеролом.<br>
+                    <strong>Дрожжи:</strong> <em>Saccharomyces cerevisiae</em> (хлеб, пиво, вино), <em>Kluyveromyces marxianus</em> (сбраживание сыворотки/лактозы), <em>Yarrowia lipolytica</em> (микробные липиды).<br>
+                    <strong>Мицелиальные грибы:</strong> <em>Aspergillus niger</em> (синтез лимонной кислоты E330, ферменты), <em>Penicillium roqueforti</em> и <em>camemberti</em> (сыры).<br>
+                    <strong>Опасность:</strong> микотоксины (афлатоксины $B_1, M_1$, охратоксин А, патулин) — термостабильны и не разрушаются пастеризацией!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="assets/images/fungal_representatives_biotech.png" alt="Группы грибов" style="max-width: 100%; max-height: 420px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <div style="font-size: 0.8125rem; color: #8d8d8d; margin-top: 0.5rem;">
+              Разнообразие морфологических структур грибов в биотехнологии. <em>Prescott's Microbiology</em>, с. 544.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           ТАБ 2: НОРМАТИВНАЯ БАЗА РФ И ГОСТЫ
+           =================================================================== -->
+      <section id="sem4-tab-standards" class="cds--tab-panel" role="tabpanel">
+        <div class="cds--tile" style="margin-bottom: 2rem;">
+          <span class="cds--tag cds--tag--blue" style="margin-bottom: 0.5rem;">Нормативное регулирование ЕАЭС / РФ</span>
+          <h2 style="margin-bottom: 0.75rem;">Классификация микроорганизмов по ТР ТС 021/2011 и стандарты ГОСТ</h2>
+
+          <div style="overflow-x: auto; margin: 1.5rem 0;">
+            <table class="cds--data-table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>Нормативная категория</th>
+                  <th>Нормируемые микроорганизмы</th>
+                  <th>ГОСТ на метод испытания</th>
+                  <th>Нормативный принцип по ТР ТС 021/2011</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Санитарно-показательные</strong></td>
+                  <td>КМАФАнМ<br>БГКП (колиформы)</td>
+                  <td>ГОСТ 10444.15-94<br>ГОСТ 31747-2012</td>
+                  <td>Числовой норматив (КОЕ/г или см³);<br>Не допускаются в регламентированной массе (0,1–1,0 г)</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Условно-патогенные</strong></td>
+                  <td><em>S. aureus</em><br><em>B. cereus</em><br>Сульфитредуцирующие клостридии</td>
+                  <td>ГОСТ 31746-2012<br>ГОСТ 10444.8-2013<br>ГОСТ 29185-2014</td>
+                  <td>Не допускаются в массе 0,01–0,1 г либо количественный порог &lt; $10^2\dots 10^3$ КОЕ/г</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Патогенные (в т.ч. зоонозные)</strong></td>
+                  <td><em>Salmonella spp.</em><br><em>Listeria monocytogenes</em></td>
+                  <td>ГОСТ 31659-2012<br>ГОСТ 32031-2012</td>
+                  <td><strong>Абсолютный запрет:</strong> не допускаются в 25 граммах продукта (в детском питании — в 50–100 г)</td>
+                </tr>
+                <tr>
+                  <td><strong>4. Микроорганизмы порчи</strong></td>
+                  <td>Дрожжи и плесневые грибы</td>
+                  <td>ГОСТ 10444.12-2013</td>
+                  <td>Предельное число КОЕ/г (для соков, сыров, кондитерских изделий)</td>
+                </tr>
+                <tr>
+                  <td><strong>5. Заквасочные / пробиотические</strong></td>
+                  <td>Молочнокислые бактерии, <em>Bifidobacterium</em></td>
+                  <td>ГОСТ 33951-2016</td>
+                  <td><strong>Нижний гарантированный порог:</strong> не менее $1	imes 10^7$ КОЕ/г (LAB) и $1	imes 10^6$ КОЕ/г (бифидо) на конец срока</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           ТАБ 3: ПРАКТИЧЕСКИЕ КЕЙСЫ
+           =================================================================== -->
+      <section id="sem4-tab-cases" class="cds--tab-panel" role="tabpanel">
+        
+        <!-- Кейс 1 -->
+        <div class="cds--tile" style="margin-bottom: 1.5rem;">
+          <span class="cds--tag cds--tag--cyan" style="margin-bottom: 0.5rem;">Кейс 1 • Геномика и ANI</span>
+          <h3>Таксономическая демаркация штамма: 16S рРНК (99,2%) vs ANI (97,4% vs 88,6%)</h3>
+          <p style="margin: 0.75rem 0; line-height: 1.6;">
+            Из сыродельной закваски изолирован молочнокислый Штамм А-42. По гену 16S рРНК он имеет сходство 99,2% с <em>L. paracasei</em> и 99,1% с <em>L. casei</em>. Полногеномный индекс ANI составил 97,4% с <em>L. paracasei</em> и 88,6% с <em>L. casei</em>.
+          </p>
+          <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+            <summary style="cursor: pointer; font-weight: 600; color: #78a9ff;">Показать эталонный разбор и вердикт</summary>
+            <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6;">
+              <strong>Вывод:</strong> Сходство по 16S рРНК &gt; 99% недостаточно для разделения видов комплекса <em>L. casei</em>. Международный порог вида — <strong>ANI &ge; 95–96%</strong>. Значение 97,4% строго подтверждает видовую принадлежность к <em>Lacticaseibacillus paracasei</em>.
+            </div>
+          </details>
+        </div>
+
+        <!-- Кейс 2 -->
+        <div class="cds--tile" style="margin-bottom: 1.5rem;">
+          <span class="cds--tag cds--tag--purple" style="margin-bottom: 0.5rem;">Кейс 2 • Метрология MALDI-TOF</span>
+          <h3>Аудит протокола MALDI-TOF MS по ГОСТ ISO 7218-2015</h3>
+          <p style="margin: 0.75rem 0; line-height: 1.6;">
+            С ленты обвалки мяса сняты спектры 4 колоний: Изолят 1 — <em>Salmonella enterica</em> (Score 2,415); Изолят 2 — <em>Pseudomonas fluorescens</em> (Score 2,180); Изолят 3 — <em>Listeria monocytogenes</em> (Score 1,845); Изолят 4 — Low Quality (Score 1,510).
+          </p>
+          <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+            <summary style="cursor: pointer; font-weight: 600; color: #78a9ff;">Показать эталонный разбор и вердикт</summary>
+            <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6;">
+              <strong>Вердикт:</strong><br>
+              • Изолят 1 (Score &ge; 2,300) — достоверная сальмонелла, партия мяса подлежит немедленной браковке по ТР ТС 021/2011.<br>
+              • Изолят 3 (Score 1,845) — видовая идентификация листерии <em>юридически недостоверна</em> (нужен Score &ge; 2,000). Требуется повторный анализ с экстракцией кислотой либо классическое подтверждение по ГОСТ 32031-2012.
+            </div>
+          </details>
+        </div>
+
+        <!-- Кейс 3 -->
+        <div class="cds--tile" style="margin-bottom: 1.5rem;">
+          <span class="cds--tag cds--tag--magenta" style="margin-bottom: 0.5rem;">Кейс 3 • Бактерия или архея?</span>
+          <h3>Дифференциация прокариот биогазового метантенка</h3>
+          <p style="margin: 0.75rem 0; line-height: 1.6;">
+            Культура Х лизируется лизоцимом и подавляется пенициллином и хлорамфениколом, содержит жирные кислоты. Культура Y устойчива к пенициллину, хлорамфениколу и лизоциму, содержит изопреноидные фитанильные спирты и образует метан.
+          </p>
+          <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+            <summary style="cursor: pointer; font-weight: 600; color: #78a9ff;">Показать эталонный разбор и вердикт</summary>
+            <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6;">
+              <strong>Вывод:</strong> Культура Х — истинная бактерия (домен Bacteria) с пептидогликаном. Культура Y — метаногенная архея (домен Archaea) с эфирными липидами и псевдомуреином/S-слоем. Археи абсолютно непатогенны для человека и вырабатывают биогаз.
+            </div>
+          </details>
+        </div>
+
+        <!-- Кейс 4 -->
+        <div class="cds--tile" style="margin-bottom: 1.5rem;">
+          <span class="cds--tag cds--tag--red" style="margin-bottom: 0.5rem;">Кейс 4 • Микотоксикология</span>
+          <h3>Аудит яблочного концентрата: <em>Penicillium expansum</em> и патулин</h3>
+          <p style="margin: 0.75rem 0; line-height: 1.6;">
+            В партии концентрата яблочного сока для детского питания обнаружен <em>P. expansum</em> и микотоксин патулин в концентрации 0,08 мг/кг (в восстановленном соке — 0,016 мг/кг). Технолог предложил устранить брак высокотемпературной пастеризацией при +92°C.
+          </p>
+          <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;">
+            <summary style="cursor: pointer; font-weight: 600; color: #78a9ff;">Показать эталонный разбор и вердикт</summary>
+            <div style="margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.6;">
+              <strong>Вывод:</strong> Для детского питания норматив патулина в сырье — не более 0,02 мг/кг. Партия категорически бракуется! Предложение технолога недопустимо: патулин термостабилен, пастеризация убивает гриб, но сохраняет токсин.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           ТАБ 4: КОНТРОЛЬНЫЕ ВОПРОСЫ
+           =================================================================== -->
+      <section id="sem4-tab-questions" class="cds--tab-panel" role="tabpanel">
+        <div class="cds--tile" style="margin-bottom: 2rem;">
+          <span class="cds--tag cds--tag--green" style="margin-bottom: 0.5rem;">Фонд оценочных средств (27 вопросов)</span>
+          <h2 style="margin-bottom: 0.75rem;">Вопросы для проверки знаний и защиты Семинара 4</h2>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+            Вопросы структурированы по 6 тематическим блокам. Раскройте спойлер для просмотра эталонного академического ответа преподавателя:
+          </p>
+
+          <!-- Список 27 вопросов с details -->
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            
+            <div style="font-weight: 600; color: #4589ff; margin-top: 0.5rem;">Блок 1: Системы классификации и молекулярная филогения</div>
+            
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">1. Отличие искусственных систем классификации от естественных (филогенетических)</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Искусственные группируют по отдельным удобным внешним признакам (форма, брожение сахаров). Естественные отражают истинное эволюционное родство на основе универсальных молекулярных маркеров (рРНК, ANI).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">2. Диагностические признаки классического определителя Берджи и их ограничения</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Морфология, Грам-окраска, подвижность, отношение к кислороду и биохимический спектр. Ограничение: эволюционная конвергенция приводит к объединению неродственных бактерий со сходным фенотипом.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">3. Фенотипическая и биохимическая конвергенция микроорганизмов</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Независимое возникновение сходных морфологических признаков или ферментативных путей (например, молочнокислого брожения) у далеких таксонов.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">4. Феномен «микробной темной материи» и парадокс Стейли-Конрада</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Прямой счет клеток превышает число колоний на чашках в 100–10 000 раз. Менее 1% природных микроорганизмов поддаются культивированию на стандартных питательных средах.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">5. Состояние VBNC (Viable but Non-Culturable) у патогенов пищевой цепи</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Состояние клеток, сохраняющих метаболизм и вирулентность, но не образующих колоний на чашках. Опасно тем, что патоген не обнаруживается по ГОСТ, но вызывает инфекцию у потребителя.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">6. Влияние горизонтального переноса генов (HGT) на построение филогенетических древ</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Перенос плазмид искажает эволюционную историю отдельных генов, поэтому филогению строят по генам аппарата трансляции (рРНК), не подверженным HGT.</div>
+            </details>
+
+            <div style="font-weight: 600; color: #4589ff; margin-top: 1rem;">Блок 2: Молекулярно-генетические и физико-химические методы</div>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">7. Почему ген 16S рРНК — универсальный молекулярный хронометр</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Присутствует у всех прокариот, выполняет идентичную функцию трансляции, содержит чередование консервативных и гипервариабельных участков.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">8. Консервативные и гипервариабельные петли (V1–V9) гена 16S рРНК</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Консервативные участки служат сайтами посадки универсальных праймеров (27F, 1492R), а вариабельные участки V1–V9 отражают эволюционную дивергенцию таксонов.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">9. Пороги идентичности по гену 16S рРНК для демаркации рода и вида</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">&lt; 95,0% — разные роды; 95,0%–98,65% — один род, разные виды; &ge; 98,7% — кандидат в один вид (требуется подтверждение по ANI).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">10. Сущность метода MLST (Multi-Locus Sequence Typing)</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Секвенирование 6–8 генов домашнего хозяйства для выявления сиквенс-типов (ST) патогенов внутри одного вида, когда 16S рРНК идентична на 100%.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">11. Индекс средней нуклеотидной идентичности (ANI) и пороговое значение</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Средний процент совпадения ортологичных генов при полногеномном сравнении. Порог демаркации одного вида: <strong>ANI &ge; 95–96%</strong>.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">12. Принцип MALDI-TOF MS и анализируемые молекулы</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Лазерная десорбция/ионизация белков с измерением времени пролета детектора. Анализируются видоспецифичные спектры белков рибосом (2–20 кДа).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">13. Значения Score Value по ГОСТ ISO 7218-2015</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">&ge; 2,300 — достоверный вид; 2,000–2,299 — надежный род, вероятный вид; 1,700–1,999 — вероятный род; &lt; 1,700 — ненадежно. Порог видовой надежности — &ge; 2,000–2,300.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">14. Различие между ПЦР и метагеномным профилированием</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">ПЦР детектирует один целевой фрагмент ДНК конкретного патогена. Метагеномика дает полный генетический профиль всего сообщества микроорганизмов в образце.</div>
+            </details>
+
+            <div style="font-weight: 600; color: #4589ff; margin-top: 1rem;">Блок 3: Нормативная классификация микроорганизмов в РФ</div>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">15. Пять нормативных групп микроорганизмов по ТР ТС 021/2011</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">1) Санитарно-показательные; 2) Условно-патогенные; 3) Патогенные; 4) Микроорганизмы порчи; 5) Технологическая и пробиотическая микрофлора.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">16. Санитарно-показательные бактерии: КМАФАнМ и БГКП</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">КМАФАнМ — общее число мезофильных аэробных микроорганизмов (ГОСТ 10444.15-94). БГКП — колиформные бактерии, сбраживающие лактозу с газом при +37°C (ГОСТ 31747-2012).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">17. Метрологическое отличие нормирования КМАФАнМ от патогенов</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">КМАФАнМ нормируется числовой концентрацией (КОЕ/г). Патогены (сальмонеллы, листерии) имеют малую инфицирующую дозу и нормируются альтернативно: полное отсутствие в 25 граммах.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">18. Условно-патогенные микроорганизмы и риски отравлений</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;"><em>S. aureus</em>, <em>B. cereus</em>, <em>C. perfringens</em>. Опасны только при массовом размножении до титра &gt; $10^5\dots 10^6$ КОЕ/г с накоплением токсинов.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">19. Нормирование технологической и заквасочной микрофлоры</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Нормируется нижний предел жизнеспособных клеток: не менее $1	imes 10^7$ КОЕ/г молочнокислых бактерий и $1	imes 10^6$ КОЕ/г бифидобактерий на конец срока годности.</div>
+            </details>
+
+            <div style="font-weight: 600; color: #4589ff; margin-top: 1rem;">Блок 4: Домен Archaea: цитология и биотехнология</div>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">20. Молекулярные отличия мембран и стенки архей от бактерий</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Простая эфирная связь (<em>ether</em>) вместо сложной; разветвленные изопреноидные цепи (фитанил); отсутствие муреина (псевдомуреин с NAT или белковый S-слой).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">21. Тетраэфирный монослой у гипертермофильных архей</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Молекулы бифитанила $	ext{C}_{40}$ пронизывают мембрану насквозь. Монослой ковалентно сшит и не расслаивается даже при температурах выше +100°C.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">22. Основные экологические группы архей</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Метаногены (облигатные анаэробы), экстремальные галофилы (рассолы с NaCl &gt; 20%, бактериородопсин) и гипертермофилы (геотермальные источники).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">23. Безопасность архей и их биотехнологическое применение</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Среди архей нет возбудителей инфекций человека. В биотехнологии: термостабильная ДНК-полимераза Pfu для высокоточной ПЦР и биогазовые реакторы.</div>
+            </details>
+
+            <div style="font-weight: 600; color: #4589ff; margin-top: 1rem;">Блок 5: Микроводоросли и цианобактерии</div>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">24. Различие спирулины и хлореллы и усвояемость белка</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Спирулина — прокариотическая цианобактерия с тонкой стенкой, легко перевариваемой человеком. Хлорелла — эукариот с толстой целлюлозной оболочкой, требующей дезинтеграции.</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">25. Продукты из водорослей и гидроколлоиды</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Омега-3 ПНЖК (DHA/EPA), фикоцианин, &beta;-каротин. Агар-агар (E406) и каррагинан (E407) получают из красных водорослей, альгинаты (E400–E404) — из бурых водорослей.</div>
+            </details>
+
+            <div style="font-weight: 600; color: #4589ff; margin-top: 1rem;">Блок 6: Царство Грибы (Fungi) и микотоксины</div>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">26. Промышленные продуценты грибов в биотехнологии</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;"><em>Saccharomyces cerevisiae</em> (хлеб, спирт), <em>Kluyveromyces marxianus</em> (сыворотка/лактоза), <em>Aspergillus niger</em> (лимонная кислота E330), <em>Penicillium roqueforti/camemberti</em> (сыры).</div>
+            </details>
+
+            <details style="background: var(--cds-layer-02, #262626); padding: 0.75rem 1rem; border-radius: 4px;">
+              <summary style="cursor: pointer; font-weight: 600;">27. Микотоксины (афлатоксины, охратоксин А, патулин) и их термостабильность</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5;">Термостабильные токсичные вторичные метаболиты плесеней. Пастеризация убивает мицелий, но не разрушает сам микотоксин, что несет риски поражения печени и почек.</div>
+            </details>
+
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <!-- =====================================================================
+       ПРЕДСТАВЛЕНИЕ: ПОДГОТОВКА К КОЛЛОКВИУМУ 1 (МОДУЛЬ 1)
+       ===================================================================== -->
