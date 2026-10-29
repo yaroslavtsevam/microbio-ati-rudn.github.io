@@ -243,7 +243,10 @@ const App = {
       SlidesPlayer.renderSlide(SlidesPlayer.currentIndex);
     }
 
-    this.renderMath();
+    const activeView = views[viewName];
+    if (activeView) {
+      this.renderMath(activeView);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
