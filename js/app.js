@@ -198,7 +198,7 @@ const App = {
 
     // 3. Подсветка родительского триггера подменю при активном дочернем роуте
     const lecturesViews = ['lectures'];
-    const seminarsViews = ['seminar0', 'seminar1', 'seminar2', 'seminar3'];
+    const seminarsViews = ['seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4'];
 
     const lecturesTrigger = document.querySelector('[data-submenu-trigger="lectures"]');
     const seminarsTrigger = document.querySelector('[data-submenu-trigger="seminars"]');
@@ -227,6 +227,7 @@ const App = {
       seminar1: document.getElementById('view-seminar1'),
       seminar2: document.getElementById('view-seminar2'),
       seminar3: document.getElementById('view-seminar3'),
+      seminar4: document.getElementById('view-seminar4'),
       colloquium1: document.getElementById('view-colloquium1'),
       test: document.getElementById('view-test')
     };
