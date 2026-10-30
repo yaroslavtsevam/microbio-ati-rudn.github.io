@@ -138,7 +138,7 @@ const App = {
 
   handleRouteHash() {
     const rawHash = window.location.hash.replace('#', '');
-    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'colloquium1', 'test'];
+    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'colloquium1', 'test'];
 
     if (!rawHash) {
       this.switchView('catalog');
@@ -147,6 +147,25 @@ const App = {
 
     if (validViews.includes(rawHash)) {
       this.switchView(rawHash);
+      return;
+    }
+
+    // Если хеш является внутристраничным якорем для Семинара 4 (sem4-*, question-*)
+    if (rawHash.startsWith('sem4-')) {
+      if (this.currentView !== 'seminar4') {
+        this.switchView('seminar4');
+      }
+      setTimeout(() => {
+        const targetEl = document.getElementById(rawHash);
+        if (targetEl) {
+          const parentPanel = targetEl.closest('.cds--tab-panel');
+          if (parentPanel && !parentPanel.classList.contains('cds--tab-panel--active')) {
+            const tabBtn = document.querySelector(`[data-tab-target="${parentPanel.id}"]`);
+            if (tabBtn) tabBtn.click();
+          }
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
       return;
     }
 

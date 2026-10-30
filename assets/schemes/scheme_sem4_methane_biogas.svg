@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">ЧЕТЫРЕХСТАДИЙНАЯ СХЕМА МЕТАНОВОГО СБРАЖИВАНИЯ СТОКОВ В МЕТАНТЕНКАХ</text>
+  <text x="750" y="32" fill="#8d8d8d" font-size="12">Биоэнергетика и экология</text>
+
+  <!-- Stage 1 -->
+  <g transform="translate(30, 75)">
+    <rect x="0" y="0" width="200" height="130" rx="4" fill="#262626" stroke="#0f62fe"/>
+    <text x="15" y="24" fill="#78a9ff" font-size="12" font-weight="700">1. ГИДРОЛИЗ</text>
+    <text x="15" y="44" fill="#8d8d8d" font-size="10">Clostridium, Bacillus</text>
+    <text x="15" y="70" fill="#f4f4f4" font-size="11">Белки, жиры, крахмал</text>
+    <text x="15" y="90" fill="#f1c21b" font-size="11">↓ гидролазы</text>
+    <text x="15" y="110" fill="#c6c6c6" font-size="10">Аминокислоты, сахара</text>
+  </g>
+
+  <line x1="230" y1="140" x2="260" y2="140" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 -->
+  <g transform="translate(265, 75)">
+    <rect x="0" y="0" width="200" height="130" rx="4" fill="#262626" stroke="#009d9a"/>
+    <text x="15" y="24" fill="#3ddbd9" font-size="12" font-weight="700">2. АЦИДОГЕНЕЗ</text>
+    <text x="15" y="44" fill="#8d8d8d" font-size="10">LAB, Enterobacter</text>
+    <text x="15" y="70" fill="#f4f4f4" font-size="11">Сбраживание сахаров</text>
+    <text x="15" y="90" fill="#f1c21b" font-size="11">↓ брожение</text>
+    <text x="15" y="110" fill="#c6c6c6" font-size="10">Лактат, бутират, спирты</text>
+  </g>
+
+  <line x1="465" y1="140" x2="495" y2="140" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3 -->
+  <g transform="translate(500, 75)">
+    <rect x="0" y="0" width="200" height="130" rx="4" fill="#262626" stroke="#8a3ffc"/>
+    <text x="15" y="24" fill="#be95ff" font-size="12" font-weight="700">3. АЦЕТОГЕНЕЗ</text>
+    <text x="15" y="44" fill="#8d8d8d" font-size="10">Syntrophobacter</text>
+    <text x="15" y="70" fill="#f4f4f4" font-size="11">Окисление кислот</text>
+    <text x="15" y="90" fill="#f1c21b" font-size="11">↓ синтрофия</text>
+    <text x="15" y="110" fill="#c6c6c6" font-size="10">Ацетат + H₂ + CO₂</text>
+  </g>
+
+  <line x1="700" y1="140" x2="730" y2="140" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4 -->
+  <g transform="translate(735, 75)">
+    <rect x="0" y="0" width="195" height="130" rx="4" fill="#262626" stroke="#ee5396"/>
+    <text x="15" y="24" fill="#ff7eb6" font-size="12" font-weight="700">4. МЕТАНОГЕНЕЗ</text>
+    <text x="15" y="44" fill="#ff7eb6" font-size="10">АРХЕИ Methanobacter</text>
+    <text x="15" y="70" fill="#42be65" font-size="12" font-weight="700">БИОГАЗ:</text>
+    <text x="15" y="90" fill="#f4f4f4" font-size="11">• CH₄ (65–75%)</text>
+    <text x="15" y="110" fill="#f4f4f4" font-size="11">• CO₂ (25–35%)</text>
+  </g>
+
+  <rect x="30" y="220" width="900" height="40" rx="4" fill="#262626" stroke="#525252"/>
+  <text x="480" y="245" text-anchor="middle" fill="#f1c21b" font-size="11">
+    Археи замыкают цепь очистки стоков молочных и спиртовых заводов, генерируя тепло и электричество!
+  </text>
+</svg>

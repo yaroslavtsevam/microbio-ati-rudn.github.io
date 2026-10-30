@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">ЦИТОХИМИЯ МЕМБРАН: БАКТЕРИАЛЬНЫЙ БИСЛОЙ vs АРХЕЙНЫЙ МОНОСЛОЙ</text>
+  <text x="750" y="32" fill="#8d8d8d" font-size="12">Prescott's Microbiology, с. 109</text>
+
+  <!-- Bacteria -->
+  <g transform="translate(60, 75)">
+    <rect x="0" y="0" width="400" height="200" rx="4" fill="#262626" stroke="#0f62fe"/>
+    <text x="20" y="25" fill="#78a9ff" font-size="13" font-weight="700">ДОМЕН BACTERIA (И ЭУКАРИОТЫ)</text>
+    <text x="20" y="48" fill="#f4f4f4" font-size="12">• Сложноэфирная связь (—C—O—CO—)</text>
+    <text x="20" y="68" fill="#f4f4f4" font-size="12">• Неразветвленные жирные кислоты (C₁₆–C₁₈)</text>
+    <text x="20" y="88" fill="#f4f4f4" font-size="12">• D-глицерол-3-фосфат</text>
+    <text x="20" y="108" fill="#f4f4f4" font-size="12">• Мембрана: жидкий липидный бислой</text>
+    <line x1="20" y1="125" x2="380" y2="125" stroke="#525252"/>
+    <text x="20" y="150" fill="#ff8389" font-size="11">Сложный эфир гидролизуется кислотой</text>
+    <text x="20" y="170" fill="#ff8389" font-size="11">Бислой термически расслаивается при +100 °C</text>
+  </g>
+
+  <!-- Archaea -->
+  <g transform="translate(500, 75)">
+    <rect x="0" y="0" width="400" height="200" rx="4" fill="#262626" stroke="#ee5396"/>
+    <text x="20" y="25" fill="#ff7eb6" font-size="13" font-weight="700">ДОМЕН ARCHAEA (ГИПЕРТЕРМОФИЛЫ)</text>
+    <text x="20" y="48" fill="#f4f4f4" font-size="12">• Простая эфирная связь (—C—O—C—)</text>
+    <text x="20" y="68" fill="#f4f4f4" font-size="12">• Изопреноидный фитанил C₂₀ / бифитанил C₄₀</text>
+    <text x="20" y="88" fill="#f4f4f4" font-size="12">• L-глицерол-1-фосфат</text>
+    <text x="20" y="108" fill="#f4f4f4" font-size="12">• Тетраэфирный ковалентный монослой (ГДГТ)</text>
+    <line x1="20" y1="125" x2="380" y2="125" stroke="#525252"/>
+    <text x="20" y="150" fill="#42be65" font-size="11">Простой эфир устойчив к кислоте и кипению</text>
+    <text x="20" y="170" fill="#42be65" font-size="11">Монослой не расслаивается при +100...+122 °C</text>
+  </g>
+</svg>

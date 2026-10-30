@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">ЭНДОСИМБИОТИЧЕСКОЕ ПРОИСХОЖДЕНИЕ ФОТОСИНТЕЗИРУЮЩИХ ЭУКАРИОТ</text>
+  <text x="750" y="32" fill="#8d8d8d" font-size="12">Линн Маргулис, 1967</text>
+
+  <!-- Left: Host & Cyanobacteria -->
+  <g transform="translate(50, 75)">
+    <rect x="0" y="0" width="380" height="120" rx="4" fill="#262626" stroke="#009d9a"/>
+    <text x="20" y="25" fill="#3ddbd9" font-size="13" font-weight="700">ПЕРВИЧНЫЙ ЭНДОСИМБИОЗ (~1,6 млрд лет назад)</text>
+    <text x="20" y="50" fill="#f4f4f4" font-size="11">Древняя эукариотическая клетка поглотила</text>
+    <text x="20" y="68" fill="#42be65" font-size="11" font-weight="600">фототрофную цианобактерию (Cyanobacteria)</text>
+    <text x="20" y="90" fill="#c6c6c6" font-size="11">Цианобактерия превратилась в ХЛОРОПЛАСТ</text>
+    <text x="20" y="106" fill="#8d8d8d" font-size="10">(сохранил 70S рибосомы, кольцевую ДНК)</text>
+  </g>
+
+  <line x1="430" y1="135" x2="490" y2="135" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Right: 3 Lineages of Archaeplastida -->
+  <g transform="translate(500, 75)">
+    <rect x="0" y="0" width="410" height="120" rx="4" fill="#262626" stroke="#8a3ffc"/>
+    <text x="20" y="25" fill="#be95ff" font-size="13" font-weight="700">ДИВЕРГЕНЦИЯ СУПЕРГРУППЫ ARCHAEPLASTIDA</text>
+    <text x="20" y="50" fill="#42be65" font-size="11">1. Зеленые водоросли (Chlorophyta) → Хлорелла, Дуналиелла</text>
+    <text x="20" y="70" fill="#ff7eb6" font-size="11">2. Красные водоросли (Rhodophyta) → Источник агара E406, каррагинана E407</text>
+    <text x="20" y="90" fill="#3ddbd9" font-size="11">3. Глаукофиты (Glaucophyta) → Сохранили муреин в хлоропласте!</text>
+  </g>
+
+  <rect x="50" y="215" width="860" height="85" rx="4" fill="#262626" stroke="#525252"/>
+  <text x="480" y="240" text-anchor="middle" fill="#f1c21b" font-size="12" font-weight="700">
+    ПАРАДОКС: «ВОДОРОСЛИ» — ЭТО НЕ СИСТЕМАТИЧЕСКИЙ ТАКСОН, А ЭКОЛОГИЧЕСКОЕ ПОНЯТИЕ!
+  </text>
+  <text x="480" y="262" text-anchor="middle" fill="#f4f4f4" font-size="11">
+    Спирулина (Arthrospira) — прокариот (домен Bacteria, цианобактерия, тонкая стенка, белок 65%).
+  </text>
+  <text x="480" y="282" text-anchor="middle" fill="#f4f4f4" font-size="11">
+    Хлорелла (Chlorella) — эукариот (домен Eukarya, ядро, панцирь из алгаенана, требует дезинтеграции).
+  </text>
+</svg>

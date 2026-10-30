@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="gradBact" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f62fe"/><stop offset="100%" stop-color="#002d9c"/>
+    </linearGradient>
+    <linearGradient id="gradArch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ee5396"/><stop offset="100%" stop-color="#9f1853"/>
+    </linearGradient>
+    <linearGradient id="gradEuk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#009d9a"/><stop offset="100%" stop-color="#005352"/>
+    </linearGradient>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="#f4f4f4"/>
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="960" height="60" fill="#262626" rx="6 6 0 0"/>
+  <text x="30" y="36" fill="#f4f4f4" font-size="16" font-weight="600" letter-spacing="0.5">УНИВЕРСАЛЬНОЕ ДРЕВО ЖИЗНИ КАРЛА ВЁЗЕ (Tree of Life)</text>
+  <text x="750" y="36" fill="#8d8d8d" font-size="12">16S / 18S рРНК филогения</text>
+
+  <!-- Tree paths -->
+  <!-- LUCA at (480, 420) -->
+  <path d="M 480 420 L 480 340" stroke="#f4f4f4" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Left branch to Bacteria -->
+  <path d="M 480 340 C 400 340, 200 300, 200 190" stroke="#0f62fe" stroke-width="4" fill="none"/>
+  
+  <!-- Right branch to Archaea / Eukarya common trunk -->
+  <path d="M 480 340 C 560 340, 680 300, 680 250" stroke="#ee5396" stroke-width="4" fill="none"/>
+  
+  <!-- Archaea branch -->
+  <path d="M 680 250 C 620 230, 560 200, 560 190" stroke="#ee5396" stroke-width="3" fill="none"/>
+  
+  <!-- Eukarya branch from Asgardarchaeota node -->
+  <path d="M 680 250 C 740 230, 800 200, 800 190" stroke="#009d9a" stroke-width="3" fill="none"/>
+
+  <!-- LUCA Callout -->
+  <circle cx="480" cy="420" r="10" fill="#f1c21b"/>
+  <rect x="360" y="435" width="240" height="32" rx="4" fill="#393939" stroke="#525252"/>
+  <text x="480" y="456" text-anchor="middle" fill="#f1c21b" font-size="12" font-weight="700">LUCA (~3,8–4,0 млрд лет назад)</text>
+
+  <!-- Domain 1: Bacteria -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="240" height="110" rx="4" fill="url(#gradBact)" stroke="#4589ff" stroke-width="1.5"/>
+    <text x="120" y="28" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">ДОМЕН BACTERIA</text>
+    <text x="120" y="46" text-anchor="middle" fill="#d0e2ff" font-size="11">Истинные бактерии (муреин)</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#4589ff" stroke-width="1"/>
+    <text x="20" y="74" fill="#ffffff" font-size="11">• Pseudomonadota (Proteo)</text>
+    <text x="20" y="90" fill="#ffffff" font-size="11">• Bacillota (Firmicutes: LAB, Spores)</text>
+    <text x="20" y="104" fill="#ffffff" font-size="11">• Actinomycetota (Bifidobacterium)</text>
+  </g>
+
+  <!-- Domain 2: Archaea -->
+  <g transform="translate(440, 80)">
+    <rect x="0" y="0" width="240" height="110" rx="4" fill="url(#gradArch)" stroke="#ff7eb6" stroke-width="1.5"/>
+    <text x="120" y="28" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">ДОМЕН ARCHAEA</text>
+    <text x="120" y="46" text-anchor="middle" fill="#ffd6e8" font-size="11">Простая эфирная связь, S-слой</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#ff7eb6" stroke-width="1"/>
+    <text x="20" y="74" fill="#ffffff" font-size="11">• Methanobacteriota (Метан)</text>
+    <text x="20" y="90" fill="#ffffff" font-size="11">• Halobacteriota (Галофилы, соль)</text>
+    <text x="20" y="104" fill="#ffffff" font-size="11">• Asgardarchaeota (Актин, тубулин)</text>
+  </g>
+
+  <!-- Domain 3: Eukarya -->
+  <g transform="translate(700, 80)">
+    <rect x="0" y="0" width="220" height="110" rx="4" fill="url(#gradEuk)" stroke="#3ddbd9" stroke-width="1.5"/>
+    <text x="110" y="28" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">ДОМЕН EUKARYA</text>
+    <text x="110" y="46" text-anchor="middle" fill="#9ef0f0" font-size="11">Оформленное ядро, органеллы</text>
+    <line x1="20" y1="56" x2="200" y2="56" stroke="#3ddbd9" stroke-width="1"/>
+    <text x="20" y="74" fill="#ffffff" font-size="11">• Царство Fungi (Грибы, дрожжи)</text>
+    <text x="20" y="90" fill="#ffffff" font-size="11">• Archaeplastida (Хлорелла, водоросли)</text>
+    <text x="20" y="104" fill="#ffffff" font-size="11">• Metazoa &amp; Растения</text>
+  </g>
+
+  <!-- Highlight sister relation -->
+  <rect x="580" y="260" width="240" height="30" rx="4" fill="#262626" stroke="#f1c21b" stroke-dasharray="3"/>
+  <text x="700" y="280" text-anchor="middle" fill="#f1c21b" font-size="11" font-weight="600">Сестринское родство архей и эукариот</text>
+</svg>

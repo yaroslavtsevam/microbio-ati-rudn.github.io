@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">ФИЗИЧЕСКИЙ ПРИНЦИП MALDI-TOF MS (ГОСТ ISO 7218-2015)</text>
+  <text x="710" y="32" fill="#8d8d8d" font-size="12">Лазерная десорбция рибосомальных белков</text>
+
+  <!-- Stage 1: Laser -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="180" height="150" rx="4" fill="#262626" stroke="#da1e28"/>
+    <text x="15" y="24" fill="#ff8389" font-size="12" font-weight="700">1. ЛАЗЕР (337 нм)</text>
+    <text x="15" y="46" fill="#c6c6c6" font-size="11">Импульс азотного лазера</text>
+    <line x1="90" y1="60" x2="90" y2="95" stroke="#da1e28" stroke-width="3" stroke-dasharray="3"/>
+    <rect x="25" y="100" width="130" height="30" rx="3" fill="#393939" stroke="#f1c21b"/>
+    <text x="90" y="120" text-anchor="middle" fill="#f1c21b" font-size="11">Колония + Матрица</text>
+  </g>
+
+  <line x1="220" y1="155" x2="260" y2="155" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Ionization -->
+  <g transform="translate(270, 80)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#262626" stroke="#0f62fe"/>
+    <text x="15" y="24" fill="#78a9ff" font-size="12" font-weight="700">2. МЯГКАЯ ИОНИЗАЦИЯ</text>
+    <text x="15" y="46" fill="#c6c6c6" font-size="11">Матрица передает H⁺ белкам</text>
+    <text x="15" y="66" fill="#f4f4f4" font-size="11">• Заряд иона: z = +1</text>
+    <text x="15" y="86" fill="#f4f4f4" font-size="11">• Без фрагментации белков</text>
+    <text x="15" y="106" fill="#78a9ff" font-size="11">• Ускорение: U = 20 кВ</text>
+  </g>
+
+  <line x1="470" y1="155" x2="510" y2="155" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3: Flight Tube -->
+  <g transform="translate(520, 80)">
+    <rect x="0" y="0" width="220" height="150" rx="4" fill="#262626" stroke="#009d9a"/>
+    <text x="15" y="24" fill="#3ddbd9" font-size="12" font-weight="700">3. ТРУБКА ДРЕЙФА (TOF)</text>
+    <text x="15" y="46" fill="#c6c6c6" font-size="11">Вакуумная трубка L ~ 1 м</text>
+    <text x="15" y="70" fill="#42be65" font-size="11">● Лёгкие белки летят быстрее</text>
+    <text x="15" y="90" fill="#f1c21b" font-size="11">■ Средние белки</text>
+    <text x="15" y="110" fill="#ff8389" font-size="11">▲ Тяжёлые белки летят медленнее</text>
+  </g>
+
+  <line x1="740" y1="155" x2="780" y2="155" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: Detector & Spectrum -->
+  <g transform="translate(790, 80)">
+    <rect x="0" y="0" width="130" height="150" rx="4" fill="#262626" stroke="#8a3ffc"/>
+    <text x="15" y="24" fill="#be95ff" font-size="12" font-weight="700">4. ДЕТЕКТОР</text>
+    <text x="15" y="50" fill="#f4f4f4" font-size="11">Масс-спектр</text>
+    <text x="15" y="70" fill="#f1c21b" font-size="11">2–20 кДа</text>
+    <text x="15" y="92" fill="#c6c6c6" font-size="10">Белковый профиль</text>
+    <text x="15" y="120" fill="#42be65" font-size="11" font-weight="700">Время: 2–5 мин</text>
+  </g>
+
+  <!-- Formula banner -->
+  <rect x="40" y="250" width="880" height="85" rx="4" fill="#262626" stroke="#525252"/>
+  <text x="480" y="275" text-anchor="middle" fill="#f1c21b" font-family="'IBM Plex Mono', monospace" font-size="14">
+    t = L · √(m / (2 · z · e · U)) ∝ √(m/z)
+  </text>
+  <text x="480" y="300" text-anchor="middle" fill="#f4f4f4" font-size="12">
+    Время пролета (t) строго пропорционально квадратному корню отношения массы белка к заряду (m/z)
+  </text>
+  <text x="480" y="320" text-anchor="middle" fill="#8d8d8d" font-size="11">
+    Спектр формируют рибосомальные белки (до 30% сухого веса клетки), закодированные в хромосоме
+  </text>
+</svg>

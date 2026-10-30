@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">МЕТОДИКА ВЫЯВЛЕНИЯ БГКП (КОЛИФОРМОВ) ПО ГОСТ 31747-2012</text>
+  <text x="750" y="32" fill="#8d8d8d" font-size="12">Санитарно-показательный контроль</text>
+
+  <!-- Stage 1: Kessler broth -->
+  <g transform="translate(40, 75)">
+    <rect x="0" y="0" width="410" height="150" rx="4" fill="#262626" stroke="#0f62fe"/>
+    <text x="20" y="25" fill="#78a9ff" font-size="13" font-weight="700">ЭТАП 1: ОБОГАЩЕНИЕ (БУЛЬОН КЕССЛЕР С ЖЕЛЧЬЮ)</text>
+    <text x="20" y="48" fill="#c6c6c6" font-size="11">Стеклянный поплавок Дурхама (перевернутая пробирка):</text>
+    <text x="20" y="70" fill="#f4f4f4" font-size="11">• Инкубация: +37 °C в течение 24–48 часов</text>
+    <text x="20" y="92" fill="#42be65" font-size="11">✓ Среда помутнела, поплавок пуст → БГКП отсутствуют</text>
+    <text x="20" y="114" fill="#da1e28" font-size="11" font-weight="700">✗ В поплавке появился пузырек газа (CO₂ + H₂) → ПЦР / Пересев</text>
+  </g>
+
+  <line x1="450" y1="150" x2="500" y2="150" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Endo agar -->
+  <g transform="translate(510, 75)">
+    <rect x="0" y="0" width="410" height="150" rx="4" fill="#262626" stroke="#da1e28"/>
+    <text x="20" y="25" fill="#ff8389" font-size="13" font-weight="700">ЭТАП 2: ДИФФЕРЕНЦИАЦИЯ (СРЕДА ЭНДО)</text>
+    <text x="20" y="48" fill="#c6c6c6" font-size="11">Химический механизм реакции фуксин-сульфита:</text>
+    <text x="20" y="70" fill="#f4f4f4" font-size="11">• Исходно фуксин обесцвечен сульфитом Na₂SO₃ (среда бесцветна)</text>
+    <text x="20" y="92" fill="#f4f4f4" font-size="11">• БГКП сбраживают лактозу с образованием альдегидов</text>
+    <text x="20" y="114" fill="#ff8389" font-size="11" font-weight="700">ТЕМНО-КРАСНЫЕ КОЛОНИИ С ЗОЛОТИСТЫМ МЕТАЛЛИЧЕСКИМ БЛЕСКОМ</text>
+  </g>
+
+  <rect x="40" y="245" width="880" height="50" rx="4" fill="#262626" stroke="#525252"/>
+  <text x="480" y="275" text-anchor="middle" fill="#f1c21b" font-size="12">
+    БГКП погибают при пастеризации (+76 °C, 20 с). Обнаружение в готовом молоке — 100% маркер вторичной контаминации!
+  </text>
+</svg>

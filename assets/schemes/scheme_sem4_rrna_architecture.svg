@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 260" width="100%" height="auto" style="background:#161616; border-radius:6px; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="gradVar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f62fe"/><stop offset="100%" stop-color="#0043ce"/>
+    </linearGradient>
+    <marker id="arrowUp" viewBox="0 0 10 10" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 10 L 5 0 L 10 10 z" fill="#f1c21b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
+  <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">АРХИТЕКТУРА И ГИПЕРВАРИАБЕЛЬНЫЕ ЗОНЫ ГЕНА 16S рРНК (~1540 п.н.)</text>
+  <text x="780" y="32" fill="#8d8d8d" font-size="12">Карл Вёзе, 1977</text>
+
+  <!-- Gene track -->
+  <g transform="translate(50, 90)">
+    <!-- 5' -->
+    <text x="-25" y="32" fill="#78a9ff" font-family="'IBM Plex Mono', monospace" font-size="16" font-weight="700">5'</text>
+    
+    <!-- C1..C10 (gray) & V1..V9 (blue) -->
+    <!-- C1 --> <rect x="0" y="10" width="35" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="17" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C1</text>
+    <!-- V1 --> <rect x="38" y="6" width="38" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="57" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V1</text>
+    <!-- C2 --> <rect x="79" y="10" width="45" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="101" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C2</text>
+    <!-- V2 --> <rect x="127" y="6" width="45" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="149" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V2</text>
+    <!-- C3 --> <rect x="175" y="10" width="45" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="197" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C3</text>
+    <!-- V3 --> <rect x="223" y="6" width="55" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="250" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V3</text>
+    <!-- C4 --> <rect x="281" y="10" width="40" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="301" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C4</text>
+    <!-- V4 --> <rect x="324" y="6" width="60" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="354" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V4</text>
+    <!-- C5 --> <rect x="387" y="10" width="45" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="409" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C5</text>
+    <!-- V5 --> <rect x="435" y="6" width="40" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="455" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V5</text>
+    <!-- C6 --> <rect x="478" y="10" width="45" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="500" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C6</text>
+    <!-- V6 --> <rect x="526" y="6" width="45" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="548" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V6</text>
+    <!-- C7 --> <rect x="574" y="10" width="45" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="596" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C7</text>
+    <!-- V7 --> <rect x="622" y="6" width="45" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="644" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V7</text>
+    <!-- C8 --> <rect x="670" y="10" width="40" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="690" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C8</text>
+    <!-- V8 --> <rect x="713" y="6" width="40" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="733" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V8</text>
+    <!-- C9 --> <rect x="756" y="10" width="35" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="773" y="33" text-anchor="middle" fill="#c6c6c6" font-size="11">C9</text>
+    <!-- V9 --> <rect x="794" y="6" width="35" height="44" fill="url(#gradVar)" stroke="#4589ff" rx="3"/><text x="811" y="33" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">V9</text>
+    <!-- C10 --> <rect x="832" y="10" width="30" height="36" fill="#393939" stroke="#525252" rx="3"/><text x="847" y="33" text-anchor="middle" fill="#c6c6c6" font-size="10">C10</text>
+
+    <!-- 3' -->
+    <text x="875" y="32" fill="#78a9ff" font-family="'IBM Plex Mono', monospace" font-size="16" font-weight="700">3'</text>
+
+    <!-- Primer 27F -->
+    <line x1="18" y1="80" x2="18" y2="52" stroke="#f1c21b" stroke-width="2" marker-end="url(#arrowUp)"/>
+    <text x="18" y="98" text-anchor="middle" fill="#f1c21b" font-size="11" font-weight="700">Праймер 27F</text>
+    <text x="18" y="112" text-anchor="middle" fill="#8d8d8d" font-size="10">(консервативный)</text>
+
+    <!-- V3-V4 bracket -->
+    <rect x="220" y="0" width="168" height="56" rx="4" fill="none" stroke="#009d9a" stroke-width="2" stroke-dasharray="4"/>
+    <line x1="304" y1="80" x2="304" y2="62" stroke="#009d9a" stroke-width="2" marker-end="url(#arrowUp)"/>
+    <text x="304" y="98" text-anchor="middle" fill="#009d9a" font-size="11" font-weight="700">Регион V3–V4 (~460 п.н.)</text>
+    <text x="304" y="112" text-anchor="middle" fill="#8d8d8d" font-size="10">Стандарт метагеномики NGS</text>
+
+    <!-- Primer 1492R -->
+    <line x1="845" y1="80" x2="845" y2="52" stroke="#f1c21b" stroke-width="2" marker-end="url(#arrowUp)"/>
+    <text x="845" y="98" text-anchor="middle" fill="#f1c21b" font-size="11" font-weight="700">Праймер 1492R</text>
+    <text x="845" y="112" text-anchor="middle" fill="#8d8d8d" font-size="10">(консервативный)</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 230)">
+    <rect x="0" y="0" width="14" height="14" fill="#393939" stroke="#525252" rx="2"/>
+    <text x="22" y="12" fill="#c6c6c6" font-size="11">C1–C10: Консервативные участки (сайты праймеров)</text>
+    <rect x="360" y="0" width="14" height="14" fill="#0f62fe" rx="2"/>
+    <text x="382" y="12" fill="#c6c6c6" font-size="11">V1–V9: Гипервариабельные петли (таксономический баркодинг)</text>
+  </g>
+</svg>
