@@ -216,25 +216,14 @@ const App = {
     });
 
     // 3. Подсветка родительского триггера подменю при активном дочернем роуте
-    const lecturesViews = ['lectures'];
-    const seminarsViews = ['seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4'];
+    const resourcesViews = ['lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'colloquium1', 'test'];
+    const resourcesTrigger = document.querySelector('[data-submenu-trigger="resources"]');
 
-    const lecturesTrigger = document.querySelector('[data-submenu-trigger="lectures"]');
-    const seminarsTrigger = document.querySelector('[data-submenu-trigger="seminars"]');
-
-    if (lecturesTrigger) {
-      if (lecturesViews.includes(viewName)) {
-        lecturesTrigger.classList.add('cds--header__menu-title--active');
+    if (resourcesTrigger) {
+      if (resourcesViews.includes(viewName)) {
+        resourcesTrigger.classList.add('cds--header__menu-title--active');
       } else {
-        lecturesTrigger.classList.remove('cds--header__menu-title--active');
-      }
-    }
-
-    if (seminarsTrigger) {
-      if (seminarsViews.includes(viewName)) {
-        seminarsTrigger.classList.add('cds--header__menu-title--active');
-      } else {
-        seminarsTrigger.classList.remove('cds--header__menu-title--active');
+        resourcesTrigger.classList.remove('cds--header__menu-title--active');
       }
     }
 

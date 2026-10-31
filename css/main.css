@@ -149,8 +149,137 @@ body {
   flex-direction: column;
 }
 
+/* 3. TYPOGRAPHY: IBM CARBON FOUNDATIONS
+   https://www.carbondesignsystem.com/building-blocks/foundations/typography/ */
+h1, .cds--type-expressive-heading-06, .cds--type-expressive-heading-05 {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--cds-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2, .cds--type-expressive-heading-04 {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0;
+  color: var(--cds-text-primary);
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h3, .cds--type-expressive-heading-03 {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--cds-text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h4, .cds--type-expressive-heading-02 {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  color: var(--cds-text-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h5, h6, .cds--type-expressive-heading-01 {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.16px;
+  color: var(--cds-text-primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Body text (Expressive reading & Productive UI) */
+p, .cds--type-body-02 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--cds-text-primary);
+  margin-bottom: 1rem;
+}
+
+.cds--type-body-01 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.16px;
+  color: var(--cds-text-primary);
+  margin-bottom: 1rem;
+}
+
+.cds--type-caption-01, .cds--type-helper-text-01 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+  color: var(--cds-text-secondary);
+}
+
+.cds--type-label-01 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+  color: var(--cds-text-secondary);
+}
+
+/* Carbon Measure: Optimal reading length for textual study content (50-75 characters) */
+.cds--readable-text,
+.content-block,
+.theory-guide,
+.study-text {
+  max-width: 54rem;
+  line-height: 1.6;
+}
+
+/* Lists according to IBM Carbon Guidelines */
+ul.cds--list--unordered,
+ol.cds--list--ordered {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: var(--cds-text-primary);
+  line-height: 1.6;
+}
+
+ul.cds--list--unordered li,
+ol.cds--list--ordered li {
+  margin-bottom: 0.5rem;
+}
+
+ul.cds--list--unordered li:last-child,
+ol.cds--list--ordered li:last-child {
+  margin-bottom: 0;
+}
+
 code, pre, kbd, samp {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+code:not(pre code) {
+  background-color: var(--cds-layer-accent-01);
+  color: var(--cds-text-primary);
+  padding: 2px 6px;
+  border-radius: 2px;
 }
 
 /* 4. CARBON UI SHELL (HEADER) */
