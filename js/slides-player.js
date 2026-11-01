@@ -188,18 +188,22 @@ const SlidesPlayer = {
       }
     }
 
-    // Рендеринг формул KaTeX
+    // Рендеринг формул KaTeX на слайде и в заметках лектора
     if (typeof renderMathInElement === 'function') {
+      const katexOpts = {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false
+      };
       try {
-        renderMathInElement(this.container, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\(', right: '\\)', display: false },
-            { left: '\\[', right: '\\]', display: true }
-          ],
-          throwOnError: false
-        });
+        renderMathInElement(this.container, katexOpts);
+        if (notesBar && slide.notes) {
+          renderMathInElement(notesBar, katexOpts);
+        }
       } catch (e) {
         console.warn('KaTeX slide error:', e);
       }

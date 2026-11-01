@@ -7,16 +7,16 @@
 
   <rect x="0" y="0" width="960" height="50" fill="#262626" rx="6 6 0 0"/>
   <text x="25" y="32" fill="#f4f4f4" font-size="15" font-weight="600">МЕТОДОЛОГИЯ МУЛЬТИЛОКУСНОГО ТИПИРОВАНИЯ (MLST / MLSA)</text>
-  <text x="750" y="32" fill="#8d8d8d" font-size="12">Разрешение внутривидовых штаммов</text>
+  <text x="935" y="32" text-anchor="end" fill="#8d8d8d" font-size="11.5">Разрешение внутривидовых штаммов</text>
 
   <!-- Step 1 -->
   <g transform="translate(40, 75)">
     <rect x="0" y="0" width="240" height="120" rx="4" fill="#262626" stroke="#0f62fe"/>
-    <text x="15" y="24" fill="#78a9ff" font-size="12" font-weight="700">1. ГЕНЫ ДОМАШНЕГО ХОЗЯЙСТВА</text>
-    <text x="15" y="44" fill="#c6c6c6" font-size="11">Выбор 7 консервативных генов:</text>
-    <text x="15" y="62" fill="#f4f4f4" font-size="11">• recA (репарация ДНК)</text>
-    <text x="15" y="78" fill="#f4f4f4" font-size="11">• gyrB (ДНК-гираза), rpoB (РНК-пол)</text>
-    <text x="15" y="94" fill="#f4f4f4" font-size="11">• atpD, groEL, gapA, purA</text>
+    <text x="14" y="24" fill="#78a9ff" font-size="11.5" font-weight="700">1. ГЕНЫ ДОМАШНЕГО ХОЗЯЙСТВА</text>
+    <text x="14" y="44" fill="#c6c6c6" font-size="10.5">Выбор 7 консервативных генов:</text>
+    <text x="14" y="62" fill="#f4f4f4" font-size="10.5">• recA (репарация ДНК)</text>
+    <text x="14" y="78" fill="#f4f4f4" font-size="10.5">• gyrB (ДНК-гираза), rpoB (РНК-пол)</text>
+    <text x="14" y="94" fill="#f4f4f4" font-size="10.5">• atpD, groEL, gapA, purA</text>
   </g>
 
   <line x1="280" y1="135" x2="320" y2="135" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
@@ -24,10 +24,10 @@
   <!-- Step 2 -->
   <g transform="translate(330, 75)">
     <rect x="0" y="0" width="260" height="120" rx="4" fill="#262626" stroke="#009d9a"/>
-    <text x="15" y="24" fill="#3ddbd9" font-size="12" font-weight="700">2. ПЦР И СЕКВЕНИРОВАНИЕ</text>
-    <text x="15" y="44" fill="#c6c6c6" font-size="11">Секвенирование фрагментов по Сэнгеру:</text>
-    <text x="15" y="64" fill="#f4f4f4" font-size="11">Длина фрагментов: 450–500 п.н.</text>
-    <text x="15" y="84" fill="#c6c6c6" font-size="11">Выявление синонимичных мутаций в 3-х позициях кодонов</text>
+    <text x="14" y="24" fill="#3ddbd9" font-size="11.5" font-weight="700">2. ПЦР И СЕКВЕНИРОВАНИЕ</text>
+    <text x="14" y="44" fill="#c6c6c6" font-size="10.5">Секвенирование по Сэнгеру:</text>
+    <text x="14" y="64" fill="#f4f4f4" font-size="10.5">Длина фрагментов: 450–500 п.н.</text>
+    <text x="14" y="84" fill="#c6c6c6" font-size="10">Синонимичные замены в 3-х позициях</text>
   </g>
 
   <line x1="590" y1="135" x2="630" y2="135" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow)"/>
