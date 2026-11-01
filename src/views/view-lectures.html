@@ -1,5 +1,16 @@
   <main id="view-lectures" class="cds--grid" style="display: none;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+    <!-- Переключатель лекций (IBM Carbon Content Switcher / Tabs) -->
+    <div class="cds--tabs" role="tablist" style="margin-bottom: 1.5rem;">
+      <button type="button" class="cds--tab cds--tab--selected" id="btn-select-lecture-1" data-lecture-switch="1" role="tab">
+        Лекция 1: Морфология и ультраструктура (45 слайдов)
+      </button>
+      <button type="button" class="cds--tab" id="btn-select-lecture-2" data-lecture-switch="2" role="tab">
+        Лекция 2: Биоразнообразие и систематика (55 слайдов)
+      </button>
+    </div>
+
+    <!-- Шапка Лекции 1 -->
+    <div id="lecture-header-1" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
       <div>
         <div class="cds--header__name-prefix">Лекционный комплекс • Модуль 1</div>
         <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
@@ -18,6 +29,29 @@
           <span>Скачать слайды (PDF, 14.7 МБ)</span>
           <span>📄</span>
         </a>
+      </div>
+    </div>
+
+    <!-- Шапка Лекции 2 -->
+    <div id="lecture-header-2" style="display: none; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <div class="cds--header__name-prefix">Лекционный комплекс • Модуль 2 (по материалам Семинара 4)</div>
+        <h1 class="hero-banner__title" style="margin-bottom: 0.5rem;">
+          Лекция 2: Биоразнообразие и современная систематика микроорганизмов
+        </h1>
+        <div class="cds--tile__subtitle" style="margin-bottom: 0;">
+          Филогенетическое древо жизни, 16S рРНК, MLST, ANI, MALDI-TOF, 5 групп ТР ТС, домен Archaea, микроводоросли и микотоксикология • 55 слайдов (1 + 27×2 вопросов)
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="assets/presentations/Lecture_02_Microbiology.pptx" download class="cds--btn cds--btn--primary">
+          <span>Скачать презентацию Лекции 2 (PPTX, 4.5 МБ)</span>
+          <span>📥</span>
+        </a>
+        <button type="button" class="cds--btn cds--btn--secondary" data-go-to="seminar4">
+          <span>Перейти к Семинару 4 (27 вопросов)</span>
+          <span>→</span>
+        </button>
       </div>
     </div>
 
@@ -54,6 +88,12 @@
       <!-- Контейнер слайда (16:9) -->
       <div class="slide-viewport" id="slide-viewport">
         <!-- Слайд рендерится через SlidesPlayer.js -->
+      </div>
+
+      <!-- Комментарий к слайду (Speaker Notes / Вопрос семинара) -->
+      <div id="slide-notes-bar" style="display: none; padding: 0.875rem 1.25rem; background-color: var(--cds-layer-01); border-top: 1px solid var(--cds-border-subtle-01); font-size: 0.875rem; line-height: 1.5; color: var(--cds-text-secondary);">
+        <strong style="color: var(--cds-text-primary);">Комментарий к слайду (Вопрос Семинара 4):</strong>
+        <span id="slide-notes-text"></span>
       </div>
 
       <!-- Футер плеера с подсказками клавиш -->

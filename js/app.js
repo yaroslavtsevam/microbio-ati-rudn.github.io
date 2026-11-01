@@ -72,8 +72,12 @@ const App = {
       if (navLink) {
         e.preventDefault();
         const targetView = navLink.getAttribute('data-nav');
+        const lectureNum = navLink.getAttribute('data-lecture');
         this.closeAllSubmenus();
         this.switchView(targetView);
+        if (targetView === 'lectures' && lectureNum && typeof SlidesPlayer !== 'undefined') {
+          SlidesPlayer.switchLecture(parseInt(lectureNum, 10));
+        }
         window.location.hash = targetView;
         return;
       }
@@ -105,8 +109,12 @@ const App = {
         e.preventDefault();
         const view = targetGoTo.getAttribute('data-go-to');
         const testTopic = targetGoTo.getAttribute('data-test-topic');
+        const lectureNum = targetGoTo.getAttribute('data-lecture');
         this.closeAllSubmenus();
         this.switchView(view);
+        if (view === 'lectures' && lectureNum && typeof SlidesPlayer !== 'undefined') {
+          SlidesPlayer.switchLecture(parseInt(lectureNum, 10));
+        }
         window.location.hash = view;
 
         if (view === 'test' && testTopic) {

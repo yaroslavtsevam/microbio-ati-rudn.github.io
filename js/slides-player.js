@@ -4,6 +4,7 @@
  */
 
 const SlidesPlayer = {
+  currentLecture: 1,
   currentIndex: 0,
   slides: [],
   container: null,
@@ -24,11 +25,38 @@ const SlidesPlayer = {
     this.renderSlide(this.currentIndex);
   },
 
+  switchLecture(lectureNum) {
+    const num = Number(lectureNum) === 2 ? 2 : 1;
+    if (num === 2 && typeof LECTURE2_SLIDES !== 'undefined') {
+      this.currentLecture = 2;
+      this.slides = LECTURE2_SLIDES;
+    } else {
+      this.currentLecture = 1;
+      this.slides = LECTURE1_SLIDES;
+    }
+
+    this.currentIndex = 0;
+
+    const btn1 = document.getElementById('btn-select-lecture-1');
+    const btn2 = document.getElementById('btn-select-lecture-2');
+    const hdr1 = document.getElementById('lecture-header-1');
+    const hdr2 = document.getElementById('lecture-header-2');
+
+    if (btn1) btn1.classList.toggle('cds--tab--selected', this.currentLecture === 1);
+    if (btn2) btn2.classList.toggle('cds--tab--selected', this.currentLecture === 2);
+    if (hdr1) hdr1.style.display = this.currentLecture === 1 ? 'flex' : 'none';
+    if (hdr2) hdr2.style.display = this.currentLecture === 2 ? 'flex' : 'none';
+
+    this.populateModuleSelector();
+    this.renderSlide(0);
+  },
+
   initControls() {
     const btnPrev = document.getElementById('btn-slide-prev');
     const btnNext = document.getElementById('btn-slide-next');
     const btnFullscreen = document.getElementById('btn-slide-fullscreen');
     const selectModule = document.getElementById('select-slide-jump');
+    const lectureSwitchBtns = document.querySelectorAll('[data-lecture-switch]');
 
     if (btnPrev) btnPrev.addEventListener('click', () => this.prevSlide());
     if (btnNext) btnNext.addEventListener('click', () => this.nextSlide());
@@ -39,6 +67,12 @@ const SlidesPlayer = {
         if (!isNaN(idx)) this.goToSlide(idx);
       });
     }
+    lectureSwitchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const num = parseInt(btn.getAttribute('data-lecture-switch'), 10);
+        this.switchLecture(num);
+      });
+    });
   },
 
   initKeyboard() {
@@ -141,6 +175,19 @@ const SlidesPlayer = {
 
     this.container.innerHTML = html;
 
+    // Отображение комментария / заметок к слайду (Speaker Notes)
+    const notesBar = document.getElementById('slide-notes-bar');
+    const notesText = document.getElementById('slide-notes-text');
+    if (notesBar && notesText) {
+      if (slide.notes) {
+        notesText.innerHTML = this.formatMathText(slide.notes);
+        notesBar.style.display = 'block';
+      } else {
+        notesText.innerHTML = '';
+        notesBar.style.display = 'none';
+      }
+    }
+
     // Рендеринг формул KaTeX
     if (typeof renderMathInElement === 'function') {
       try {
@@ -169,7 +216,7 @@ const SlidesPlayer = {
 
     return `
       <div class="slide-card slide-card--title">
-        <div class="slide-title-tag">ЛЕКЦИЯ 1 • АТИ РУДН</div>
+        <div class="slide-title-tag">ЛЕКЦИЯ ${this.currentLecture || 1} • АТИ РУДН</div>
         <h1 class="slide-hero-title">${this.formatMathText(slide.title)}</h1>
         <p class="slide-hero-subtitle">${this.formatMathText(slide.subtitle || '')}</p>
         <div class="slide-meta-grid">${metaHtml}</div>
