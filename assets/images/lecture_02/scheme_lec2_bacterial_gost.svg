@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Stage 1: Kessler broth -->
+  <g transform="translate(40, 15)">
+    <rect x="0" y="0" width="410" height="150" rx="4" fill="#edf5ff" stroke="#0f62fe" stroke-width="1.8"/>
+    <text x="18" y="26" fill="#0043ce" font-size="12.5" font-weight="700">ЭТАП 1: ОБОГАЩЕНИЕ (БУЛЬОН КЕССЛЕР С ЖЕЛЧЬЮ)</text>
+    <text x="18" y="48" fill="#334155" font-size="11">Стеклянный поплавок Дурхама (перевернутая пробирка):</text>
+    <text x="18" y="70" fill="#0f172a" font-size="11" font-weight="500">• Инкубация: +37 °C в течение 24–48 часов</text>
+    <text x="18" y="92" fill="#047857" font-size="11" font-weight="600">✓ Среда помутнела, поплавок пуст → БГКП отсутствуют</text>
+    <text x="18" y="116" fill="#a2191f" font-size="10.8" font-weight="700">✗ В поплавке появился пузырек газа (CO₂ + H₂) → пересев на Эндо</text>
+  </g>
+
+  <line x1="450" y1="90" x2="500" y2="90" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Endo agar -->
+  <g transform="translate(510, 15)">
+    <rect x="0" y="0" width="410" height="150" rx="4" fill="#fff1f2" stroke="#da1e28" stroke-width="1.8"/>
+    <text x="18" y="26" fill="#a2191f" font-size="12.5" font-weight="700">ЭТАП 2: ДИФФЕРЕНЦИАЦИЯ (СРЕДА ЭНДО)</text>
+    <text x="18" y="48" fill="#334155" font-size="11">Химический механизм реакции фуксин-сульфита:</text>
+    <text x="18" y="70" fill="#0f172a" font-size="11" font-weight="500">• Исходно фуксин обесцвечен сульфитом Na₂SO₃ (среда розовая)</text>
+    <text x="18" y="92" fill="#0f172a" font-size="11" font-weight="500">• БГКП сбраживают лактозу через уксусный альдегид</text>
+    <text x="18" y="116" fill="#a2191f" font-size="10" font-weight="700">ТЕМНО-КРАСНЫЕ КОЛОНИИ С ЗОЛОТИСТЫМ МЕТАЛЛИЧЕСКИМ БЛЕСКОМ</text>
+  </g>
+
+  <rect x="40" y="182" width="880" height="50" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="480" y="212" text-anchor="middle" fill="#92400e" font-size="12" font-weight="700">
+    БГКП погибают при пастеризации (+76 °C, 20 с). Обнаружение в пастеризованном молоке — 100% маркер вторичного загрязнения!
+  </text>
+</svg>

@@ -111,7 +111,8 @@ const SlidesPlayer = {
       const opt = document.createElement('option');
       opt.value = idx;
       const modPrefix = slide.module ? `[${slide.module.split(':')[0]}] ` : '';
-      opt.textContent = `${idx + 1}. ${modPrefix}${slide.title}`;
+      const cleanTitle = String(slide.title || '').replace(/[\$*]/g, '');
+      opt.textContent = `${idx + 1}. ${modPrefix}${cleanTitle}`;
       selector.appendChild(opt);
     });
   },
@@ -394,9 +395,9 @@ const SlidesPlayer = {
     return parts.map(part => {
       if (!part) return '';
       
-      // Математический блок: сохраняем знаки <, >, &, нормализуем экранирование
+      // Математический блок: экранируем HTML-символы (<, >, &) для безопасной вставки в innerHTML перед рендером KaTeX
       if (part.startsWith('$') && part.endsWith('$')) {
-        return part;
+        return part.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
       
       // Обычный текст: экранируем HTML и преобразуем markdown bold/italic

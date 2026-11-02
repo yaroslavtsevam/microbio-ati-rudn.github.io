@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 295" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Stage 1: Laser -->
+  <g transform="translate(40, 15)">
+    <rect x="0" y="0" width="180" height="150" rx="4" fill="#fff1f2" stroke="#da1e28" stroke-width="1.8"/>
+    <text x="15" y="25" fill="#a2191f" font-size="12" font-weight="700">1. ЛАЗЕР (337 нм)</text>
+    <text x="15" y="47" fill="#334155" font-size="11">Импульс УФ-лазера</text>
+    <line x1="90" y1="60" x2="90" y2="95" stroke="#da1e28" stroke-width="3" stroke-dasharray="3"/>
+    <rect x="20" y="100" width="140" height="32" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+    <text x="90" y="120" text-anchor="middle" fill="#92400e" font-size="11" font-weight="700">Колония + Матрица</text>
+  </g>
+
+  <line x1="220" y1="90" x2="260" y2="90" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Ionization -->
+  <g transform="translate(270, 15)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#edf5ff" stroke="#0f62fe" stroke-width="1.8"/>
+    <text x="15" y="25" fill="#0043ce" font-size="12" font-weight="700">2. МЯГКАЯ ИОНИЗАЦИЯ</text>
+    <text x="15" y="47" fill="#334155" font-size="11">Матрица передает H⁺ белкам</text>
+    <text x="15" y="68" fill="#0f172a" font-size="11" font-weight="500">• Заряд иона: z = +1</text>
+    <text x="15" y="88" fill="#0f172a" font-size="11" font-weight="500">• Без фрагментации белков</text>
+    <text x="15" y="110" fill="#0043ce" font-size="11" font-weight="700">• Ускорение: U = 20 кВ</text>
+  </g>
+
+  <line x1="470" y1="90" x2="510" y2="90" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3: Flight Tube -->
+  <g transform="translate(520, 15)">
+    <rect x="0" y="0" width="220" height="150" rx="4" fill="#f0fdfa" stroke="#007d79" stroke-width="1.8"/>
+    <text x="15" y="25" fill="#005d5d" font-size="12" font-weight="700">3. ТРУБКА ДРЕЙФА (TOF)</text>
+    <text x="15" y="47" fill="#334155" font-size="11">Вакуумная трубка L ~ 1 м</text>
+    <text x="15" y="72" fill="#047857" font-size="11" font-weight="600">● Лёгкие белки летят быстрее</text>
+    <text x="15" y="94" fill="#b45309" font-size="11" font-weight="600">■ Средние белки</text>
+    <text x="15" y="116" fill="#a2191f" font-size="11" font-weight="600">▲ Тяжёлые белки летят медленнее</text>
+  </g>
+
+  <line x1="740" y1="90" x2="780" y2="90" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: Detector & Spectrum -->
+  <g transform="translate(790, 15)">
+    <rect x="0" y="0" width="130" height="150" rx="4" fill="#f5f3ff" stroke="#6929c4" stroke-width="1.8"/>
+    <text x="14" y="25" fill="#6929c4" font-size="12" font-weight="700">4. ДЕТЕКТОР</text>
+    <text x="14" y="50" fill="#0f172a" font-size="11" font-weight="600">Масс-спектр</text>
+    <text x="14" y="70" fill="#92400e" font-size="11.5" font-weight="700">2–20 кДа</text>
+    <text x="14" y="92" fill="#334155" font-size="10.5">Белковый профиль</text>
+    <text x="14" y="122" fill="#047857" font-size="11" font-weight="700">Время: 2–5 мин</text>
+  </g>
+
+  <!-- Formula banner -->
+  <rect x="40" y="185" width="880" height="92" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="480" y="212" text-anchor="middle" fill="#0043ce" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700">
+    t = L · √(m / (2 · z · e · U)) ∝ √(m/z)
+  </text>
+  <text x="480" y="238" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="600">
+    Время пролета (t) строго пропорционально квадратному корню отношения массы белка к заряду (m/z)
+  </text>
+  <text x="480" y="260" text-anchor="middle" fill="#475569" font-size="11">
+    Спектр формируют рибосомальные белки (до 30% сухого веса клетки), конститутивно экспрессируемые в хромосоме
+  </text>
+</svg>
