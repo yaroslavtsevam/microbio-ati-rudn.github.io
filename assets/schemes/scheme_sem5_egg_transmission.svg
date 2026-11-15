@@ -13,16 +13,17 @@
     <text x="20" y="82" fill="#c6c6c6" font-size="11.5">• При охлаждении теплого яйца (или неправильной мойке)</text>
     <text x="20" y="100" fill="#c6c6c6" font-size="11.5">  бактерии втягиваются через поры скорлупы</text>
     <text x="20" y="124" fill="#c6c6c6" font-size="11.5">• Загрязнение меланжа при разбивании яиц на заводе</text>
-    <rect x="20" y="155" width="400" height="65" rx="4" fill="#161616" stroke="#42be65"/>
-    <text x="34" y="178" fill="#42be65" font-size="11.5" font-weight="700">МЕРЫ КОНТРОЛЯ:</text>
-    <text x="34" y="198" fill="#f4f4f4" font-size="11.5">Дезинфекция скорлупы • Пастеризация меланжа (64,4 °C, 2,5 мин)</text>
+    <rect x="20" y="150" width="400" height="72" rx="4" fill="#161616" stroke="#42be65"/>
+    <text x="34" y="172" fill="#42be65" font-size="11.5" font-weight="700">МЕРЫ КОНТРОЛЯ:</text>
+    <text x="34" y="191" fill="#f4f4f4" font-size="11">• Дезинфекция скорлупы яиц</text>
+    <text x="34" y="208" fill="#f4f4f4" font-size="11">• Пастеризация меланжа (64,4 °C, 2,5 мин)</text>
   </g>
 
   <!-- Right: Vertical Path -->
   <g transform="translate(500, 20)">
     <rect x="0" y="0" width="440" height="240" rx="6" fill="#262626" stroke="#ff8389" stroke-width="1.8"/>
     <text x="20" y="30" fill="#ff8389" font-size="13.5" font-weight="700">2. ВЕРТИКАЛЬНЫЙ ПУТЬ (ТРАНСОВАРИАЛЬНЫЙ)</text>
-    <text x="20" y="54" fill="#f4f4f4" font-size="12">S. Enteritidis (PT4, PT8) инфицирует яичник и яйцевод курицы</text>
+    <text x="20" y="54" fill="#f4f4f4" font-size="11.5">S. Enteritidis (PT4, PT8) поражает яичник и яйцевод</text>
     <text x="20" y="82" fill="#c6c6c6" font-size="11.5">• Бактерии попадают на вителлиновую мембрану желтка</text>
     <text x="20" y="100" fill="#c6c6c6" font-size="11.5">  и в белок ЕЩЕ ДО формирования скорлупы (~1 на 1000 яиц)</text>
     <text x="20" y="124" fill="#c6c6c6" font-size="11.5">• Наружная мойка скорлупы абсолютно бесполезна!</text>

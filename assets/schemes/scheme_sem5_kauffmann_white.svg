@@ -1,21 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
-  <defs>
-    <marker id="arrow-kw" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#78a9ff"/>
-    </marker>
-  </defs>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
   <!-- Central Bacterium Body -->
-  <g transform="translate(270, 95)">
+  <g transform="translate(270, 110)">
     <!-- Vi Capsule (dashed outer halo) -->
     <rect x="-18" y="-18" width="456" height="176" rx="88" fill="none" stroke="#be95ff" stroke-width="2.5" stroke-dasharray="8 5"/>
     <!-- Cell wall / O-antigen outer ring -->
     <rect x="0" y="0" width="420" height="140" rx="70" fill="#262626" stroke="#0f62fe" stroke-width="3"/>
     <!-- Inner cytoplasm -->
     <rect x="14" y="14" width="392" height="112" rx="56" fill="#161616" stroke="#393939" stroke-width="1"/>
-    <text x="210" y="58" text-anchor="middle" fill="#f4f4f4" font-size="16" font-weight="700">Salmonella enterica</text>
-    <text x="210" y="80" text-anchor="middle" fill="#a6c8ff" font-size="12.5">Грамотрицательная палочка (0,5 × 1–3 мкм)</text>
-    <text x="210" y="102" text-anchor="middle" fill="#f1c21b" font-family="'IBM Plex Mono', monospace" font-size="12">Пример (S. Typhimurium): 1, 4, (5), 12 : i : 1, 2</text>
+    <text x="210" y="56" text-anchor="middle" fill="#f4f4f4" font-size="16" font-weight="700">Salmonella enterica</text>
+    <text x="210" y="78" text-anchor="middle" fill="#a6c8ff" font-size="12.5">Грамотрицательная палочка (0,5 × 1–3 мкм)</text>
+    <text x="210" y="100" text-anchor="middle" fill="#f1c21b" font-family="'IBM Plex Mono', monospace" font-size="11.5">S. Typhimurium: 1, 4, (5), 12 : i : 1, 2</text>
 
     <!-- O-antigen spikes around body -->
     <circle cx="50" cy="0" r="5" fill="#42be65"/>
@@ -35,34 +29,36 @@
   </g>
 
   <!-- Callout 1: O-antigen -->
-  <g transform="translate(30, 15)">
-    <rect x="0" y="0" width="280" height="58" rx="4" fill="#262626" stroke="#42be65" stroke-width="1.5"/>
-    <text x="14" y="22" fill="#42be65" font-size="12.5" font-weight="700">O-АНТИГЕН («КОРПУС»)</text>
-    <text x="14" y="42" fill="#f4f4f4" font-size="11.5">Термостабильный ЛПС • Задает серогруппу (A, B, D)</text>
+  <g transform="translate(20, 12)">
+    <rect x="0" y="0" width="420" height="72" rx="4" fill="#262626" stroke="#42be65" stroke-width="1.5"/>
+    <text x="16" y="23" fill="#42be65" font-size="12.5" font-weight="700">O-АНТИГЕН («КОРПУС»)</text>
+    <text x="16" y="42" fill="#f4f4f4" font-size="11.5">Термостабильный липополисахарид (ЛПС)</text>
+    <text x="16" y="59" fill="#c6c6c6" font-size="11">Задает серогруппу (A, B, C1, D) • Плотные гранулы в мазке</text>
   </g>
-  <line x1="310" y1="44" x2="395" y2="90" stroke="#42be65" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="360" y1="84" x2="400" y2="108" stroke="#42be65" stroke-width="1.5" stroke-dasharray="4 3"/>
 
   <!-- Callout 2: Vi-antigen -->
-  <g transform="translate(650, 15)">
-    <rect x="0" y="0" width="280" height="58" rx="4" fill="#262626" stroke="#be95ff" stroke-width="1.5"/>
-    <text x="14" y="22" fill="#be95ff" font-size="12.5" font-weight="700">Vi-АНТИГЕН («БРОНЕЖИЛЕТ»)</text>
-    <text x="14" y="42" fill="#f4f4f4" font-size="11.5">Капсула у S. Typhi и S. Dublin • Защита от фагоцитов</text>
+  <g transform="translate(560, 12)">
+    <rect x="0" y="0" width="380" height="72" rx="4" fill="#262626" stroke="#be95ff" stroke-width="1.5"/>
+    <text x="16" y="23" fill="#be95ff" font-size="12.5" font-weight="700">Vi-АНТИГЕН («БРОНЕЖИЛЕТ»)</text>
+    <text x="16" y="42" fill="#f4f4f4" font-size="11.5">Поверхностная капсула у S. Typhi и S. Dublin</text>
+    <text x="16" y="59" fill="#c6c6c6" font-size="11">Маскирует O-антиген и защищает от фагоцитов</text>
   </g>
-  <line x1="650" y1="44" x2="580" y2="77" stroke="#be95ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="600" y1="84" x2="575" y2="92" stroke="#be95ff" stroke-width="1.5" stroke-dasharray="4 3"/>
 
   <!-- Callout 3: H-antigen Phase 1 -->
-  <g transform="translate(30, 270)">
-    <rect x="0" y="0" width="420" height="72" rx="4" fill="#262626" stroke="#ff8389" stroke-width="1.5"/>
-    <text x="14" y="22" fill="#ff8389" font-size="12.5" font-weight="700">H-АНТИГЕН: ФАЗА 1 (СПЕЦИФИЧЕСКАЯ)</text>
-    <text x="14" y="42" fill="#f4f4f4" font-size="11.5">Белок жгутиков (флагеллин) • Обозначается строчными буквами: i, g,m, d</text>
-    <text x="14" y="59" fill="#c6c6c6" font-size="11">Бактерия переключает фазы жгутиков, уходя от антител хозяина</text>
+  <g transform="translate(20, 290)">
+    <rect x="0" y="0" width="445" height="84" rx="4" fill="#262626" stroke="#ff8389" stroke-width="1.5"/>
+    <text x="16" y="23" fill="#ff8389" font-size="12.5" font-weight="700">H-АНТИГЕН: ФАЗА 1 (СПЕЦИФИЧЕСКАЯ)</text>
+    <text x="16" y="43" fill="#f4f4f4" font-size="11.5">Белок жгутиков (флагеллин) • Строчные буквы: i, g,m, d</text>
+    <text x="16" y="61" fill="#c6c6c6" font-size="11">Бактерия переключает фазы жгутиков, уходя от антител хозяина</text>
   </g>
 
   <!-- Callout 4: H-antigen Phase 2 -->
-  <g transform="translate(510, 270)">
-    <rect x="0" y="0" width="420" height="72" rx="4" fill="#262626" stroke="#3ddbd9" stroke-width="1.5"/>
-    <text x="14" y="22" fill="#3ddbd9" font-size="12.5" font-weight="700">H-АНТИГЕН: ФАЗА 2 (ГРУППОВАЯ)</text>
-    <text x="14" y="42" fill="#f4f4f4" font-size="11.5">Альтернативный флагеллин • Обозначается цифрами: 1,2 • 1,5 • 1,7</text>
-    <text x="14" y="59" fill="#c6c6c6" font-size="11">В ГОСТ ISO 7218-2015: H-реакция дает рыхлые хлопья (O — гранулы)</text>
+  <g transform="translate(495, 290)">
+    <rect x="0" y="0" width="445" height="84" rx="4" fill="#262626" stroke="#3ddbd9" stroke-width="1.5"/>
+    <text x="16" y="23" fill="#3ddbd9" font-size="12.5" font-weight="700">H-АНТИГЕН: ФАЗА 2 (ГРУППОВАЯ)</text>
+    <text x="16" y="43" fill="#f4f4f4" font-size="11.5">Альтернативный флагеллин • Цифры: 1,2 • 1,5 • 1,7</text>
+    <text x="16" y="61" fill="#c6c6c6" font-size="11">По ГОСТ ISO 7218-2015: H-реакция дает рыхлые хлопья</text>
   </g>
 </svg>

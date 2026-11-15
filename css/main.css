@@ -270,6 +270,16 @@ ol.cds--list--ordered li:last-child {
   margin-bottom: 0;
 }
 
+ol.cds--list--ordered[start] {
+  list-style: decimal;
+  counter-reset: none;
+}
+
+ol.cds--list--ordered[start] > li::before {
+  content: none;
+  display: none;
+}
+
 code, pre, kbd, samp {
   font-family: 'IBM Plex Mono', 'Courier New', monospace;
   font-size: 0.875em;
