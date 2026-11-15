@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow-egg" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <!-- Left: Horizontal Path -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="440" height="240" rx="6" fill="#262626" stroke="#f1c21b" stroke-width="1.8"/>
+    <text x="20" y="30" fill="#f1c21b" font-size="13.5" font-weight="700">1. ГОРИЗОНТАЛЬНЫЙ ПУТЬ (СНАРУЖИ)</text>
+    <text x="20" y="54" fill="#f4f4f4" font-size="12">Фекальное загрязнение скорлупы в клоаке или гнезде</text>
+    <text x="20" y="82" fill="#c6c6c6" font-size="11.5">• При охлаждении теплого яйца (или неправильной мойке)</text>
+    <text x="20" y="100" fill="#c6c6c6" font-size="11.5">  бактерии втягиваются через поры скорлупы</text>
+    <text x="20" y="124" fill="#c6c6c6" font-size="11.5">• Загрязнение меланжа при разбивании яиц на заводе</text>
+    <rect x="20" y="155" width="400" height="65" rx="4" fill="#161616" stroke="#42be65"/>
+    <text x="34" y="178" fill="#42be65" font-size="11.5" font-weight="700">МЕРЫ КОНТРОЛЯ:</text>
+    <text x="34" y="198" fill="#f4f4f4" font-size="11.5">Дезинфекция скорлупы • Пастеризация меланжа (64,4 °C, 2,5 мин)</text>
+  </g>
+
+  <!-- Right: Vertical Path -->
+  <g transform="translate(500, 20)">
+    <rect x="0" y="0" width="440" height="240" rx="6" fill="#262626" stroke="#ff8389" stroke-width="1.8"/>
+    <text x="20" y="30" fill="#ff8389" font-size="13.5" font-weight="700">2. ВЕРТИКАЛЬНЫЙ ПУТЬ (ТРАНСОВАРИАЛЬНЫЙ)</text>
+    <text x="20" y="54" fill="#f4f4f4" font-size="12">S. Enteritidis (PT4, PT8) инфицирует яичник и яйцевод курицы</text>
+    <text x="20" y="82" fill="#c6c6c6" font-size="11.5">• Бактерии попадают на вителлиновую мембрану желтка</text>
+    <text x="20" y="100" fill="#c6c6c6" font-size="11.5">  и в белок ЕЩЕ ДО формирования скорлупы (~1 на 1000 яиц)</text>
+    <text x="20" y="124" fill="#c6c6c6" font-size="11.5">• Наружная мойка скорлупы абсолютно бесполезна!</text>
+    <rect x="20" y="155" width="400" height="65" rx="4" fill="#161616" stroke="#0f62fe"/>
+    <text x="34" y="178" fill="#78a9ff" font-size="11.5" font-weight="700">МЕРЫ КОНТРОЛЯ:</text>
+    <text x="34" y="198" fill="#f4f4f4" font-size="11.5">Вакцинация кур (снижение 79% → 11%) • Концепция Нурми</text>
+  </g>
+
+  <!-- Bottom Regulatory Strip -->
+  <rect x="20" y="280" width="920" height="52" rx="4" fill="#262626" stroke="#3ddbd9" stroke-width="1.2"/>
+  <text x="480" y="302" text-anchor="middle" fill="#3ddbd9" font-size="12" font-weight="700">НОРМАТИВ ТР ТС 021/2011 (ПРИЛОЖЕНИЕ 1) И ЗАЩИТА В ПРОДАЖЕ:</text>
+  <text x="480" y="321" text-anchor="middle" fill="#f4f4f4" font-size="11.5">Сальмонеллы не допускаются в 125 г сырых яиц (5×25 г, анализ в желтках) • Хранение &lt; 7 °C блокирует рост</text>
+</svg>

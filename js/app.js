@@ -146,7 +146,7 @@ const App = {
 
   handleRouteHash() {
     const rawHash = window.location.hash.replace('#', '');
-    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'colloquium1', 'test'];
+    const validViews = ['catalog', 'lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'seminar5', 'colloquium1', 'test'];
 
     if (!rawHash) {
       this.switchView('catalog');
@@ -158,10 +158,11 @@ const App = {
       return;
     }
 
-    // Если хеш является внутристраничным якорем для Семинара 4 (sem4-*, question-*)
-    if (rawHash.startsWith('sem4-')) {
-      if (this.currentView !== 'seminar4') {
-        this.switchView('seminar4');
+    // Если хеш является внутристраничным якорем для Семинара 4 или 5
+    if (rawHash.startsWith('sem4-') || rawHash.startsWith('sem5-')) {
+      const targetView = rawHash.startsWith('sem5-') ? 'seminar5' : 'seminar4';
+      if (this.currentView !== targetView) {
+        this.switchView(targetView);
       }
       setTimeout(() => {
         const targetEl = document.getElementById(rawHash);
@@ -224,7 +225,7 @@ const App = {
     });
 
     // 3. Подсветка родительского триггера подменю при активном дочернем роуте
-    const resourcesViews = ['lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'colloquium1', 'test'];
+    const resourcesViews = ['lectures', 'seminar0', 'seminar1', 'seminar2', 'seminar3', 'seminar4', 'seminar5', 'colloquium1', 'test'];
     const resourcesTrigger = document.querySelector('[data-submenu-trigger="resources"]');
 
     if (resourcesTrigger) {
@@ -244,6 +245,7 @@ const App = {
       seminar2: document.getElementById('view-seminar2'),
       seminar3: document.getElementById('view-seminar3'),
       seminar4: document.getElementById('view-seminar4'),
+      seminar5: document.getElementById('view-seminar5'),
       colloquium1: document.getElementById('view-colloquium1'),
       test: document.getElementById('view-test')
     };

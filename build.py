@@ -26,6 +26,7 @@ VIEWS_ORDER = [
     'view-seminar2.html',
     'view-seminar3.html',
     'view-seminar4.html',
+    'view-seminar5.html',
     'view-colloquium1.html',
     'view-test.html',
     'shell_footer.html'

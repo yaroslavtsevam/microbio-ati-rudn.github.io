@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="100%" height="auto" style="background:transparent; font-family:'IBM Plex Sans', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow-sl" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8d8d8d"/>
+    </marker>
+  </defs>
+
+  <!-- Node 1: Scalding -->
+  <g transform="translate(15, 25)">
+    <rect x="0" y="0" width="165" height="200" rx="6" fill="#262626" stroke="#f1c21b" stroke-width="1.6"/>
+    <text x="12" y="25" fill="#f1c21b" font-size="12" font-weight="700">1. ШПАРКА</text>
+    <text x="12" y="47" fill="#f4f4f4" font-size="11">Горячая ванна</text>
+    <text x="12" y="70" fill="#c6c6c6" font-size="10.5">• Недогрев: бактерии</text>
+    <text x="12" y="85" fill="#c6c6c6" font-size="10.5">  переходят с пера</text>
+    <text x="12" y="105" fill="#c6c6c6" font-size="10.5">• Перегрев: рыхлит</text>
+    <text x="12" y="120" fill="#c6c6c6" font-size="10.5">  кутикулу кожи</text>
+    <rect x="12" y="148" width="141" height="38" rx="3" fill="#161616" stroke="#525252"/>
+    <text x="82" y="171" text-anchor="middle" fill="#f1c21b" font-size="10.5">Контроль T °C воды</text>
+  </g>
+
+  <line x1="180" y1="125" x2="200" y2="125" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow-sl)"/>
+
+  <!-- Node 2: Defeathering -->
+  <g transform="translate(204, 25)">
+    <rect x="0" y="0" width="175" height="200" rx="6" fill="#262626" stroke="#ff8389" stroke-width="1.6"/>
+    <text x="12" y="25" fill="#ff8389" font-size="12" font-weight="700">2. ПЕРОСЪЕМ</text>
+    <text x="12" y="47" fill="#f4f4f4" font-size="11">Резиновые пальцы</text>
+    <text x="12" y="70" fill="#c6c6c6" font-size="10.5">• Сдавливают тушку</text>
+    <text x="12" y="85" fill="#c6c6c6" font-size="10.5">  и выдавливают кал</text>
+    <text x="12" y="105" fill="#c6c6c6" font-size="10.5">• Трещины в резине</text>
+    <text x="12" y="120" fill="#c6c6c6" font-size="10.5">  копят биопленки</text>
+    <rect x="12" y="148" width="151" height="38" rx="3" fill="#161616" stroke="#da1e28"/>
+    <text x="87" y="171" text-anchor="middle" fill="#ff8389" font-size="10.5">Втирание в поры кожи</text>
+  </g>
+
+  <line x1="379" y1="125" x2="399" y2="125" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow-sl)"/>
+
+  <!-- Node 3: Evisceration -->
+  <g transform="translate(403, 25)">
+    <rect x="0" y="0" width="175" height="200" rx="6" fill="#262626" stroke="#da1e28" stroke-width="1.8"/>
+    <text x="12" y="25" fill="#ff8389" font-size="12" font-weight="700">3. ПОТРОШЕНИЕ</text>
+    <text x="12" y="47" fill="#f4f4f4" font-size="11">Разрыв кишечника</text>
+    <text x="12" y="70" fill="#c6c6c6" font-size="10.5">• Выход содержимого</text>
+    <text x="12" y="85" fill="#c6c6c6" font-size="10.5">  слепых кишок</text>
+    <text x="12" y="105" fill="#c6c6c6" font-size="10.5">• Тушку птицы не</text>
+    <text x="12" y="120" fill="#c6c6c6" font-size="10.5">  разрубают пополам</text>
+    <rect x="12" y="148" width="151" height="38" rx="3" fill="#161616" stroke="#da1e28"/>
+    <text x="87" y="171" text-anchor="middle" fill="#ff8389" font-size="10.5">Калибровка ножей</text>
+  </g>
+
+  <line x1="578" y1="125" x2="598" y2="125" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow-sl)"/>
+
+  <!-- Node 4: CCP Zero Tolerance -->
+  <g transform="translate(602, 25)">
+    <rect x="0" y="0" width="155" height="200" rx="6" fill="#262626" stroke="#42be65" stroke-width="2"/>
+    <text x="12" y="25" fill="#42be65" font-size="12" font-weight="700">ККТ: ИНСПЕКЦИЯ</text>
+    <text x="12" y="47" fill="#f4f4f4" font-size="11">Zero Tolerance</text>
+    <text x="12" y="70" fill="#c6c6c6" font-size="10.5">• 9 CFR 381.65(e):</text>
+    <text x="12" y="85" fill="#c6c6c6" font-size="10.5">  видимые фекалии</text>
+    <text x="12" y="100" fill="#c6c6c6" font-size="10.5">  запрещено пускать</text>
+    <text x="12" y="115" fill="#c6c6c6" font-size="10.5">  в танк охлаждения!</text>
+    <rect x="12" y="148" width="131" height="38" rx="3" fill="#161616" stroke="#24a148"/>
+    <text x="77" y="171" text-anchor="middle" fill="#42be65" font-size="10.5">Обрезка + мойка</text>
+  </g>
+
+  <line x1="757" y1="125" x2="777" y2="125" stroke="#8d8d8d" stroke-width="2" marker-end="url(#arrow-sl)"/>
+
+  <!-- Node 5: Chilling -->
+  <g transform="translate(781, 25)">
+    <rect x="0" y="0" width="164" height="200" rx="6" fill="#262626" stroke="#0f62fe" stroke-width="1.8"/>
+    <text x="12" y="25" fill="#78a9ff" font-size="12" font-weight="700">4. ОХЛАЖДЕНИЕ</text>
+    <text x="12" y="47" fill="#f4f4f4" font-size="11">Вода vs Воздух</text>
+    <text x="12" y="70" fill="#c6c6c6" font-size="10.5">• Ванна без хлора =</text>
+    <text x="12" y="85" fill="#c6c6c6" font-size="10.5">  перекрестный «суп»</text>
+    <text x="12" y="105" fill="#c6c6c6" font-size="10.5">• Воздух: кожа птицы</text>
+    <text x="12" y="120" fill="#c6c6c6" font-size="10.5">  не успевает сохнуть</text>
+    <rect x="12" y="148" width="140" height="38" rx="3" fill="#161616" stroke="#0f62fe"/>
+    <text x="82" y="171" text-anchor="middle" fill="#78a9ff" font-size="10.5">ЕС: ≤ 1000 КОЕ/г</text>
+  </g>
+
+  <!-- Bottom summary -->
+  <rect x="15" y="250" width="930" height="65" rx="4" fill="#262626" stroke="#525252"/>
+  <text x="480" y="276" text-anchor="middle" fill="#f4f4f4" font-size="12">
+    Итог на бойнях: положительных охлажденных тушек птицы по Campylobacter — 45% (Австралия), 72% (Великобритания), 80% (США)
+  </text>
+  <text x="480" y="298" text-anchor="middle" fill="#a6c8ff" font-size="11.5">
+    Для сравнения: воздушное охлаждение крупных туш говядины (12,3% → 2,9%) и свинины (59% → 2%) высушивает поверхность гораздо эффективнее
+  </text>
+</svg>
